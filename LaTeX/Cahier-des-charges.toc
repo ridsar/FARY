@@ -1,0 +1,34 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Pr\IeC {\'e}sentation}{2}
+\contentsline {subsection}{\numberline {2.1}Les membres du groupe}{2}
+\contentsline {subsection}{\numberline {2.2}Les origines du projet}{3}
+\contentsline {subsection}{\numberline {2.3}Le jeu}{4}
+\contentsline {subsubsection}{\numberline {2.3.1}Pr\IeC {\'e}sentation}{4}
+\contentsline {subsubsection}{\numberline {2.3.2}D\IeC {\'e}roulement d'une partie}{4}
+\contentsline {subsubsection}{\numberline {2.3.3}L'interface}{5}
+\contentsline {subsubsection}{\numberline {2.3.4}L'arsenal de d\IeC {\'e}fense}{5}
+\contentsline {section}{\numberline {3}D\IeC {\'e}coupage du projet}{5}
+\contentsline {subsection}{\numberline {3.1}Le graphisme}{5}
+\contentsline {subsubsection}{\numberline {3.1.1}La 3D}{5}
+\contentsline {subsubsection}{\numberline {3.1.2}La 2D}{5}
+\contentsline {subsection}{\numberline {3.2}Audio}{6}
+\contentsline {subsection}{\numberline {3.3}Le r\IeC {\'e}seau}{6}
+\contentsline {subsection}{\numberline {3.4}L'intelligence artificiel}{6}
+\contentsline {subsection}{\numberline {3.5}Le menu}{6}
+\contentsline {subsection}{\numberline {3.6}Le site}{6}
+\contentsline {subsection}{\numberline {3.7}Gameplay}{6}
+\contentsline {subsection}{\numberline {3.8}Animation}{7}
+\contentsline {section}{\numberline {4}R\IeC {\'e}partition des t\IeC {\^a}ches}{7}
+\contentsline {section}{\numberline {5}Ressources utilis\IeC {\'e}es}{8}
+\contentsline {subsection}{\numberline {5.1}Ordinateur}{8}
+\contentsline {subsection}{\numberline {5.2}Visual Studio 2015}{8}
+\contentsline {subsection}{\numberline {5.3}Unity}{8}
+\contentsline {subsection}{\numberline {5.4}Gimp/Blender}{8}
+\contentsline {subsection}{\numberline {5.5}Tutoriel}{8}
+\contentsline {section}{\numberline {6}Planning}{9}
+\contentsline {subsection}{\numberline {6.1}Premi\IeC {\`e}re soutenance}{9}
+\contentsline {subsection}{\numberline {6.2}Deuxi\IeC {\`e}me soutenance}{9}
+\contentsline {subsection}{\numberline {6.3}Soutenance finale}{9}
+\contentsline {section}{\numberline {7}Budget}{10}
+\contentsline {section}{\numberline {8}Conclusion}{10}
