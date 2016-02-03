@@ -26,11 +26,6 @@ public class Déplacement : MonoBehaviour
         print(move.y);
         double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
         double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            move.z = move.z + (0.2f * (float)cosAngle);
-            move.x = move.x + (0.2f * (float)sinAngle);
-        }
         if (Input.GetKey(KeyCode.Z))
         {
             move.z = move.z + (0.2f * (float)cosAngle);
