@@ -8,8 +8,8 @@ public class WowCamera : MonoBehaviour
     public Transform target;
 
     public Rigidbody rigidBody;
-    public float targetHeight = 3f;
-    public float distance = 5.0f;
+    public float targetHeight = 10f;
+    public float distance = 10.0f;
     public float offsetFromWall = 0.1f;
 
     public float maxDistance = 20;
