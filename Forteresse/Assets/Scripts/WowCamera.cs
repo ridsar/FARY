@@ -7,7 +7,8 @@ public class WowCamera : MonoBehaviour
 {
     public Transform target;
 
-    public float targetHeight = 1.7f;
+    public Rigidbody rigidBody;
+    public float targetHeight = 3f;
     public float distance = 5.0f;
     public float offsetFromWall = 0.1f;
 
@@ -37,6 +38,7 @@ public class WowCamera : MonoBehaviour
 
     void Start()
     {
+        rigidBody = GetComponent<Rigidbody>();
         Vector3 angles = transform.eulerAngles;
         xDeg = angles.x;
         yDeg = angles.y;
@@ -46,8 +48,8 @@ public class WowCamera : MonoBehaviour
         correctedDistance = distance;
 
         // Make the rigid body not change rotation
-        /*if (rigidbody)
-            rigidbody.freezeRotation = true;*/
+        if (rigidBody)
+            rigidBody.freezeRotation = true;
     }
 
 
@@ -99,7 +101,8 @@ public class WowCamera : MonoBehaviour
         {
             float targetRotationAngle = target.eulerAngles.y;
             float currentRotationAngle = transform.eulerAngles.y;
-            xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
+            if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D))
+                xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, 2 * rotationDampening * Time.deltaTime);
         }
 
         yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
