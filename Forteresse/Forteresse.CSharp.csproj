@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Jump.cs" />
     <Compile Include="Assets\Scripts\CharMove.cs" />
     <Compile Include="Assets\Scripts\Déplacement.cs" />
     <Compile Include="Assets\Scripts\UserInput.cs" />
