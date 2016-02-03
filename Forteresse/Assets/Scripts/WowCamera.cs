@@ -101,8 +101,7 @@ public class WowCamera : MonoBehaviour
         {
             float targetRotationAngle = target.eulerAngles.y;
             float currentRotationAngle = transform.eulerAngles.y;
-            if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D))
-                xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, 2 * rotationDampening * Time.deltaTime);
+            xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, 2 * rotationDampening * Time.deltaTime);
         }
 
         yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
