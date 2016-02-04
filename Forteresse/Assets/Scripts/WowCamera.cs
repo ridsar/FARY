@@ -82,8 +82,12 @@ public class WowCamera : MonoBehaviour
         // If either mouse buttons are down, let the mouse govern camera position
         if (Input.GetMouseButton(0))
         {
-            xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-            yDeg -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+            if(Input.GetAxis("Mouse X") * xSpeed * 0.02f > 1f || Input.GetAxis("Mouse Y") * ySpeed * 0.02f > 1f || Input.GetAxis("Mouse X") * xSpeed * 0.02f < -1f || Input.GetAxis("Mouse Y") * ySpeed * 0.02f < -1)
+            {
+                xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
+                yDeg -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+            }
+            
         }
         //Reset the camera angle and Rotate the Target Around the World!
         else if (Input.GetMouseButton(1))
