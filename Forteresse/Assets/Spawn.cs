@@ -5,6 +5,8 @@ public class Spawn : MonoBehaviour {
 
     public GameObject[] enemies;
     public int amount;
+    public float spawingTime;
+    public int enemyNumber;
     private Vector3 spawnPoints;
 
 
@@ -14,9 +16,9 @@ public class Spawn : MonoBehaviour {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         amount = enemies.Length;  
         
-        if (amount != 10)
+        if (amount != enemyNumber)
         {
-            InvokeRepeating("spawnEnemy", 5, 10f);
+            InvokeRepeating("spawnEnemy", spawingTime, 10f);
         }  
 	}
 
