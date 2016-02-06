@@ -1,0 +1,32 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Spawn : MonoBehaviour {
+
+    public GameObject[] enemies;
+    public int amount;
+    private Vector3 spawnPoints;
+
+
+
+	void Update ()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        amount = enemies.Length;  
+        
+        if (amount != 10)
+        {
+            InvokeRepeating("spawnEnemy", 5, 10f);
+        }  
+	}
+
+    void spawnEnemy()
+    {
+        spawnPoints.x = Random.Range(-20 + transform.position.x, 20 + transform.position.x);
+        spawnPoints.y = 0.5f;
+        spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
+
+        Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length - 1)], spawnPoints, Quaternion.identity);
+        CancelInvoke();
+    }
+}

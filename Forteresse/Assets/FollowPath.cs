@@ -1,12 +1,4 @@
-﻿/*----------------------------------------------------------------------------------
-// File:           FollowPath.cs
-// Date:           25/04/2014
-// Author:         DI STEFANO Anthony
-// YouTube:		   https://www.youtube.com/user/MADEiiN83
-// LinkedIn:       https://www.linkedin.com/profile/view?id=217106831
-// ----------------------------------------------------------------------------------*/
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
