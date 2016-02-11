@@ -47,7 +47,8 @@ public class Déplacement : MonoBehaviour
             rb.AddForce(0, 50, 0);
 
         if (transform.position.y - GObj.transform.position.y > 2)
-            rb.AddForce(0, -20, 0);     
+            rb.AddForce(0, -20, 0);  
+           
         transform.Rotate(rotate, 5);
         transform.position += move;       
     }
