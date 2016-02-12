@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Build : MonoBehaviour
 {
-
     public GameObject[] Tower;
     private Vector3 spawnPoints;
 
     void Update()
     {
         Tower = GameObject.FindGameObjectsWithTag("Tower");
+        var Field = GameObject.Find("Terrain");
 
         if (Input.GetMouseButton(1))
         {
@@ -20,7 +20,8 @@ public class Build : MonoBehaviour
                 float x =  hit.point.x;
                 float y = hit.point.y;
                 float z = hit.point.z;
-                StartCoroutine(spawnEnemy(x, y, z));
+                if (y == Field.transform.position.y)
+                    StartCoroutine(spawnEnemy(x, y, z));
             }
         }
 
