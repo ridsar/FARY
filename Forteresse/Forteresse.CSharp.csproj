@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Déplacement.cs" />
     <Compile Include="Assets\Scripts\WowCamera.cs" />
     <Compile Include="Assets\Spawn.cs" />
+    <Compile Include="Assets\Tower\Gem.cs" />
     <Compile Include="Assets\menuScript.cs" />
   </ItemGroup>
   <ItemGroup>
