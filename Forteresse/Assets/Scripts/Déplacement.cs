@@ -6,7 +6,8 @@ public class Déplacement : MonoBehaviour
 
     // Use this for initialization
     public Rigidbody rb;
-    
+    public float Speed;
+    public float rotateSpeed;
 
     void Start()
     {
@@ -19,30 +20,31 @@ public class Déplacement : MonoBehaviour
         var GObj = GameObject.Find("Terrain");
         Vector3 rotate = new Vector3();
         Vector3 move = new Vector3();
+        
 
         if (Input.GetKey(KeyCode.Q))
-            rotate.y -= 10f;
+            rotate.y -= rotateSpeed;
         if (Input.GetKey(KeyCode.D))
-            rotate.y += 10f;
+            rotate.y += rotateSpeed;
         print(move.z);
         print(move.y);
         double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
         double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
         if (Input.GetKey(KeyCode.Z))
         {
-            move.z = move.z + (0.2f * (float)cosAngle);
-            move.x = move.x + (0.2f * (float)sinAngle);
+            move.z = move.z + (Speed * (float)cosAngle);
+            move.x = move.x + (Speed * (float)sinAngle);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            move.z = move.z - (0.2f * (float)cosAngle);
-            move.x = move.x - (0.2f * (float)sinAngle);
+            move.z = move.z - (Speed * (float)cosAngle);
+            move.x = move.x - (Speed * (float)sinAngle);
         }
 
         if (Input.GetKey(KeyCode.A))
-            move.x -= 0.2f;
+            move.x -= Speed;
         if (Input.GetKey(KeyCode.E))
-            move.x += 0.2f;
+            move.x += Speed;
         if (Input.GetKey(KeyCode.Space) && transform.position.y - GObj.transform.position.y < 0.5)
             rb.AddForce(0, 50, 0);
 
