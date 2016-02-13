@@ -5,7 +5,8 @@ public class Build : MonoBehaviour
 {
     public GameObject[] Tower;
     private Vector3 spawnPoints;
-    bool canBuild = true; //FIXEME
+    bool canBuild = false; //FIXEME
+
 
     void Update()
     {
@@ -18,7 +19,7 @@ public class Build : MonoBehaviour
 
 
         //Instanciation d'un model de tour pour visualisation
-       /* if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
+        if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
             RaycastHit hit;
             if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
@@ -32,20 +33,30 @@ public class Build : MonoBehaviour
                 StartCoroutine(spawnEnemy(x, y, z));
                 var tour = GameObject.Find("Tower(Clone)");                              
             }         
-        }*/
+        }
 
 
         //l'objet suit la souris
-        /*if (canBuild)
+        if (canBuild)
         {
-            RaycastHit hit;
+            var tour = GameObject.Find("Tower(Clone)");
+            float distance = 20;
+            Vector3 mousePosition = new Vector3(Input.mousePosition.x, 100, Input.mousePosition.y / 2);
+            print(Input.mousePosition);
+            Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            objPosition.y = 2;
+            tour.transform.position = objPosition;
+
+
+           /* RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 var tour = GameObject.Find("Tower(Clone)");
                 tour.transform.position = hit.point;
             }
-        }*/
-            
+            print(Camera.main.ScreenPointToRay(Input.mousePosition));*/
+        }
+       
 
         //l'objet est construit pour de vrai en jeu 
         if (Input.GetMouseButton(1) && canBuild)
@@ -58,8 +69,9 @@ public class Build : MonoBehaviour
                 float z = hit.point.z;
                 if (y == Field.transform.position.y)
                     StartCoroutine(spawnEnemy(x, y, z));
-                    canBuild = true; // FIXEME
+                    canBuild = false; // FIXEME
             }
+            GameObject.Find("Tower(Clone)").name = "Tower(Build)";
         }       
     }
 
