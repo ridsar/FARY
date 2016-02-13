@@ -9,6 +9,7 @@ public class Déplacement : MonoBehaviour
     public float Speed;
     public float rotateSpeed;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,6 +21,14 @@ public class Déplacement : MonoBehaviour
         var GObj = GameObject.Find("Terrain");
         Vector3 rotate = new Vector3();
         Vector3 move = new Vector3();
+
+        RaycastHit hit;
+        float theDistance;
+
+        Vector3 downSide = transform.TransformDirection(Vector3.down) * 10;
+
+        if (Physics.Raycast(transform.position, (downSide), out hit))
+            theDistance = hit.distance;
         
 
         if (Input.GetKey(KeyCode.Q))
@@ -45,11 +54,14 @@ public class Déplacement : MonoBehaviour
             move.x -= Speed;
         if (Input.GetKey(KeyCode.E))
             move.x += Speed;
-        if (Input.GetKey(KeyCode.Space) && transform.position.y - GObj.transform.position.y < 0.5)
-            rb.AddForce(0, 50, 0);
+        
+        theDistance = hit.distance;
 
-        if (transform.position.y - GObj.transform.position.y > 2)
-            rb.AddForce(0, -20, 0);  
+        if (Input.GetKey(KeyCode.Space) && theDistance < 0.5)
+            rb.AddForce(0, 80, 0);
+
+        if (theDistance > 2)
+            rb.AddForce(0, -50, 0);  
            
         transform.Rotate(rotate, 5);
         transform.position += move;       

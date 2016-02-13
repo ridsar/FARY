@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Build : MonoBehaviour
 {
     public GameObject[] Tower;
@@ -31,8 +32,8 @@ public class Build : MonoBehaviour
                 float z = hit.point.z;
 
                 StartCoroutine(spawnEnemy(x, y, z));
-                var tour = GameObject.Find("Tower(Clone)");                              
-            }         
+                var tour = GameObject.Find("Tower(Clone)");
+            }
         }
 
 
@@ -40,7 +41,7 @@ public class Build : MonoBehaviour
         if (canBuild)
         {
             var tour = GameObject.Find("Tower(Clone)");
-
+            tour.GetComponent<Collider>().enabled = false;
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, 100, Input.mousePosition.y / 2);
             print(Input.mousePosition);
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -56,6 +57,9 @@ public class Build : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
+                var tour = GameObject.Find("Tower(Clone)");
+                tour.GetComponent<Collider>().enabled = true;
+                tour.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 float x = hit.point.x;
                 float y = hit.point.y;
                 float z = hit.point.z;
