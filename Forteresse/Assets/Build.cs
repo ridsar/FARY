@@ -40,21 +40,13 @@ public class Build : MonoBehaviour
         if (canBuild)
         {
             var tour = GameObject.Find("Tower(Clone)");
-            float distance = 20;
+
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, 100, Input.mousePosition.y / 2);
             print(Input.mousePosition);
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            objPosition.y = 2;
+            objPosition.y = 0;
             tour.transform.position = objPosition;
 
-
-           /* RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-            {
-                var tour = GameObject.Find("Tower(Clone)");
-                tour.transform.position = hit.point;
-            }
-            print(Camera.main.ScreenPointToRay(Input.mousePosition));*/
         }
        
 
@@ -67,9 +59,7 @@ public class Build : MonoBehaviour
                 float x = hit.point.x;
                 float y = hit.point.y;
                 float z = hit.point.z;
-                if (y == Field.transform.position.y)
-                    StartCoroutine(spawnEnemy(x, y, z));
-                    canBuild = false; // FIXEME
+                canBuild = false; // FIXEME
             }
             GameObject.Find("Tower(Clone)").name = "Tower(Build)";
         }       
@@ -83,7 +73,7 @@ public class Build : MonoBehaviour
         spawnPoints.y = y;
         spawnPoints.z = z;
 
-        Instantiate(Tower[UnityEngine.Random.Range(0, Tower.Length - 1)], spawnPoints, Quaternion.identity);
+        Instantiate(Tower[UnityEngine.Random.Range(0, Tower.Length - 1)], spawnPoints, Quaternion.identity).name = "Tower(Clone)";
         CancelInvoke();
         yield return new WaitForSeconds(0);
     }
