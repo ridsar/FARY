@@ -33,21 +33,20 @@ public class Build : MonoBehaviour
                 float z = hit.point.z;
 
                 StartCoroutine(spawnEnemy(x, y, z));
-                var tour = GameObject.Find("Tower(Clone)");
             }
         }
 
+        var player = GameObject.Find("Player");
+        var tour = GameObject.Find("Tower(Clone)");
+
+
+        Vector3 playerPos = player.transform.position;
+        Vector3 towerPos = tour.transform.position;
 
         //l'objet suit la souris
         if (canBuild)
         {
 
-            var tour = GameObject.Find("Tower(Clone)");
-            var boule = GameObject.Find("Sphere");
-
-            tour.GetComponent<MeshRenderer>().material.mainTexture = tour.GetComponent<MeshRenderer>().material.GetTexture("Tower 1");
-            boule.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
-            tour.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
             tour.GetComponent<Collider>().enabled = false;
             Cursor.visible = false;
 
@@ -56,19 +55,36 @@ public class Build : MonoBehaviour
             objPosition.y = 0;
             tour.transform.position = objPosition;
 
+            
+
+
+            var walls = GameObject.Find("/Tower(Clone)/Walls");
+
+            if (playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50)
+            {
+                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
+            }
+            else
+                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
+
+
         }
-       
+
 
         //l'objet est construit pour de vrai en jeu 
-        if (Input.GetMouseButton(0) && canBuild)
+        if (Input.GetMouseButton(0) && canBuild && !(playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50))
         {
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                var tour = GameObject.Find("Tower(Clone)");
+                var walls = GameObject.Find("/Tower(Clone)/Walls");
+
                 tour.GetComponent<Collider>().enabled = true;
                 Cursor.visible = true;
-                tour.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+            
                 float x = hit.point.x;
                 float y = hit.point.y;
                 float z = hit.point.z;
