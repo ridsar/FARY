@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\Build.cs" />
     <Compile Include="Assets\FollowPath.cs" />
-    <Compile Include="Assets\Jump.cs" />
     <Compile Include="Assets\Map\Mapcamera.cs" />
     <Compile Include="Assets\Scripts\Déplacement.cs" />
     <Compile Include="Assets\Scripts\WowCamera.cs" />
