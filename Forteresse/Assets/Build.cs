@@ -24,7 +24,7 @@ public class Build : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
             RaycastHit hit;
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 canBuild = true;
 
@@ -36,16 +36,17 @@ public class Build : MonoBehaviour
             }
         }
 
-        var player = GameObject.Find("Player");
-        var tour = GameObject.Find("Tower(Clone)");
-
-
-        Vector3 playerPos = player.transform.position;
-        Vector3 towerPos = tour.transform.position;
 
         //l'objet suit la souris
         if (canBuild)
         {
+
+            var player = GameObject.Find("Player");
+            var tour = GameObject.Find("Tower(Clone)");
+
+
+            Vector3 playerPos = player.transform.position;
+            Vector3 towerPos = tour.transform.position;
 
             tour.GetComponent<Collider>().enabled = false;
             Cursor.visible = false;
@@ -55,7 +56,7 @@ public class Build : MonoBehaviour
             objPosition.y = 0;
             tour.transform.position = objPosition;
 
-            
+
 
 
             var walls = GameObject.Find("/Tower(Clone)/Walls");
@@ -72,26 +73,36 @@ public class Build : MonoBehaviour
 
 
         //l'objet est construit pour de vrai en jeu 
-        if (Input.GetMouseButton(0) && canBuild && !(playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50))
+        if (canBuild)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            var player = GameObject.Find("Player");
+            var tour = GameObject.Find("Tower(Clone)");
+
+
+            Vector3 playerPos = player.transform.position;
+            Vector3 towerPos = tour.transform.position;
+
+            if (Input.GetMouseButton(0) && !(playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50))
             {
-                var walls = GameObject.Find("/Tower(Clone)/Walls");
+                RaycastHit hit;
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                {
+                    var walls = GameObject.Find("/Tower(Clone)/Walls");
 
-                tour.GetComponent<Collider>().enabled = true;
-                Cursor.visible = true;
+                    tour.GetComponent<Collider>().enabled = true;
+                    Cursor.visible = true;
 
-                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                    walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
-            
-                float x = hit.point.x;
-                float y = hit.point.y;
-                float z = hit.point.z;
-                canBuild = false;
+
+                    float x = hit.point.x;
+                    float y = hit.point.y;
+                    float z = hit.point.z;
+                    canBuild = false;
+                }
+                GameObject.Find("Tower(Clone)").name = "Tower(Build)";
             }
-            GameObject.Find("Tower(Clone)").name = "Tower(Build)";
-        }       
+        }  
     }
 
 

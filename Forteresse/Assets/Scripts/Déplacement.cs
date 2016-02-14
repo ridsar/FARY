@@ -35,8 +35,6 @@ public class Déplacement : MonoBehaviour
             rotate.y -= rotateSpeed;
         if (Input.GetKey(KeyCode.D))
             rotate.y += rotateSpeed;
-        print(move.z);
-        print(move.y);
         double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
         double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
         if (Input.GetKey(KeyCode.Z))
