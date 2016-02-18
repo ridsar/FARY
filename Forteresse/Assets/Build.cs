@@ -16,8 +16,6 @@ public class Build : MonoBehaviour
 
         //Déclaration variables
         Tower = GameObject.FindGameObjectsWithTag("Tower");
-        var Field = GameObject.Find("Terrain");
-
 
 
         //Instanciation d'un model de tour pour visualisation
@@ -94,10 +92,6 @@ public class Build : MonoBehaviour
 
                     walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
-
-                    float x = hit.point.x;
-                    float y = hit.point.y;
-                    float z = hit.point.z;
                     canBuild = false;
                 }
                 GameObject.Find("Tower(Clone)").name = "Tower(Build)";

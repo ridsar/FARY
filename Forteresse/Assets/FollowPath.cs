@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -168,9 +167,6 @@ public class FollowPath : MonoBehaviour {
 			GetComponent<Animation>().CrossFade(anim);
 		}
 	}
-	
-	[MenuItem ("MADEiiN83/YouTube")] static void L1 () { Application.OpenURL("https://www.youtube.com/user/MADEiiN83"); }
-	[MenuItem ("MADEiiN83/LinkedIn")] static void L2 () { Application.OpenURL("https://www.linkedin.com/profile/view?id=217106831"); }
 	#endregion
 	
 } // End class

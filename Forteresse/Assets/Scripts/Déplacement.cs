@@ -18,7 +18,7 @@ public class Déplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var GObj = GameObject.Find("Terrain");
+        //var GObj = GameObject.Find("Terrain");
         Vector3 rotate = new Vector3();
         Vector3 move = new Vector3();
 
