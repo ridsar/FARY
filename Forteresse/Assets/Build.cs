@@ -79,7 +79,12 @@ public class Build : MonoBehaviour
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
-
+            if (Input.GetMouseButton(1))
+            {
+                Destroy(tour);
+                Cursor.visible = true;
+                canBuild = false;
+            }
             if (Input.GetMouseButton(0) && !(playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50))
             {
                 RaycastHit hit;
