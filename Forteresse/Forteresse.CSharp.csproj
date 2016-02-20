@@ -73,6 +73,7 @@
     <Compile Include="Assets\Tower\Gem.cs" />
     <Compile Include="Assets\damagePlayer.cs" />
     <Compile Include="Assets\menuScript.cs" />
+    <Compile Include="Assets\move.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\overlord\models\overlord\Materials\clothshader.shader" />

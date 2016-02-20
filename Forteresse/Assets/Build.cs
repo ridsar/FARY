@@ -7,8 +7,12 @@ public class Build : MonoBehaviour
     public GameObject[] Tower;
     private Vector3 spawnPoints;
     bool canBuild = false;
+    Attack monScript;
 
+    void Start ()
+    {
 
+    }
     void Update()
     {
 
@@ -41,7 +45,8 @@ public class Build : MonoBehaviour
 
             var player = GameObject.Find("Player");
             var tour = GameObject.Find("Tower(Clone)");
-
+            monScript = GameObject.Find("Tower(Clone)").GetComponent<Attack>();
+            monScript.enabled = false;
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
@@ -76,7 +81,7 @@ public class Build : MonoBehaviour
             var player = GameObject.Find("Player");
             var tour = GameObject.Find("Tower(Clone)");
 
-
+            monScript.enabled = true;
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
             if (Input.GetMouseButton(1))
