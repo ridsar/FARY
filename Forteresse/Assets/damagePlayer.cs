@@ -8,28 +8,13 @@ public class damagePlayer : MonoBehaviour
 
     void Start()
     {
-        
+        print(playerHealth);
     }
 
     void Update()
     {
 
     }
-
-
-    /*public damagePlayer (int health)
-    {
-        this.playerHealth = health;
-    }
-
-
-
-    public int getHealth()
-    {
-        return this.playerHealth;
-    }*/
-
-
 
     void OnCollisionEnter(Collision _collision)
     {
@@ -38,5 +23,22 @@ public class damagePlayer : MonoBehaviour
             playerHealth -= damage;
             print("enemyDong just touch..." + playerHealth);
         }
-    }    
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+
+        }
+            
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            playerHealth -= damage;
+            print("enemyDong just touch..." + playerHealth);
+        }
+    }
 }
