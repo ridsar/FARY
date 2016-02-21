@@ -35,6 +35,9 @@ public class move : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Enemy")
+        {
             target = null;
+            Destroy(GameObject.Find("Projectile(Build)"));
+        }
     }
 }
