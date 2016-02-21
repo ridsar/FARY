@@ -3,43 +3,38 @@ using System.Collections;
 
 public class move : MonoBehaviour {
 
-    public GameObject sphere;
 
-    private Vector3 startPos;
+    private Transform target = null;
 
-    private Vector3 endPos;
-
-    private float distance = 30f;
-
-    private float lerpTime = 5;
-
-    private float currentLerpTime = 0;
-
-    private bool keyHit = false;
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        startPos = sphere.transform.position;
-        endPos = sphere.transform.position + Vector3.forward * distance;
+
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetKey(KeyCode.P))
-        {
-            keyHit = true;
-        }
-        if( keyHit == true)
-        {
-            currentLerpTime += Time.deltaTime;
-            if(currentLerpTime >= lerpTime)
-            {
-                currentLerpTime = lerpTime;
-            }
-            float Perc = currentLerpTime / lerpTime;
-            sphere.transform.position = Vector3.Lerp(startPos, endPos, Perc);
-        }
+        if (target == null) return;
+        transform.LookAt(target);
+
+        float distance = Vector3.Distance(transform.parent.position, target.position);
+        bool tooClose = distance < 0;
+
+        Vector3 direction = tooClose ? Vector3.back : Vector3.forward;
+        transform.Translate(direction * Time.deltaTime * 10);
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+            target = other.transform;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemy")
+            target = null;
     }
 }

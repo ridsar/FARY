@@ -15,44 +15,42 @@ public class Attack : MonoBehaviour {
 
     private float lerpTime = 3;
 
+    Collider colli;
+
+    move monScript;
+
+
     // Use this for initialization
     void Start ()
     {
-	    
+        StartCoroutine(move());
 	}
 
     // Update is called once per frame
+        
     void Update()
-    {     
-
-        /*Proj = GameObject.FindGameObjectsWithTag("Damage");
-
-        RaycastHit hit;
-        Vector3 p1 = transform.position;
-
-        if (Physics.CheckSphere(p1, 10f) && Physics.SphereCast(p1, 10f, transform.forward, out hit, 10f) && hit.transform.tag == "Enemy")
-        {
-            sommet = transform.position;
-            sommet += new Vector3(0, 10, 0);
-
-            print(hit.collider);
-            Vector3 direction = hit.transform.position;
-
-            Instantiate(Proj[UnityEngine.Random.Range(0, Proj.Length - 1)], sommet, Quaternion.identity).name = "Projectile(Clone)";
-            currentLerpTime += Time.deltaTime;
-            if (currentLerpTime >= lerpTime)
-            {
-                currentLerpTime = lerpTime;
-            }
-            GameObject.Find("Projectile(Clone)").transform.position = Vector3.Lerp(GameObject.Find("Projectile(Clone)").transform.position, hit.transform.position, 5);
-            CancelInvoke();
-        }*/
-    }   
-    void OnTriggerEnter(Collision other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if (GameObject.Find("Projectile(Clone)"))
         {
-            Vector3 toto = new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z);
+            GameObject.Find("Projectile(Clone)").transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            GameObject.Find("Projectile(Clone)").transform.name = "Projectile(Build)";
         }
+    }
+    void Call()
+    {
+
+    }
+    IEnumerator move()
+    {
+        while (true)
+        {
+            GameObject projectile = GameObject.Find("Projectile");
+
+            var myNewSmoke = Instantiate(projectile, projectile.transform.position, Quaternion.identity).name = "Projectile(Clone)";
+            GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
+            monScript = GameObject.Find("Projectile(Clone)").GetComponent<move>();
+            monScript.enabled = true;
+            yield return new WaitForSeconds(3);
+        }       
     }
 }
