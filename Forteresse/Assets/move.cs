@@ -15,7 +15,8 @@ public class move : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (target == null) return;
+        if (target == null)
+            return;
         transform.LookAt(target);
 
         float distance = Vector3.Distance(transform.parent.position, target.position);

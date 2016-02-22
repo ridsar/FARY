@@ -9,21 +9,20 @@ public class Attack : MonoBehaviour {
 
     private Vector3 sommet;
 
-    float startTime = 0.0f;
-
-    private float currentLerpTime = 0;
-
-    private float lerpTime = 3;
-
     Collider colli;
 
     move monScript;
+
+    int n = 0;
+
+    bool check = true;
+
+    public int attackSpeed;
 
 
     // Use this for initialization
     void Start ()
     {
-        StartCoroutine(move());
 	}
 
     // Update is called once per frame
@@ -35,6 +34,10 @@ public class Attack : MonoBehaviour {
             GameObject.Find("Projectile(Clone)").transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             GameObject.Find("Projectile(Clone)").transform.name = "Projectile(Build)";
         }
+        if (Input.GetKey(KeyCode.N))
+        {
+            StopCoroutine(move());
+        }
     }
     void Call()
     {
@@ -42,7 +45,7 @@ public class Attack : MonoBehaviour {
     }
     IEnumerator move()
     {
-        while (true)
+        while (!check)
         {
             GameObject projectile = GameObject.Find("Projectile");
 
@@ -50,7 +53,31 @@ public class Attack : MonoBehaviour {
             GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
             monScript = GameObject.Find("Projectile(Clone)").GetComponent<move>();
             monScript.enabled = true;
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(attackSpeed);
         }       
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            if (n == 0 && check)
+            {
+                check = false;
+                StartCoroutine(move());
+            }
+            ++n;
+        }
+        
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            --n;
+            if ( n <= 0 && !check)
+            {
+                check = true;
+            }
+        }        
     }
 }
