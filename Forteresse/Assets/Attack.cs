@@ -13,6 +13,8 @@ public class Attack : MonoBehaviour {
 
     move monScript;
 
+    selfDestruct destroy;
+
     int n = 0;
 
     bool check = true;
@@ -53,6 +55,8 @@ public class Attack : MonoBehaviour {
             GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
             monScript = GameObject.Find("Projectile(Clone)").GetComponent<move>();
             monScript.enabled = true;
+            destroy = GameObject.Find("Projectile(Clone)").GetComponent<selfDestruct>();
+            destroy.enabled = true;
             yield return new WaitForSeconds(attackSpeed);
         }       
     }
