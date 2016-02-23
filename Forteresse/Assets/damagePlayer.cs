@@ -5,6 +5,12 @@ public class damagePlayer : MonoBehaviour
 {
     public int playerHealth = 30;
     int damage = 10;
+    int dead = 0;
+
+    public int getDead()
+    {
+        return dead;
+    }
 
     void Start()
     {

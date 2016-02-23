@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Attack : MonoBehaviour {
+public class Attack : MonoBehaviour
+{
 
     public int damage = 5;
 
@@ -15,20 +16,17 @@ public class Attack : MonoBehaviour {
 
     selfDestruct destroy;
 
-    int n = 0;
-
     bool check = true;
 
     public int attackSpeed;
 
-
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-	}
+    }
 
     // Update is called once per frame
-        
+
     void Update()
     {
         if (GameObject.Find("Projectile(Clone)"))
@@ -49,18 +47,21 @@ public class Attack : MonoBehaviour {
     {
         while (!check)
         {
-            GameObject projectile = GameObject.Find("Projectile");
 
-            var myNewSmoke = Instantiate(projectile, projectile.transform.position, Quaternion.identity).name = "Projectile(Clone)";
+            GameObject projectile = GameObject.Find("/Tower(Build)/Projectile");
+            Vector3 up = new Vector3(0, 12, 0);
+            var myNewSmoke = Instantiate(projectile, gameObject.transform.position + up, Quaternion.identity).name = "Projectile(Clone)";
             GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
+
             monScript = GameObject.Find("Projectile(Clone)").GetComponent<move>();
             monScript.enabled = true;
             destroy = GameObject.Find("Projectile(Clone)").GetComponent<selfDestruct>();
             destroy.enabled = true;
             yield return new WaitForSeconds(attackSpeed);
-        }       
+        }
     }
-    void OnTriggerEnter(Collider other)
+
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
         {
@@ -70,18 +71,21 @@ public class Attack : MonoBehaviour {
                 StartCoroutine(move());
             }
             ++n;
+        }       
+    }*/
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Enemy" && check)
+        {
+            check = false;
+            StartCoroutine(move());
         }
-        
     }
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Enemy")
         {
-            --n;
-            if ( n <= 0 && !check)
-            {
-                check = true;
-            }
-        }        
+            check = true;
+        }
     }
 }

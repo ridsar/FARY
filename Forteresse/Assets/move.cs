@@ -17,13 +17,15 @@ public class move : MonoBehaviour {
     {
         if (target == null)
             return;
+
+        
         transform.LookAt(target);
 
         float distance = Vector3.Distance(transform.parent.position, target.position);
         bool tooClose = distance < 0;
 
         Vector3 direction = tooClose ? Vector3.back : Vector3.forward;
-        transform.Translate(direction * Time.deltaTime * 10);
+        transform.Translate(direction * Time.deltaTime * 50);
 
     }
 
@@ -34,11 +36,11 @@ public class move : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider other)
-    {
+    {        
         if (other.tag == "Enemy")
         {
-            target = null;
             Destroy(GameObject.Find("Projectile(Build)"));
+            target = null;
         }
     }
 }
