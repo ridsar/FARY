@@ -57,10 +57,7 @@ public class Build : MonoBehaviour
             tour.GetComponent<Collider>().enabled = false;
             Cursor.visible = false;
 
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, 100, Input.mousePosition.y / 2);
-            Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            objPosition.y = 0;
-            tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, playerPos.y, playerPos.z + 20 * (float)cosAngle);
+            tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle);
 
 
 
