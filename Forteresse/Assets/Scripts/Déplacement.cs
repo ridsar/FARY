@@ -31,11 +31,6 @@ public class Déplacement : NetworkBehaviour
         if (Physics.Raycast(transform.position, (downSide), out hit))
             theDistance = hit.distance;
         
-
-        if (Input.GetKey(KeyCode.Q))
-            rotate.y -= rotateSpeed;
-        if (Input.GetKey(KeyCode.D))
-            rotate.y += rotateSpeed;
         double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
         double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
         if (Input.GetKey(KeyCode.Z))
@@ -49,11 +44,17 @@ public class Déplacement : NetworkBehaviour
             move.x = move.x - (Speed * (float)sinAngle);
         }
 
-        if (Input.GetKey(KeyCode.A))
-            move.x -= Speed;
-        if (Input.GetKey(KeyCode.E))
-            move.x += Speed;
-        
+        if (Input.GetKey(KeyCode.Q))
+        {
+            move.x -= Speed * (float)cosAngle;
+            move.z += Speed * (float)sinAngle;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            move.x += Speed * (float)cosAngle;
+            move.z -= Speed * (float)sinAngle;
+        }
+
         theDistance = hit.distance;
 
         if (Input.GetKey(KeyCode.Space) && theDistance < 0.5)

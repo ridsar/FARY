@@ -42,9 +42,12 @@ public class Build : MonoBehaviour
         //l'objet suit la souris
         if (canBuild)
         {
-
             var player = GameObject.Find("Player");
             var tour = GameObject.Find("Tower(Clone)");
+
+            double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
+            double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
+
             monScript = GameObject.Find("Tower(Clone)").GetComponent<Attack>();
             monScript.enabled = false;
 
@@ -57,7 +60,7 @@ public class Build : MonoBehaviour
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, 100, Input.mousePosition.y / 2);
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             objPosition.y = 0;
-            tour.transform.position = objPosition;
+            tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, playerPos.y, playerPos.z + 20 * (float)cosAngle);
 
 
 
