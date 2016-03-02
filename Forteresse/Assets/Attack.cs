@@ -73,6 +73,7 @@ public class Attack : MonoBehaviour
             ++n;
         }       
     }*/
+
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Enemy" && check)
