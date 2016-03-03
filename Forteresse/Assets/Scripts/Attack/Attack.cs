@@ -39,10 +39,7 @@ public class Attack : MonoBehaviour
             StopCoroutine(move());
         }
     }
-    void Call()
-    {
 
-    }
     IEnumerator move()
     {
         while (!check)
@@ -55,6 +52,7 @@ public class Attack : MonoBehaviour
 
             monScript = GameObject.Find("Projectile(Clone)").GetComponent<move>();
             monScript.enabled = true;
+
             destroy = GameObject.Find("Projectile(Clone)").GetComponent<selfDestruct>();
             destroy.enabled = true;
             yield return new WaitForSeconds(attackSpeed);
@@ -76,12 +74,25 @@ public class Attack : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Enemy" && check)
+        if(other.tag == "Enemy")
+        {
+            check = false;
+        }
+        else
+        {
+            check = true;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
         {
             check = false;
             StartCoroutine(move());
         }
     }
+
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Enemy")
