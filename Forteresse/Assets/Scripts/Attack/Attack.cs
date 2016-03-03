@@ -42,7 +42,7 @@ public class Attack : MonoBehaviour
         while (!check)
         {
 
-            GameObject projectile = GameObject.Find("/Tower(Build)/Projectile");
+            GameObject projectile = GameObject.Find("/Mage Tower(Build)/Projectile");
             Vector3 up = new Vector3(0, 12, 0);
             var myNewSmoke = Instantiate(projectile, gameObject.transform.position + up, Quaternion.identity).name = "Projectile(Clone)";
             GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;

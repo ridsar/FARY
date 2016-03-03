@@ -7,9 +7,11 @@ public class Build : MonoBehaviour
     public GameObject[] Tower;
     private Vector3 spawnPoints;
     bool canBuild = false;
+    string name = "";
+    int type;
     Attack monScript;
 
-    void Start ()
+    void Start()
     {
 
     }
@@ -26,29 +28,37 @@ public class Build : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
             RaycastHit hit;
+            name = "Mage Tower";
+            type = 1;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 canBuild = true;
-
-                float x = hit.point.x;
-                float y = hit.point.y;
-                float z = hit.point.z;
-
-                StartCoroutine(spawnEnemy(x, y, z));
+                StartCoroutine(spawnEnemy());
             }
         }
 
+        if (Input.GetKey(KeyCode.Alpha2) && !canBuild)
+        {
+            RaycastHit hit;
+            name = "Canon Tower";
+            type = 0;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                canBuild = true;
+                StartCoroutine(spawnEnemy());
+            }
+        }
 
         //l'objet suit la souris
         if (canBuild)
         {
             var player = GameObject.Find("Player");
-            var tour = GameObject.Find("Tower(Clone)");
+            var tour = GameObject.Find(name + "(Clone)");
 
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
 
-            monScript = GameObject.Find("Tower(Clone)").GetComponent<Attack>();
+            monScript = GameObject.Find(name + "(Clone)").GetComponent<Attack>();
             monScript.enabled = false;
 
             Vector3 playerPos = player.transform.position;
@@ -62,14 +72,14 @@ public class Build : MonoBehaviour
 
 
 
-            var walls = GameObject.Find("/Tower(Clone)/Walls");
+            /*var walls = GameObject.Find("/" + name + "(Clone)/Walls");
 
             if (playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50)
             {
                 walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
             }
             else
-                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
+                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);*/
 
 
         }
@@ -79,11 +89,13 @@ public class Build : MonoBehaviour
         if (canBuild)
         {
             var player = GameObject.Find("Player");
-            var tour = GameObject.Find("Tower(Clone)");
+            var tour = GameObject.Find(name + "(Clone)");
 
             monScript.enabled = true;
+
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
+
             if (Input.GetMouseButton(1))
             {
                 Destroy(tour);
@@ -93,31 +105,28 @@ public class Build : MonoBehaviour
             if (Input.GetMouseButton(0) && !(playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50))
             {
                 RaycastHit hit;
+
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    var walls = GameObject.Find("/Tower(Clone)/Walls");
+                    //var walls = GameObject.Find("/" + name + "(Clone)/Walls");
 
                     tour.GetComponent<Collider>().enabled = true;
                     Cursor.visible = true;
 
-                    walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                    //walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
                     canBuild = false;
                 }
-                GameObject.Find("Tower(Clone)").name = "Tower(Build)";
+                GameObject.Find(name + "(Clone)").name = name + "(Build)";
             }
-        }  
+        }
     }
 
 
     //Clone l'objet voulu
-    IEnumerator spawnEnemy(float x, float y, float z)
+    IEnumerator spawnEnemy()
     {
-        spawnPoints.x = x;
-        spawnPoints.y = y;
-        spawnPoints.z = z;
-
-        Instantiate(Tower[UnityEngine.Random.Range(0, Tower.Length - 1)], spawnPoints, Quaternion.identity).name = "Tower(Clone)";
+        Instantiate(Tower[type], new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)";
         CancelInvoke();
         yield return new WaitForSeconds(0);
     }
