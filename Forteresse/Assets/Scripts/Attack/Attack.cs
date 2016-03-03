@@ -29,14 +29,11 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
+
         if (GameObject.Find("Projectile(Clone)"))
         {
             GameObject.Find("Projectile(Clone)").transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             GameObject.Find("Projectile(Clone)").transform.name = "Projectile(Build)";
-        }
-        if (Input.GetKey(KeyCode.N))
-        {
-            StopCoroutine(move());
         }
     }
 
@@ -76,17 +73,17 @@ public class Attack : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            check = false;
+            check = check && false;           
         }
         else
         {
-            check = true;
-        }
+            check = check && true;
+        }       
     }
 
     void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
+    { 
+        if (other.tag == "Enemy" && check)
         {
             check = false;
             StartCoroutine(move());
