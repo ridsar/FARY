@@ -64,9 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Build.cs" />
-    <Compile Include="Assets\Map\Mapcamera.cs" />
     <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Attack\Attack.cs" />
+    <Compile Include="Assets\Scripts\Attack\Hit.cs" />
     <Compile Include="Assets\Scripts\Attack\damagePlayer.cs" />
     <Compile Include="Assets\Scripts\Attack\move.cs" />
     <Compile Include="Assets\Scripts\Attack\selfDestruct.cs" />
@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Menu\VolumeControl.cs" />
     <Compile Include="Assets\Scripts\Menu\menuScript.cs" />
     <Compile Include="Assets\Scripts\Other\Gem.cs" />
+    <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\overlord\models\overlord\Materials\clothshader.shader" />
