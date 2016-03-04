@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
 
     bool check = true;
 
-    public int attackSpeed;
+    private float attackSpeed;
 
     private string name;
     private string parentName;
@@ -35,14 +35,16 @@ public class Attack : MonoBehaviour
         if (parentName == "Mage Tower(Build)" || parentName == "Mage Tower(Clone)")
         {
             name = "Mage Projectile";
-            parent = "/Mage Tower(Build)/";
+            parent = "/Mage Tower(Build)/Mage Projectile";
             scale = new Vector3(0.1f, 0.1f, 0.1f);
+            attackSpeed = 2;
         }
         else if (parentName == "Canon Tower(Build)" || parentName == "Canon Tower(Clone)")
         {
             name = "Canon Projectile";
-            parent = "/Canon Tower(Build)/";
+            parent = "/Canon Tower(Build)/Canon Projectile";
             scale = new Vector3(1, 1, 1);
+            attackSpeed = 3.5f;
         }
     }
 
@@ -56,6 +58,7 @@ public class Attack : MonoBehaviour
             GameObject.Find(name + "(Clone)").transform.localScale = scale;
             GameObject.Find(name + "(Clone)").transform.name = name + "(Build)";
         }
+        print(check);
     }
 
     IEnumerator move()
@@ -63,10 +66,9 @@ public class Attack : MonoBehaviour
         while (!check)
         {
 
-            GameObject projectile = GameObject.Find(parent + name);
-            Vector3 up = new Vector3(0, 12, 0);
-
-            var myNewSmoke = Instantiate(projectile, gameObject.transform.position + up, Quaternion.identity).name = name + "(Clone)";
+            GameObject projectile = GameObject.Find(parent);
+            var myNewSmoke = Instantiate(projectile, projectile.transform.position, Quaternion.identity).name = name + "(Clone)";
+            CancelInvoke();
             GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
 
             monScript = GameObject.Find(name + "(Clone)").GetComponent<move>();
@@ -74,7 +76,7 @@ public class Attack : MonoBehaviour
 
             destroy = GameObject.Find(name + "(Clone)").GetComponent<selfDestruct>();
             destroy.enabled = true;
-            CancelInvoke();
+            print("move");
             yield return new WaitForSeconds(attackSpeed);
         }
     }
@@ -97,6 +99,7 @@ public class Attack : MonoBehaviour
         {
             check = false;
             StartCoroutine(move());
+            print("ok");
         }
     }
 
