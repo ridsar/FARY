@@ -20,9 +20,30 @@ public class Attack : MonoBehaviour
 
     public int attackSpeed;
 
+    private string name;
+    private string parentName;
+    private string parent;
+
+    private Vector3 scale;
+
+
     // Use this for initialization
     void Start()
     {
+        parentName = transform.name;
+
+        if (parentName == "Mage Tower(Build)" || parentName == "Mage Tower(Clone)")
+        {
+            name = "Mage Projectile";
+            parent = "/Mage Tower(Build)/";
+            scale = new Vector3(0.1f, 0.1f, 0.1f);
+        }
+        else if (parentName == "Canon Tower(Build)" || parentName == "Canon Tower(Clone)")
+        {
+            name = "Canon Projectile";
+            parent = "/Canon Tower(Build)/";
+            scale = new Vector3(1, 1, 1);
+        }
     }
 
     // Update is called once per frame
@@ -30,10 +51,10 @@ public class Attack : MonoBehaviour
     void Update()
     {
 
-        if (GameObject.Find("Projectile(Clone)"))
+        if (GameObject.Find(name + "(Clone)"))
         {
-            GameObject.Find("Projectile(Clone)").transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-            GameObject.Find("Projectile(Clone)").transform.name = "Projectile(Build)";
+            GameObject.Find(name + "(Clone)").transform.localScale = scale;
+            GameObject.Find(name + "(Clone)").transform.name = name + "(Build)";
         }
     }
 
@@ -42,32 +63,21 @@ public class Attack : MonoBehaviour
         while (!check)
         {
 
-            GameObject projectile = GameObject.Find("/Mage Tower(Build)/Projectile");
+            GameObject projectile = GameObject.Find(parent + name);
             Vector3 up = new Vector3(0, 12, 0);
-            var myNewSmoke = Instantiate(projectile, gameObject.transform.position + up, Quaternion.identity).name = "Projectile(Clone)";
+
+            var myNewSmoke = Instantiate(projectile, gameObject.transform.position + up, Quaternion.identity).name = name + "(Clone)";
             GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
 
-            monScript = GameObject.Find("Projectile(Clone)").GetComponent<move>();
+            monScript = GameObject.Find(name + "(Clone)").GetComponent<move>();
             monScript.enabled = true;
 
-            destroy = GameObject.Find("Projectile(Clone)").GetComponent<selfDestruct>();
+            destroy = GameObject.Find(name + "(Clone)").GetComponent<selfDestruct>();
             destroy.enabled = true;
+            CancelInvoke();
             yield return new WaitForSeconds(attackSpeed);
         }
     }
-
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            if (n == 0 && check)
-            {
-                check = false;
-                StartCoroutine(move());
-            }
-            ++n;
-        }       
-    }*/
 
     void OnTriggerStay(Collider other)
     {

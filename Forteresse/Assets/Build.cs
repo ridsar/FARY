@@ -29,7 +29,7 @@ public class Build : MonoBehaviour
         {
             RaycastHit hit;
             name = "Mage Tower";
-            type = 1;
+            type = 0;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 canBuild = true;
@@ -41,7 +41,7 @@ public class Build : MonoBehaviour
         {
             RaycastHit hit;
             name = "Canon Tower";
-            type = 0;
+            type = 1;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 canBuild = true;
@@ -72,14 +72,14 @@ public class Build : MonoBehaviour
 
 
 
-            /*var walls = GameObject.Find("/" + name + "(Clone)/Walls");
+            var walls = GameObject.Find("/" + name + "(Clone)/Walls");
 
             if (playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50)
             {
                 walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
             }
             else
-                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);*/
+                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
 
 
         }
@@ -108,12 +108,12 @@ public class Build : MonoBehaviour
 
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    //var walls = GameObject.Find("/" + name + "(Clone)/Walls");
+                    var walls = GameObject.Find("/" + name + "(Clone)/Walls");
 
                     tour.GetComponent<Collider>().enabled = true;
                     Cursor.visible = true;
 
-                    //walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                    walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
                     canBuild = false;
                 }

@@ -5,11 +5,21 @@ public class move : MonoBehaviour {
 
 
     private Transform target = null;
+    string parentName;
+    string name;
 
     // Use this for initialization
     void Start ()
     {
-
+        parentName = transform.parent.name;
+        if(parentName == "Mage Tower(Build)" || parentName == "Mage Tower(Clone)")
+        {
+            name = "Mage Projectile(Build)";
+        }
+        else if(parentName == "Canon Tower(Build)" || parentName == "Canon Tower(Clone)")
+        {
+            name = "Canon Projectile(Build)";
+        }
 	}
 
     // Update is called once per frame
@@ -39,7 +49,7 @@ public class move : MonoBehaviour {
     {        
         if (other.tag == "Enemy")
         {
-            Destroy(GameObject.Find("Projectile(Build)"));
+            Destroy(GameObject.Find(name));
             target = null;
         }
     }
