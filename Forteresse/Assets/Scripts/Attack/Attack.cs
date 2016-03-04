@@ -58,7 +58,6 @@ public class Attack : MonoBehaviour
             GameObject.Find(name + "(Clone)").transform.localScale = scale;
             GameObject.Find(name + "(Clone)").transform.name = name + "(Build)";
         }
-        print(check);
     }
 
     IEnumerator move()
@@ -67,7 +66,7 @@ public class Attack : MonoBehaviour
         {
 
             GameObject projectile = GameObject.Find(parent);
-            var myNewSmoke = Instantiate(projectile, projectile.transform.position, Quaternion.identity).name = name + "(Clone)";
+            var myNewSmoke = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity).name = name + "(Clone)";
             CancelInvoke();
             GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
 
@@ -76,7 +75,6 @@ public class Attack : MonoBehaviour
 
             destroy = GameObject.Find(name + "(Clone)").GetComponent<selfDestruct>();
             destroy.enabled = true;
-            print("move");
             yield return new WaitForSeconds(attackSpeed);
         }
     }
@@ -99,7 +97,6 @@ public class Attack : MonoBehaviour
         {
             check = false;
             StartCoroutine(move());
-            print("ok");
         }
     }
 

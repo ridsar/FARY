@@ -24,30 +24,12 @@ public class damagePlayer : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void OnCollisionEnter(Collision _collision)
-    {
-        if(_collision.gameObject.tag == "Damage")
-        {
-            playerHealth -= damage;
-            print("enemyDong just touch..." + playerHealth);
-        }
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Damage")
         {
             playerHealth -= damage;
             print("enemyDong just touch..." + playerHealth);
-        }
-            
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Damage")
-        {
-           
-        }
+        }           
     }
 }
