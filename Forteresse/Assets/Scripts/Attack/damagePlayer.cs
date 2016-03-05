@@ -28,8 +28,15 @@ public class damagePlayer : MonoBehaviour
     {
         if (other.tag == "Damage")
         {
-            playerHealth -= damage;
-            print("enemyDong just touch..." + playerHealth);
+            if(other.name == "Mage dmg")
+            {
+                playerHealth -= 5;
+            }
+            else if(other.name == "Canon dmg")
+            {
+                playerHealth -= 10;
+            }
+            print("Enemy just touch by..." + playerHealth);
         }           
     }
 }

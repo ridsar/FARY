@@ -12,6 +12,7 @@ public class move : MonoBehaviour {
     void Start ()
     {
         parentName = transform.parent.name;
+
         if(parentName == "Mage Tower(Build)" || parentName == "Mage Tower(Clone)")
         {
             name = "Mage Projectile(Build)";
@@ -27,9 +28,10 @@ public class move : MonoBehaviour {
     {
         if (target == null)
             return;
-
         
         transform.LookAt(target);
+        if(transform.parent.name == "Canon Tower(Build)")
+            transform.parent.LookAt(target);
 
         float distance = Vector3.Distance(transform.parent.position, target.position);
         bool tooClose = distance < 0;
