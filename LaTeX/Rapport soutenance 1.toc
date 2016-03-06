@@ -1,0 +1,32 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Pr\IeC {\'e}sentation}{3}
+\contentsline {subsection}{\numberline {2.1}Les membres du groupe}{3}
+\contentsline {subsection}{\numberline {2.2}Les origines du projet}{4}
+\contentsline {subsection}{\numberline {2.3}Le jeu}{5}
+\contentsline {subsubsection}{\numberline {2.3.1}Pr\IeC {\'e}sentation}{5}
+\contentsline {subsubsection}{\numberline {2.3.2}D\IeC {\'e}roulement d'une partie}{5}
+\contentsline {subsubsection}{\numberline {2.3.3}Multijoueur}{6}
+\contentsline {subsubsection}{\numberline {2.3.4}L'interface}{6}
+\contentsline {subsubsection}{\numberline {2.3.5}L'arsenal de d\IeC {\'e}fense}{7}
+\contentsline {section}{\numberline {3}Avancement du projet}{8}
+\contentsline {subsection}{\numberline {3.1}Le graphisme}{8}
+\contentsline {subsubsection}{\numberline {3.1.1}La 3D}{8}
+\contentsline {subsubsection}{\numberline {3.1.2}La 2D}{8}
+\contentsline {subsection}{\numberline {3.2}Audio}{8}
+\contentsline {subsection}{\numberline {3.3}Le r\IeC {\'e}seau}{8}
+\contentsline {subsection}{\numberline {3.4}L'intelligence artificiel}{9}
+\contentsline {subsection}{\numberline {3.5}Le menu}{9}
+\contentsline {subsection}{\numberline {3.6}Le site}{9}
+\contentsline {subsection}{\numberline {3.7}Gameplay}{9}
+\contentsline {subsection}{\numberline {3.8}Animation}{10}
+\contentsline {section}{\numberline {4}R\IeC {\'e}partition des t\IeC {\^a}ches}{11}
+\contentsline {section}{\numberline {5}Ressources utilis\IeC {\'e}es}{12}
+\contentsline {subsection}{\numberline {5.1}Ordinateur}{12}
+\contentsline {subsection}{\numberline {5.2}Visual Studio 2015}{12}
+\contentsline {subsection}{\numberline {5.3}Unity}{12}
+\contentsline {subsection}{\numberline {5.4}Gimp/Blender}{12}
+\contentsline {subsection}{\numberline {5.5}Tutoriel}{13}
+\contentsline {section}{\numberline {6}Planning}{13}
+\contentsline {section}{\numberline {7}Budget}{14}
+\contentsline {section}{\numberline {8}Conclusion}{14}
