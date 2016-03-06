@@ -11,11 +11,12 @@
 \usepackage{listings}
 \usepackage[T1]{fontenc}
 \usepackage{eurosym}
+\usepackage{setspace}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
-
+\renewcommand{\baselinestretch}{1.5}
 \begin{document}
 \begin{titlepage}
   \begin{sffamily}
@@ -41,15 +42,19 @@
     \end{minipage}
 	\begin{flushleft}\vfill
       {
-       \textsc{Chatelus} Florian\\
-       \textsc{Henric} Arnaud\\
-       \textsc{Sarkar} Riday\\
-       \textsc{Ezzahoui} Yassine }
+       \textsc{Chatelus} Florian - \emph{chatel\_f} \\
+       \textsc{Henric} Arnaud - \emph{henric\_a}\\
+       \textsc{Sarkar} Riday - \emph{sarkar\_r}\\
+       \textsc{Ezzahoui} Yassine - \emph{ezzaho\_y} }
     \end{flushleft}	
   \end{center}
   \end{sffamily}
 \end{titlepage}
-\tableofcontents
+
+\begin{spacing}{1.0}
+	\tableofcontents
+\end{spacing}
+
 \newpage
 \section{Introduction}
 Ce cahier des charges a pour but de vous présenter le projet que nous allons réaliser durant le deuxième semestre de notre année de Sup . Dans ce cahier des charges vous aurez accès aux différentes étapes du développement de notre jeu ainsi que les moyens humains et matériels mis en oeuvre dans la réalisation du projet.
@@ -58,7 +63,7 @@ Nous établirons un planning dans lequel chaque membre aura un but précis à ac
 Ce cahier des charges contient également un planning détaillé qui servira à mettre en avant  la réalisation des différentes parties du jeu afin que celui-ci soit terminé le 20 juin.
 Ainsi vous allez  apprendre  dans ce cahier tout ce que vous avez besoin de savoir concernant de la réalisation de ce projet : présentation, découpage du projet et organisation de la réalisation.
 La motivation principal est  d’ obtenir un jeu fonctionnel qui correspond aux attentes  et aux ambitions de chacun.
-
+\newpage
 
 \section{Présentation}
 	\subsection{Les membres du groupe}
@@ -69,7 +74,7 @@ La motivation principal est  d’ obtenir un jeu fonctionnel qui correspond aux 
 	\parindent=0cm\textbf{Arnaud \textsc{Henric}}
 	\smallbreak
 	Le projet de première année, enfin ! Nous avons déjà eu des TPs de programmation mais le projet permettra de nous tester d’avantage. En groupe, nous allons réaliser un devoir que nous avons nous-mêmes choisi, un jeu-vidéo. J’ai déjà réaliser certains projets en ISN au lycée (le triangle de Sierpinski, le jeu de la vie ou encore un code barre) mais jamais de projet comme celui-ci, sur un semestre entier et en groupe. Néanmoins ISN m’a donné un peu d'expérience et je suis prêt à créer ce jeu vidéo.\\
-	
+\newpage	
 	\parindent=0cm\textbf{Riday \textsc{Sarkar}}
 	\smallbreak
  Avant d’arriver à EPITA,  j'ai jamais touché à une ligne de code a part cliquer de temps en temps sur des icônes avec Algobox en cours de maths (au passage c'était très bien pour découvrir  le monde merveilleux de l’algorithmique). Je suis conscient que réaliser les tâches qu’on m’a données ne sera pas facile. Cela étant dit, je sais que ce projet est un plus pour nous et qu’on va apprendre beaucoup de choses à travers la réalisation de ce projet. Donc je vais jouer le jeu et faire un maximum de choses pour le projet et essayer d’apprendre un maximum de choses à travers la réalisation de ce projet.\\
@@ -92,6 +97,9 @@ Nous avons choisi de réaliser un jeu plutôt qu’un logiciel car nous avons de
 		\par La première est la phase que nous appellerons \textit{phase de préparation}, elle consiste à préparer ses défenses, en les positionnant de façon stratégique, les améliorant ou en les réparant. Cette phase sera d'une importance capital pour assurer une victoire lors de la phase suivante. Une fois que vous serez fin prêt pour le combat, il vous suffira d'appuyer sur prêt et la deuxième phase commencera une fois tout les joueurs prêt.
 		\par Nous arrivons donc en deuxième phase, la \textit{phase de combat}, qui va déclencher l'action. Des créatures vont apparaitre à des points précis de la carte et vont converger vers le ou les cristaux. Le joueur pourra donc durant cette phase attaquer les monstres et tenter de les détruire et/ou continuer à poser, améliorer et réparer ses constructions mais avec des malus d'incantation.
 		\par Tous les certains nombre de cycle, au terme de ces deux phases, un monstre plus imposant apparaitra, et le joueur devra s'en défaire afin de remporter la manque et d'obtenir des objets.
+		\subsubsection{Multijoueur}
+		Le mode multijoueur consistera en un mode CO-OP. Vous devrez \^etre capable de jouer en \'equipe afin d'affronter vos adversaires. Pour cela, vous commencerez la partie c\^ote \'a c\^ote. Vous ne pouvez combattre seulement des IA. Le mode multijoueur consiste en un mode en \'equipe et non pas en 1vs1 contre un ami.
+		\par Chaque joueur pourra int\'eragir avec l'environnement. Leurs constructions et leurs objectifs sont communs tandis que toutes leurs caract\'eristiques telles que leur monnaie et leur vie sont s\'epar\'ees.
 		\subsubsection{L'interface}
 		L’interface permettra au joueur d'être renseignée à tout moment sur : 
 		\begin{itemize}
@@ -114,18 +122,19 @@ Les défenses fixes seront achetable grâce a l’argent gagné durant la partie
 	\item Des pièges.
 	\item Des auras.
 	\end{itemize}
+\newpage
 \section{Découpage du projet}
 	\subsection{Le graphisme}
 		\subsubsection{La 3D}
 		Étant donné sa gratuité, nous allons utiliser Blender pour réaliser des modèles 3D. Ce logiciel va nous permettre de modéliser les différents personnages de notre jeu et de faire les diverses textures de l’environnement du jeu.
 
 		\subsubsection{La 2D}
-		La 2D de notre jeu sera principalement représenté par l'interface graphique du joueur. En effet, le joueur aura besoin d'avoir des informations et de repère visuel afin d'interagir correctement avec son environnement et d'avoir une expérience de jeu la meilleure possible. La 2D pourra également jouer un rôle important dans les menus.
+		La 2D de notre jeu sera principalement représenté par l'interface graphique du joueur. En effet, le joueur aura besoin d'avoir des informations et de repère visuel afin d'interagir correctement avec son environnement et d'avoir une expérience de jeu la meilleure possible. La 2D pourra également jouer un rôle important dans les menus
 	\subsection{Audio}
 	L’audio gère évidemment tous les sons. De bruitages dans le jeu à musique dans les menus, nous devrons trouver des sons qui s’adaptent au contexte médiéval.
 
 	\subsection{Le réseau}
-	Le réseau consistera tout simplement a implémenter un mode multijoueur, afin que les joueurs puissent jouer ensemble en ligne ou bien en réseau local.
+	Le réseau consistera tout simplement a implémenter un mode multijoueur, afin que les joueurs puisse jouer ensemble en ligne ou bien en réseau local.
 	\subsection{L'intelligence artificiel}
 	Pour définir l’IA, nous allons créer différents niveaux de difficultés. Le but est que l’IA détruise le cristal que nous devons protéger, ainsi, l’IA est l’ennemie. Il contrôle plusieurs personnages. Nous devons coder un IA capable de se déplacer vers le cristal, mais également de combattre contre l’utilisateur, de mourir tué par le héros ou les tourelles. 
 
@@ -134,11 +143,11 @@ Les défenses fixes seront achetable grâce a l’argent gagné durant la partie
 	\subsection{Le site}
 	Modéliser un site web avec une présentation générale des créateurs et de la création (chronologie, problèmes, solutions…). Ajouter des images du jeu. Expliquer les règles.  Donner les références utiles pour notre réalisation. Permettre le téléchargement du jeu aux utilisateurs, et mettre à disposition le rapport ainsi que le jeu en version lite.
 	\subsection{Gameplay}
-	Le gameplay consiste à coder tous les mouvements de notre héros, soit le personnage que l’on contrôle… Il devra être capable de donner des coups, construire des tours, courir, sauter, et bien sûr, se déplacer à n’importe quel point accessible de la map. Le gameplay consiste également à coder la caméra suivant notre héros. Ce jeu se jouant à la troisième personne, la caméra devra être capable de toujours regarder le héros de derrière et de le suivre dans tous ses mouvements. On devra ici géré également tous les problèmes de collision.
+	Le gameplay consiste à coder tous les mouvements de notre héros, soit le personnage que l’on contrôle… Il devra être capable de donner des coups, construire des tours, courir, sauter, et bien sûr, se déplacer à n’importe qu’elle point accessible de la map. Le gameplay consiste également à coder la caméra suivant notre héros. Ce jeu se jouant à la troisième personne, la caméra devra être capable de toujours regarder le héros de derrière et de le suivre dans tous ses mouvements. On devra ici géré également tous les problèmes de collision.
 	\subsection{Animation}
 	L’animation est le moyen de rendre les mouvements des personnages fluides et réalistes. Chaque mouvement devra être animé, les jambes lorsqu’un personnage se déplace, les bras lorsqu’il combat, etc...
 
-
+\newpage
 
 \section{Répartition des tâches}
 Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car ainsi chaque membre réalise plusieurs tâches et peut apprendre des choses de domaines différents . De plus, si un membre rencontre des difficultés et se retrouve bloqué pour réaliser une tâche, son coéquipier peut venir en aide puisqu’ils s’occupent de la même tâche. Ainsi la réalisation des tâches devient plus facile.
@@ -152,11 +161,13 @@ Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car a
 		\hline
 		3D & & $\times$ & $\times$ &\\
 		\hline
-		2D & $\times$ & $\times$ & $\times$ & $\times$ \\
+		2D & & $\times$ & & $\times$\\
 		\hline
 		IA & $\times$ & & & $\times$\\
 		\hline
-		Multijoueur/Réseau & $\times$ & $\times$ & $\times$ & $\times$\\
+		Multijoueur & $\times$ & & $\times$ &\\
+		\hline
+		Réseau & $\times$ & $\times$ & & \\
 		\hline
 		Menu & & & $\times$ & $\times$\\
 		\hline
@@ -166,103 +177,56 @@ Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car a
 		\hline
 		Audio & $\times$ & & $\times$ &\\
 		\hline
-		\LaTeX & $\times$ & $\times$ & &\\
+		\LaTeX & $\times$ & $\times$ & $\times$ & $\times$\\
 		\hline
 	\end{tabular}
 	\newpage
 \section{Ressources utilisées}
 	\subsection{Ordinateur}
-	Nous utiliserons a l'évidence des ordinateurs. Ils seront notre principal outil de travail. Nous utiliserons un ordinateur dans toutes les étapes de notre projet. 
+	Nous utiliserons a l'évidence des ordinateurs. Ils seront notre principale outil de travail. Nous utiliserons un ordinateur dans toutes les étapes de notre projet. 
 	\subsection{Visual Studio 2015}
-	Visual Studio est le logiciel qui nous permettra de coder nos scripts sur Unity. Nous l'utiliserons plus particulièrement afin d'utiliser le langage C\# qui représentera la quasi-totalité, voir la totalité de notre code.
+	Visual Studio est le logiciel qui nous permettra de coder nos script sur Unity. Nous l'utiliserons plus particulièrement afin d'utiliser le langage C\# qui représentera la quasi-totalité, voir la totalité de notre code.
 	\subsection{Unity}
-	Unity sera LE logiciel cœur de notre projet, il lui servira de base. Il nous permettra de mettre en relation des objets avec des scripts que ces objets effectuerons. Ce logiciel correspond parfaitement a nos besoins, dans la réalisation d'un jeu vidéo. De plus il possède une courbe d'apprentissage linaire et est facile d'accès, ce qui correspond à nouveau avec notre statut d'étudiant en première année.
+	Unity sera LE logiciel cœur de notre projet, il lui servira de base. Il nous permettra de mettre en relation des objets avec des scripts que ces objets effectuerons. Ce logiciel correspond parfaitement a nos besoins, dans la réalisation d'un jeu vidéo. De plus il possède une courbe d'apprentissage linaire et est facile d'accès, ce qui correspond a nouveau avec notre statut d'étudiant en première année.
 	\subsection{Gimp/Blender}
 	Gimp est un éditeur graphique. Il nous sera utile notamment pour la création de la 2D, et donc de l'interface graphique de notre jeu. Sans oublier la jaquette de notre jeu lorsqu'il sera en version CD.
 	\par Blender quant a lui est un logiciel de modélisation 3D et sera simplement destiné a la création d'éléments 3D pour notre jeu. 
 	\subsection{Tutoriel}
-	Enfin, la ressource que nous utiliserons le plus, après nos ordinateurs, sont les tutoriels. Dans la mesure où, cette expérience est inédite pour chacun d'entre nous, nous aurons besoin d'acquérir de nombreuses connaissances. C'est ici qu'interviendront les nombreux tutoriels à notre disposition sur le web. Notez que des tutoriels ont été visionné pour la réalisation de ce cahier des charges.
-	\newpage
+	Enfin, la ressource que nous utiliserons le plus, après nos ordinateurs, sont les tutoriels. Dans la mesure où, cette expérience est inédite pour chacun d'entre nous, nous aurons besoin d'acquérir de nombreuse connaissance. C'est ici qu'interviendront les nombreux tutoriels à notre disposition sur le web. Notez que des tutoriels on été visionné pour la réalisation de ce cahier des charges.
 \section{Planning}
-	\subsection{Première soutenance}
-	\begin{tabular}{|c||c|c|c|c|}
+	\begin{tabular}{|c||c|c|c|}
 		\hline
-		& Non débuté & Débuté & Avancé & Terminé \\
+		& 1\iere{} soutenance & 2\ieme{} soutenance & 3\ieme{} soutenance \\
 		\hline
-		Site & & & $\times$ & \\
+		Site &  Avancé & Avancé & Terminé \\
 		\hline
-		3D & & $\times$ & &  \\
+		3D & Débuté & Avancé & Terminé \\
 		\hline
-		2D & & $\times$ & &  \\
+		2D & Débuté & Avancé & Terminé \\
 		\hline
-		IA & & $\times$ & &\\
+		IA & Débuté & Débuté & Terminé\\
 		\hline
-		Multijoueur/Réseau & & $\times$ & & \\
+		Multijoueur & Débuté & Avancé & Terminé\\
 		\hline
-		Menu & & & $\times$ & \\
+		Réseau & Débuté & Avancé & Terminé\\
 		\hline
-		Gameplay & & $\times$ & & \\
+		Menu & Avancé & Terminé & Terminé \\
 		\hline
-		Animation & & $\times$ &  & \\		
+		Gameplay & Débuté & Débuté & Terminé\\
 		\hline
-		Audio & $\times$ &  & &  \\
+		Animation & Débuté & Avancé & Terminé\\		
+		\hline
+		Audio & Non débuté & Débuté & Terminé\\
 		\hline		
-	\end{tabular}
-	\subsection{Deuxième soutenance}
-	\begin{tabular}{|c||c|c|c|c|}
-		\hline
-		& Non débuté & Débuté & Avancé & Terminé\\
-		\hline
-		Site & & & $\times$ & \\
-		\hline
-		3D & & & $\times$ & \\
-		\hline
-		2D & & & $\times$ & \\
-		\hline
-		IA & & $\times$ & & \\
-		\hline
-		Multijoueur/Réseau & & & $\times$ & \\
-		\hline
-		Menu & & & & $\times$\\
-		\hline
-		Gameplay & & $\times$ & & \\
-		\hline
-		Animation & & & $\times$ &\\		
-		\hline
-		Audio & & $\times$ & &\\
-		\hline		
-	\end{tabular}
-	\subsection{Soutenance finale}
-	\begin{tabular}{|c||c|c|c|c|}
-		\hline
-		& Non débuté & Débuté & Avancé & Terminé \\
-		\hline
-		Site & & & & $\times$ \\
-		\hline
-		3D & & & & $\times$ \\
-		\hline
-		2D & & & & $\times$ \\
-		\hline
-		IA & & & & $\times$ \\
-		\hline
-		Multijoueur/Réseau & & & & $\times$ \\
-		\hline
-		Menu & & & & $\times$ \\
-		\hline
-		Gameplay & & & & $\times$\\
-		\hline
-		Animation & & & & $\times$\\		
-		\hline
-		Audio & & & & $\times$ \\
-		\hline		
-	\end{tabular}
+	\end{tabular}\\
+	\newpage
 \section{Budget}
 
-Nous sommes des étudiants et ceci est un projet de première année. C'est donc un projet dans le cadre scolaire et à but non lucratif. Ainsi, le budget sera de 0\euro{}. Aucun achat ne sera nécessaire à la réalisation de notre projet. Les dépenses seront donc également de 0\euro{}. Seul des logiciels gratuits ou bien fourni gratuitement par l'école seront utilisés dans ce projet. Un léger dépassement de budget est bien entendu possible, notamment pour l'achat d'un CD si cela s'avère nécessaire.\\
+Nous sommes des étudiants et ceci est un projet de première année. C'est donc un projet dans le cadre scolaire et à but non lucratif. Ainsi, le budget sera de 0\euro{}. Aucun achats ne sera nécessaire à la réalisation de notre projet. Les dépenses seront donc également de 0\euro{}. Seul des logiciels gratuits ou bien fournit gratuitement par l'école seront utilisés dans ce projet. Un léger dépassement de budget est bien entendu possible, notamment pour l'achat d'un CD si cela s'avère nécessaire.\\
 \centerline{\includegraphics[scale=0.7]{images.jpg}}
 
 \section{Conclusion}
+
 Ainsi, Forteresse sera notre jeu-vidéo réalisé par Florian, Arnaud, Riday et Yassine (FARY). Situé dans un contexte médiéval, inspiré des conquêtes de l’époque, nous devrons à tout pris défendre notre cristal, attaqué par des ennemis aussi répugnants que menaçants. Pour cela, nos guerriers devront faire preuve de stratégie et de courage pour repousser les dangers. Capables de construire des tours de défense, ils devront les placer sur des lieux stratégiques afin de stopper l’invasion ennemie mais ils devront aussi user de leur force au combat.
 Êtes vous capables de résister et de défendre vos cristaux ?
-… à vous de jouer !!
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  23 JAN 2016 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  6 MAR 2016 16:40
 entering extended mode
 **"Cahier des charges.tex"
 ("Cahier des charges.tex"
@@ -108,6 +108,9 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\eurosym\eurosym.sty"
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box28
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -355,21 +358,21 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen111
 )
 ("Cahier des charges.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Info: Redefining \degres on input line 19.
-LaTeX Info: Redefining \dots on input line 19.
-LaTeX Info: Redefining \up on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Info: Redefining \degres on input line 20.
+LaTeX Info: Redefining \dots on input line 20.
+LaTeX Info: Redefining \up on input line 20.
 \c@lstlisting=\count101
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -386,27 +389,27 @@ LaTeX Info: Redefining \up on input line 19.
 \makeMPintoPDFobject=\count107
 \everyMPtoPDFconversion=\toks19
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 21.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 22.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 27.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 28.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <24.88> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 27.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 28.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <20.74> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 29.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 30.
 
 <coollogo_com-19602433.png, id=1, 220.57407pt x 76.78688pt>
 File: coollogo_com-19602433.png Graphic file (type png)
 
 <use coollogo_com-19602433.png>
-Package pdftex.def Info: coollogo_com-19602433.png used on input line 32.
+Package pdftex.def Info: coollogo_com-19602433.png used on input line 33.
 (pdftex.def)             Requested size: 220.57352pt x 76.78668pt.
 
 <crossed-swords-clip-art-48219.jpg, id=3, 426.59375pt x 426.59375pt>
@@ -414,14 +417,14 @@ File: crossed-swords-clip-art-48219.jpg Graphic file (type jpg)
 
 <use crossed-swords-clip-art-48219.jpg>
 Package pdftex.def Info: crossed-swords-clip-art-48219.jpg used on input line 3
-4.
+5.
 (pdftex.def)             Requested size: 170.63446pt x 170.63446pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 41.
+(Font)              <12> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 41.
+(Font)              <8> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 41.
+(Font)              <6> on input line 42.
  [1
 
 {C:/Users/florian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./coollog
@@ -435,73 +438,79 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+[1] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
-[3] <Plan.png, id=28, 584.93532pt x 417.81094pt>
+[4] <Plan.png, id=32, 584.93532pt x 417.81094pt>
 File: Plan.png Graphic file (type png)
  <use Plan.png>
-Package pdftex.def Info: Plan.png used on input line 91.
+Package pdftex.def Info: Plan.png used on input line 96.
 (pdftex.def)             Requested size: 321.71541pt x 229.79672pt.
- [4 <./Plan.png>] [5] [6]
-Overfull \hbox (0.42627pt too wide) in paragraph at lines 139--140
+ [5 <./Plan.png>] [6] [7] [8] [9]
+Overfull \hbox (0.42627pt too wide) in paragraph at lines 148--149
 []\T1/cmr/m/n/12 L'animation est le moyen de rendre les mou-ve-ments des per-so
 n-nages fluides
  []
 
+[10]
 
 Package Fancyhdr Warning: \headheight is too small (14.61858pt): 
  Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] [8] <images.jpg, id=48, 212.795pt x 238.8925pt>
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 197--222
+
+ []
+
+[13] <images.jpg, id=65, 212.795pt x 238.8925pt>
 File: images.jpg Graphic file (type jpg)
  <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 262.
+Package pdftex.def Info: images.jpg used on input line 226.
 (pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
- [9]
-[10 <./images.jpg>] ("Cahier des charges.aux") ) 
+ [14 <./images.jpg>] ("Cahier des charges.aux") ) 
 Here is how much of TeX's memory you used:
- 4212 strings out of 493673
- 56050 string characters out of 3143954
- 127584 words of memory out of 3000000
- 7519 multiletter control sequences out of 15000+200000
- 17648 words of font info for 39 fonts, out of 3000000 for 9000
+ 4248 strings out of 493673
+ 56675 string characters out of 3143954
+ 120880 words of memory out of 3000000
+ 7549 multiletter control sequences out of 15000+200000
+ 18473 words of font info for 40 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  28i,10n,43p,954b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\florian\AppData\Loca
-l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\florian\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Us
-ers\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc120
-0.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dp
-i600\ecbx1440.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\ecbx1200.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\
-pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\florian\AppData\Local\MiKTe
-X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\florian\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\flo
-rian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1200.pk> <
-C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-cc1200.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\eccc2074.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
-ur\jknappen\ec\dpi600\eccc2488.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/euros
-ym/feymr10.pfb>
-Output written on "Cahier des charges.pdf" (11 pages, 274846 bytes).
+ <C:\Users\florian\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\florian
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\U
+sers\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc12
+00.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
+pi600\ecbx1440.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecbx1200.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\florian\AppData\Local\MiKT
+eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\florian\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\fl
+orian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsi1200.pk> 
+<C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+css1200.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\eccc1200.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi600\eccc2074.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/eurosym/feymr10.pfb>
+Output written on "Cahier des charges.pdf" (15 pages, 282738 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
+ 459 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
