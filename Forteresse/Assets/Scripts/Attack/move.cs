@@ -42,9 +42,9 @@ public class move : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" && target == null)
             target = other.transform;
     }
 
