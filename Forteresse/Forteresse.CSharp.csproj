@@ -67,6 +67,7 @@
     <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Attack\Attack.cs" />
     <Compile Include="Assets\Scripts\Attack\Hit.cs" />
+    <Compile Include="Assets\Scripts\Attack\Target.cs" />
     <Compile Include="Assets\Scripts\Attack\damagePlayer.cs" />
     <Compile Include="Assets\Scripts\Attack\move.cs" />
     <Compile Include="Assets\Scripts\Attack\selfDestruct.cs" />
