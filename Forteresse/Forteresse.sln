@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forteresse.CSharp.Plugins", "Forteresse.CSharp.Plugins.csproj", "{4C1E09B0-DB28-0911-7691-4773AA81C0F4}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forteresse.CSharp", "Forteresse.CSharp.csproj", "{CBDA754F-6DC0-7873-8989-07A4874430C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forteresse.CSharp.Editor", "Forteresse.CSharp.Editor.csproj", "{CFED81AD-0C78-2DB6-BB63-7F120A8F4D14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C1E09B0-DB28-0911-7691-4773AA81C0F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1E09B0-DB28-0911-7691-4773AA81C0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1E09B0-DB28-0911-7691-4773AA81C0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1E09B0-DB28-0911-7691-4773AA81C0F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBDA754F-6DC0-7873-8989-07A4874430C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBDA754F-6DC0-7873-8989-07A4874430C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBDA754F-6DC0-7873-8989-07A4874430C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBDA754F-6DC0-7873-8989-07A4874430C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFED81AD-0C78-2DB6-BB63-7F120A8F4D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFED81AD-0C78-2DB6-BB63-7F120A8F4D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFED81AD-0C78-2DB6-BB63-7F120A8F4D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFED81AD-0C78-2DB6-BB63-7F120A8F4D14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
