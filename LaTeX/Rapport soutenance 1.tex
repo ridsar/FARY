@@ -57,12 +57,10 @@
 
 \newpage
 \section{Introduction}
-Ce cahier des charges a pour but de vous présenter le projet que nous allons réaliser durant le deuxième semestre de notre année de Sup . Dans ce cahier des charges vous aurez accès aux différentes étapes du développement de notre jeu ainsi que les moyens humains et matériels mis en oeuvre dans la réalisation du projet.
-Forteresse est en fait un tower defense issu de l’imagination de Henric Arnaud, Sarkar Riday,Chatelus Florian et de Ezzahoui Yassine.
-Nous établirons un planning dans lequel chaque membre aura un but précis à accomplir pendant une durée déterminée.
-Ce cahier des charges contient également un planning détaillé qui servira à mettre en avant  la réalisation des différentes parties du jeu afin que celui-ci soit terminé le 20 juin.
-Ainsi vous allez  apprendre  dans ce cahier tout ce que vous avez besoin de savoir concernant de la réalisation de ce projet : présentation, découpage du projet et organisation de la réalisation.
-La motivation principal est  d’ obtenir un jeu fonctionnel qui correspond aux attentes  et aux ambitions de chacun.
+Dans le cadre de de notre première année a EPITA, nous devons réaliser un projet informatique de fin d’année qui doit montrer l’application de nos connaissances dans le domaine de la programmation.
+	Le sujet étant libre, nous avons décidé de réaliser un jeu vidéo nommé Forteresse.
+	Le présent document est  le rapport de la première soutenance qui retrace l’avancement de notre projet en cours de développement depuis la validation du cahier des charges jusqu'à la première soutenance. Ainsi, à travers ce rapport, nous allons établir un bilan des tâches qui ont été réalisées par chacun des membres du groupe. Nous allons aussi établir un bilan  des tâches qui restent à  réaliser pour  la prochaine soutenance. 
+
 \newpage
 
 \section{Présentation}
@@ -123,6 +121,39 @@ Les défenses fixes seront achetable grâce a l’argent gagné durant la partie
 	\item Des auras.
 	\end{itemize}
 \newpage
+\section{Répartition des tâches}
+Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car ainsi chaque membre réalise plusieurs tâches et peut apprendre des choses de domaines différents . De plus, si un membre rencontre des difficultés et se retrouve bloqué pour réaliser une tâche, son coéquipier peut venir en aide puisqu’ils s’occupent de la même tâche. Ainsi la réalisation des tâches devient plus facile.
+\bigbreak
+\bigbreak
+	\begin{tabular}{|c||c|c|c|c|c|}
+		\hline
+		& Florian & Riday & Yassine & Arnaud \\
+		\hline
+		Site & & & $\times$ & $\times$\\
+		\hline
+		3D & & $\times$ & $\times$ &\\
+		\hline
+		2D & & $\times$ & & $\times$\\
+		\hline
+		IA & $\times$ & & & $\times$\\
+		\hline
+		Multijoueur & $\times$ & & $\times$ &\\
+		\hline
+		Réseau & $\times$ & $\times$ & & \\
+		\hline
+		Menu & & & $\times$ & $\times$\\
+		\hline
+		Gameplay & $\times$ & $\times$ & &\\
+		\hline
+		Animation & & $\times$ & & $\times$\\		
+		\hline
+		Audio & $\times$ & & $\times$ &\\
+		\hline
+		\LaTeX & $\times$ & $\times$ & $\times$ & $\times$\\
+		\hline
+	\end{tabular}
+	\newpage
+\newpage
 \section{Avancement du projet}
 	\subsection{Le graphisme}
 		\subsubsection{La 3D}
@@ -135,8 +166,10 @@ Les défenses fixes seront achetable grâce a l’argent gagné durant la partie
 
 	\subsection{Le réseau}
 	Le réseau consistera tout simplement a implémenter un mode multijoueur, afin que les joueurs puisse jouer ensemble en ligne ou bien en réseau local.
+	\subsection{Multijoueur}
+	Notre manque d'expérience dans le domaine de la création de jeu vidéo, nous a forcé a planifier l'avancement de notre projet sans trop de réel prévision. C'est pour cela que le multijoueur n'a pas encore été débuté a l'heure actuelle. Il sera débuté lorsque le réseau sera pleinement opérationnel. Cela va donc repousser notre planning en ce qui concerne le multijoueur.
 	\subsection{L'intelligence artificiel}
-	L'IA a été une de nos priorité lors pour cette premiere soutenance, car elle est un outils majeur du bon fonctionnement du jeu. A l'heure actuelle l'IA est très basique. Elle permet simplement aux ennemies de se déplacer d'un point A a un point B, en suivant un route défini au préalable.
+	L'IA a été une de nos priorité lors pour cette première soutenance, car elle est un outils majeur du bon fonctionnement du jeu. A l'heure actuelle l'IA est très basique. Elle permet simplement aux ennemies de se déplacer d'un point A a un point B, en suivant un route défini au préalable.
 	\par La prochaine étape sera de lui permettre de converger vers un objet lorsque celui-ci sera a sa porté et bien évidement de l'attaquer, afin d'avoir une IA fonctionnelle, permettant le déroulement d'une partie.
 
 	\subsection{Le menu}
@@ -145,8 +178,21 @@ Les défenses fixes seront achetable grâce a l’argent gagné durant la partie
 	Modéliser un site web avec une présentation générale des créateurs et de la création (chronologie, problèmes, solutions…). Ajouter des images du jeu. Expliquer les règles.  Donner les références utiles pour notre réalisation. Permettre le téléchargement du jeu aux utilisateurs, et mettre à disposition le rapport ainsi que le jeu en version lite.
 	\subsection{Gameplay}
 		\subsubsection{Déplacement}
+		Les déplacement on été le premier élément de gameplay implémenté, puisque c'est un élément indispensable dans tout jeu a la troisième personne.
+		\par Pour se déplacer il faut utiliser les touches 'z' pour avancer, 's' pour reculer et de faire des rotations avec la touche 'q' pour effectuer une rotation sur la gauche et la touche 'd' pour faire une rotation sur la droite. Comme dans la plupart des MMORPG.
+		\par Après de nombreux tests, il est apparue que cette façon de se déplacer n'était pas la plus efficace et qu'elle pourrait poser des problèmes notamment pour gérer la visé pour les attaques des personnages. Nous avons donc choisit d'utiliser la souris afin d'effectuer les rotations. Les touches 'q' et 'd' ont donc respectivement été ré-attribué au déplacement latérale gauche et droit.
+		\par Le saut s'effectue s'effectue avec la touche 'espace'. Il ne peut etre fait que lorsque le personnage est au sol.  
 		\subsubsection{Camera}
-		\subsubsection{Degats}
+		Afin d'améliorer le gameplay au niveau des déplacements il était important d'avoir un script pour la caméra afin d'avoir une fluidité optimale dans les déplacements.
+		\par Comme dans la plupart des jeu a la troisième personne, la camera suit le personnage de derrière. On contrôle la camera a la souris. Il est possible de régler la distance entre la camera et le personnage à l'aide de la molette. La camera gère également les collisions, ce qui lui permet de ne pas passer au travers du sol ou bien de mur.
+		\subsubsection{Dégâts}
+		La gestion des dégâts et des points de vie, sont deux élément majeurs du gameplay de notre jeu.
+		\par Nous gérons les dégâts de la façon suivante, dans un premier temps un nombre de point de vie est attribué a l'objet (tel qu'un ennemie) et lorsque cet objet entre en collision avec un objet avec un certain tag et un certain nom, un nombre donné de points de vie sont retirés à l'objet. Jusqu'à ce que le nombre de point de vie atteigne 0 et que l'objet soit détruit.
+		\subsubsection{La construction}
+		La construction concerne aussi bien la construction de tour que les dégâts. En effet pour faire des dégâts, les tours on besoin de projectiles, il faut donc construire des projectiles lorsque l'ennemie est a porté. Pour cela on clone le un objet qui nous sert a de référence, puis on active les scripts nécessaire au bon fonctionnement du projectile sur l'objet cloné.
+		\par La construction d'une tour se utilise le même principe et se déroule en deux étapes. Tout d'abord, la tour va être crée et sera a l'état d'image et suivra le , elle sera verte dans les emplacements valide et rouge dans le cas contraire. Une fois la tour positionné a l'endroit voulu un clic gauche permet de la fixer et d'activer ses scripts.
+		\subsubsection{L'apparition des ennemies}
+		La génération d'ennemie se base sur le même principe que celui de la construction, hormis que les ennemies apparaissent a des positions aléatoire autour d'un point, afin d'eviter les problèmes de collision et de blocage entre les différents ennemies. 
 	\subsection{Animation}
 	L’animation est le moyen de rendre les mouvements des personnages fluides et réalistes. Chaque mouvement devra être animé, les jambes lorsqu’un personnage se déplace, les bras lorsqu’il combat, etc...
 
@@ -184,18 +230,6 @@ Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car a
 		\hline
 	\end{tabular}
 	\newpage
-\section{Ressources utilisées}
-	\subsection{Ordinateur}
-	Nous utiliserons a l'évidence des ordinateurs. Ils seront notre principale outil de travail. Nous utiliserons un ordinateur dans toutes les étapes de notre projet. 
-	\subsection{Visual Studio 2015}
-	Visual Studio est le logiciel qui nous permettra de coder nos script sur Unity. Nous l'utiliserons plus particulièrement afin d'utiliser le langage C\# qui représentera la quasi-totalité, voir la totalité de notre code.
-	\subsection{Unity}
-	Unity sera LE logiciel cœur de notre projet, il lui servira de base. Il nous permettra de mettre en relation des objets avec des scripts que ces objets effectuerons. Ce logiciel correspond parfaitement a nos besoins, dans la réalisation d'un jeu vidéo. De plus il possède une courbe d'apprentissage linaire et est facile d'accès, ce qui correspond a nouveau avec notre statut d'étudiant en première année.
-	\subsection{Gimp/Blender}
-	Gimp est un éditeur graphique. Il nous sera utile notamment pour la création de la 2D, et donc de l'interface graphique de notre jeu. Sans oublier la jaquette de notre jeu lorsqu'il sera en version CD.
-	\par Blender quant a lui est un logiciel de modélisation 3D et sera simplement destiné a la création d'éléments 3D pour notre jeu. 
-	\subsection{Tutoriel}
-	Enfin, la ressource que nous utiliserons le plus, après nos ordinateurs, sont les tutoriels. Dans la mesure où, cette expérience est inédite pour chacun d'entre nous, nous aurons besoin d'acquérir de nombreuse connaissance. C'est ici qu'interviendront les nombreux tutoriels à notre disposition sur le web. Notez que des tutoriels on été visionné pour la réalisation de ce cahier des charges.
 \section{Planning}
 	\begin{tabular}{|c||c|c|c|}
 		\hline
@@ -225,7 +259,7 @@ Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car a
 	\newpage
 \section{Budget}
 
-Nous sommes des étudiants et ceci est un projet de première année. C'est donc un projet dans le cadre scolaire et à but non lucratif. Ainsi, le budget sera de 0\euro{}. Aucun achats ne sera nécessaire à la réalisation de notre projet. Les dépenses seront donc également de 0\euro{}. Seul des logiciels gratuits ou bien fournit gratuitement par l'école seront utilisés dans ce projet. Un léger dépassement de budget est bien entendu possible, notamment pour l'achat d'un CD si cela s'avère nécessaire.\\
+Nous sommes des étudiants et ceci est un projet de première année. C'est donc un projet dans le cadre scolaire et à but non lucratif. Ainsi, le budget est de 0\euro{}. Comme prévu aucun achats n'a été nécessaire jusqu'a présent pour la réalisation de notre projet. Nous avons utilisé uniquement des logiciels gratuits ou bien fournit gratuitement par l'école. Nous n'avons donc eu a faire pour le moment a aucun dépassement de budget.\\
 \centerline{\includegraphics[scale=0.7]{images.jpg}}
 
 \section{Conclusion}

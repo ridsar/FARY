@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  11 MAR 2016 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  13 MAR 2016 14:19
 entering extended mode
 **"Rapport soutenance 1.tex"
 ("Rapport soutenance 1.tex"
@@ -438,50 +438,56 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+[1] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
-[5] <Plan.png, id=35, 584.93532pt x 417.81094pt>
+[4] <Plan.png, id=32, 584.93532pt x 417.81094pt>
 File: Plan.png Graphic file (type png)
  <use Plan.png>
-Package pdftex.def Info: Plan.png used on input line 96.
+Package pdftex.def Info: Plan.png used on input line 94.
 (pdftex.def)             Requested size: 321.71541pt x 229.79672pt.
- [6 <./Plan.png>] [7] [8] [9]
-Overfull \hbox (0.42627pt too wide) in paragraph at lines 151--152
-[]\T1/cmr/m/n/12 L'animation est le moyen de rendre les mou-ve-ments des per-so
-n-nages fluides
- []
-
-[10] [11]
+ [5 <./Plan.png>] [6] [7]
 
 Package Fancyhdr Warning: \headheight is too small (14.61858pt): 
  Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 200--225
+[8] [9] [10]
+Overfull \hbox (6.95256pt too wide) in paragraph at lines 181--182
+[]\T1/cmr/m/n/12 Les dé-pla-ce-ment on été le pre-mier élé-ment de ga-me-play i
+m-plé-menté, puisque
+ []
+
+[11] [12]
+Overfull \hbox (0.42627pt too wide) in paragraph at lines 197--198
+[]\T1/cmr/m/n/12 L'animation est le moyen de rendre les mou-ve-ments des per-so
+n-nages fluides
+ []
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 234--259
 
  []
 
-[14] <images.jpg, id=68, 212.795pt x 238.8925pt>
+[15] <images.jpg, id=71, 212.795pt x 238.8925pt>
 File: images.jpg Graphic file (type jpg)
  <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 229.
+Package pdftex.def Info: images.jpg used on input line 263.
 (pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
- [15 <./images.jpg>] ("Rapport soutenance 1.aux") ) 
+ [16 <./images.jpg>] ("Rapport soutenance 1.aux") ) 
 Here is how much of TeX's memory you used:
  4248 strings out of 493673
  56699 string characters out of 3143954
@@ -508,9 +514,9 @@ jfour\jknappen\ec\dpi600\eccc2074.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.
 9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/eurosym/feymr10.pfb>
-Output written on "Rapport soutenance 1.pdf" (16 pages, 285023 bytes).
+Output written on "Rapport soutenance 1.pdf" (17 pages, 284707 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
+ 460 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
