@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  13 MAR 2016 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  13 MAR 2016 17:30
 entering extended mode
 **"Rapport soutenance 1.tex"
 ("Rapport soutenance 1.tex"
@@ -465,27 +465,21 @@ Package Fancyhdr Warning: \headheight is too small (14.61858pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8] [9] [10]
-Overfull \hbox (6.95256pt too wide) in paragraph at lines 181--182
+[8] [9] [10] [11]
+Overfull \hbox (6.95256pt too wide) in paragraph at lines 197--198
 []\T1/cmr/m/n/12 Les dé-pla-ce-ment on été le pre-mier élé-ment de ga-me-play i
 m-plé-menté, puisque
  []
 
-[11] [12]
-Overfull \hbox (0.42627pt too wide) in paragraph at lines 197--198
-[]\T1/cmr/m/n/12 L'animation est le moyen de rendre les mou-ve-ments des per-so
-n-nages fluides
- []
-
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 234--259
+[12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 221--246
 
  []
 
 [15] <images.jpg, id=71, 212.795pt x 238.8925pt>
 File: images.jpg Graphic file (type jpg)
  <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 263.
+Package pdftex.def Info: images.jpg used on input line 250.
 (pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
  [16 <./images.jpg>] ("Rapport soutenance 1.aux") ) 
 Here is how much of TeX's memory you used:
@@ -495,7 +489,7 @@ Here is how much of TeX's memory you used:
  7549 multiletter control sequences out of 15000+200000
  18473 words of font info for 40 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 28i,10n,43p,956b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,11n,43p,956b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\florian\AppData\L
 ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\flori
 an\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:
@@ -514,9 +508,9 @@ jfour\jknappen\ec\dpi600\eccc2074.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.
 9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/eurosym/feymr10.pfb>
-Output written on "Rapport soutenance 1.pdf" (17 pages, 284707 bytes).
+Output written on "Rapport soutenance 1.pdf" (17 pages, 284565 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
+ 458 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

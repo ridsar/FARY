@@ -122,7 +122,8 @@ Les défenses fixes seront achetable grâce a l’argent gagné durant la partie
 	\end{itemize}
 \newpage
 \section{Répartition des tâches}
-Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car ainsi chaque membre réalise plusieurs tâches et peut apprendre des choses de domaines différents . De plus, si un membre rencontre des difficultés et se retrouve bloqué pour réaliser une tâche, son coéquipier peut venir en aide puisqu’ils s’occupent de la même tâche. Ainsi la réalisation des tâches devient plus facile.
+Nous avions au départ attribué deux personnes a chaque tâche, afin de pouvoir nous entre aider. cela nous a servit puisqu'un membre du groupe nous a quitté, toute les tâches ont donc gardé au moins une personne attribué. Mais il s'est avéré plus efficace de se spécialiser dans des domaines précis plutôt que de toucher a beaucoup de domaine et de travailler a plusieurs sur ceux-ci.\\
+Le tableau ci dessous montre quelles ont été les tâches effectué et par qui.
 \bigbreak
 \bigbreak
 	\begin{tabular}{|c||c|c|c|c|c|}
@@ -131,23 +132,23 @@ Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car a
 		\hline
 		Site & & & $\times$ & $\times$\\
 		\hline
-		3D & & $\times$ & $\times$ &\\
+		3D & & $\times$ & &\\
 		\hline
-		2D & & $\times$ & & $\times$\\
+		2D & & $\times$ & & \\
 		\hline
-		IA & $\times$ & & & $\times$\\
+		IA & $\times$ & & & \\
 		\hline
-		Multijoueur & $\times$ & & $\times$ &\\
+		Multijoueur &  & &  &\\
 		\hline
-		Réseau & $\times$ & $\times$ & & \\
+		Réseau & & $\times$ & & \\
 		\hline
-		Menu & & & $\times$ & $\times$\\
+		Menu & & & & $\times$\\
 		\hline
-		Gameplay & $\times$ & $\times$ & &\\
+		Gameplay & $\times$ & & &\\
 		\hline
-		Animation & & $\times$ & & $\times$\\		
+		Animation & $\times$ & $\times$ & & \\		
 		\hline
-		Audio & $\times$ & & $\times$ &\\
+		Audio & & & & $\times$\\
 		\hline
 		\LaTeX & $\times$ & $\times$ & $\times$ & $\times$\\
 		\hline
@@ -156,16 +157,31 @@ Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car a
 \newpage
 \section{Avancement du projet}
 	\subsection{Le graphisme}
+		\subsubsection{La carte}
+		Nous nous sommes mis d’accord pour une carte plutôt fermée. Nous avons donc décidé d’entourer le terrain par des chaînes de montagnes. Comme le jeu se déroule à l’époque médiévale, nous avons décidé d’avoir un terrain plutôt vert avec des arbres et des maisons médiévales. Nous avons des maisons de l’époque médiévale sur le terrain mais pas encore des villages. Nous savons très bien que les villages n’interviennent pas dans le jeu mais ils permettent d’avoir un environnement du jeu riche en détail. 
+\par Le spawn des ennemis se fait derrière les chaîne de montagnes. Ensuite ils se dirigent vers le lieu du cristal en suivant un chemin visible qu’on a tracé. Le joueur voit les différents chemins qui vont être empruntés par les ennemis et ensuite il place des tours tout au long de ces chemins qui vont tuer les ennemis et ainsi empêcher l’arrivée des ennemis jusqu’au lieu du cristal.
+
 		\subsubsection{La 3D}
-		Étant donné sa gratuité, nous allons utiliser Blender pour réaliser des modèles 3D. Ce logiciel va nous permettre de modéliser les différents personnages de notre jeu et de faire les diverses textures de l’environnement du jeu.
+		Yassine devait modéliser les personnages avec Blender mais après qu’il ait quitté EPITA et rendu son seul travail sur le site, nous avons décidé d’avoir un style graphique très simple composé de formes très simple afin de ne pas passer du temps sur la création du personnages ou d’élément du jeu.  Pour le moment, nous travaillons avec deux modèles de personnages importé de l’asset store mais c’est provisoire. Nous comptons avoir des monstres qui vont constituer les ennemis et plusieurs modèles plusieurs modèles de personnages ainsi le joueur a la possibilité de choisir le personnage qui lui convient.  
+\par Le cristal est l’élément majeur de notre jeu car le jeu consiste à défendre ce cristal. Nous avons décidé d’importer un gem depuis Blender, le logiciel 3D qu’on utilise, et de le transformer en forme de cristal avec Unity, le moteur de jeu. Nous l’avons ensuite ajouté une texture pour le visuel et une force pour qu’il puisse flotter dans l’air.
 
 		\subsubsection{La 2D}
-		La 2D de notre jeu sera principalement représenté par l'interface graphique du joueur. En effet, le joueur aura besoin d'avoir des informations et de repère visuel afin d'interagir correctement avec son environnement et d'avoir une expérience de jeu la meilleure possible. La 2D pourra également jouer un rôle important dans les menus
-	\subsection{Audio}
-	L’audio gère évidemment tous les sons. De bruitages dans le jeu à musique dans les menus, nous devrons trouver des sons qui s’adaptent au contexte médiéval.
+Nous avons une minimap qui permet d’avoir une vue d’ensemble plus large et qui suit le joueur en permanence. Pour cela, nous sommes passés par un script C\#.  Pour l’instant, nous n’avons pas pu faire en sorte de distinguer le joueur sur la minimap des autres éléments qui l’entoure.
+\par Nous avons mis en place la barre de vie et la barre représentant la somme dont le joueur dispose car chaque construction de tour coûte de l’argent au joueur. Elles ne sont pas encore fonctionnelles car nous n’avons pas encore défini le système de vie et de l’argent.
+Ce qui est à faire pour la prochaine soutenance :
+\begin{itemize}
+\item Nous avons certes décidé de ne pas changer la carte à chaque niveau mais au menu principal, le joueur aura le choix entre plusieurs map avec des décors différents. Nous comptons faire au moins encore une nouvelle map.
+\item Faire en sorte qu’on puisse distinguer le joueur parmi les différents éléments de la carte qui l’entoure.
+\item Avoir des modèles de personnages et des ennemis
+\item Faire fonctionnelles les barres de vie et de l’argent
+
+\end{itemize}
+
 
 	\subsection{Le réseau}
-	Le réseau consistera tout simplement a implémenter un mode multijoueur, afin que les joueurs puisse jouer ensemble en ligne ou bien en réseau local.
+Nous avons mis en place un système de réseau en mode host en utilisant le network manager d’Unity. Un joueur se porte comme serveur et les autres joueurs sont donc des clients.
+\par Certes nous avons mis en place le réseau, mais pour l’instant, nous avons un problème. Le problème est que le joueur qui se comporte comme serveur peut commencer une partie sans qu’il ait d’autres joueurs présents en ligne. Donc il faut recoder le nertwork manager  pour que joueur qui va se comporter comme serveur ne puisse pas lancer la partie tant qu’il ait pas au moins un autre joueur en ligne.
+
 	\subsection{Multijoueur}
 	Notre manque d'expérience dans le domaine de la création de jeu vidéo, nous a forcé a planifier l'avancement de notre projet sans trop de réel prévision. C'est pour cela que le multijoueur n'a pas encore été débuté a l'heure actuelle. Il sera débuté lorsque le réseau sera pleinement opérationnel. Cela va donc repousser notre planning en ce qui concerne le multijoueur.
 	\subsection{L'intelligence artificiel}
@@ -194,42 +210,11 @@ Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car a
 		\subsubsection{L'apparition des ennemies}
 		La génération d'ennemie se base sur le même principe que celui de la construction, hormis que les ennemies apparaissent a des positions aléatoire autour d'un point, afin d'eviter les problèmes de collision et de blocage entre les différents ennemies. 
 	\subsection{Animation}
-	L’animation est le moyen de rendre les mouvements des personnages fluides et réalistes. Chaque mouvement devra être animé, les jambes lorsqu’un personnage se déplace, les bras lorsqu’il combat, etc...
+	Pour la partie animation, nous avons du vent qui fait bouger les feuilles des différents arbres présent sur la carte.
+Nous avons aussi un système de fumée qui sort de cheminée des maisons.
 
 \newpage
 
-\section{Répartition des tâches}
-Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car ainsi chaque membre réalise plusieurs tâches et peut apprendre des choses de domaines différents . De plus, si un membre rencontre des difficultés et se retrouve bloqué pour réaliser une tâche, son coéquipier peut venir en aide puisqu’ils s’occupent de la même tâche. Ainsi la réalisation des tâches devient plus facile.
-\bigbreak
-\bigbreak
-	\begin{tabular}{|c||c|c|c|c|c|}
-		\hline
-		& Florian & Riday & Yassine & Arnaud \\
-		\hline
-		Site & & & $\times$ & $\times$\\
-		\hline
-		3D & & $\times$ & $\times$ &\\
-		\hline
-		2D & & $\times$ & & $\times$\\
-		\hline
-		IA & $\times$ & & & $\times$\\
-		\hline
-		Multijoueur & $\times$ & & $\times$ &\\
-		\hline
-		Réseau & $\times$ & $\times$ & & \\
-		\hline
-		Menu & & & $\times$ & $\times$\\
-		\hline
-		Gameplay & $\times$ & $\times$ & &\\
-		\hline
-		Animation & & $\times$ & & $\times$\\		
-		\hline
-		Audio & $\times$ & & $\times$ &\\
-		\hline
-		\LaTeX & $\times$ & $\times$ & $\times$ & $\times$\\
-		\hline
-	\end{tabular}
-	\newpage
 \section{Planning}
 	\begin{tabular}{|c||c|c|c|}
 		\hline
