@@ -12,6 +12,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{eurosym}
 \usepackage{setspace}
+\usepackage{caption}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -94,6 +95,11 @@ Nous avons choisi de réaliser un jeu plutôt qu’un logiciel car nous avons de
 		\centerline{\includegraphics[scale=0.55]{Plan.png}}
 		\par La première est la phase que nous appellerons \textit{phase de préparation}, elle consiste à préparer ses défenses, en les positionnant de façon stratégique, les améliorant ou en les réparant. Cette phase sera d'une importance capital pour assurer une victoire lors de la phase suivante. Une fois que vous serez fin prêt pour le combat, il vous suffira d'appuyer sur prêt et la deuxième phase commencera une fois tout les joueurs prêt.
 		\par Nous arrivons donc en deuxième phase, la \textit{phase de combat}, qui va déclencher l'action. Des créatures vont apparaitre à des points précis de la carte et vont converger vers le ou les cristaux. Le joueur pourra donc durant cette phase attaquer les monstres et tenter de les détruire et/ou continuer à poser, améliorer et réparer ses constructions mais avec des malus d'incantation.
+		\bigbreak
+		\begin{figure}[!ht]
+			\centerline{\includegraphics[scale=0.3]{cristalprojet.png}}
+			\caption*{Image du cristal à protéger}
+		\end{figure}
 		\par Tous les certains nombre de cycle, au terme de ces deux phases, un monstre plus imposant apparaitra, et le joueur devra s'en défaire afin de remporter la manque et d'obtenir des objets.
 		\subsubsection{Multijoueur}
 		Le mode multijoueur consistera en un mode CO-OP. Vous devrez \^etre capable de jouer en \'equipe afin d'affronter vos adversaires. Pour cela, vous commencerez la partie c\^ote \'a c\^ote. Vous ne pouvez combattre seulement des IA. Le mode multijoueur consiste en un mode en \'equipe et non pas en 1vs1 contre un ami.
@@ -177,21 +183,54 @@ Ce qui est à faire pour la prochaine soutenance :
 
 \end{itemize}
 
+\newpage
 
 	\subsection{Le réseau}
-Nous avons mis en place un système de réseau en mode host en utilisant le network manager d’Unity. Un joueur se porte comme serveur et les autres joueurs sont donc des clients.
+Nous avons mis en place un système de réseau en mode host en utilisant le network manager d’Unity. Un joueur se porte comme serveur et les autres joueurs sont donc des clients.\\
+
+
+\begin{figure}[!ht]
+	\centerline{\includegraphics[scale=0.3]{Menureseauprojet.png}}
+	\caption*{Image du menu pour jouer en réseau}
+\end{figure}
+
 \par Certes nous avons mis en place le réseau, mais pour l’instant, nous avons un problème. Le problème est que le joueur qui se comporte comme serveur peut commencer une partie sans qu’il ait d’autres joueurs présents en ligne. Donc il faut recoder le nertwork manager  pour que joueur qui va se comporter comme serveur ne puisse pas lancer la partie tant qu’il ait pas au moins un autre joueur en ligne.
 
+\newpage
 	\subsection{Multijoueur}
 	Notre manque d'expérience dans le domaine de la création de jeu vidéo, nous a forcé a planifier l'avancement de notre projet sans trop de réel prévision. C'est pour cela que le multijoueur n'a pas encore été débuté a l'heure actuelle. Il sera débuté lorsque le réseau sera pleinement opérationnel. Cela va donc repousser notre planning en ce qui concerne le multijoueur.
+	
 	\subsection{L'intelligence artificiel}
 	L'IA a été une de nos priorité lors pour cette première soutenance, car elle est un outils majeur du bon fonctionnement du jeu. A l'heure actuelle l'IA est très basique. Elle permet simplement aux ennemies de se déplacer d'un point A a un point B, en suivant un route défini au préalable.
 	\par La prochaine étape sera de lui permettre de converger vers un objet lorsque celui-ci sera a sa porté et bien évidement de l'attaquer, afin d'avoir une IA fonctionnelle, permettant le déroulement d'une partie.
 
 	\subsection{Le menu}
-	Nous tenterons de créer un menu accessible et design. Il devra permettre d'accéder au lancement d’une nouvelle partie, aux options, ainsi qu’au mode multi-joueur. 
+	
+
+	\par Pour cette première soutenance, nous avons réalisé le menu principale, le menu d’options ainsi que le menu de pause dans le jeu. Le menu principal nous permet de lancer le jeu en solo, nous diriger vers le multijoueur mais également de nous envoyer vers le sous-menu pour les options. Enfin il permet évidemment de quitter le jeu avec un message de confirmation…
+Ensuite, le sous-menu qui gère les options du jeu permet de modifier le volume du son. Il permettra ensuite de gérer la luminosité et de donner d’autres indications.
+\newpage
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{Menuprojet.png}}
+		\caption*{Image du menu principale}		
+	\end{figure}
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{Menupauseprojet.png}}
+		\caption*{Image du menu pause}
+	\end{figure}
+	
+	\par Enfin, nous avons également créer un menu de pause qui apparaît lorsqu’on appuie sur “echap” dans le jeu. Il arrête bien sûr le jeu (les mouvements des personnages et les attaques) lorsqu’il est actif. Dans le menu pause, on peut évidemment reprendre le jeu en cours au même moment, mais également relancer le niveau et revenir au menu principal. On pourra ensuite sauvegarder le jeu, pour le reprendre plus tard.
+
 	\subsection{Le site}
-	Modéliser un site web avec une présentation générale des créateurs et de la création (chronologie, problèmes, solutions…). Ajouter des images du jeu. Expliquer les règles.  Donner les références utiles pour notre réalisation. Permettre le téléchargement du jeu aux utilisateurs, et mettre à disposition le rapport ainsi que le jeu en version lite.
+	 Le site internet devait être réalisé avec Yassine. Avec son départ de l’EPITA, l’objectif était de réaliser un site qui fonctionne. 
+	 
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{siteprojet.png}}
+		\caption*{Page d'accueil du site internet}
+	\end{figure}	 
+	 
+	 Nous avons néanmoins ajouté différents onglets à la page principale tels que la présentation générale du jeu, l’historique de la réalisation du projet que nous remplirons au fur et à mesure, une page pour nous contacter en cas de problèmes ou de questions concernant Forteresse mais également une page où il sera possible de télécharger le jeu en version lite ou normal, ainsi que le cahier des charges. Nous avons également créer un onglet qui vous indique les logiciels utilisés pour réaliser notre jeu ainsi que des liens renvoyant vers le site principal de l’application.
+
 	\subsection{Gameplay}
 		\subsubsection{Déplacement}
 		Les déplacement on été le premier élément de gameplay implémenté, puisque c'est un élément indispensable dans tout jeu a la troisième personne.
@@ -203,12 +242,28 @@ Nous avons mis en place un système de réseau en mode host en utilisant le netw
 		\par Comme dans la plupart des jeu a la troisième personne, la camera suit le personnage de derrière. On contrôle la camera a la souris. Il est possible de régler la distance entre la camera et le personnage à l'aide de la molette. La camera gère également les collisions, ce qui lui permet de ne pas passer au travers du sol ou bien de mur.
 		\subsubsection{Dégâts}
 		La gestion des dégâts et des points de vie, sont deux élément majeurs du gameplay de notre jeu.
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{tourattaque.png}}
+		\caption*{Image d'une tour qui attaque}
+	\end{figure}		
+
 		\par Nous gérons les dégâts de la façon suivante, dans un premier temps un nombre de point de vie est attribué a l'objet (tel qu'un ennemie) et lorsque cet objet entre en collision avec un objet avec un certain tag et un certain nom, un nombre donné de points de vie sont retirés à l'objet. Jusqu'à ce que le nombre de point de vie atteigne 0 et que l'objet soit détruit.
 		\subsubsection{La construction}
 		La construction concerne aussi bien la construction de tour que les dégâts. En effet pour faire des dégâts, les tours on besoin de projectiles, il faut donc construire des projectiles lorsque l'ennemie est a porté. Pour cela on clone le un objet qui nous sert a de référence, puis on active les scripts nécessaire au bon fonctionnement du projectile sur l'objet cloné.
+	\begin{figure}[!ht]	
+		\centerline{\includegraphics[scale=0.3]{Tour(Clone)projet.png}}	
+		\caption*{Image d'une tour en construction}	
+	\end{figure}
+		
 		\par La construction d'une tour se utilise le même principe et se déroule en deux étapes. Tout d'abord, la tour va être crée et sera a l'état d'image et suivra le , elle sera verte dans les emplacements valide et rouge dans le cas contraire. Une fois la tour positionné a l'endroit voulu un clic gauche permet de la fixer et d'activer ses scripts.
 		\subsubsection{L'apparition des ennemies}
-		La génération d'ennemie se base sur le même principe que celui de la construction, hormis que les ennemies apparaissent a des positions aléatoire autour d'un point, afin d'eviter les problèmes de collision et de blocage entre les différents ennemies. 
+	
+		La génération d'ennemie se base sur le même principe que celui de la construction, hormis que les ennemies apparaissent a des positions aléatoire autour d'un point, afin d'eviter les problèmes de collision et de blocage entre les différents ennemies. \\
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{ennemiesprojet.png}}
+		\caption*{Apparition d'un vague de squelette}
+	\end{figure}
+
 	\subsection{Animation}
 	Pour la partie animation, nous avons du vent qui fait bouger les feuilles des différents arbres présent sur la carte.
 Nous avons aussi un système de fumée qui sort de cheminée des maisons.
@@ -245,10 +300,10 @@ Nous avons aussi un système de fumée qui sort de cheminée des maisons.
 \section{Budget}
 
 Nous sommes des étudiants et ceci est un projet de première année. C'est donc un projet dans le cadre scolaire et à but non lucratif. Ainsi, le budget est de 0\euro{}. Comme prévu aucun achats n'a été nécessaire jusqu'a présent pour la réalisation de notre projet. Nous avons utilisé uniquement des logiciels gratuits ou bien fournit gratuitement par l'école. Nous n'avons donc eu a faire pour le moment a aucun dépassement de budget.\\
+
 \centerline{\includegraphics[scale=0.7]{images.jpg}}
 
 \section{Conclusion}
 
-Ainsi, Forteresse sera notre jeu-vidéo réalisé par Florian, Arnaud, Riday et Yassine (FARY). Situé dans un contexte médiéval, inspiré des conquêtes de l’époque, nous devrons à tout pris défendre notre cristal, attaqué par des ennemis aussi répugnants que menaçants. Pour cela, nos guerriers devront faire preuve de stratégie et de courage pour repousser les dangers. Capables de construire des tours de défense, ils devront les placer sur des lieux stratégiques afin de stopper l’invasion ennemie mais ils devront aussi user de leur force au combat.
-Êtes vous capables de résister et de défendre vos cristaux ?
+Les outils à notre disposition pour réaliser le projet étant  nouveaux pour nous, nous avons eu du mal à les utiliser de manière efficace.  Nous avons dans la mesure du possible essayé de respecté le planning de la première soutenance. De nombreuses tâches restent à réaliser pour la deuxième soutenance. Néanmoins,  connaissant mieux les outils mis à notre disposition, nous allons travailler beaucoup plus efficacement et nous espérons respecter le planning pour la deuxième soutenance. 
 \end{document}

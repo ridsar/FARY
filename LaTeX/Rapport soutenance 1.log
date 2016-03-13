@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  13 MAR 2016 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.7)  13 MAR 2016 22:12
 entering extended mode
 **"Rapport soutenance 1.tex"
 ("Rapport soutenance 1.tex"
@@ -111,6 +111,23 @@ Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen110
+\captionmargin@=\dimen111
+\captionwidth=\dimen112
+\caption@tempdima=\dimen113
+\caption@indent=\dimen114
+\caption@parindent=\dimen115
+\caption@hangindent=\dimen116
+)
+\c@ContinuedFloat=\count100
+Package caption Info: listings package is loaded.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -352,64 +369,66 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count100
+\Gread@gobject=\count101
 ))
-\Gin@req@height=\dimen110
-\Gin@req@width=\dimen111
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
 )
 ("Rapport soutenance 1.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Info: Redefining \degres on input line 20.
-LaTeX Info: Redefining \dots on input line 20.
-LaTeX Info: Redefining \up on input line 20.
-\c@lstlisting=\count101
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Info: Redefining \degres on input line 21.
+LaTeX Info: Redefining \dots on input line 21.
+LaTeX Info: Redefining \up on input line 21.
+\c@lstlisting=\count102
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen112
+\scratchcounter=\count103
+\scratchdimen=\dimen119
 \scratchbox=\box29
-\nofMPsegments=\count103
-\nofMParguments=\count104
+\nofMPsegments=\count104
+\nofMParguments=\count105
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen113
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen120
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
 \everyMPtoPDFconversion=\toks19
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 22.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 23.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 28.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 29.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <24.88> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 28.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 29.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <20.74> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 30.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 31.
 
 <coollogo_com-19602433.png, id=1, 220.57407pt x 76.78688pt>
 File: coollogo_com-19602433.png Graphic file (type png)
 
 <use coollogo_com-19602433.png>
-Package pdftex.def Info: coollogo_com-19602433.png used on input line 33.
+Package pdftex.def Info: coollogo_com-19602433.png used on input line 34.
 (pdftex.def)             Requested size: 220.57352pt x 76.78668pt.
 
 <crossed-swords-clip-art-48219.jpg, id=3, 426.59375pt x 426.59375pt>
@@ -417,14 +436,14 @@ File: crossed-swords-clip-art-48219.jpg Graphic file (type jpg)
 
 <use crossed-swords-clip-art-48219.jpg>
 Package pdftex.def Info: crossed-swords-clip-art-48219.jpg used on input line 3
-5.
+6.
 (pdftex.def)             Requested size: 170.63446pt x 170.63446pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 42.
+(Font)              <12> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 42.
+(Font)              <8> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 42.
+(Font)              <6> on input line 43.
  [1
 
 {C:/Users/florian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./coollog
@@ -439,57 +458,124 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [1] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
 [4] <Plan.png, id=32, 584.93532pt x 417.81094pt>
 File: Plan.png Graphic file (type png)
  <use Plan.png>
-Package pdftex.def Info: Plan.png used on input line 94.
+Package pdftex.def Info: Plan.png used on input line 95.
 (pdftex.def)             Requested size: 321.71541pt x 229.79672pt.
- [5 <./Plan.png>] [6] [7]
+ [5 <./Plan.png>] <cristalprojet.png, id=37, 1438.6247pt x 810.77907pt>
+File: cristalprojet.png Graphic file (type png)
+
+<use cristalprojet.png>
+Package pdftex.def Info: cristalprojet.png used on input line 100.
+(pdftex.def)             Requested size: 431.59074pt x 243.2356pt.
+ [6 <./cristalprojet.png>] [7] [8]
 
 Package Fancyhdr Warning: \headheight is too small (14.61858pt): 
  Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8] [9] [10] [11]
-Overfull \hbox (6.95256pt too wide) in paragraph at lines 197--198
+[9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+<Menureseauprojet.png, id=59, 1446.15282pt x 810.77907pt>
+File: Menureseauprojet.png Graphic file (type png)
+
+<use Menureseauprojet.png>
+Package pdftex.def Info: Menureseauprojet.png used on input line 193.
+(pdftex.def)             Requested size: 433.8492pt x 243.2356pt.
+ [12 <./Menureseauprojet.png>] [13]
+<Menuprojet.png, id=67, 1443.14156pt x 812.28468pt>
+File: Menuprojet.png Graphic file (type png)
+ <use Menuprojet.png>
+Package pdftex.def Info: Menuprojet.png used on input line 214.
+(pdftex.def)             Requested size: 432.94582pt x 243.68729pt.
+
+<Menupauseprojet.png, id=68, 1443.14156pt x 810.77907pt>
+File: Menupauseprojet.png Graphic file (type png)
+
+<use Menupauseprojet.png>
+Package pdftex.def Info: Menupauseprojet.png used on input line 218.
+(pdftex.def)             Requested size: 432.94582pt x 243.2356pt.
+ [14 <./Menuprojet.png> <./Menupauseprojet.png>]
+Overfull \hbox (3.86427pt too wide) in paragraph at lines 225--226
+[]\T1/cmr/m/n/12 Le site in-ter-net de-vait être réa-lisé avec Yas-sine. Avec s
+on dé-part de l'EPITA,
+ []
+
+<siteprojet.png, id=72, 1425.07407pt x 752.0597pt>
+File: siteprojet.png Graphic file (type png)
+ <use siteprojet.png>
+Package pdftex.def Info: siteprojet.png used on input line 228.
+(pdftex.def)             Requested size: 427.52551pt x 225.61964pt.
+
+[15 <./siteprojet.png>]
+Overfull \hbox (6.95256pt too wide) in paragraph at lines 236--237
 []\T1/cmr/m/n/12 Les dé-pla-ce-ment on été le pre-mier élé-ment de ga-me-play i
 m-plé-menté, puisque
  []
 
-[12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 221--246
+[16] <tourattaque.png, id=79, 1441.63594pt x 810.77907pt>
+File: tourattaque.png Graphic file (type png)
+
+<use tourattaque.png>
+Package pdftex.def Info: tourattaque.png used on input line 246.
+(pdftex.def)             Requested size: 432.49413pt x 243.2356pt.
+
+<Tour(Clone)projet.png, id=80, 1441.63594pt x 809.27344pt>
+File: Tour(Clone)projet.png Graphic file (type png)
+
+<use Tour(Clone)projet.png>
+Package pdftex.def Info: Tour(Clone)projet.png used on input line 254.
+(pdftex.def)             Requested size: 432.49413pt x 242.7839pt.
+ [17 <./tourattaque.png>]
+<ennemiesprojet.png, id=84, 1440.13031pt x 810.77907pt>
+File: ennemiesprojet.png Graphic file (type png)
+
+<use ennemiesprojet.png>
+Package pdftex.def Info: ennemiesprojet.png used on input line 263.
+(pdftex.def)             Requested size: 432.04243pt x 243.2356pt.
+ [18 <./Tour(Clone)projet.png>] [19 <./ennemiesprojet.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 274--299
 
  []
 
-[15] <images.jpg, id=71, 212.795pt x 238.8925pt>
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+
+ []
+
+<images.jpg, id=95, 212.795pt x 238.8925pt>
 File: images.jpg Graphic file (type jpg)
  <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 250.
+Package pdftex.def Info: images.jpg used on input line 304.
 (pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
- [16 <./images.jpg>] ("Rapport soutenance 1.aux") ) 
+ [21 <./images.jpg>] ("Rapport soutenance 1.aux") ) 
 Here is how much of TeX's memory you used:
- 4248 strings out of 493673
- 56699 string characters out of 3143954
- 120880 words of memory out of 3000000
- 7549 multiletter control sequences out of 15000+200000
+ 5329 strings out of 493673
+ 76481 string characters out of 3143954
+ 137392 words of memory out of 3000000
+ 8616 multiletter control sequences out of 15000+200000
  18473 words of font info for 40 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 28i,11n,43p,956b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,10n,43p,956b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\florian\AppData\L
 ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\flori
 an\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:
@@ -508,9 +594,9 @@ jfour\jknappen\ec\dpi600\eccc2074.pk> <C:\Users\florian\AppData\Local\MiKTeX\2.
 9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/eurosym/feymr10.pfb>
-Output written on "Rapport soutenance 1.pdf" (17 pages, 284565 bytes).
+Output written on "Rapport soutenance 1.pdf" (22 pages, 26925522 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
+ 484 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
