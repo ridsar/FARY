@@ -30,8 +30,6 @@ public class move : MonoBehaviour {
             return;
         
         transform.LookAt(target);
-        if(transform.parent.name == "Canon Tower(Build)")
-            transform.parent.LookAt(target);
         
 
         float distance = Vector3.Distance(transform.parent.position, target.position);
