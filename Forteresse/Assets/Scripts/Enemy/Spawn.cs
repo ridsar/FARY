@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawn : MonoBehaviour {
 
-    public GameObject[] enemies;
+    public GameObject enemies;
     public int amount = 0;
     public float spawingTime;
     public int enemyNumber;
@@ -13,8 +13,35 @@ public class Spawn : MonoBehaviour {
 
 	void Update ()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
+        switch (name)
+        {
+            case "A":
+                spawingTime = 1;
+                amount = 20;
+                enemies = GameObject.Find("Enemy");
+                break;
+            case "B":
+                spawingTime = 3;
+                amount = 3;
+                enemies = GameObject.Find("Enemy");
+                break;
+            case "C":
+                spawingTime = 10;
+                amount = 5;
+                enemies = GameObject.Find("Enemy");
+                break; 
+            case "D":
+                spawingTime = 2;
+                amount = 10;
+                enemies = GameObject.Find("Enemy");
+                break;
+            case "E":
+                spawingTime = 2.5f;
+                amount = 4;
+                enemies = GameObject.Find("Enemy");
+                break;
+        }
+        
         
         if (amount != enemyNumber)
         {
@@ -28,7 +55,7 @@ public class Spawn : MonoBehaviour {
         spawnPoints.y = 0.5f;
         spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
 
-        Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length - 1)], spawnPoints, Quaternion.identity).name = gameObject.name + "Enemy(Clone)";
+        Instantiate(enemies, spawnPoints, Quaternion.identity).name = gameObject.name + "Enemy(Clone)";
         ++amount;
         CancelInvoke();
     }
