@@ -12,6 +12,8 @@ public class MouseLook : MonoBehaviour {
     public float yRotationV;
     public float lookSmoothDamp = 0.1f;
 
+    CursorLockMode wantedMode;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -20,6 +22,10 @@ public class MouseLook : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (Input.GetKey(KeyCode.Escape))
+            Screen.lockCursor = false;
+        else
+            Screen.lockCursor = true;
         if (Input.GetMouseButton(0))
         {
         }

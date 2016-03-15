@@ -10,39 +10,41 @@ public class Spawn : MonoBehaviour {
 
     private Vector3 spawnPoints;
 
-
-	void Update ()
+    void Start()
     {
         switch (name)
         {
             case "A":
                 spawingTime = 1;
-                amount = 20;
+                enemyNumber = 20;
                 enemies = GameObject.Find("Enemy");
                 break;
             case "B":
                 spawingTime = 3;
-                amount = 3;
+                enemyNumber = 3;
                 enemies = GameObject.Find("Enemy");
                 break;
             case "C":
                 spawingTime = 10;
-                amount = 5;
+                enemyNumber = 5;
                 enemies = GameObject.Find("Enemy");
-                break; 
+                break;
             case "D":
                 spawingTime = 2;
-                amount = 10;
+                enemyNumber = 10;
                 enemies = GameObject.Find("Enemy");
                 break;
             case "E":
                 spawingTime = 2.5f;
-                amount = 4;
+                enemyNumber = 4;
                 enemies = GameObject.Find("Enemy");
                 break;
         }
-        
-        
+    }
+
+	void Update ()
+    {
+                   
         if (amount != enemyNumber)
         {
             InvokeRepeating("spawnEnemy", spawingTime, 10f);

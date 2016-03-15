@@ -40,27 +40,22 @@ public class FollowPath : MonoBehaviour {
             case 'A':
                 path = 'A';
                 pathToFollow = GameObject.Find("PathA").transform;
-                print(pathToFollow);
                 break;
             case 'B':
                 path = 'B';
                 pathToFollow = GameObject.Find("PathB").transform;
-                print(pathToFollow);
                 break;
             case 'C':
                 path = 'C';
                 pathToFollow = GameObject.Find("PathC").transform;
-                print(pathToFollow);
                 break;
             case 'D':
                 path = 'D';
                 pathToFollow = GameObject.Find("PathD").transform;
-                print(pathToFollow);
                 break;
             case 'E':
                 path = 'E';
                 pathToFollow = GameObject.Find("PathE").transform;
-                print(pathToFollow);
                 break;
         }
 
@@ -138,7 +133,6 @@ public class FollowPath : MonoBehaviour {
                     currentTarget = null;
                     lastTarget = null;
                     walk = false;
-                    print("coucou c'est moi !");
                     PlayAnimation(idleAnimation);
                     return;
                 }       
