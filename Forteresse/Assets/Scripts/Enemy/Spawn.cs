@@ -4,17 +4,17 @@ using System.Collections;
 public class Spawn : MonoBehaviour {
 
     public GameObject[] enemies;
-    public int amount;
+    public int amount = 0;
     public float spawingTime;
     public int enemyNumber;
-    private Vector3 spawnPoints;
 
+    private Vector3 spawnPoints;
 
 
 	void Update ()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        amount = enemies.Length;  
+
         
         if (amount != enemyNumber)
         {
@@ -29,6 +29,7 @@ public class Spawn : MonoBehaviour {
         spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
 
         Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length - 1)], spawnPoints, Quaternion.identity);
+        ++amount;
         CancelInvoke();
     }
 }
