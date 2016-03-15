@@ -28,7 +28,7 @@ public class Spawn : MonoBehaviour {
         spawnPoints.y = 0.5f;
         spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
 
-        Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length - 1)], spawnPoints, Quaternion.identity);
+        Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Length - 1)], spawnPoints, Quaternion.identity).name = gameObject.name + "Enemy(Clone)";
         ++amount;
         CancelInvoke();
     }

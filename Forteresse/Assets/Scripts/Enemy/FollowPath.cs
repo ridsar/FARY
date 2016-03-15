@@ -25,13 +25,44 @@ public class FollowPath : MonoBehaviour {
 	private bool walk = false;
 	private Transform currentTarget;
 	private Transform lastTarget;
+
+    private char path;
 	#endregion
 	
 	#region Unity methods
 	/// <summary>
 	/// Start this instance.
 	/// </summary>
-	void Start () {
+	void Start ()
+    {
+        switch (gameObject.name[0])
+        {
+            case 'A':
+                path = 'A';
+                pathToFollow = GameObject.Find("PathA").transform;
+                print(pathToFollow);
+                break;
+            case 'B':
+                path = 'B';
+                pathToFollow = GameObject.Find("PathB").transform;
+                print(pathToFollow);
+                break;
+            case 'C':
+                path = 'C';
+                pathToFollow = GameObject.Find("PathC").transform;
+                print(pathToFollow);
+                break;
+            case 'D':
+                path = 'D';
+                pathToFollow = GameObject.Find("PathD").transform;
+                print(pathToFollow);
+                break;
+            case 'E':
+                path = 'E';
+                pathToFollow = GameObject.Find("PathE").transform;
+                print(pathToFollow);
+                break;
+        }
 
 		if(pathToFollow == null){
 			Debug.LogError("Un GameObject 'Path' doit etre renseigné dans le script 'FollowPath.cs'.");
@@ -81,11 +112,11 @@ public class FollowPath : MonoBehaviour {
 	void PathsOrientation(){
 		int nb = listPaths.Count();
 		for(int i = 2; i <= nb; i++){
-			Transform premier = listPaths.Single(p => p.name == "Path" + (i-1));
-			Transform deuxieme = listPaths.Single(p => p.name == "Path" + i);
+			Transform premier = listPaths.Single(p => p.name == "Path" + path + (i-1)) ;
+			Transform deuxieme = listPaths.Single(p => p.name == "Path" + path + i);
 			
 			premier.LookAt(deuxieme.position);
-			if(i == nb) deuxieme.LookAt(listPaths.Single(p => p.name == "Path1").position);
+			if(i == nb) deuxieme.LookAt(listPaths.Single(p => p.name == "Path" + path + "1").position);
 		}
 	}
 
@@ -96,14 +127,27 @@ public class FollowPath : MonoBehaviour {
 
 		switch(type){
 			case MovementTypes.Follow:
-				currentTarget = listPaths.Single(p => p.name == "Path" + index);
-				index = (index < listPaths.Count) ? index +1 : 1;
-				break;
-			case MovementTypes.Random:
+                if (index <= listPaths.Count)
+                {
+                    currentTarget = listPaths.Single(p => p.name == "Path" + path + index);
+                    transform.LookAt(currentTarget);
+                    index = /*(index < listPaths.Count) ? */index + 1;// : 1;
+                }
+                else
+                {
+                    currentTarget = null;
+                    lastTarget = null;
+                    walk = false;
+                    print("coucou c'est moi !");
+                    PlayAnimation(idleAnimation);
+                    return;
+                }       
+                break;
+            case MovementTypes.Random:
 				currentTarget = listPaths[Random.Range(0, listPaths.Count)];
 				break;
 			case MovementTypes.Reverse:
-				currentTarget = listPaths.Single(p => p.name == "Path" + index);
+				currentTarget = listPaths.Single(p => p.name == "Path" + path + index);
 				index = (index > 1) ? index -1 : listPaths.Count;
 				break;
 		}
@@ -118,7 +162,8 @@ public class FollowPath : MonoBehaviour {
 		if(currentTarget != null){
 			transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, Time.deltaTime * speed);
 
-			if(CheckDistance() <= 0.5f){
+			if(CheckDistance() <= 0.5f)
+            {
 				walk = false;
 				lastTarget = currentTarget;
 				GetNewPosition();
@@ -130,14 +175,16 @@ public class FollowPath : MonoBehaviour {
 	/// Check the distance.
 	/// </summary>
 	/// <returns>The distance.</returns>
-	float CheckDistance(){
+	float CheckDistance()
+    {
 		return Vector3.Distance(transform.position, currentTarget.position);
 	}
 
 	/// <summary>
 	/// Wait time
 	/// </summary>
-	IEnumerator Wait(){
+	IEnumerator Wait()
+    {
 		float time = Random.Range(minWaitTime, maxWaitTime);
 
 		// Random animation
@@ -162,10 +209,12 @@ public class FollowPath : MonoBehaviour {
 	/// Play the animation.
 	/// </summary>
 	/// <param name="anim">Animation.</param>
-	void PlayAnimation(string anim){
-		if(GetComponent<Animation>() != null && GetComponent<Animation>()[anim] != null){
+	void PlayAnimation(string anim)
+    {
+		if(GetComponent<Animation>() != null && GetComponent<Animation>()[anim] != null)
+        {
 			GetComponent<Animation>().CrossFade(anim);
-		}
+        }
 	}
 	#endregion
 	
