@@ -3,8 +3,19 @@ guid: 48fd0d285dad2c14c9c4b7a115c029d1
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: smal_box
+    100002: //RootNode
+    100004: small_box_cover
+    400000: smal_box
+    400002: //RootNode
+    400004: small_box_cover
+    2300000: smal_box
+    2300002: small_box_cover
+    3300000: smal_box
+    3300002: small_box_cover
     4300000: small_box_cover
     4300002: smal_box
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0

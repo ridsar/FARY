@@ -3,8 +3,19 @@ guid: 099b6dd3e33ead547a0501317f431bc8
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: big_box
+    100004: big_box_cover
+    400000: //RootNode
+    400002: big_box
+    400004: big_box_cover
+    2300000: big_box
+    2300002: big_box_cover
+    3300000: big_box
+    3300002: big_box_cover
     4300000: big_box_cover
     4300002: big_box
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
