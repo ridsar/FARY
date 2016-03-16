@@ -22,8 +22,19 @@ public class Build : MonoBehaviour
 
         //Déclaration variables
         Tower = GameObject.FindGameObjectsWithTag("Tower");
-
-
+        if (Input.GetKey(KeyCode.E))
+        {
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, transform.forward * 10, Color.green);
+            if (Physics.Raycast(transform.position, transform.forward * 10, out hit))
+            {            
+                if (hit.collider.gameObject.tag == "Tower" && hit.distance <= 10)
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
+        
         //Instanciation d'un model de tour pour visualisation
         if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
