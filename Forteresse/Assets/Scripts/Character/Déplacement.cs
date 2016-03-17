@@ -48,7 +48,6 @@ public class Déplacement : NetworkBehaviour
         {
             move.z = move.z + (0.7f * (float)cosAngle);
             move.x = move.x + (0.7f * (float)sinAngle);
-            print("je speed");
         }
 
         if (Input.GetKey(KeyCode.Q))
