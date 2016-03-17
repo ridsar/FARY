@@ -76,15 +76,18 @@ public class FollowPath : MonoBehaviour {
 				break;
 			}
 
-			if(listPaths.Count > 0) GetNewPosition();
+			if(listPaths.Count > 0)
+                GetNewPosition();
 		}
-	}
-	
-	/// <summary>
-	/// Update this instance.
-	/// </summary>
-	void Update () {
-		if(walk) StartWalk();
+    }
+
+    /// <summary>
+    /// Update this instance.
+    /// </summary>
+    void Update ()
+    {
+		if(walk)
+            StartWalk();
 	}
 	#endregion
 	
