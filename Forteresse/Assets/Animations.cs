@@ -7,6 +7,7 @@ public class Animations : MonoBehaviour {
     private float inputH;
     private float inputV;
     private bool jump;
+    private bool run;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,14 @@ public class Animations : MonoBehaviour {
         else
         {
             anim.SetBool("jump", false);
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            anim.SetBool("run", true);
+        }
+        else
+        {
+            anim.SetBool("run", false);
         }
     }
 }
