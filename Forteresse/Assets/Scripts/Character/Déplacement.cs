@@ -46,8 +46,8 @@ public class Déplacement : NetworkBehaviour
         }
         if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift))
         {
-            move.z = move.z + (0.7f * (float)cosAngle);
-            move.x = move.x + (0.7f * (float)sinAngle);
+            move.z = move.z + (0.3f * (float)cosAngle);
+            move.x = move.x + (0.3f * (float)sinAngle);
         }
 
         if (Input.GetKey(KeyCode.Q))
