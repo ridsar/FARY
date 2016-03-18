@@ -3,17 +3,21 @@ using System.Collections;
 
 public class Wave : MonoBehaviour {
 
-
     // Use this for initialization
     void Start()
     {
-        if(GameObject.Find("spawn"))
-            GameObject.Find("spawn").SetActive(false);
+        GameObject.FindGameObjectWithTag("Spawn").SetActive(false);
     }
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKey(KeyCode.F))
-            GameObject.Find("spawn").SetActive(true);
-	}
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (GameObject.FindGameObjectWithTag("Spawn"))
+            {
+                GameObject.FindGameObjectWithTag("Spawn").SetActive(true);
+                print("hello it's me");
+            }
+        }
+    }
 }
