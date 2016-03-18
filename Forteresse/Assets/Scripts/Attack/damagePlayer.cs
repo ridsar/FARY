@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class damagePlayer : MonoBehaviour
 {
     public int playerHealth = 100;
     int dead = 0;
+    public Slider PlayerHealthBar; //R
 
     public int getDead()
     {
@@ -18,7 +20,7 @@ public class damagePlayer : MonoBehaviour
 
     void Update()
     {
-        if(playerHealth <= 0)
+        if (playerHealth <= 0)
         {
             Destroy(gameObject);
         }
@@ -30,10 +32,12 @@ public class damagePlayer : MonoBehaviour
             if (other.name == "Attack Skeleton")
             {
                 playerHealth -= 5;
+                PlayerHealthBar.value -= .1f; //R
             }
             else if (other.name == "Attack Goblin")
             {
                 playerHealth -= 10;
+                PlayerHealthBar.value -= .2f; //R
             }
             print("Enemy just touch by..." + playerHealth);
         }           
