@@ -54,7 +54,7 @@ public class Spawn : MonoBehaviour {
                    
         if (amount != enemyNumber)
         {
-            InvokeRepeating("spawnEnemy", spawingTime, 10f);
+            InvokeRepeating("spawnEnemy", spawingTime, 10f);           
         }  
 	}
 

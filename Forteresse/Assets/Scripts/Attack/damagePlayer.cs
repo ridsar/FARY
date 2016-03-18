@@ -3,7 +3,7 @@ using System.Collections;
 
 public class damagePlayer : MonoBehaviour
 {
-    public int playerHealth = 30;
+    public int playerHealth = 100;
     int dead = 0;
 
     public int getDead()
@@ -25,13 +25,13 @@ public class damagePlayer : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Damage")
+        if (other.tag == "Player")
         {
-            if(other.name == "Mage dmg")
+            if (other.name == "Attack Skeleton")
             {
                 playerHealth -= 5;
             }
-            else if(other.name == "Canon dmg")
+            else if (other.name == "Attack Goblin")
             {
                 playerHealth -= 10;
             }
