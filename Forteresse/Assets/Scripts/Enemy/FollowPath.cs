@@ -107,10 +107,12 @@ public class FollowPath : MonoBehaviour {
 	/// <summary>
 	/// Paths orientation.
 	/// </summary>
-	void PathsOrientation(){
+	void PathsOrientation()
+    {
 		int nb = listPaths.Count();
-		for(int i = 2; i <= nb; i++){
-			Transform premier = listPaths.Single(p => p.name == "Path" + path + (i-1)) ;
+		for(int i = 2; i <= nb; i++)
+        {
+			Transform premier = listPaths.Single(p => p.name == "Path" + path + (i-1));
 			Transform deuxieme = listPaths.Single(p => p.name == "Path" + path + i);
 			
 			premier.LookAt(deuxieme.position);
