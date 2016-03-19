@@ -20,7 +20,7 @@ public class Spawn : MonoBehaviour {
             case "A":
                 spawingTime = 1;
                 enemyNumber = 20;
-                myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
+                myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
                 myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
                 myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
                 myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
@@ -33,18 +33,18 @@ public class Spawn : MonoBehaviour {
             case "C":
                 spawingTime = 10;
                 enemyNumber = 5;
-                myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
+                myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
                 break;
             case "D":
                 spawingTime = 2;
                 enemyNumber = 10;
-                myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy");
+                myWave.Add("Troll"); myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy");
                 myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Goblin"); myWave.Add("Enemy");
                 break;
             case "E":
                 spawingTime = 2.5f;
                 enemyNumber = 4;
-                myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
+                myWave.Add("Troll"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
                 break;
         }
     }
