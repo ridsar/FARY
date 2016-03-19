@@ -32,12 +32,18 @@ public class damagePlayer : MonoBehaviour
             if (other.name == "Attack Skeleton")
             {
                 playerHealth -= 5;
-                PlayerHealthBar.value -= .1f; //R
+                if (PlayerHealthBar.value >= .1f) //R
+                {
+                    PlayerHealthBar.value -= .1f; //R
+                }
             }
             else if (other.name == "Attack Goblin")
             {
                 playerHealth -= 10;
-                PlayerHealthBar.value -= .2f; //R
+                if (PlayerHealthBar.value >= .2f) //R
+                {
+                    PlayerHealthBar.value -= .2f; //R
+                }
             }
             print("Enemy just touch by..." + playerHealth);
         }           

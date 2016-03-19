@@ -35,12 +35,18 @@ public class crystalHealth : MonoBehaviour {
             if (other.name == "Attack Skeleton")
             {
                 playerHealth -= 5;
-                CristalHealth.value -= .1f; //R
+                if (CristalHealth.value >= .1f) //R
+                {
+                    CristalHealth.value -= .1f; //R
+                }
             }
             else if (other.name == "Attack Goblin")
             {
                 playerHealth -= 10;
-                CristalHealth.value -= .2f; //R
+                if (CristalHealth.value >= .2f) //R
+                {
+                    CristalHealth.value -= .2f; //R
+                }
             }
             print("Enemy just touch by..." + playerHealth);
         }
