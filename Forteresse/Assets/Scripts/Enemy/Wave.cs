@@ -2,22 +2,29 @@
 using System.Collections;
 
 public class Wave : MonoBehaviour {
+    GameObject spawn;
+    bool check = true;
+    Spawn spawnScript;
+    
 
     // Use this for initialization
     void Start()
     {
-        GameObject.FindGameObjectWithTag("Spawn").SetActive(false);
+        
     }
 	// Update is called once per frame
 	void Update ()
     {
         if (Input.GetKey(KeyCode.E))
         {
-            if (GameObject.FindGameObjectWithTag("Spawn"))
+            if (check)
+                GetComponent<Spawn>().enabled = true;
+            else
             {
-                GameObject.FindGameObjectWithTag("Spawn").SetActive(true);
-                print("hello it's me");
+                GetComponent<Spawn>().enabled = false;
             }
+            check = !check;
+
         }
     }
 }
