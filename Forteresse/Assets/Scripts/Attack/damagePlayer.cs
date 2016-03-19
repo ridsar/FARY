@@ -27,6 +27,17 @@ public class damagePlayer : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if(other.tag == "Damage")
+        {
+            if(other.name == "Canon dmg")
+            {
+                playerHealth -= 20;
+            }
+            if(other.name == "Mage dmg")
+            {
+                playerHealth -= 10;
+            }
+        }
         if (other.tag == "Player")
         {
             if (other.name == "Attack Skeleton")
