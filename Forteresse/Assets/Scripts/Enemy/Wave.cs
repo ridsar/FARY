@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Wave : MonoBehaviour {
     GameObject spawn;
-    bool check = true;
+    public bool check = true;
     Spawn spawnScript;
     
 
@@ -12,19 +12,16 @@ public class Wave : MonoBehaviour {
     {
         
     }
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        foreach(Transform obj in gameObject.transform.parent)
         {
-            if (check)
-                GetComponent<Spawn>().enabled = true;
-            else
-            {
-                GetComponent<Spawn>().enabled = false;
-            }
-            check = !check;
-
+            check = check && obj.GetComponent<Spawn>().enabled == false;
         }
-    }
+        if (check && Input.GetKey(KeyCode.F))
+        {
+            GetComponent<Spawn>().enabled = true;
+        }
+    }  
 }
