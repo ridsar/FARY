@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Wave : MonoBehaviour {
     GameObject spawn;
-    public bool check = true;
+    public bool check;
+    int compte = 0;
     Spawn spawnScript;
     
 
@@ -17,11 +18,15 @@ public class Wave : MonoBehaviour {
     {
         foreach(Transform obj in gameObject.transform.parent)
         {
-            check = check && obj.GetComponent<Spawn>().enabled == false;
+            compte += obj.GetComponent<Spawn>().myWave.Capacity;
         }
-        if (check && Input.GetKey(KeyCode.F))
+        if (compte == 0 && Input.GetKey(KeyCode.F))
         {
-            GetComponent<Spawn>().enabled = true;
+            check = true;
+            print("new wave");
+            //GetComponent<Spawn>().waveNb += 1;
+            GetComponent<Spawn>().amount = 0;
+            GetComponent<Spawn>().check = false;
         }
     }  
 }

@@ -10,9 +10,9 @@ public class Spawn : MonoBehaviour {
     public int enemyNumber;
     public int waveNb = 1;
 
-    private List<string> myWave = new List<string>();
+    public List<string> myWave = new List<string>();
 
-    private bool check = false;
+    public bool check = false;
     private Vector3 spawnPoints;
 
     void Start()
@@ -122,9 +122,10 @@ public class Spawn : MonoBehaviour {
             ++waveNb;
             check = true;
         }
-        else if (Input.GetKey(KeyCode.G) && check)
+        else if (check && GetComponent<Wave>().check)
         {
             check = false;
+            GetComponent<Wave>().check = false;
             print("hello");
         }
         if (amount != enemyNumber && check)
@@ -140,6 +141,8 @@ public class Spawn : MonoBehaviour {
         spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
 
         Instantiate(GameObject.Find(myWave[amount]), spawnPoints, Quaternion.identity).name = gameObject.name + myWave[amount] + "(Clone)";
+        /*if(myWave.Capacity > 0)
+            myWave.RemoveAt(0);*/
         ++amount;
         CancelInvoke();
     }
