@@ -4,7 +4,7 @@ using System.Collections;
 public class Wave : MonoBehaviour {
     GameObject spawn;
     public bool check;
-    int compte = 0;
+    public int compte = 0;
     Spawn spawnScript;
     
 
@@ -16,17 +16,20 @@ public class Wave : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        foreach(Transform obj in gameObject.transform.parent)
+        compte = 0;
+
+        foreach(Transform obj in gameObject.transform)
         {
-            compte += obj.GetComponent<Spawn>().myWave.Capacity;
+            compte += obj.GetComponent<Spawn>().myWave.Count;
         }
         if (compte == 0 && Input.GetKey(KeyCode.F))
         {
             check = true;
             print("new wave");
-            //GetComponent<Spawn>().waveNb += 1;
-            GetComponent<Spawn>().amount = 0;
-            GetComponent<Spawn>().check = false;
+            foreach (Transform obj in gameObject.transform)
+            {
+                obj.GetComponent<Spawn>().check = false;
+            }
         }
     }  
 }
