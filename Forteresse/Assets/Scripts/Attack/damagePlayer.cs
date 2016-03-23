@@ -22,6 +22,10 @@ public class damagePlayer : MonoBehaviour
     {
         if (playerHealth <= 0)
         {
+            if (gameObject.tag == "Enemy")
+            {
+                GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
+            }
             Destroy(gameObject);
         }
     }

@@ -10,6 +10,7 @@ public class Spawn : MonoBehaviour {
     public int waveNb = 1;
 
     public List<string> myWave = new List<string>();
+    public List<GameObject> myEnemy = new List<GameObject>();
 
     public bool check = false;
     private Vector3 spawnPoints;
@@ -125,6 +126,8 @@ public class Spawn : MonoBehaviour {
         spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
 
         Instantiate(GameObject.Find(myWave[0]), spawnPoints, Quaternion.identity).name = gameObject.name + myWave[0] + "(Clone)";
+        myEnemy.Add(GameObject.Find(gameObject.name + myWave[0] + "(Clone)"));
+
         if(myWave.Count > 0)
             myWave.RemoveAt(0);
         CancelInvoke();
