@@ -33,14 +33,18 @@ public class damagePlayer : MonoBehaviour
     {
         if(other.tag == "Damage")
         {
-            if(other.name == "Canon dmg")
+            switch (other.name)
             {
-                playerHealth -= 20;
-            }
-            if(other.name == "Mage dmg")
-            {
-                playerHealth -= 10;
-            }
+                case "Canon dmg":
+                    playerHealth -= 20;
+                    break;
+                case "Mage dmg":
+                    playerHealth -= 10;
+                    break;
+                case "Player dmg":
+                    playerHealth -= 40;
+                    break;
+            }          
         }
         if (other.tag == "Player")
         {

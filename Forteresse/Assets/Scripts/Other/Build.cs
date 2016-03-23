@@ -27,14 +27,14 @@ public class Build : MonoBehaviour
             RaycastHit hit;
             Debug.DrawRay(transform.position, transform.forward * 10, Color.green);
             if (Physics.Raycast(transform.position, transform.forward * 10, out hit))
-            {            
+            {
                 if (hit.collider.gameObject.tag == "Tower" && hit.distance <= 10)
                 {
                     Destroy(hit.collider.gameObject);
                 }
             }
         }
-        
+
         //Instanciation d'un model de tour pour visualisation
         if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
@@ -140,5 +140,12 @@ public class Build : MonoBehaviour
         Instantiate(Tower[type], new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)";
         CancelInvoke();
         yield return new WaitForSeconds(0);
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Tower" && GameObject.Find(name + "(Clone)"))
+        {
+            GameObject.Find(name + "(Clone)/Walls").GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
+        }
     }
 }

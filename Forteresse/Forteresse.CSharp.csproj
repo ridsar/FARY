@@ -58,27 +58,23 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Animations.cs" />
-    <Compile Include="Assets\Build.cs" />
+    <Compile Include="Assets\AttackPlayer.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+    <Compile Include="Assets\Scripts\Animation\Animations.cs" />
     <Compile Include="Assets\Scripts\Attack\Attack.cs" />
     <Compile Include="Assets\Scripts\Attack\Hit.cs" />
     <Compile Include="Assets\Scripts\Attack\Target.cs" />
+    <Compile Include="Assets\Scripts\Attack\crystalHealth.cs" />
     <Compile Include="Assets\Scripts\Attack\damagePlayer.cs" />
+    <Compile Include="Assets\Scripts\Attack\enemyHealth.cs" />
     <Compile Include="Assets\Scripts\Attack\move.cs" />
     <Compile Include="Assets\Scripts\Attack\selfDestruct.cs" />
     <Compile Include="Assets\Scripts\Character\Déplacement.cs" />
@@ -90,10 +86,9 @@
     <Compile Include="Assets\Scripts\Menu\PauseScript.cs" />
     <Compile Include="Assets\Scripts\Menu\VolumeControl.cs" />
     <Compile Include="Assets\Scripts\Menu\menuScript.cs" />
+    <Compile Include="Assets\Scripts\Other\Build.cs" />
     <Compile Include="Assets\Scripts\Other\Gem.cs" />
     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
-    <Compile Include="Assets\crystalHealth.cs" />
-    <Compile Include="Assets\enemyHealth.cs" />
     <Compile Include="Assets\targetAttack.cs" />
   </ItemGroup>
   <ItemGroup>
