@@ -66,13 +66,19 @@ public class Attack : MonoBehaviour
         {
 
             GameObject projectile = GameObject.Find(parent);
-            var myNewSmoke = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity).name = name + "(Clone)";
+            var myNewSmoke = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity);
+            myNewSmoke.name = name + "(Clone)";
             CancelInvoke();
-            GameObject.Find(myNewSmoke).transform.parent = gameObject.transform;
 
-            monScript = GameObject.Find(name + "(Clone)").GetComponent<move>();
-            monScript.enabled = true;
+            GameObject projTemp = GameObject.Find(myNewSmoke.name);
 
+            projTemp.transform.parent = gameObject.transform;
+            projTemp.GetComponent<move>().enabled = true;
+
+            if(projTemp.transform.parent.tag != "Tower")
+            {
+                Destroy(projTemp);
+            }
             destroy = GameObject.Find(name + "(Clone)").GetComponent<selfDestruct>();
             destroy.enabled = true;
             yield return new WaitForSeconds(attackSpeed);
