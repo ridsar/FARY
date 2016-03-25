@@ -4,6 +4,7 @@ using System.Collections;
 public class AttackPlayer : MonoBehaviour {
 
     BoxCollider arme;
+    float time = 0f;
 
     // Use this for initialization
     void Start()
@@ -14,8 +15,11 @@ public class AttackPlayer : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if(time > 0)
+            time -= 1 * Time.deltaTime;
+        if (Input.GetKey(KeyCode.Mouse0) && time <= 0)
         {
+            time = 1;
             StartCoroutine(attack());
             StopCoroutine(attack());
         }
