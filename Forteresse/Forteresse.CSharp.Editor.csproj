@@ -88,45 +88,37 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.EditorTestsRunner">
-      <HintPath>Library\UnityAssemblies\UnityEditor.EditorTestsRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TreeEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Forteresse.CSharp.Plugins.csproj">
-      <Project>{4C1E09B0-DB28-0911-7691-4773AA81C0F4}</Project>
-      <Name>Forteresse.CSharp.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Forteresse.CSharp.csproj">
       <Project>{CBDA754F-6DC0-7873-8989-07A4874430C4}</Project>
       <Name>Forteresse.CSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\DCMEditorWindow.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\DrawCallMinimizerInspector.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\GenericListAdaptor.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\IReorderableListAdaptor.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\Internal\GUIHelper.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\Internal\ReorderableListResources.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\ReorderableListControl.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\ReorderableListFlags.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\ReorderableListGUI.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\Reorderable List\SerializedPropertyAdaptor.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Editor\ShaderPropertyUtility.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Editor\AssetExporter.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Editor\CombineMeshInEditor.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Editor\CombineMeshInEditorWindow.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Editor\RevertFromDevelopmentBake.cs" />
+    <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Editor\TextureExporter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Enemis\Earthborn Troll\Shader\Alpha_Texture.shader" />
+    <None Include="Assets\Enemis\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
+    <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
+    <None Include="Assets\Maisons\Cartoon lowpoly water well\readme.txt" />
+    <None Include="Assets\Maisons\Sculptures\readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\overlord\models\overlord\Materials\clothshader.shader" />
     <None Include="Assets\overlord\readme.txt" />
