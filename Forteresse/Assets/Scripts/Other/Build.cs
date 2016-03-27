@@ -9,7 +9,7 @@ public class Build : MonoBehaviour
     bool canBuild = false;
     string name = "";
     int type;
-    Attack monScript;
+    Attack attackScript;
 
     void Start()
     {
@@ -22,15 +22,16 @@ public class Build : MonoBehaviour
 
         //Déclaration variables
         Tower = GameObject.FindGameObjectsWithTag("Tower");
-        if (Input.GetKey(KeyCode.E))
+        //Detruire un tour en jeu
+        if (Input.GetKey(KeyCode.E)) //Appuyez sur E pour detruire la tour
         {
-            RaycastHit hit;
-            Debug.DrawRay(transform.position, transform.forward * 10, Color.green);
-            if (Physics.Raycast(transform.position, transform.forward * 10, out hit))
+            RaycastHit hit; //Creation d'un Raycast pour detecter la tour a detruire 
+
+            if (Physics.Raycast(transform.position, transform.forward * 10, out hit)) //Le raycast va de 0 à 10 a partir du personnage devant lui
             {
-                if (hit.collider.gameObject.tag == "Tower" && hit.distance <= 10)
+                if (hit.collider.gameObject.tag == "Tower" && hit.distance <= 10) // si l'objet hit est une tour 
                 {
-                    Destroy(hit.collider.gameObject);
+                    Destroy(hit.collider.gameObject); // detruit la tour
                 }
             }
         }
@@ -38,110 +39,99 @@ public class Build : MonoBehaviour
         //Instanciation d'un model de tour pour visualisation
         if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
-            RaycastHit hit;
-            name = "Mage Tower";
+            name = "Mage Tower"; //Paramètre pour la tour a instancier
             type = 0;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-            {
-                canBuild = true;
-                StartCoroutine(spawnEnemy());
-            }
+
+            canBuild = true; //variable disant si je peux poser une tour ou pas
+            StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
         }
 
         if (Input.GetKey(KeyCode.Alpha2) && !canBuild)
         {
-            RaycastHit hit;
-            name = "Canon Tower";
+            name = "Canon Tower"; //Paramètre pour la tour a instancier
             type = 1;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-            {
-                canBuild = true;
-                StartCoroutine(spawnEnemy());
-            }
+
+            canBuild = true; //variable disant si je peux poser une tour ou pas
+            StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
         }
 
         //l'objet suit la souris
-        if (canBuild)
+        if (canBuild) //Lorsque l'une des tour a été selectionné
         {
             var player = GameObject.Find("Player");
-            var tour = GameObject.Find(name + "(Clone)");
+            var tour = GameObject.Find(name + "(Clone)"); //Ajout du mot "(Clone)" pour differentier la tour des autres tour deja construite
 
-            double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
+            double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
 
-            monScript = GameObject.Find(name + "(Clone)").GetComponent<Attack>();
-            monScript.enabled = false;
+            attackScript = tour.GetComponent<Attack>();
+            attackScript.enabled = false; //Eteint le script "Attck" sur la tour
 
-            Vector3 playerPos = player.transform.position;
-            Vector3 towerPos = tour.transform.position;
+            Vector3 playerPos = player.transform.position; //Position actuelle du joueur
+            Vector3 towerPos = tour.transform.position; //Position actuelle de la tour
 
-            tour.GetComponent<Collider>().enabled = false;
-            Cursor.visible = false;
+            tour.GetComponent<Collider>().enabled = false; //Desactivation du collider
 
-            tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle);
-
+            tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle); //Modifie la position de la tour en fonction de la pos du joueur
 
 
+            //Change la couleur de la tour, si elle est posable ou pas
 
-            var walls = GameObject.Find("/" + name + "(Clone)/Walls");
+            var walls = GameObject.Find("/" + name + "(Clone)/Walls"); //On recupère les murs de la tour
 
-            if (playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50)
+            if (playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50) //Actuellement useless
             {
-                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
+                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f); //La tour devient verte
             }
             else
-                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
+                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient rouge
 
 
         }
 
 
         //l'objet est construit pour de vrai en jeu 
-        if (canBuild)
+        if (canBuild && (Input.GetMouseButton(1) || Input.GetMouseButton(0)))
         {
+            //Déclaration de variable
             var player = GameObject.Find("Player");
             var tour = GameObject.Find(name + "(Clone)");
-
-            monScript.enabled = true;
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
 
-            if (Input.GetMouseButton(1))
+            attackScript.enabled = true; //Le script d'attack est désormais activé
+
+            if (Input.GetMouseButton(1)) //clic droit
             {
-                Destroy(tour);
-                Cursor.visible = true;
-                canBuild = false;
+                Destroy(tour); //detruit la tour
+                canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
             }
-            if (Input.GetMouseButton(0) && !(playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50))
+            if (Input.GetMouseButton(0)) //clic gauche
             {
-                RaycastHit hit;
+                //remet les couleurs de la tour
+                var walls = GameObject.Find("/" + name + "(Clone)/Walls");
+                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-                {
-                    var walls = GameObject.Find("/" + name + "(Clone)/Walls");
+                //réactive le collider de la tour
+                tour.GetComponent<Collider>().enabled = true;
 
-                    tour.GetComponent<Collider>().enabled = true;
-                    Cursor.visible = true;
+                canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
 
-                    walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-
-                    canBuild = false;
-                }
-                GameObject.Find(name + "(Clone)").name = name + "(Build)";
+                GameObject.Find(name + "(Clone)").name = name + "(Build)"; //On change le nom de la tour avec "(Build)" pour la differentier des autres tours
             }
         }
     }
 
 
     //Clone l'objet voulu
-    IEnumerator spawnEnemy()
+    IEnumerator invokTower()
     {
-        Instantiate(Tower[type], new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)";
-        CancelInvoke();
-        yield return new WaitForSeconds(0);
+        Instantiate(Tower[type], new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
+        CancelInvoke(); //arrete la creation de tour
+        yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other) //Ca ca marche pas
     {
         if (other.tag == "Tower" && GameObject.Find(name + "(Clone)"))
         {

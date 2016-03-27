@@ -8,6 +8,8 @@ public class damagePlayer : MonoBehaviour
     int dead = 0;
     public Slider PlayerHealthBar; //R
 
+    GameObject tower;
+
     public int getDead()
     {
         return dead;
@@ -25,6 +27,10 @@ public class damagePlayer : MonoBehaviour
             if (gameObject.tag == "Enemy")
             {
                 GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
+                if(tower != null)
+                {
+                    tower.GetComponent<Attack>().check = true;
+                }
             }
             Destroy(gameObject);
         }
@@ -66,5 +72,12 @@ public class damagePlayer : MonoBehaviour
             }
             print("Enemy just touch by..." + playerHealth);
         }           
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Tower")
+        {
+            tower = other.gameObject;
+        }
     }
 }

@@ -19,7 +19,8 @@ public class Wave : MonoBehaviour {
     {
         compte = 0;
         enemyNumber = 0;
-        foreach(Transform obj in gameObject.transform)
+
+        foreach (Transform obj in gameObject.transform)
         {
             compte += obj.GetComponent<Spawn>().myWave.Count;
             enemyNumber += obj.GetComponent<Spawn>().myEnemy.Count;

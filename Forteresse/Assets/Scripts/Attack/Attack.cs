@@ -12,11 +12,7 @@ public class Attack : MonoBehaviour
 
     Collider colli;
 
-    move monScript;
-
-    selfDestruct destroy;
-
-    bool check = true;
+    public bool check = true;
 
     private float attackSpeed;
 
@@ -53,11 +49,6 @@ public class Attack : MonoBehaviour
     void Update()
     {
 
-        if (GameObject.Find(name + "(Clone)"))
-        {
-            GameObject.Find(name + "(Clone)").transform.localScale = scale;
-            GameObject.Find(name + "(Clone)").transform.name = name + "(Build)";
-        }
     }
 
     IEnumerator move()
@@ -66,21 +57,18 @@ public class Attack : MonoBehaviour
         {
 
             GameObject projectile = GameObject.Find(parent);
-            var myNewSmoke = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity);
-            myNewSmoke.name = name + "(Clone)";
+            var newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity);
             CancelInvoke();
+            newProj.name = name + "(Clone)";
+            GameObject projTemp = GameObject.Find(newProj.name);
 
-            GameObject projTemp = GameObject.Find(myNewSmoke.name);
-
+            projTemp.transform.localScale = scale;
             projTemp.transform.parent = gameObject.transform;
-            projTemp.GetComponent<move>().enabled = true;
 
-            if(projTemp.transform.parent.tag != "Tower")
-            {
-                Destroy(projTemp);
-            }
-            destroy = GameObject.Find(name + "(Clone)").GetComponent<selfDestruct>();
-            destroy.enabled = true;
+            projTemp.GetComponent<move>().enabled = true;
+            projTemp.GetComponent<selfDestruct>().enabled = true;
+
+            projTemp.name = name + "(Build)";
             yield return new WaitForSeconds(attackSpeed);
         }
     }
@@ -89,7 +77,7 @@ public class Attack : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            check = check && false;           
+            check = check && false;
         }
         else
         {
