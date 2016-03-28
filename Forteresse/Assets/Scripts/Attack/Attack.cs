@@ -49,31 +49,6 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-
-    }
-
-    IEnumerator move()
-    {
-        while (!check)
-        {
-            GameObject projectile = GameObject.Find(child);
-            var newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity); //Créer l'objet (porjectile)
-            CancelInvoke(); //arrete la création d'objet
-            newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
-
-            GameObject projTemp = GameObject.Find(newProj.name); //Le projectile
-
-            projTemp.transform.localScale = scale; //adapte la taille du projectile en fonction de la tour
-            projTemp.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
-
-            //activation des scripts
-            projTemp.GetComponent<move>().enabled = true;
-            projTemp.GetComponent<selfDestruct>().enabled = true;
-
-            projTemp.name = name + "(Build)"; //Passage a l'etat "(Build)"
-
-            yield return new WaitForSeconds(attackSpeed); //Le temps entre les activations (la vitesse d'attaque des tours)
-        }
     }
 
     void OnTriggerStay(Collider other) //Lorsqu'il y a des enemies dans le collider 
@@ -102,6 +77,30 @@ public class Attack : MonoBehaviour
         if (other.tag == "Enemy")
         {
             check = true;
+        }
+    }
+    IEnumerator move()
+    {
+        while (!check)
+        {
+            GameObject projectile = GameObject.Find(child);
+            var newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity); //Créer l'objet (porjectile)
+            CancelInvoke(); //arrete la création d'objet
+            newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
+
+            GameObject projTemp = GameObject.Find(newProj.name); //Le projectile
+
+            projTemp.transform.localScale = scale; //adapte la taille du projectile en fonction de la tour
+            projTemp.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
+
+            //activation des scripts
+            projTemp.GetComponent<move>().enabled = true;
+            projTemp.GetComponent<selfDestruct>().enabled = true;
+
+            projTemp.name = name + "(Build)"; //Passage a l'etat "(Build)"
+
+            check = true;
+            yield return new WaitForSeconds(attackSpeed); //Le temps entre les activations (la vitesse d'attaque des tours)
         }
     }
 }

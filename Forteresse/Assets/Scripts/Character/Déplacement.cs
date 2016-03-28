@@ -33,6 +33,7 @@ public class Déplacement : NetworkBehaviour
         
         double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
         double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
+
         if (Input.GetKey(KeyCode.Z))
         {
             move.z = move.z + (Speed * (float)cosAngle) * Time.deltaTime;
