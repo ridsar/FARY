@@ -35,30 +35,30 @@ public class Déplacement : NetworkBehaviour
         double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
         if (Input.GetKey(KeyCode.Z))
         {
-            move.z = move.z + (Speed * (float)cosAngle);
-            move.x = move.x + (Speed * (float)sinAngle);
+            move.z = move.z + (Speed * (float)cosAngle) * Time.deltaTime;
+            move.x = move.x + (Speed * (float)sinAngle) * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            move.z = move.z - (Speed * (float)cosAngle);
-            move.x = move.x - (Speed * (float)sinAngle);
+            move.z = move.z - (Speed * (float)cosAngle) * Time.deltaTime;
+            move.x = move.x - (Speed * (float)sinAngle) * Time.deltaTime;
 
         }
         if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift))
         {
-            move.z = move.z + (0.3f * (float)cosAngle);
-            move.x = move.x + (0.3f * (float)sinAngle);
+            move.z = move.z + (15f * (float)cosAngle) * Time.deltaTime;
+            move.x = move.x + (15f * (float)sinAngle) * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
-            move.x -= Speed * (float)cosAngle;
-            move.z += Speed * (float)sinAngle;
+            move.x -= Speed * (float)cosAngle * Time.deltaTime;
+            move.z += Speed * (float)sinAngle * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            move.x += Speed * (float)cosAngle;
-            move.z -= Speed * (float)sinAngle;
+            move.x += Speed * (float)cosAngle * Time.deltaTime;
+            move.z -= Speed * (float)sinAngle * Time.deltaTime;
         }
 
         theDistance = hit.distance;
