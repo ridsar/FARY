@@ -33,7 +33,7 @@ public class Attack : MonoBehaviour
         {
             name = "Mage Projectile";
             child = "/Mage Tower(Build)/Mage Projectile";
-            scale = new Vector3(0.1f, 0.1f, 0.1f);
+            scale = new Vector3(1f, 1f, 1f);
             attackSpeed = 2;
         }
         else if (parentName == "Canon Tower(Build)" || parentName == "Canon Tower(Clone)")

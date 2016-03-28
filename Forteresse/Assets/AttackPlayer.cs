@@ -22,8 +22,7 @@ public class AttackPlayer : MonoBehaviour {
             time = 1;
             StartCoroutine(attack());
             StopCoroutine(attack());
-        }
-        
+        }  
     }
     IEnumerator attack()
     {
