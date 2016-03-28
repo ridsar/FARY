@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
 
     private string name;
     private string parentName;
-    private string parent;
+    private string child;
 
     private Vector3 scale;
 
@@ -28,17 +28,18 @@ public class Attack : MonoBehaviour
     {
         parentName = transform.name;
 
+        //Initialisation des paramètres en fonction de la tour
         if (parentName == "Mage Tower(Build)" || parentName == "Mage Tower(Clone)")
         {
             name = "Mage Projectile";
-            parent = "/Mage Tower(Build)/Mage Projectile";
+            child = "/Mage Tower(Build)/Mage Projectile";
             scale = new Vector3(0.1f, 0.1f, 0.1f);
             attackSpeed = 2;
         }
         else if (parentName == "Canon Tower(Build)" || parentName == "Canon Tower(Clone)")
         {
             name = "Canon Projectile";
-            parent = "/Canon Tower(Build)/Canon Projectile";
+            child = "/Canon Tower(Build)/Canon Projectile";
             scale = new Vector3(1, 1, 1);
             attackSpeed = 3.5f;
         }
@@ -55,37 +56,39 @@ public class Attack : MonoBehaviour
     {
         while (!check)
         {
+            GameObject projectile = GameObject.Find(child);
+            var newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity); //Créer l'objet (porjectile)
+            CancelInvoke(); //arrete la création d'objet
+            newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
 
-            GameObject projectile = GameObject.Find(parent);
-            var newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity);
-            CancelInvoke();
-            newProj.name = name + "(Clone)";
-            GameObject projTemp = GameObject.Find(newProj.name);
+            GameObject projTemp = GameObject.Find(newProj.name); //Le projectile
 
-            projTemp.transform.localScale = scale;
-            projTemp.transform.parent = gameObject.transform;
+            projTemp.transform.localScale = scale; //adapte la taille du projectile en fonction de la tour
+            projTemp.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
 
+            //activation des scripts
             projTemp.GetComponent<move>().enabled = true;
             projTemp.GetComponent<selfDestruct>().enabled = true;
 
-            projTemp.name = name + "(Build)";
-            yield return new WaitForSeconds(attackSpeed);
+            projTemp.name = name + "(Build)"; //Passage a l'etat "(Build)"
+
+            yield return new WaitForSeconds(attackSpeed); //Le temps entre les activations (la vitesse d'attaque des tours)
         }
     }
 
-    void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Enemy")
+    void OnTriggerStay(Collider other) //Lorsqu'il y a des enemies dans le collider 
+    {                                  //Tout les objets vont être testé (enemie ou pas)
+        if(other.tag == "Enemy") 
         {
-            check = check && false;
+            check = check && false; //un enemie est présent -> check sera false, la tour attaquera
         }
         else
         {
-            check = check && true;
+            check = check && true; //l'objet testé n'est pas un enemie, cela depend donc des autres objets
         }       
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) //Lorsqu'un enemie entre en collision check est sur false et donc la tour attaque
     { 
         if (other.tag == "Enemy" && check)
         {
@@ -94,7 +97,7 @@ public class Attack : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other) //Lorsqu'un enemie sort de collision check est sur true et donc la tour n'attaque pas
     {
         if (other.tag == "Enemy")
         {

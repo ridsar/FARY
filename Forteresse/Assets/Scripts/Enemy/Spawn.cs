@@ -24,15 +24,15 @@ public class Spawn : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.F) && !check)
         {
-            print(name);
-            switch (waveNb)
+            print(name); // pour test
+            switch (waveNb) //regarde le numero de la vague a laquelle on est
             {
                 case 1:
-                    switch (name)
+                    switch (name) //regarde le spawn ou l'on doit spawn le mob
                     {
                         case "A":
-                            spawingTime = 1;
-                            myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
+                            spawingTime = 1; //temps entre le spawn de chaque enemie
+                            myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy"); //ajout a une liste des enemies a faire pop 
                             myWave.Add("Enemy");
                             break;
                         case "B":
@@ -105,31 +105,34 @@ public class Spawn : MonoBehaviour {
                     }
                     break;
             }
-            ++waveNb;
+            ++waveNb; //On incrémente de 1, pour passer a la vague suivante
             check = true;
         }
-        else if (check && transform.parent.GetComponent<Wave>().check)
+        else if (check && transform.parent.GetComponent<Wave>().check) //si les deux check sont true alors on peut lancer une nouvelle vague
         {
+            //pemret de relancer un vague
             check = false;
             transform.parent.GetComponent<Wave>().check = false;
         }
-        if (myWave.Count > 0 && check)
+        if (myWave.Count > 0 && check) //tant qu'il reste des elements dans la liste
         {
-            InvokeRepeating("spawnEnemy", spawingTime, 10f);
+            InvokeRepeating("spawnEnemy", spawingTime, 10f); //appel la methode spawnEnemy
         }
 	}
 
     void spawnEnemy()
     {
+        //coordonnée de spawn
         spawnPoints.x = Random.Range(-20 + transform.position.x, 20 + transform.position.x);
         spawnPoints.y = 0.5f;
         spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
 
-        Instantiate(GameObject.Find(myWave[0]), spawnPoints, Quaternion.identity).name = gameObject.name + myWave[0] + "(Clone)";
-        myEnemy.Add(GameObject.Find(gameObject.name + myWave[0] + "(Clone)"));
-
-        if(myWave.Count > 0)
-            myWave.RemoveAt(0);
+        Instantiate(GameObject.Find(myWave[0]), spawnPoints, Quaternion.identity).name = gameObject.name + myWave[0] + "(Clone)"; //Créer l'enemie
         CancelInvoke();
+
+        myEnemy.Add(GameObject.Find(gameObject.name + myWave[0] + "(Clone)")); //ajout de l'enemie spawn a la liste des enemies en vie
+
+        if(myWave.Count > 0) //retire un element de la liste des enemies a faire spawn
+            myWave.RemoveAt(0);
     }
 }
