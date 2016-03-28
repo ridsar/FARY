@@ -8,11 +8,13 @@ public class PauseScript : MonoBehaviour {
     GameObject PauseMenu;
     bool paused;
 
+
 	void Start ()
     {
         paused = false;
         PauseMenu = GameObject.Find("PauseMenu");
         Cursor.lockState = CursorLockMode.Confined;
+        
     }
 	
 	// Update is called once per frame
@@ -21,6 +23,16 @@ public class PauseScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
+            if (!paused) //F
+            {
+                GameObject.Find("Main Camera").GetComponent<WowCamera>().enabled = true; //F
+                GameObject.Find("Player").GetComponent<MouseLook>().enabled = true; //F
+            }
+            else
+            {
+                GameObject.Find("Main Camera").GetComponent<WowCamera>().enabled = false; //F
+                GameObject.Find("Player").GetComponent<MouseLook>().enabled = false; //F
+            }
         }
         if (paused)
         {
@@ -36,7 +48,6 @@ public class PauseScript : MonoBehaviour {
             Cursor.lockState = CursorLockMode.Locked; //Le curseur disparait et est lock au milieu de l'ecran
             Cursor.visible = false;
         }
-	
 	}
 
     public void Resume()
