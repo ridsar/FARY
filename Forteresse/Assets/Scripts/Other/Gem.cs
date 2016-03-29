@@ -19,9 +19,5 @@ public class Gem : MonoBehaviour {
     {
         if (transform.position.y < 10)
             rb.AddForce(0, 10, 0);
-        /*if (transform.position.y >= altitude_up)
-            transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
-        if (transform.position.y <= altitude_down)
-            transform.position += new Vector3(0, speed, 0) * Time.deltaTime;*/
     }
 }
