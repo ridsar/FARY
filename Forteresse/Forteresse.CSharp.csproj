@@ -58,24 +58,15 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraReseau.cs" />
-    <Compile Include="Assets\DeplacementReseau.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
-    <Compile Include="Assets\LookMouseReseau.cs" />
     <Compile Include="Assets\Scripts\Animation\Animations.cs" />
     <Compile Include="Assets\Scripts\Attack\Attack.cs" />
     <Compile Include="Assets\Scripts\Attack\Hit.cs" />
@@ -92,24 +83,28 @@
     <Compile Include="Assets\Scripts\Enemy\FollowPath.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spawn.cs" />
     <Compile Include="Assets\Scripts\Enemy\Wave.cs" />
+    <Compile Include="Assets\Scripts\Enemy\targetAttack.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseScript.cs" />
     <Compile Include="Assets\Scripts\Menu\VolumeControl.cs" />
     <Compile Include="Assets\Scripts\Menu\menuScript.cs" />
     <Compile Include="Assets\Scripts\Other\Build.cs" />
     <Compile Include="Assets\Scripts\Other\Gem.cs" />
     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
-    <Compile Include="Assets\targetAttack.cs" />
+    <Compile Include="Assets\Scripts\Reseau\CameraReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\DeplacementReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\LookMouseReseau.cs" />
+    <Compile Include="Assets\attackPlayerCaster.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\BloodMageJonas\HairShader.shader" />
     <None Include="Assets\Enemis\Earthborn Troll\Shader\Alpha_Texture.shader" />
     <None Include="Assets\Enemis\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
     <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
     <None Include="Assets\Maisons\Cartoon lowpoly water well\readme.txt" />
     <None Include="Assets\Maisons\Sculptures\readme.txt" />
+    <None Include="Assets\Player\BloodMageJonas\HairShader.shader" />
+    <None Include="Assets\Player\overlord\models\overlord\Materials\clothshader.shader" />
+    <None Include="Assets\Player\overlord\readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\overlord\models\overlord\Materials\clothshader.shader" />
-    <None Include="Assets\overlord\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
