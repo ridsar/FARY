@@ -53,6 +53,8 @@ public class PauseScript : MonoBehaviour {
     public void Resume()
     {
         paused = false;
+        GameObject.Find("Main Camera").GetComponent<WowCamera>().enabled = true; //F
+        GameObject.Find("Player").GetComponent<MouseLook>().enabled = true; //F
     }
 
     public void MainMenu ()

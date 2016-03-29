@@ -48,7 +48,10 @@ public class damagePlayer : MonoBehaviour
                     playerHealth -= 10;
                     break;
                 case "Player dmg":
-                    playerHealth -= 40;
+                    playerHealth -= 20;
+                    break;
+                case "Player dmg(Clone)":
+                    playerHealth -= 20;
                     break;
             }          
         }
