@@ -32,6 +32,12 @@ public class damagePlayer : MonoBehaviour
                     tower.GetComponent<Attack>().check = true;
                 }
             }
+            int nb = Random.Range(1, 10);
+            for(int i = 0; i < nb; ++i)
+            {
+                Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 2, transform.position.z + Random.Range(-10, 10));
+                Instantiate(GameObject.Find("Coin"), pos, GameObject.Find("Coin").transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
@@ -54,27 +60,7 @@ public class damagePlayer : MonoBehaviour
                     playerHealth -= 20;
                     break;
             }          
-        }
-        if (other.tag == "Player")
-        {
-            if (other.name == "Attack Skeleton")
-            {
-                playerHealth -= 5;
-                if (PlayerHealthBar.value >= .1f) //R
-                {
-                    PlayerHealthBar.value -= .1f; //R
-                }
-            }
-            else if (other.name == "Attack Goblin")
-            {
-                playerHealth -= 10;
-                if (PlayerHealthBar.value >= .2f) //R
-                {
-                    PlayerHealthBar.value -= .2f; //R
-                }
-            }
-            print("Enemy just touch by..." + playerHealth);
-        }           
+        }             
     }
     void OnTriggerStay(Collider other)
     {
