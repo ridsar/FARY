@@ -23,7 +23,7 @@ public class FollowPath : MonoBehaviour {
 	private List<Transform> listPaths = new List<Transform>();
 	private int index = 1;
 	private bool walk = false;
-	private Transform currentTarget;
+	public Transform currentTarget;
 	private Transform lastTarget;
 
     private char path;
@@ -88,14 +88,14 @@ public class FollowPath : MonoBehaviour {
     {
 		if(walk)
             StartWalk();
-	}
-	#endregion
-	
-	#region Other methods
-	/// <summary>
-	/// Get all paths.
-	/// </summary>
-	void GetPaths(){
+    }
+    #endregion
+
+    #region Other methods
+    /// <summary>
+    /// Get all paths.
+    /// </summary>
+    void GetPaths(){
 		foreach(Transform temp in pathToFollow){
 			//if(temp.tag == "Path"){
 				listPaths.Add(temp);

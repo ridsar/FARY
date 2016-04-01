@@ -22,11 +22,11 @@ public class targetAttack : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            transform.GetComponent<SphereCollider>().radius = scale * 2f;
+            transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
             float distance = Vector3.Distance(transform.position, other.transform.position);
             if (distance > 7)
             {
-                transform.Translate(Vector3.forward * Time.deltaTime * 20);
+                transform.Translate(Vector3.forward * Time.deltaTime * transform.GetComponent<FollowPath>().speed);
             }
             transform.LookAt(other.transform);
             GetComponent<FollowPath>().enabled = false;
@@ -38,6 +38,7 @@ public class targetAttack : MonoBehaviour {
         {
             GetComponent<FollowPath>().enabled = true;
             transform.GetComponent<SphereCollider>().radius = scale;
+            transform.LookAt(transform.GetComponent<FollowPath>().currentTarget);
         }
     }
 }
