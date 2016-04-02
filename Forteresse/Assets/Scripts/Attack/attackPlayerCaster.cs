@@ -17,7 +17,7 @@ public class attackPlayerCaster : MonoBehaviour {
         {
             Vector3 pos = new Vector3(transform.position.x , transform.position.y + 2.6f, transform.position.z );
             Quaternion rot = new Quaternion(0, transform.parent.rotation.y, 0, transform.parent.rotation.w);
-            var newFirebolt = Instantiate(transform, pos, rot);
+            var newFirebolt = Instantiate(transform, pos, rot);            
             newFirebolt.name = transform.name + "(Clone)"; //Créer la boule de feu
             CancelInvoke();
             GameObject.Find("Player dmg(Clone)").GetComponent<selfDestruct>().enabled = true;
