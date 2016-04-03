@@ -32,7 +32,7 @@ public class crystalHealth : MonoBehaviour {
     {
         if (other.tag == "DamageEnemy")
         {
-            if (other.name == "Attack Skeleton")
+            if (other.name == "Skeleton dmg")
             {
                 playerHealth -= 5;
                 if (CristalHealth.value >= .1f) //R
@@ -40,7 +40,7 @@ public class crystalHealth : MonoBehaviour {
                     CristalHealth.value -= .1f; //R
                 }
             }
-            else if (other.name == "Attack Goblin")
+            else if (other.name == "Goblin dmg")
             {
                 playerHealth -= 10;
                 if (CristalHealth.value >= .2f) //R

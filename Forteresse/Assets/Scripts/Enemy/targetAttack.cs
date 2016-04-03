@@ -3,7 +3,6 @@ using System.Collections;
 
 public class targetAttack : MonoBehaviour {
 
-    private Vector3 direction;
     private float scale;
     public float tooClose;
 
@@ -21,7 +20,7 @@ public class targetAttack : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" || other.tag == "Crystal")
         {
             transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
             float distance = Vector3.Distance(transform.position, other.transform.position);
@@ -35,7 +34,7 @@ public class targetAttack : MonoBehaviour {
     }
     void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" || other.tag == "Crystal")
         {
             GetComponent<FollowPath>().enabled = true;
             transform.GetComponent<SphereCollider>().radius = scale;
