@@ -8,47 +8,50 @@ public class attackEnemy : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(autoAttack());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canAttack)
-        {
-            canAttack = false;
-            StartCoroutine(autoAttack());
-        }
-
     }
     void OnTriggerEnter(Collider other)
     {
-
-    }
-    void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            float dist = Vector3.Distance(transform.position, other.transform.position);
-            if (dist < 10f && canAttack)
+            if (canAttack)
             {
-                gameObject.GetComponent<BoxCollider>().enabled = true;
                 canAttack = false;
+                StartCoroutine(autoAttack());
             }
-            else
-            {
-                gameObject.GetComponent<BoxCollider>().enabled = false;
-            }
+        }
+    }
+   void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            canAttack = canAttack && false;
+        }
+        else
+            canAttack = canAttack && true;
+    }
+    void OnTriggerExit (Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            canAttack = true;
         }
     }
     IEnumerator autoAttack()
     {
+        GameObject dmg  = transform.GetChild(0).gameObject;
         while (!canAttack)
         {
-            gameObject.GetComponent<BoxCollider>().enabled = !canAttack;
+            dmg.GetComponent<BoxCollider>().enabled = true;
             print("attaque");
+            yield return new WaitForSeconds(0.5f);
+            dmg.GetComponent<BoxCollider>().enabled = false;
+            canAttack = true;
             yield return new WaitForSeconds(2f);
         }
-
     }
 }
