@@ -33,7 +33,12 @@ public class enemyHealth : MonoBehaviour
                 }
             }
             int nb = Random.Range(1, 10);
-            for(int i = 0; i < nb; ++i)
+            for (int i = 0; i < nb / 2; ++i)
+            {
+                Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 2, transform.position.z + Random.Range(-10, 10));
+                Instantiate(GameObject.Find("Ignot"), pos, GameObject.Find("Ignot").transform.rotation);
+            }
+            for (int i = 0; i < nb % 2; ++i)
             {
                 Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 2, transform.position.z + Random.Range(-10, 10));
                 Instantiate(GameObject.Find("Coin"), pos, GameObject.Find("Coin").transform.rotation);
@@ -56,7 +61,7 @@ public class enemyHealth : MonoBehaviour
                 case "Player dmg":
                     playerHealth -= 20;
                     break;
-                case "Player dmg(Clone)":
+                case "Player dmg(Build)":
                     playerHealth -= 20;
                     break;
             }

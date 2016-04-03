@@ -19,8 +19,16 @@ public class pickUpMoney : MonoBehaviour {
     {
         if(other.transform.tag == "Money")
         {
-            Destroy(other.gameObject);
-            ++money;
+            if(other.gameObject.name == "Coin(Clone)")
+            {
+                Destroy(other.gameObject);
+                ++money;
+            }
+            else if (other.transform.name == "Ignot(Clone)")
+            {
+                Destroy(other.gameObject);
+                money += 5;
+            }
             print(money);
         }
     }

@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Reseau\DeplacementReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\LookMouseReseau.cs" />
     <Compile Include="Assets\playerHealth.cs" />
+    <Compile Include="Assets\regroupeCoin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Enemis\Earthborn Troll\Shader\Alpha_Texture.shader" />
