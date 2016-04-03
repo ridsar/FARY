@@ -15,24 +15,29 @@ public class attackPlayerCaster : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.Mouse0) && time <= 0 && transform.name == "Player dmg")
         {
-            Vector3 pos = new Vector3(transform.position.x , transform.position.y + 2.6f, transform.position.z );
-            Quaternion rot = new Quaternion(0, transform.parent.rotation.y, 0, transform.parent.rotation.w);
-            var newFirebolt = Instantiate(transform, pos, rot);            
+            var temp = GameObject.Find("Player").transform;
+            Vector3 pos = new Vector3(temp.position.x, 10f, temp.position.z);
+            Quaternion rot = new Quaternion(0, temp.rotation.y, 0, temp.rotation.w);
+            var newFirebolt = Instantiate(gameObject, pos, rot);
+         
             newFirebolt.name = transform.name + "(Clone)"; //Créer la boule de feu
             CancelInvoke();
             GameObject.Find("Player dmg(Clone)").GetComponent<selfDestruct>().enabled = true;
+            GameObject.Find("Player dmg(Clone)").name = "Player dmg(Build)";
             time = 1;
+            print(GameObject.Find("Player dmg(Build)").transform.position);
+            print(temp.position);
         }
         if(time > 0)
             time -= 1 * Time.deltaTime;
 
-        if (transform.name == "Player dmg(Clone)")
+        if (transform.name == "Player dmg(Build)")
             transform.Translate(Vector3.forward * Time.deltaTime * 50);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (transform.name == "Player dmg(Clone)")
+        if (transform.name == "Player dmg(Build)")
         {
             if (other.tag == "Enemy")
             {

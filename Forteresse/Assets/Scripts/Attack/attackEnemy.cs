@@ -8,11 +8,20 @@ public class attackEnemy : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        StartCoroutine(autoAttack());
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (canAttack)
+        {
+            canAttack = false;
+            StartCoroutine(autoAttack());
+        }
+
+    }
+    void OnTriggerEnter(Collider other)
     {
 
     }
@@ -23,26 +32,23 @@ public class attackEnemy : MonoBehaviour {
             float dist = Vector3.Distance(transform.position, other.transform.position);
             if (dist < 10f && canAttack)
             {
-                StartCoroutine(autoAttack());
+                gameObject.GetComponent<BoxCollider>().enabled = true;
                 canAttack = false;
             }
-            else if (dist >= 10f)
+            else
             {
-                StopCoroutine(autoAttack());
-                canAttack = true;
+                gameObject.GetComponent<BoxCollider>().enabled = false;
             }
         }
     }
     IEnumerator autoAttack()
     {
-        if (!canAttack)
+        while (!canAttack)
         {
-            gameObject.GetComponent<BoxCollider>().enabled = true;
+            gameObject.GetComponent<BoxCollider>().enabled = !canAttack;
             print("attaque");
-            gameObject.GetComponent<BoxCollider>().enabled = false;
-            print("fin");
-            yield return new WaitForSeconds(3f);
-
+            yield return new WaitForSeconds(2f);
         }
+
     }
 }

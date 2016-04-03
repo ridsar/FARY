@@ -5,6 +5,7 @@ public class targetAttack : MonoBehaviour {
 
     private Vector3 direction;
     private float scale;
+    public float tooClose;
 
 	// Use this for initialization
 	void Start ()
@@ -24,7 +25,7 @@ public class targetAttack : MonoBehaviour {
         {
             transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
             float distance = Vector3.Distance(transform.position, other.transform.position);
-            if (distance > 7)
+            if (distance > tooClose)
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * transform.GetComponent<FollowPath>().speed);
             }

@@ -23,13 +23,7 @@ public class MouseLook : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetMouseButton(0))
-        {
-        }
-        else
-        {
-            yRotation += Input.GetAxis("Mouse X") * lookSensitivity;
-            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        }
-	}
+        yRotation += Input.GetAxis("Mouse X") * lookSensitivity;
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+    }
 }
