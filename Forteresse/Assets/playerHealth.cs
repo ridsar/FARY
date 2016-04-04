@@ -35,13 +35,31 @@ public class playerHealth : MonoBehaviour
             switch (other.name)
             {
                 case "Troll dmg":
-                    Health -= 20;
+                    {
+                        Health -= 20;
+                        if (PlayerHealthBar.value >= (float)(1/5))   //R
+                        {                                            
+                            PlayerHealthBar.value -= (float)(1 / 5); //R
+                        }
+                    }
                     break;
                 case "Goblin dmg":
-                    Health -= 10;
+                    {
+                        Health -= 10;
+                        if (PlayerHealthBar.value >= (float)(1 / 10))   //R
+                        {
+                            PlayerHealthBar.value -= (float)(1 / 10); //R
+                        }
+                    }
                     break;
                 case "Skeleton dmg":
-                    Health -= 20;
+                    {
+                        Health -= 20;
+                        if (PlayerHealthBar.value >= (float)(1 / 5))   //R
+                        {
+                            PlayerHealthBar.value -= (float)(1 / 5); //R
+                        }
+                    }
                     break;
             }
             print(Health);

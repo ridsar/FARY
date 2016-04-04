@@ -9,6 +9,7 @@ public class crystalHealth : MonoBehaviour {
     public int playerHealth = 30;
     int dead = 0;
     public Slider CristalHealth; //R
+    public Text WelcomeText; //R
 
     public int getDead()
     {
@@ -22,6 +23,10 @@ public class crystalHealth : MonoBehaviour {
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            WelcomeText.enabled = false;
+        }
         if (playerHealth <= 0)
         {
             Destroy(gameObject);
@@ -35,17 +40,17 @@ public class crystalHealth : MonoBehaviour {
             if (other.name == "Skeleton dmg")
             {
                 playerHealth -= 5;
-                if (CristalHealth.value >= .1f) //R
+                if (CristalHealth.value >= (float)(1/6)) //R
                 {
-                    CristalHealth.value -= .1f; //R
+                    CristalHealth.value -= (float)(1/6); //R
                 }
             }
             else if (other.name == "Goblin dmg")
             {
                 playerHealth -= 10;
-                if (CristalHealth.value >= .2f) //R
+                if (CristalHealth.value >= (float)(1/3)) //R
                 {
-                    CristalHealth.value -= .2f; //R
+                    CristalHealth.value -= (float)(1/3); //R
                 }
             }
             print("Enemy just touch by..." + playerHealth);
