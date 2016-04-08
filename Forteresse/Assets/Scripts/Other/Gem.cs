@@ -17,7 +17,6 @@ public class Gem : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (transform.position.y < 10)
-            rb.AddForce(0, 10, 0);
+        rb.AddForce(1000, 0, 1000);
     }
 }

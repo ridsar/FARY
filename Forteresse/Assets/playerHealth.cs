@@ -23,8 +23,8 @@ public class playerHealth : MonoBehaviour
     void Update()
     {
         if (Health <= 0)
-        {                 
-            Destroy(gameObject);
+        {
+            transform.position = new Vector3(330, 0, 325);
         }
     }
 
