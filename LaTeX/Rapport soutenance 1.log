@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.15)  8 APR 2016 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.15)  8 APR 2016 13:53
 entering extended mode
 **"./Rapport soutenance 1.tex"
 ("Rapport soutenance 1.tex"
@@ -613,19 +613,19 @@ File: ennemiesprojet.png Graphic file (type png)
 Package pdftex.def Info: ennemiesprojet.png used on input line 272.
 (pdftex.def)             Requested size: 432.04243pt x 243.2356pt.
  [18 <./Tour(Clone)projet.png>] [19 <./ennemiesprojet.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 294--319
+Underfull \hbox (badness 10000) in paragraph at lines 295--320
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
 <images.jpg, id=95, 212.795pt x 238.8925pt>
 File: images.jpg Graphic file (type jpg)
  <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 324.
+Package pdftex.def Info: images.jpg used on input line 325.
 (pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
  [21 <./images.jpg>] ("Rapport soutenance 1.aux") ) 
 Here is how much of TeX's memory you used:
@@ -656,7 +656,7 @@ knappen\ec\dpi600\eccc2074.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
 epita-student/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/eurosym/feym
 r10.pfb>
-Output written on "Rapport soutenance 1.pdf" (22 pages, 26926793 bytes).
+Output written on "Rapport soutenance 1.pdf" (22 pages, 26926808 bytes).
 PDF statistics:
  486 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
