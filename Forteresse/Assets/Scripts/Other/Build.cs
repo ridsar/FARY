@@ -6,9 +6,10 @@ public class Build : MonoBehaviour
 {
     public GameObject[] Tower;
     private Vector3 spawnPoints;
-    bool canBuild = false;
+    public bool canBuild = false;
     string name = "";
     int type;
+    string path;
     Attack attackScript;
 
     void Start()
@@ -40,7 +41,8 @@ public class Build : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
             name = "Mage Tower"; //Paramètre pour la tour a instancier
-            type = 0;
+            type = 1;
+            path = "/Mage Tower(Clone)/Walls";
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
@@ -49,10 +51,21 @@ public class Build : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha2) && !canBuild)
         {
             name = "Canon Tower"; //Paramètre pour la tour a instancier
-            type = 1;
+            type = 2;
+            path = "/Canon Tower(Clone)/Walls";
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
+        }
+        if(Input.GetKey(KeyCode.Alpha3) && !canBuild)
+        {
+            name = "Lava Floor";
+            type = 0;
+            path = "/Lava Floor(Clone)";
+
+            canBuild = true;
+            StartCoroutine(invokTower());
+            
         }
 
         //l'objet suit la souris
@@ -63,12 +76,17 @@ public class Build : MonoBehaviour
 
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
+            if(type == 1 || type == 2)
+            {
+                attackScript = tour.GetComponent<Attack>();
+                attackScript.enabled = false; //Eteint le script "Attck" sur la tour
+            }
 
-            attackScript = tour.GetComponent<Attack>();
-            attackScript.enabled = false; //Eteint le script "Attck" sur la tour
 
             Vector3 playerPos = player.transform.position; //Position actuelle du joueur
             Vector3 towerPos = tour.transform.position; //Position actuelle de la tour
+
+            tour.transform.rotation = player.transform.rotation;
 
             tour.GetComponent<Collider>().enabled = false; //Desactivation du collider
 
@@ -77,7 +95,7 @@ public class Build : MonoBehaviour
 
             //Change la couleur de la tour, si elle est posable ou pas
 
-            var walls = GameObject.Find("/" + name + "(Clone)/Walls"); //On recupère les murs de la tour
+            var walls = GameObject.Find(path); //On recupère les murs de la tour
 
             if (playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50) //Actuellement useless
             {
@@ -99,8 +117,8 @@ public class Build : MonoBehaviour
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
-
-            attackScript.enabled = true; //Le script d'attack est désormais activé
+            if(type == 1 || type == 2)
+                attackScript.enabled = true; //Le script d'attack est désormais activé
 
             if (Input.GetMouseButton(1)) //clic droit
             {
@@ -110,7 +128,7 @@ public class Build : MonoBehaviour
             if (Input.GetMouseButton(0)) //clic gauche
             {
                 //remet les couleurs de la tour
-                var walls = GameObject.Find("/" + name + "(Clone)/Walls");
+                var walls = GameObject.Find(path);
                 walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
                 //réactive le collider de la tour
@@ -131,11 +149,11 @@ public class Build : MonoBehaviour
         CancelInvoke(); //arrete la creation de tour
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
-    void OnTriggerStay(Collider other) //Ca ca marche pas
+    void OnTriggerEnter(Collider other) //Ca ca marche pas
     {
-        if (other.tag == "Tower" && GameObject.Find(name + "(Clone)"))
+        if (other.tag == "Tower")
         {
-            GameObject.Find(name + "(Clone)/Walls").GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
+            GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
         }
     }
 }

@@ -7,6 +7,7 @@ public class enemyHealth : MonoBehaviour
     public int playerHealth = 100;
     int dead = 0;
     public Slider PlayerHealthBar; //R
+    float time = 1;
 
     GameObject tower;
 
@@ -70,9 +71,13 @@ public class enemyHealth : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Tower")
+        if (time > 0)
+            time -= 1 * Time.deltaTime;
+        if(other.name == "Lava Floor(Build)" && time <= 0)
         {
-            tower = other.gameObject;
+            time = 1;
+            playerHealth -= 1;
+            print(playerHealth);
         }
     }
 }
