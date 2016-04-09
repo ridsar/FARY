@@ -76,7 +76,7 @@ public class Build : MonoBehaviour
 
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
-            if(type == 0 || type == 2)
+            if(name == "Canon Tower" || name == "Mage Tower")
             {
                 attackScript = tour.GetComponent<Attack>();
                 attackScript.enabled = false; //Eteint le script "Attck" sur la tour
@@ -117,7 +117,7 @@ public class Build : MonoBehaviour
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
-            if(type == 0 || type == 2)
+            if(name == "Canon Tower" || name == "Mage Tower")
                 attackScript.enabled = true; //Le script d'attack est désormais activé
 
             if (Input.GetMouseButton(1)) //clic droit
@@ -145,7 +145,7 @@ public class Build : MonoBehaviour
     //Clone l'objet voulu
     IEnumerator invokTower()
     {
-        Instantiate(Tower[type], new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
+        Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
         CancelInvoke(); //arrete la creation de tour
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }

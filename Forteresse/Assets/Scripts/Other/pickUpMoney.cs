@@ -15,8 +15,9 @@ public class pickUpMoney : MonoBehaviour {
     {
 	    
 	}
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collision other)
     {
+        print(other);
         if(other.transform.tag == "Money")
         {
             if(other.gameObject.name == "Coin(Clone)")
