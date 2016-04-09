@@ -41,7 +41,7 @@ public class Build : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
         {
             name = "Mage Tower"; //Paramètre pour la tour a instancier
-            type = 1;
+            type = 0;
             path = "/Mage Tower(Clone)/Walls";
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
@@ -60,7 +60,7 @@ public class Build : MonoBehaviour
         if(Input.GetKey(KeyCode.Alpha3) && !canBuild)
         {
             name = "Lava Floor";
-            type = 0;
+            type = 1;
             path = "/Lava Floor(Clone)";
 
             canBuild = true;
@@ -76,7 +76,7 @@ public class Build : MonoBehaviour
 
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
-            if(type == 1 || type == 2)
+            if(type == 0 || type == 2)
             {
                 attackScript = tour.GetComponent<Attack>();
                 attackScript.enabled = false; //Eteint le script "Attck" sur la tour
@@ -117,7 +117,7 @@ public class Build : MonoBehaviour
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
-            if(type == 1 || type == 2)
+            if(type == 0 || type == 2)
                 attackScript.enabled = true; //Le script d'attack est désormais activé
 
             if (Input.GetMouseButton(1)) //clic droit
