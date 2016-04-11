@@ -88,21 +88,14 @@ public class Build : MonoBehaviour
 
             tour.transform.rotation = player.transform.rotation;
 
-            tour.GetComponent<Collider>().enabled = false; //Desactivation du collider
+            tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
 
             tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle); //Modifie la position de la tour en fonction de la pos du joueur
 
 
             //Change la couleur de la tour, si elle est posable ou pas
 
-            var walls = GameObject.Find(path); //On recupère les murs de la tour
-
-            if (playerPos.x - towerPos.x > 50 || playerPos.x - towerPos.x < -50 || playerPos.z - towerPos.z > 50 || playerPos.z - towerPos.z < -50) //Actuellement useless
-            {
-                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f); //La tour devient verte
-            }
-            else
-                walls.GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient rouge
+            
 
 
         }
@@ -132,7 +125,7 @@ public class Build : MonoBehaviour
                 walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
                 //réactive le collider de la tour
-                tour.GetComponent<Collider>().enabled = true;
+                tour.GetComponent<BoxCollider>().isTrigger = false;
 
                 canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
 
@@ -147,6 +140,8 @@ public class Build : MonoBehaviour
     {
         Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
         CancelInvoke(); //arrete la creation de tour
+        GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
+
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
     void OnTriggerEnter(Collider other) //Ca ca marche pas
@@ -154,6 +149,14 @@ public class Build : MonoBehaviour
         if (other.tag == "Tower")
         {
             GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
+            print(other);
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Tower")
+        {
+            GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
         }
     }
 }
