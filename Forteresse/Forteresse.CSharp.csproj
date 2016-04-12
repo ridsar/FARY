@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -96,6 +90,7 @@
     <Compile Include="Assets\Scripts\Menu\VolumeControl.cs" />
     <Compile Include="Assets\Scripts\Menu\menuScript.cs" />
     <Compile Include="Assets\Scripts\Other\Build.cs" />
+    <Compile Include="Assets\Scripts\Other\CanBuildHere.cs" />
     <Compile Include="Assets\Scripts\Other\Coin.cs" />
     <Compile Include="Assets\Scripts\Other\Gem.cs" />
     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
