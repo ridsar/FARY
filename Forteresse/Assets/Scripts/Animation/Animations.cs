@@ -39,5 +39,13 @@ public class Animations : MonoBehaviour {
         {
             anim.SetBool("run", false);
         }
+        if (Input.GetMouseButton(0))
+        {
+            anim.SetBool("attack", true);
+        }
+        else
+        {
+            anim.SetBool("attack", false);
+        }
     }
 }
