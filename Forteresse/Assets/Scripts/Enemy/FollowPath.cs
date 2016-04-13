@@ -216,10 +216,10 @@ public class FollowPath : MonoBehaviour {
         }
 	}
 	#endregion
-	void OnCollisionEnter(Collision other)
+	void OnCollisionEnter(Collider other)
     {
         if(other.transform.tag == "Enemy")
-            Physics.IgnoreCollision(gameObject.GetComponent<CapsuleCollider>(), other.collider);
+            Physics.IgnoreCollision(gameObject.GetComponent<CapsuleCollider>(), other);
     }
 } // End class
 

@@ -23,9 +23,6 @@ public class Build : MonoBehaviour
     }
     void Update()
     {
-
-        this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
-
         //Déclaration variables
         Tower = GameObject.FindGameObjectsWithTag("Tower");
         //Detruire un tour en jeu
@@ -81,12 +78,13 @@ public class Build : MonoBehaviour
 
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
+
             if(name == "Canon Tower" || name == "Mage Tower")
             {
                 attackScript = tour.GetComponent<Attack>();
                 attackScript.enabled = false; //Eteint le script "Attck" sur la tour
 
-                tour.GetComponent<CanBuildHere>().enabled = true;
+                //tour.GetComponent<CanBuildHere>().enabled = true;
             }
 
 
@@ -96,8 +94,10 @@ public class Build : MonoBehaviour
             tour.transform.rotation = player.transform.rotation;
 
             tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
-            tour.GetComponent<SphereCollider>().enabled = false;
-
+            if (name == "Canon Tower" || name == "Mage Tower")
+            {
+                tour.GetComponent<SphereCollider>().enabled = false;
+            }
             tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle); //Modifie la position de la tour en fonction de la pos du joueur
 
 
@@ -120,27 +120,33 @@ public class Build : MonoBehaviour
             Vector3 towerPos = tour.transform.position;
             if(name == "Canon Tower" || name == "Mage Tower")
             {
-                tour.GetComponent<CanBuildHere>().enabled = false;
+                //tour.GetComponent<CanBuildHere>().enabled = false;
                 attackScript.enabled = true; //Le script d'attack est désormais activé
             }
 
             if (Input.GetMouseButton(1)) //clic droit
             {
-                Destroy(tour); //detruit la tour
-                canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
-                isBuildable = true;
+                if(tour != null)
+                {
+                    Destroy(tour); //detruit la tour
+                    canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
+                    isBuildable = true;
+                }
             }
             if (Input.GetMouseButton(0)) //clic gauche
             {
                 //réactive le collider de la tour
                 tour.GetComponent<BoxCollider>().isTrigger = false;
-                tour.GetComponent<SphereCollider>().enabled = true;
-
+                if (name == "Canon Tower" || name == "Mage Tower")
+                {
+                    tour.GetComponent<SphereCollider>().enabled = true;
+                }
                 //remet les couleurs de la tour
                 var walls = GameObject.Find(path);
                 walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
                 canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
+                isBuildable = true;
 
                 GameObject.Find(name + "(Clone)").name = name + "(Build)"; //On change le nom de la tour avec "(Build)" pour la differentier des autres tours
             }
