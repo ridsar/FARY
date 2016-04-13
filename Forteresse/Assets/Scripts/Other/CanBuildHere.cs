@@ -6,18 +6,18 @@ public class CanBuildHere : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
     }
     void OnTriggerEnter(Collider other) //Ca ca marche pas
     {
+        Physics.IgnoreCollision(gameObject.GetComponent<SphereCollider>(), other);
+
         if (other.tag == "NoBuild")
         {
-            Physics.IgnoreCollision(gameObject.GetComponent<SphereCollider>(), other);
             print(other);
             transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
             GameObject.Find("Player").GetComponent<Build>().isBuildable = false;
