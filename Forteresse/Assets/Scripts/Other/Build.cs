@@ -122,6 +122,7 @@ public class Build : MonoBehaviour
             {
                 //tour.GetComponent<CanBuildHere>().enabled = false;
                 attackScript.enabled = true; //Le script d'attack est désormais activé
+                tour.GetComponent<CanBuildHere>().enabled = false;
             }
 
             if (Input.GetMouseButton(1)) //clic droit
@@ -159,6 +160,8 @@ public class Build : MonoBehaviour
     {
         Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
         CancelInvoke(); //arrete la creation de tour
+
+        GameObject.Find(name + "(Clone)").GetComponent<CanBuildHere>().enabled = true;
         GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
 
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
