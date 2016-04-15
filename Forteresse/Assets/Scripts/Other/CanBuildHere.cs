@@ -16,13 +16,11 @@ public class CanBuildHere : MonoBehaviour {
     void OnTriggerEnter(Collider other) 
     {
         if (gameObject.GetComponent<CanBuildHere>().isActiveAndEnabled == true)
-        {
-            
+        {           
             Physics.IgnoreCollision(gameObject.GetComponent<SphereCollider>(), other);
-            print(other);
+
             if (other.tag == "NoBuild")
             {
-                print(other);
                 transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
                 GameObject.Find("Player").GetComponent<Build>().isBuildable = false;
             }

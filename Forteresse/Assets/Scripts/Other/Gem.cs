@@ -11,12 +11,13 @@ public class Gem : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        rb = GetComponent<Rigidbody>();
+        
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        rb.AddForce(1000, 0, 1000);
+        altitude_down += 1 * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, 10 + Mathf.Sin(altitude_down), transform.position.z);
     }
 }

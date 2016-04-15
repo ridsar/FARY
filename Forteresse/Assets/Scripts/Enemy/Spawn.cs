@@ -24,7 +24,8 @@ public class Spawn : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.F) && !check)
         {
-            print(name); // pour test
+            print("ceci est le spawn : " + name);
+            // pour test
             switch (waveNb) //regarde le numero de la vague a laquelle on est
             {
                 case 1:
