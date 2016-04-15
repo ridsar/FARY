@@ -28,6 +28,7 @@ public class playerHealth : MonoBehaviour
             GetComponent<pickUpMoney>().money -= 50;
             if (GetComponent<pickUpMoney>().money < 0)
                 GetComponent<pickUpMoney>().money = 0;
+            print(GetComponent<pickUpMoney>().money);
         }
     }
 

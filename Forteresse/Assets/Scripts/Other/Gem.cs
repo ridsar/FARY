@@ -17,7 +17,7 @@ public class Gem : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        altitude_down += 1 * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, 10 + Mathf.Sin(altitude_down), transform.position.z);
+        altitude_down += 1.5f * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, 10 + 1.5f * Mathf.Sin(altitude_down), transform.position.z);
     }
 }
