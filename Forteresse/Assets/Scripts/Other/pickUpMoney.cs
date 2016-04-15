@@ -3,7 +3,7 @@ using System.Collections;
 
 public class pickUpMoney : MonoBehaviour {
 
-    int money = 0;
+    public int money = 0;
 	// Use this for initialization
 	void Start ()
     {

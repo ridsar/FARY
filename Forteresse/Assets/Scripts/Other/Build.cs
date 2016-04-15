@@ -14,12 +14,13 @@ public class Build : MonoBehaviour
     string name = "";
     string path;
 
+    int price;
     int type;
     Attack attackScript;
 
     void Start()
     {
-
+        
     }
     void Update()
     {
@@ -40,30 +41,33 @@ public class Build : MonoBehaviour
         }
 
         //Instanciation d'un model de tour pour visualisation
-        if (Input.GetKey(KeyCode.Alpha1) && !canBuild)
+        if (Input.GetKey(KeyCode.Alpha1) && !canBuild && GetComponent<pickUpMoney>().money >= 10)
         {
             name = "Mage Tower"; //Paramètre pour la tour a instancier
             type = 0;
             path = "/Mage Tower(Clone)/Walls";
+           // price = 10;
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
         }
 
-        if (Input.GetKey(KeyCode.Alpha2) && !canBuild)
+        if (Input.GetKey(KeyCode.Alpha2) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
         {
             name = "Canon Tower"; //Paramètre pour la tour a instancier
             type = 2;
             path = "/Canon Tower(Clone)/Walls";
+           // price = 20;
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
         }
-        if(Input.GetKey(KeyCode.Alpha3) && !canBuild)
+        if(Input.GetKey(KeyCode.Alpha3) && !canBuild && GetComponent<pickUpMoney>().money >= 30)
         {
             name = "Lava Floor";
             type = 1;
             path = "/Lava Floor(Clone)";
+            //price = 30;
 
             canBuild = true;
             StartCoroutine(invokTower());
@@ -136,6 +140,7 @@ public class Build : MonoBehaviour
             }
             if (Input.GetMouseButton(0)) //clic gauche
             {
+                GetComponent<pickUpMoney>().money -= price;
                 //réactive le collider de la tour
                 tour.GetComponent<BoxCollider>().isTrigger = false;
                 if (name == "Canon Tower" || name == "Mage Tower")

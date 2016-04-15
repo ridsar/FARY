@@ -25,6 +25,9 @@ public class playerHealth : MonoBehaviour
         if (Health <= 0)
         {
             transform.position = new Vector3(330, 0, 325);
+            GetComponent<pickUpMoney>().money -= 50;
+            if (GetComponent<pickUpMoney>().money < 0)
+                GetComponent<pickUpMoney>().money = 0;
         }
     }
 
@@ -37,7 +40,7 @@ public class playerHealth : MonoBehaviour
                 case "Troll dmg":
                     {
                         Health -= 20;
-                        if (PlayerHealthBar.value >= (float)(1/5))   //R
+                        if (PlayerHealthBar.value >= (float)(1 / 5))   //R
                         {                                            
                             PlayerHealthBar.value -= (float)(1 / 5); //R
                         }
