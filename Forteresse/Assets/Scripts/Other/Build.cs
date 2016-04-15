@@ -150,7 +150,7 @@ public class Build : MonoBehaviour
                 //remet les couleurs de la tour
                 var walls = GameObject.Find(path);
                 walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-
+                tour.transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
                 canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
                 isBuildable = true;
 
