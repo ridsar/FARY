@@ -27,7 +27,8 @@ public class Wave : MonoBehaviour {
         //Le nombre d'enemie restant a invoquer doit etre nul ainsi que le nombre d'enemie en vie. On doit appuyer sur 'F'
         if (Input.GetKey(KeyCode.F) && compte == 0 && enemyNumber == 0)
         {
-            check = true; //sert dans le script 'Spawn'
+            //check = true; //sert dans le script 'Spawn'
+
             print("new wave"); //indicatif just pour test
             foreach (Transform obj in gameObject.transform) //va du gameobject 'A' au 'E' dans le gameobject 'Spawn'
             {
