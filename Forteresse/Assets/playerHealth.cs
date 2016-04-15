@@ -6,14 +6,8 @@ using UnityEngine.UI;
 public class playerHealth : MonoBehaviour
 {
 
-    public int Health = 100;
-    int dead = 0;
+    public int Health;
     public Slider PlayerHealthBar; //R
-
-    public int getDead()
-    {
-        return dead;
-    }
 
     void Start()
     {
@@ -24,11 +18,12 @@ public class playerHealth : MonoBehaviour
     {
         if (Health <= 0)
         {
-            transform.position = new Vector3(330, 0, 325);
+            transform.position = new Vector3(443, 0, 436);
             GetComponent<pickUpMoney>().money -= 50;
             if (GetComponent<pickUpMoney>().money < 0)
                 GetComponent<pickUpMoney>().money = 0;
             print(GetComponent<pickUpMoney>().money);
+            Health = 100;
         }
     }
 

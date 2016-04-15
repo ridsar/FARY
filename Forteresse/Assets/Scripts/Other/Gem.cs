@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Gem : MonoBehaviour {
-    public float speed = 0.5f;
-    public float altitude_up = 1;
-    public float altitude_down = 10;
-    Rigidbody rb;
+public class Gem : MonoBehaviour
+{
+    public float speed = 0;
 
 
 	// Use this for initialization
@@ -17,7 +15,7 @@ public class Gem : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        altitude_down += 1.5f * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, 10 + 1.5f * Mathf.Sin(altitude_down), transform.position.z);
+        speed += 1.5f * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, 10 + 1.5f * Mathf.Sin(speed), transform.position.z);
     }
 }
