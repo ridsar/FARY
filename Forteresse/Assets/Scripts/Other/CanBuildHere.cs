@@ -13,12 +13,13 @@ public class CanBuildHere : MonoBehaviour {
     {
 
     }
-    void OnTriggerEnter(Collider other) //Ca ca marche pas
+    void OnTriggerEnter(Collider other) 
     {
         if (gameObject.GetComponent<CanBuildHere>().isActiveAndEnabled == true)
         {
+            
             Physics.IgnoreCollision(gameObject.GetComponent<SphereCollider>(), other);
-
+            print(other);
             if (other.tag == "NoBuild")
             {
                 print(other);

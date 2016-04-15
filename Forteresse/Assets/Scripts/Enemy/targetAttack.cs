@@ -20,7 +20,7 @@ public class targetAttack : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player" || other.tag == "Crystal")
+        if(other.tag == "Player")
         {
             transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
             float distance = Vector3.Distance(transform.position, other.transform.position);
@@ -28,7 +28,20 @@ public class targetAttack : MonoBehaviour {
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * transform.GetComponent<FollowPath>().speed);
             }
-            transform.LookAt(other.transform);
+            Vector3 newPos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+            transform.LookAt(newPos);
+            GetComponent<FollowPath>().enabled = false;
+        }
+        else if(other.tag == "Crystal")
+        {
+            transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
+            float distance = Vector3.Distance(transform.position, other.transform.position);
+            if (distance > tooClose * 2)
+            {
+                transform.Translate(Vector3.forward * Time.deltaTime * transform.GetComponent<FollowPath>().speed);
+            }
+            Vector3 newPos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+            transform.LookAt(newPos);
             GetComponent<FollowPath>().enabled = false;
         }
     }

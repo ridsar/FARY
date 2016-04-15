@@ -16,7 +16,7 @@ public class attackEnemy : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Crystal")
         {
             if (canAttack)
             {
@@ -27,7 +27,7 @@ public class attackEnemy : MonoBehaviour {
     }
    void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Crystal")
         {
             canAttack = canAttack && false;
         }
@@ -36,7 +36,7 @@ public class attackEnemy : MonoBehaviour {
     }
     void OnTriggerExit (Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Crystal")
         {
             canAttack = true;
         }
