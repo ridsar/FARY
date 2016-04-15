@@ -39,7 +39,6 @@ public class attackPlayerCaster : MonoBehaviour {
         {
             if (other.tag == "Enemy")
             {
-                print("Hello");
                 Destroy(gameObject);
             }
         }

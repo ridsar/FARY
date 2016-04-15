@@ -22,7 +22,7 @@ public class Spawn : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetKey(KeyCode.F) && !check)
+            if (Input.GetKey(KeyCode.F) && !check)
         {
             print("ceci est le spawn : " + name);
             // pour test
