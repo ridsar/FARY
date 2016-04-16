@@ -46,7 +46,7 @@ public class Build : MonoBehaviour
             name = "Mage Tower"; //Paramètre pour la tour a instancier
             type = 0;
             path = "/Mage Tower(Clone)/Walls";
-           // price = 10;
+            price = 10;
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
@@ -57,7 +57,7 @@ public class Build : MonoBehaviour
             name = "Canon Tower"; //Paramètre pour la tour a instancier
             type = 2;
             path = "/Canon Tower(Clone)/Walls";
-           // price = 20;
+            price = 20;
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
@@ -67,7 +67,7 @@ public class Build : MonoBehaviour
             name = "Lava Floor";
             type = 1;
             path = "/Lava Floor(Clone)";
-            //price = 30;
+            price = 30;
 
             canBuild = true;
             StartCoroutine(invokTower());
