@@ -141,6 +141,7 @@ public class Build : MonoBehaviour
             if (Input.GetMouseButton(0)) //clic gauche
             {
                 GetComponent<pickUpMoney>().money -= price;
+                print(GetComponent<pickUpMoney>().money);
                 //réactive le collider de la tour
                 tour.GetComponent<BoxCollider>().isTrigger = false;
                 if (name == "Canon Tower" || name == "Mage Tower")
