@@ -56,16 +56,6 @@ public class WowCamera : MonoBehaviour
     void Update()
     {
 
-        //Move the Player with left & right button press together
-        if (Input.GetMouseButton(1) && Input.GetMouseButton(0))
-        {
-            float targetRotationAngle = target.eulerAngles.y;
-            float currentRotationAngle = transform.eulerAngles.y;
-            xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
-            target.transform.Rotate(0, Input.GetAxis("Mouse X") * xSpeed * 0.02f, 0);
-            xDeg += Input.GetAxis("Mouse X") * targetSpeed * 0.02f;
-            target.transform.Translate(Vector3.forward * targetSpeed * Time.deltaTime);
-        }
     }
 
     /**
