@@ -29,6 +29,7 @@ public class crystalHealth : MonoBehaviour {
         }
         if (playerHealth <= 0)
         {
+            CristalHealth.value = 0; 
             Destroy(gameObject);
         }
     }
@@ -40,17 +41,17 @@ public class crystalHealth : MonoBehaviour {
             if (other.name == "Skeleton dmg")
             {
                 playerHealth -= 5;
-                if (CristalHealth.value >= (float)(1/6)) //R
+                if (CristalHealth.value >= (float)(1.0/6.0)) //R
                 {
-                    CristalHealth.value -= (float)(1/6); //R
+                    CristalHealth.value -= (float)(1.0/6.0); //R
                 }
             }
             else if (other.name == "Goblin dmg")
             {
                 playerHealth -= 10;
-                if (CristalHealth.value >= (float)(1/3)) //R
+                if (CristalHealth.value >= (float)(1.0/3.0)) //R
                 {
-                    CristalHealth.value -= (float)(1/3); //R
+                    CristalHealth.value -= (float)(1.0/3.0); //R
                 }
             }
             print("Enemy just touch by..." + playerHealth);
