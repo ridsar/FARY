@@ -11,6 +11,9 @@ public class menuScript : MonoBehaviour {
     public Button settingsText;
     public Button exitText;
     public Camera CameraComp;
+    public Camera CamMap2;
+    public Button ArrowR;
+    public Button ArrowL;
     public Text Play;
     public Button Play2;
     public Text Play2Text;
@@ -24,8 +27,8 @@ public class menuScript : MonoBehaviour {
     public float distance;
     public float lift;
     public bool cameraTurnIsFixed = false;
-    public bool overlordpick = false;
-    public bool magepick = false;
+    public bool mappick1 = true;
+    public bool mappick2 = false;
 
         // Use this for initialization
     void Start ()
@@ -82,11 +85,20 @@ public class menuScript : MonoBehaviour {
         Settings.enabled = false;
         Exit.enabled = false;
         PlayMenu.enabled = true;
+        
     }
 
     public void StartLevel()
     {
-        SceneManager.LoadScene(1);
+        if (mappick1)
+        {
+            SceneManager.LoadScene(1);
+        }
+        if (mappick2)
+        {
+            SceneManager.LoadScene(4);
+        }
+            
     }
 
     public void StartMulti()
@@ -95,15 +107,17 @@ public class menuScript : MonoBehaviour {
     }
     public void rightpick()
     {
-        overlordpick = true;
-        magepick = false;
-        Play2.enabled = true;
+        CamMap2.enabled = true;
+        CameraComp.enabled = false;
+        mappick2 = true;
+        mappick1 = false;
     }
     public void leftpick()
     {
-        overlordpick = false;
-        magepick = true;
-        Play2.enabled = true;
+        CameraComp.enabled = true;
+        CamMap2.enabled = false;
+        mappick1 = true;
+        mappick2 = false;   
     }
     public void GoBack ()
     {
@@ -117,7 +131,10 @@ public class menuScript : MonoBehaviour {
         Multi.enabled = true;
         Settings.enabled = true;
         Exit.enabled = true;
+        CamMap2.enabled = false;
+        CameraComp.enabled = true;
         CameraComp.transform.position = new Vector3((float)-31, (float)-5, (float)296);
+        
     }
 
     public void ExitGame ()
