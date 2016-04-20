@@ -4,10 +4,10 @@ using System.Collections;
 public class Animations : MonoBehaviour {
 
     public Animator anim;
-    private float inputH;
-    private float inputV;
-    private bool jump;
-    private bool run;
+    public float inputH;
+    public float inputV;
+    public bool jump;
+    public bool run;
 
 	// Use this for initialization
 	void Start () {
