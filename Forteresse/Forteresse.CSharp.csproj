@@ -59,6 +59,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
@@ -93,9 +99,14 @@
     <Compile Include="Assets\Scripts\Other\Gem.cs" />
     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
     <Compile Include="Assets\Scripts\Other\pickUpMoney.cs" />
+    <Compile Include="Assets\Scripts\Reseau\AttackPlayerCasterReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\BuildReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\CameraReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\DeplacementReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\LookMouseReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\SpawnReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\TargetAttackReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\WaveReseau.cs" />
     <Compile Include="Assets\playerHealth.cs" />
     <Compile Include="Assets\regroupeCoin.cs" />
   </ItemGroup>
