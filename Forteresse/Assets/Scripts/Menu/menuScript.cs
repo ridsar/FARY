@@ -10,6 +10,10 @@ public class menuScript : MonoBehaviour {
     public Button multiplayerText;
     public Button settingsText;
     public Button exitText;
+    public Image img1;
+    public Image img2;
+    public Image img3;
+    public Image img4;
     public Camera CameraComp;
     public Camera CamMap2;
     public Button ArrowR;
@@ -71,6 +75,10 @@ public class menuScript : MonoBehaviour {
         Exit.enabled = false;
         SettingsMenu.enabled = true;
         CameraComp.transform.position = new Vector3((float)-30, (float)-7, (float)207) + new Vector3(0, lift, distance);
+        img1.enabled = false;
+        img2.enabled = false;
+        img3.enabled = false;
+        img4.enabled = false;
     }
 
     public void play ()
@@ -85,7 +93,11 @@ public class menuScript : MonoBehaviour {
         Settings.enabled = false;
         Exit.enabled = false;
         PlayMenu.enabled = true;
-        
+        img1.enabled = false;
+        img2.enabled = false;
+        img3.enabled = false;
+        img4.enabled = false;
+
     }
 
     public void StartLevel()
@@ -134,7 +146,10 @@ public class menuScript : MonoBehaviour {
         CamMap2.enabled = false;
         CameraComp.enabled = true;
         CameraComp.transform.position = new Vector3((float)-31, (float)-5, (float)296);
-        
+        img1.enabled = true;
+        img2.enabled = true;
+        img3.enabled = true;
+        img4.enabled = true;
     }
 
     public void ExitGame ()
