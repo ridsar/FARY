@@ -104,12 +104,7 @@ public class Build : MonoBehaviour
             }
             tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle); //Modifie la position de la tour en fonction de la pos du joueur
 
-
             //Change la couleur de la tour, si elle est posable ou pas
-
-            
-
-
         }
 
 
