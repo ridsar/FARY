@@ -27,7 +27,8 @@ public class enemyHealth : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
-                GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
+                if(GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy != null)
+                    GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
                 if(tower != null)
                 {
                     tower.GetComponent<Attack>().check = true;
