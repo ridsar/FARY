@@ -59,12 +59,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
@@ -114,6 +108,7 @@
     <None Include="Assets\Enemis\Earthborn Troll\Shader\Alpha_Texture.shader" />
     <None Include="Assets\Enemis\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
     <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
+    <None Include="Assets\MORPH3D\Content\ContentPacks\WoodElfScout\Readme.txt" />
     <None Include="Assets\Maisons\Cartoon lowpoly water well\readme.txt" />
     <None Include="Assets\Maisons\Fortress Gate_Free\ReadMe.txt" />
     <None Include="Assets\Maisons\Sculptures\readme.txt" />
