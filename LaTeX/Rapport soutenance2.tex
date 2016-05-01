@@ -59,8 +59,8 @@
 \newpage
 \section{Introduction}
 Dans le cadre de de notre première année à l'EPITA, nous devons réaliser un projet informatique de fin d'année qui doit montrer l'application de nos connaissances dans le domaine de la programmation.
-	Le sujet étant libre, nous avons décidé de réaliser un jeu vidéo nommé Forteresse.
-	Le présent document est  le rapport de la première soutenance qui retrace l'avancement de notre projet en cours de développement depuis la validation du cahier des charges jusqu'à la première soutenance. Ainsi, à travers ce rapport, nous allons établir un bilan des tâches qui ont été réalisées par chacun des membres du groupe. Nous allons aussi établir un bilan  des tâches qui restent à  réaliser pour  la prochaine soutenance.
+Le sujet étant libre, nous avons décidé de réaliser un jeu vidéo nommé Forteresse.
+Le présent document est  le rapport de la première soutenance qui retrace l'avancement de notre projet en cours de développement depuis la validation du cahier des charges jusqu'à la première soutenance. Ainsi, à travers ce rapport, nous allons établir un bilan des tâches qui ont été réalisées par chacun des membres du groupe. Nous allons aussi établir un bilan  des tâches qui restent à  réaliser pour  la prochaine soutenance.
 
 \newpage
 
@@ -77,12 +77,6 @@ Dans le cadre de de notre première année à l'EPITA, nous devons réaliser un 
 	\parindent=0cm\textbf{Riday \textsc{Sarkar}}
 	\smallbreak
  Avant d’arriver à EPITA,  j'ai jamais touché à une ligne de code à part cliquer de temps en temps sur des icônes avec Algobox en cours de maths (au passage c'était très bien pour découvrir  le monde merveilleux de l’algorithmique). Je suis conscient que réaliser les tâches qu’on m’a données ne sera pas facile. Cela étant dit, je sais que ce projet est un plus pour nous et qu’on va apprendre beaucoup de choses à travers la réalisation de ce projet. Donc je vais jouer le jeu et faire un maximum de choses pour le projet et essayer d’apprendre un maximum de choses à travers la réalisation de ce projet.\\
-
-	\parindent=0cm\textbf{Yassine \textsc{Ezzahoui}}
-	\smallbreak
-	Nous abordons  le projet de première année avec ambition et envie , nombreux seront les défis à relever. Pour ma part avant cette année je n’avais aucune notion en programmation, ce projet me permettra donc d’apprendre différents langage de programmation,  de connaître tous les paramètres qui régissent un travail de groupe de cette ampleur. Ainsi ce  projet est pour moi  un atout pour l’apprentissage de tout les aspects que peut m'offrir la programmation.\\
-	
-	Nous tenons à vous informer qu'un membre du groupe, Yassine \textsc{Ezzahoui}, a quitt\'e l'EPITA.   
 
 	\parindent=0.5cm 
 	\subsection{Les origines du projet}
@@ -136,29 +130,29 @@ Le tableau ci dessous montre quelles ont été les tâches effectué et par qui.
 \bigbreak
 	\begin{tabular}{|c||c|c|c|c|c|}
 		\hline
-		& Florian & Riday & Yassine & Arnaud \\
+		& Florian & Riday & Arnaud \\
 		\hline
-		Site & & & $\times$ & $\times$\\
+		Site & & & $\times$\\
 		\hline
-		3D & & $\times$ & &\\
+		3D & & &\\
 		\hline
-		2D & & $\times$ & & \\
+		2D & & & \\
 		\hline
-		IA & $\times$ & & & \\
+		IA & $\times$ & & \\
 		\hline
-		Multijoueur &  & &  &\\
+		Multijoueur &  & &\\
 		\hline
-		Réseau & & $\times$ & & \\
+		Réseau & & & \\
 		\hline
-		Menu & & & & $\times$\\
+		Menu & & & $\times$\\
 		\hline
-		Gameplay & $\times$ & & &\\
+		Gameplay & $\times$ & &\\
 		\hline
-		Animation & $\times$ & $\times$ & & \\		
+		Animation & $\times$ & & \\		
 		\hline
-		Audio & & & & $\times$\\
+		Audio & & & $\times$\\
 		\hline
-		\LaTeX & $\times$ & $\times$ & $\times$ & $\times$\\
+		\LaTeX & $\times$ & $\times$ & $\times$\\
 		\hline
 	\end{tabular}
 	\newpage
@@ -166,29 +160,36 @@ Le tableau ci dessous montre quelles ont été les tâches effectué et par qui.
 \section{Avancement du projet}
 	\subsection{Le graphisme}
 		\subsubsection{La carte}
-		Nous nous sommes mis d’accord pour une carte plutôt fermée. Nous avons donc décidé d’entourer le terrain par des chaînes de montagnes. Comme le jeu se déroule à l’époque médiévale, nous avons décidé d’avoir un terrain plutôt vert avec des arbres et des maisons médiévales. Nous avons des maisons de l’époque médiévale sur le terrain mais pas encore des villages. Nous savons très bien que les villages n’interviennent pas dans le jeu mais ils permettent d’avoir un environnement du jeu riche en détails. 
-\par Le apparition des ennemis se fait derrière les chaînes de montagnes. Ensuite, ils se dirigent vers le cristal en suivant un chemin visible qu’on a tracé. Le joueur voit les différents chemins qui vont être empruntés par les ennemis et ensuite il place des tours tout au long de ces chemins qui vont tuer les ennemis et ainsi empêcher l’arrivée des ennemis jusqu’au cristal.
+		Notre but pour la deuxième soutenance était de finir la première carte et de commencer la deuxième. Lors de la première soutenance, nous avions une première carte qui n'était pas riche en détail. Pour commencer, il faillait donc rendre riche en détail cette première carte. Pour cela, nous avons décidé d’ajouter des villages dans la carte. Nous nous sommes renseignés concernant les villages médiévaux et nous avons essayer de construire des villages de façon à ce qu’ils ressemblent au mieux aux villages de l'époque médiévale.    
+\par Nous avions décidé de différencier la deuxième carte de la première. Dans la première carte, nous avons un terrain plutôt vert avec des chaînes de montagnes qui l’entourent, des arbres et des maisons qu’on pouvait trouver dans des villages de l'époque médiévale. Nous avons donc décidé de changer de décor dans la deuxième carte et d’avoir un environnement plutôt  urbain. Dans la deuxième carte, nous avons toujours une carte fermée. Mais au lieu des montagnes, nous avons entouré le terrain par des murs avec une texture de brick pour avoir une environnement urbain. Nous avons aussi modifié les villages en commençant par les types de maisons, les autres éléments constituant d’un village et leurs disposition.
+
 
 		\subsubsection{La 3D}
-		Yassine devait modéliser les personnages avec Blender mais après qu’il ait quitté EPITA et rendu son travail sur le site, nous avons décidé de ne pas passer moins de temps sur la création des personnages et des élément du jeu.  Pour le moment, nous travaillons avec deux modèles de personnages importés de l’asset store mais c’est provisoire. Nous comptons avoir des monstres qui vont constituer les ennemis et plusieurs modèles de personnages. Ainsi le joueur a la possibilité de choisir le personnage qui lui convient.  
-\par Le cristal est l’élément majeur de notre jeu car le jeu consiste à défendre ce cristal. Nous avons décidé d’importer un diamant depuis Blender, le logiciel 3D qu’on utilise, et de le transformer en forme de cristal avec Unity, le moteur de jeu. Nous l’avons ensuite ajouté une texture pour le visuel et une force pour qu’il puisse flotter.
+		Notre but pour cette deuxième soutenance était d’avoir plusieurs modèles de personnages ainsi que plusieurs modèles d’ennemis. Pour le moment, nous avons deux modèles de personnages et trois modèles d’ennemis. Ainsi avant de lancer la partie, le joueur a la possibilité de choisir un modèle de personnages parmi les deux. Comme nous l’avons déjà dit lors de la première soutenance, nous avons décidé de ne pas passer du temps à modéliser les personnages mais de les prendre de l’asset store. Mais nous sommes limités dans nos choix puisqu’il n’y a pas beaucoup de modèles de personnages disponible sur l’asset store qui vont avec l’époque médiévale.  Pour construire les villages dans les deux cartes, nous avons des modèles de maisons et tous les éléments constituant d’un villages comme les fontaine par exemple.
+
 
 		\subsubsection{La 2D}
-Nous avons une minimap qui permet d’avoir une vue d’ensemble et qui suit le joueur en permanence. Pour cela, nous sommes passés par un script C\#.  Pour l’instant, nous n’avons pas pu faire en sorte de distinguer le joueur sur la minimap des autres éléments qui l’entourent.
-\par Nous avons mis en place la barre de vie et la barre représentant l'argent dont le joueur dispose car chaque construction de tour coûtera de l’argent au joueur. Elles ne sont pas encore fonctionnelles car nous n’avons pas encore défini le système de vie et d'argent.
+Lors de la première soutenance, nous avions deux barre de vie qui n'étaient pas fonctionnelles et nous avions pas de véritable interface de jeu. Notre but pour la deuxième soutenance était de faire fonctionner les barres de vie ainsi de commencer d’avoir une interface de jeu. 
+\par Nous avons deux barres de vie différentes parmi les quelles nous avons une barre qui est destinée pour la vie du joueur et une autre pour la vie du cristal. Pour différencier ces deux barres de vie, nous avons ajouté une image du cristal devant la barre de vie du cristal et une image d’un guerrier médiéval devant la barre de vie du joueur.  
+\par Le joueur dispose une somme d’argent initiale ainsi il peut construire des tours pour attaquer les ennemis et donc défendre le cristal. Lorsqu’il tue un ennemi en attaquant lui-même ou par l'intermédiaire des tours, il gagne des lingots d’or. Nous avons un affichage qui comptabilise ses gains et ses dépenses. Ainsi il peut donc voir a chaque moment l’argent dont il dispose. Il peut aussi voir les différents différents outils qui sont à sa disposition pour défendre le cristal  c'est-à-dire les différentes tours qu’il peut construire. Le joueur peut aussi voir combien coûte la tour et la touche qu’il faut appuyer pour construire la tour.   
+Pour rendre joli cet interface du jeu, nous avons travaillé avec essentiellement deux logiciels du traitement d’image : Paint et GIMP.
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{GUI.png}}
+		\caption*{HUD}
+	\end{figure}
+\par Nous avons aussi mis en place un texte d’introduction qui apparaît lorsqu’on commence une partie. Ce texte explique ce que doit faire le joueur pour commencer le jeu. Puis le texte disparaît lorsque le joueur appuie sur la touche B du clavier.   
+L'état actuel du graphisme est avancé.
 \subsubsection*{Ce qui est à faire pour la prochaine soutenance}
 \begin{itemize}
-\item Nous avons certes décidé de ne pas changer la carte à chaque niveau mais au menu principal, le joueur aura le choix entre plusieurs cartes avec des décors différents. Nous comptons faire au moins une seconde carte.
-\item Faire en sorte que l'on puisse distinguer le joueur parmi les différents éléments de la carte qui l’entourent.
-\item Avoir plusieurs modèles de personnages et d'ennemis
-\item Rendre fonctionnelles les barres de vie et d’argent
+\item Finir la deuxième carte
 
 \end{itemize}
 
 \newpage
 
 	\subsection{Le réseau}
-Nous avons mis en place un réseau en mode \emph{host} en utilisant le network manager d’Unity. Un joueur se porte comme serveur et les autres joueurs sont donc des clients.\\
+Nous sommes en retards dans la partie réseau. Lors de la première soutenance, nous avions reporté la partie réseau pour la deuxième soutenance. Pour le moment, nous avons réussi a avoir plusieurs personnages dans la même carte. 
+
 
 
 \begin{figure}[!ht]
@@ -196,26 +197,34 @@ Nous avons mis en place un réseau en mode \emph{host} en utilisant le network m
 	\caption*{Image du menu pour jouer en réseau}
 \end{figure}
 
+
 \subsubsection*{Ce qui est à faire pour la prochaine soutenance}
 
 \par Certes nous avons mis en place le réseau, mais pour l’instant, le joueur qui se comporte comme serveur peut commencer une partie sans qu’il y ait d’autres joueurs présents en ligne. Donc il faut recoder le network manager  pour que joueur qui va se comporter comme serveur ne puisse pas lancer la partie tant qu’il n'y ait pas au moins un autre joueur en ligne.
 
 \newpage
 	\subsection{Multijoueur}
-	Notre manque d'expériences dans le domaine de la création de jeu vidéo, nous a forcé \'a planifier l'avancement de notre projet sans de réels prévisions. C'est pour cela que le multijoueur n'a pas encore été débuté a l'heure actuelle. Il sera débuté lorsque le réseau sera pleinement opérationnel. 
+	Nous sommes en retards dans la partie multijoueur. Lors de la première soutenance, nous avions reporté la partie multijoueur pour la deuxième soutenance. Mais étant donne que la partie réseau n’est malheureusement  pas pleinement opérationnelle, nous n’avons pas commencé la partie multijoueur. 
+
 	
 	\subsection{L'intelligence artificiel}
-	L'intelligence artificiel (IA) a été une de nos priorités lors pour cette première soutenance, car elle est un outil majeur du bon fonctionnement du jeu. A l'heure actuelle l'IA est très basique. Elle permet simplement aux ennemis de se déplacer d'un point A \'a  un point B, en suivant un chemin défini au préalable.
+	Lors de la soutenance 1, les monstres pouvaient uniquement suivre un chemin en boucle et mourir, ils ne remplissaient donc absolument pas leur rôle. L’objectif fixé pour cette soutenance fut donc de les rendre fonctionnels. Les ennemis arrêtes désormais de tourner en boucle dans leurs chemin prédéterminé, ils vont jusqu’à leur dernier « check point » et s’arrêtent. Jusqu’ici il n’y avait aucune interaction avec le joueur, le monstre se contentais d’avancer, il peut désormais détecter lorsqu’un ennemis ou un cristal se trouve proche de lui et va donc se diriger dans sa direction. Le monstre va suivre le joueur a moins qu’il ne s’éloigne assez du monstre, auquel cas il le monstre repartira sur le chemin qui lui est destiné. Lorsqu’il est a porté, il peut désormais attaquer, que ce soit le joueur ou bien le cristal. Il attaquera de façon périodique, les joueurs/cristaux qui se situe devant lui.
+
 	
 \subsubsection*{Ce qui est à faire pour la prochaine soutenance}	
 	
-	\par La prochaine étape sera de lui permettre de converger vers un objet lorsque celui-ci sera \'a sa portée et bien évidemment de l'attaquer, afin d'avoir une IA fonctionnelle, permettant le déroulement d'une partie.
+	\par La prochaine étape sera de lui permettre de converger vers un objet lorsque celui-ci sera \'a sa portée et bien évidemment de l'attaquer, afin d'avoir une IA fonctionnelle, permettant le déroulement d'une partie.	
+
 
 	\subsection{Le menu}
 	
+	Le menu se décompose en plusieurs parties. Il concerne le menu principal (où l’on peut lancer le jeu en mode solo, ou bien multijoueur, mais également accéder à un sous-menu d’options ou enfin, quitter le jeu). Ensuite, nous avons un menu de sélection de la carte dans laquelle nous souhaitons jouer, il suffit d’appuyer sur la flèche pour sélectionner une autre carte et d’appuyer sur “play” pour lancer la partie. 
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{choixdemap.png}}
+		\caption*{menu du choix de la carte}
+	\end{figure}
+	\par Enfin, dans une partie, on peut faire une pause et afficher un menu qui arrête momentanément le déplacement des ennemis. Lorsqu’on appuie sur le bouton pour reprendre, la partie et les déplacements des personnages fonctionnent à nouveau normalement. On peut également, dans ce menu, recharger la partie ou encore, revenir au menu principal. Enfin, pour cette soutenance nous avons également ajouté un menu pour sélectionner le héros avec lequel nous souhaitons jouer dans la prochaine partie.
 
-	\par Nous avons réalisé le menu principal, le menu d’options ainsi que le menu de pause dans le jeu. Le menu principal nous permet de lancer le jeu en solo, nous diriger vers le multijoueur mais également de nous envoyer vers le sous-menu pour les options. Enfin il permet évidemment de quitter le jeu avec un message de confirmation.
-Ensuite, le sous-menu qui gère les options du jeu permet de modifier le volume du son dans le menu. Il permettra ensuite de gérer la luminosité et de donner d’autres indications.
 \newpage
 	\begin{figure}[!ht]
 		\centerline{\includegraphics[scale=0.3]{Menuprojet.png}}
@@ -229,38 +238,52 @@ Ensuite, le sous-menu qui gère les options du jeu permet de modifier le volume 
 	\par Enfin, nous avons également créer un menu-pause qui apparaît lorsqu’on appuie sur “echap” dans le jeu. Il arrête bien sûr le jeu (les mouvements des personnages et les attaques) lorsqu’il est actif. Dans le menu pause, on peut évidemment reprendre le jeu en cours au même moment, mais également relancer le niveau et revenir au menu principal. On pourra ensuite sauvegarder le jeu, pour le reprendre plus tard.
 
 	\subsection{Le site}
-	 Le site internet devait être réalisé avec Yassine. Avec son départ de l’EPITA, l’objectif était de réaliser un site qui fonctionne. 
 	 
 	\begin{figure}[!ht]
 		\centerline{\includegraphics[scale=0.3]{siteprojet.png}}
 		\caption*{Page d'accueil du site internet}
 	\end{figure}	 
 	 
-	 Nous avons néanmoins ajouté différents onglets à la page principale tels que la présentation générale du jeu, l’historique de la réalisation du projet que nous remplirons au fur et à mesure, une page pour nous contacter en cas de problèmes ou de questions concernant Forteresse mais également une page où il sera possible de télécharger le jeu en version lite ou normal, ainsi que le cahier des charges. Nous avons également créer un onglet qui vous indique les logiciels utilisés pour réaliser notre jeu ainsi que des liens renvoyant vers le site principal de l’application.
+	 Le site internet permet d’avoir une présentation générale du jeu Forteresse. Il permet d’en savoir plus sur les règles du jeu mais on peut aussi avoir un aperçu du gameplay avec différentes images tirées du jeu. Ensuite, on peut suivre les avancées de la réalisation de Forteresse. Sur un autre onglet, on peut également télécharger le jeu en version normale ou encore version lite pour éviter les bandes-annonces et quelques animations. On peut avoir accès au cahier des charges du groupe FAR. Enfin, une dernière page sera configurée pour permettre aux utilisateurs de rentrer en contact avec le groupe pour poser des questions.
+
 
 	\subsection{Gameplay}
 		
-		\subsubsection{Dégâts}
-		La gestion des dégâts et des points de vie, sont deux éléments majeurs du gameplay de notre jeu.
-	\begin{figure}[!ht]
-		\centerline{\includegraphics[scale=0.3]{tourattaque.png}}
-		\caption*{Image d'une tour qui attaque}
-	\end{figure}		
+		\subsubsection{L'arsenal défensif}
+		Tout d’abord afin d’améliorer le gameplay et de le diversifier nous avons décidé d’ajouter un nouvel élément dans notre arsenal de défense. Un sol de braise, il s’utilise de façon différente d’une tour classique, il peut être posé à n’importe quel endroit sur la carte et fait des dégâts aux ennemis lorsque ceux-ci sont sur la partie du sol avec les braises. Cette arme est à privilégier lorsqu’il y a une multitude d’ennemis disposant de peu de point de vie.
 
-		\par Nous gérons les dégâts de la façon suivante: dans un premier temps un nombre de points de vie est attribué a l'objet (tel qu'un ennemi) et lorsque cet objet entre en collision avec un objet avec un certain tag et un certain nom, un nombre donné de points de vie est retiré à l'objet jusqu'à ce que le nombre de points de vie atteigne 0 et que l'objet soit détruit.
-		\subsubsection{La construction}
-		La construction d'objets concerne aussi bien la construction de tours que leurs dégâts. En effet pour faire des dégâts, les tours ont besoin de projectiles, il faut donc construire des projectiles lorsque l'ennemi est \'a portée. Pour cela, on clone l'objet qui nous sert de référence, puis on active les scripts nécessaires au bon fonctionnement du projectile sur l'objet cloné.
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{lavafloor.png}}
+		\caption*{sol de braise}
+	\end{figure}		
+		\subsubsection{Le système d’argent}
+		Aspect essentiel de la plupart des jeux, le système de monnaie du jeu est simple, il faut tuer des ennemis pour récupérer l’or qu’ils laissent tomber lors de leur mort. Il existe deux type d’objet a ramasser, les pièces d’or dont la valeur vaut 1 et les lingot d’or dont la valeur vaut 5. Chaque élément de l’arsenal possède un prix nécessaire à sa construction.
 	\begin{figure}[!ht]	
-		\centerline{\includegraphics[scale=0.3]{Tour(Clone)projet.png}}	
-		\caption*{Image d'une tour en construction}	
+		\centerline{\includegraphics[scale=0.3]{gold.png}}	
+		\caption*{pièces d'or à ramasser sur le sol}	
 	\end{figure}
 		
-		\par La construction d'une tour utilise le même principe et se déroule en deux étapes. Tout d'abord, la tour va être crée et sera \'a l'état d'image et suivra le personnage, elle sera verte dans les emplacements valides et rouge dans le cas contraire. Une fois la tour positionné \'a l'endroit voulu, un clic gauche permet de la fixer et d'activer ses scripts.
-		
-		
-		\subsubsection{L'apparition des ennemies}
+		\subsubsection{L’attaque des personnages}
 	
-		La génération d'ennemie se base sur le même principe que celui de la construction, hormis que les ennemis apparaissent \'a des positions aléatoires autour d'un point, afin d'éviter les problèmes de collision et de blocage entre les différents ennemis. \\
+		L’une des particularités de notre Tower Défense est de posséder un personnage pouvant évoluer sur la carte. Mais ce personnage ne se limite pas seulement à poser des tours il est aussi capable de d’attaquer pour combattre les ennemis qui menace le cristal. Le guerrier est doté d’une attaque au corps à corps et le mage peut lui, envoyer des boules de feu lorsque l’appuie sur le clic gauche de la souris.
+		\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{bouledefeu.png}}
+		\caption*{Le mage tirant des boules de feu}
+		\end{figure}
+		\subsubsection{Les vagues}
+		
+		Lors de la première soutenance, le système de vague n’existait pas. On ne pouvait générer des ennemis que sur un seul chemin et d’un seul type dans un nombre fixe. Désormais le système 
+Le système de vague inclue la génération d’ennemis. Pour lancer une vague, il faut appuyer sur la touche ‘f’, une file d’attente va donc être remplit dans chaque point d’apparition et vont vider leur file jusqu’à ce qu’elle soit vide. Chaque monstre va suivre le chemin lié à son point d’apparition jusqu’au cristal. Une fois la vague totalement apparue et détruite. Il est possible de lancer la vague suivante en appuyant a nouveau sur la touche ‘f’.
+
+		\subsubsection{Les zones de construction}
+	En plus des contraintes pécuniaires, la construction d’une tour possède désormais des contraintes géographiques. Lorsque la tour est dans une zone constructible la tour est verte et il suffit d’appuyer sur le clic gauche de la souris pour la posé. En revanche si elle se situe dans une zone non constructible, comme les routes par exemple, la tour passe au rouge et ne peux plus être posé, il faudra la déplacer et les poser dans une zone valide.
+		\subsubsection{La gestion des points de vie}
+La gestion des points de vie est faite en même temps que celle des dégâts, elle est désormais implémentée sur le joueur et sur le cristal de façon analogue à celle des ennemis présenté lors de la première soutenance.
+	\begin{figure}[!ht]
+		\centerline{\includegraphics[scale=0.3]{fight.png}}
+		\caption*{combat entre le guerrier et un gobelin}
+	\end{figure}
+ 
 	\begin{figure}[!ht]
 		\centerline{\includegraphics[scale=0.3]{ennemiesprojet.png}}
 		\caption*{Apparition d'un vague de squelette}
@@ -276,7 +299,9 @@ Ensuite, le sous-menu qui gère les options du jeu permet de modifier le volume 
 	\end{itemize}
 
 	\subsection{Animation}
-	Pour la partie animation, nous avons du vent qui fait bouger les feuilles des différents arbres présents sur la carte.
+		Les animations permettent de rendre réalistes les mouvements des personnages notamment. Lorsque le héros se déplace, les animations suivent ces mouvements. Elles fonctionnent aussi lorsque le héros court. Une animation lors du saut a également été ajouté. De plus, lorsque le héros inflige des dégâts à ces adversaires, on peut maintenant le voir donner des coups de poing. 
+	\par Les ennemis sont également animés. On les voit tous marcher vers le cristal ou bien, vers le héros lorsqu’ils sont dans sa zone de combat.
+Il manquera plus que d’animer les ennemis pour rendre leurs attaques fluides. Pour la prochaine soutenance, on essaiera de diversifier les types d’attaque de nos héros. Ainsi, l’overlord pourra sortir une épée et attaquer les monstres avec celle-ci.
 
 \subsubsection*{Ce qui est à faire pour la prochaine soutenance}
 \begin{itemize}

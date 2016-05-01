@@ -22,6 +22,7 @@ ModelImporter:
     100028: neck
     100030: rCollar
     100032: rShldr
+    100034: Genesis2Male
     400000: abdomen
     400002: abdomen2
     400004: chest
@@ -39,6 +40,7 @@ ModelImporter:
     400028: neck
     400030: rCollar
     400032: rShldr
+    400034: Genesis2Male
     4300000: DrifterHair.Shape_LOD0
     4300002: DrifterHair.Shape_LOD1
     4300004: Drifter_CAP.Shape
@@ -51,6 +53,7 @@ ModelImporter:
     13700000: Drifter_CAP.Shape
     13700002: DrifterHair.Shape_LOD0
     13700004: DrifterHair.Shape_LOD1
+    20500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
