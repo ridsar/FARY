@@ -13,7 +13,7 @@ public class CanBuildHere : MonoBehaviour {
     {
 
     }
-    void OnTriggerEnter(Collider other) 
+    void OnTriggerStay(Collider other) 
     {
         if (gameObject.GetComponent<CanBuildHere>().isActiveAndEnabled == true)
         {           

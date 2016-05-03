@@ -86,11 +86,12 @@ public class SelectHero : MonoBehaviour {
                 overlord.SetActive(true);
                 cam.GetComponent<WowCamera>().target = overlord.transform;
             }
-            paused = !paused;
+            paused = !paused; 
             GameObject.Find("Player").GetComponent<MouseLook>().enabled = true; //F
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked; //Le curseur disparait et est lock au milieu de l'ecran
             Cursor.visible = false;
+            GameObject.Find("selectChara").SetActive(false);
             GameObject.Find("PickHero").SetActive(false);
         }     
     }
