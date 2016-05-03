@@ -67,6 +67,14 @@
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+    <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireLightScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Scripts\Animation\Animations.cs" />
     <Compile Include="Assets\Scripts\Attack\Attack.cs" />
     <Compile Include="Assets\Scripts\Attack\Hit.cs" />
@@ -118,6 +126,8 @@
     <None Include="Assets\Player\BloodMageJonas\HairShader.shader" />
     <None Include="Assets\Player\overlord\models\overlord\Materials\clothshader.shader" />
     <None Include="Assets\Player\overlord\readme.txt" />
+    <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+    <None Include="Assets\PyroParticles\Readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
