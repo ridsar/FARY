@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class WaveReseau : NetworkBehaviour
+public class WaveReseau : MonoBehaviour
 {
 
     public bool check;
@@ -18,7 +18,7 @@ public class WaveReseau : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLocalPlayer)
+        //if (isLocalPlayer)
         {
             compte = 0;
             enemyNumber = 0;

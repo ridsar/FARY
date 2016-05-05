@@ -5,16 +5,19 @@ using System.Collections;
 
 public class PauseScript : MonoBehaviour {
 
-    GameObject PauseMenu;
+    public GameObject PauseMenu;
+    public GameObject isSelect;
+    GameObject overlord;
+    GameObject mage;
+    GameObject fire;
     bool paused;
+    bool selectR = false;
+    bool selectL = true;
 
-
-	void Start ()
+    void Start ()
     {
         paused = false;
-        PauseMenu = GameObject.Find("PauseMenu");
-        Cursor.lockState = CursorLockMode.Confined;
-        
+        Cursor.lockState = CursorLockMode.Confined;  
     }
 	
 	// Update is called once per frame
@@ -41,7 +44,7 @@ public class PauseScript : MonoBehaviour {
             Cursor.lockState = CursorLockMode.None; //Le curseur apparait et est unlock
             Cursor.visible = true;
         }
-        else if (!paused)
+        else if (!paused && isSelect.activeInHierarchy == false)
         {
             PauseMenu.SetActive(false);
             Time.timeScale = 1;

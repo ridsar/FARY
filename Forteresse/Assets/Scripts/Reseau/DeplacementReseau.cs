@@ -2,7 +2,7 @@
 using UnityEngine.Networking;
 using System.Collections;
 
-public class DeplacementReseau : NetworkBehaviour {
+public class DeplacementReseau : MonoBehaviour {
 
     // Use this for initialization
     public Rigidbody rb;
@@ -18,7 +18,7 @@ public class DeplacementReseau : NetworkBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (isLocalPlayer)
+        //if (isLocalPlayer)
         {
             //var GObj = GameObject.Find("Terrain");
             Vector3 rotate = new Vector3();

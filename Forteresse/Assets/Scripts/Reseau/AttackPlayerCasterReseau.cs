@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class AttackPlayerCasterReseau : NetworkBehaviour {
+public class AttackPlayerCasterReseau : MonoBehaviour {
 
     private float time = 0;
     // Use this for initialization
@@ -14,8 +14,8 @@ public class AttackPlayerCasterReseau : NetworkBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (isLocalPlayer)
-        {
+        //if (isLocalPlayer)
+        //{
             if (Input.GetKey(KeyCode.Mouse0) && time <= 0 && transform.name == "Player dmg" && GameObject.Find("Player").GetComponent<Build>().canBuild == false)
             {
                 var temp = GameObject.Find("Player").transform;
@@ -34,7 +34,7 @@ public class AttackPlayerCasterReseau : NetworkBehaviour {
 
             if (transform.name == "Player dmg(Build)")
                 transform.Translate(Vector3.forward * Time.deltaTime * 50);
-        }
+        //}
     }
         void OnTriggerEnter(Collider other)
     {

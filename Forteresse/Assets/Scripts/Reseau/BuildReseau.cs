@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class BuildReseau : NetworkBehaviour {
+public class BuildReseau : MonoBehaviour {
 
     public GameObject[] Tower;
 
@@ -24,8 +24,8 @@ public class BuildReseau : NetworkBehaviour {
     }
     void Update()
     {
-        if (isLocalPlayer)
-        {
+        //if (isLocalPlayer)
+        //{
             //Déclaration variables
             Tower = GameObject.FindGameObjectsWithTag("Tower");
             //Detruire un tour en jeu
@@ -74,7 +74,7 @@ public class BuildReseau : NetworkBehaviour {
                 canBuild = true;
                 StartCoroutine(invokTower());
 
-            }
+            //}
 
             //l'objet suit la souris
             if (canBuild) //Lorsque l'une des tour a été selectionné

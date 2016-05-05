@@ -2,7 +2,7 @@
 using UnityEngine.Networking;
 using System.Collections;
 
-public class LookMouseReseau : NetworkBehaviour {
+public class LookMouseReseau : MonoBehaviour {
 
     public float lookSensitivity = 5f;
     public float xRotation;
@@ -24,8 +24,8 @@ public class LookMouseReseau : NetworkBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (isLocalPlayer)
-        {
+        //if (isLocalPlayer)
+        //{
             if (Input.GetMouseButton(0))
             {
             }
@@ -34,6 +34,6 @@ public class LookMouseReseau : NetworkBehaviour {
                 yRotation += Input.GetAxis("Mouse X") * lookSensitivity;
                 transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             }
-        }
+        //}
     }
 }

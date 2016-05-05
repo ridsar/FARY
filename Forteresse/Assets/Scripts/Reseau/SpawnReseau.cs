@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 
-public class SpawnReseau : NetworkBehaviour {
+public class SpawnReseau : MonoBehaviour {
     public GameObject enemies;
     public float spawingTime;
     public int enemyNumber;
@@ -22,8 +22,8 @@ public class SpawnReseau : NetworkBehaviour {
 
     void Update()
     {
-        if (isLocalPlayer)
-        {
+        //if (isLocalPlayer)
+        //{
             if (Input.GetKey(KeyCode.F) && !check)
             {
                 print("ceci est le spawn : " + name);
@@ -199,7 +199,7 @@ public class SpawnReseau : NetworkBehaviour {
                 InvokeRepeating("spawnEnemy", spawingTime, 10f); //appel la methode spawnEnemy
             }
         }
-    }
+    //}
     void spawnEnemy()
     {
         //coordonnée de spawn

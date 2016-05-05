@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class TargetAttackReseau : NetworkBehaviour {
+public class TargetAttackReseau : MonoBehaviour {
 
     private float scale;
     public float tooClose;

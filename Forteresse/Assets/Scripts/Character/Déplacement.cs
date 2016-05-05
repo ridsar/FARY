@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class Déplacement : NetworkBehaviour
+public class Déplacement : MonoBehaviour
 {
 
     // Use this for initialization

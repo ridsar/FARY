@@ -2,7 +2,7 @@
 using UnityEngine.Networking;
 using System.Collections;
 
-public class CameraReseau : NetworkBehaviour {
+public class CameraReseau : MonoBehaviour {
 
     public Transform target;
 
