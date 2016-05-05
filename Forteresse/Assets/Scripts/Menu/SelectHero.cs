@@ -24,6 +24,8 @@ public class SelectHero : MonoBehaviour {
     public bool isSelecting = true;
     public GameObject cam;
 
+    public GameObject Network;
+
 
     void Start()
     {
@@ -45,6 +47,7 @@ public class SelectHero : MonoBehaviour {
 
     public void MainMenu()
     {
+        Network.SetActive(false);
         SceneManager.LoadScene(0);
     }
 
