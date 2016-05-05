@@ -73,6 +73,16 @@ public class Build : MonoBehaviour
             StartCoroutine(invokTower());
             
         }
+        if(Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        {
+            name = "Fire Tower";
+            type = 3;
+            path = "/Fire Tower(Clone)";
+            price = 0;
+
+            canBuild = true;
+            StartCoroutine(invokTower());
+        }
 
         //l'objet suit la souris
         if (canBuild) //Lorsque l'une des tour a été selectionné
@@ -104,7 +114,7 @@ public class Build : MonoBehaviour
             }
             tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle); //Modifie la position de la tour en fonction de la pos du joueur
 
-            //Change la couleur de la tour, si elle est posable ou pas
+            
         }
 
 
