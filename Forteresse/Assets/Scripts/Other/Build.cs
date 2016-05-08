@@ -77,7 +77,7 @@ public class Build : MonoBehaviour
         {
             name = "Fire Tower";
             type = 3;
-            path = "/Fire Tower(Clone)";
+            path = "/Fire Tower(Clone)/Walls";
             price = 0;
 
             canBuild = true;
@@ -93,7 +93,7 @@ public class Build : MonoBehaviour
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
 
-            if(name == "Canon Tower" || name == "Mage Tower")
+            if(name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
             {
                 attackScript = tour.GetComponent<Attack>();
                 attackScript.enabled = false; //Eteint le script "Attck" sur la tour
@@ -108,7 +108,7 @@ public class Build : MonoBehaviour
             tour.transform.rotation = player.transform.rotation;
 
             tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
-            if (name == "Canon Tower" || name == "Mage Tower")
+            if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
             {
                 tour.GetComponent<SphereCollider>().enabled = false;
             }
@@ -127,7 +127,7 @@ public class Build : MonoBehaviour
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
-            if(name == "Canon Tower" || name == "Mage Tower")
+            if(name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
             {
                 //tour.GetComponent<CanBuildHere>().enabled = false;
                 attackScript.enabled = true; //Le script d'attack est désormais activé
@@ -149,7 +149,7 @@ public class Build : MonoBehaviour
                 print(GetComponent<pickUpMoney>().money);
                 //réactive le collider de la tour
                 tour.GetComponent<BoxCollider>().isTrigger = false;
-                if (name == "Canon Tower" || name == "Mage Tower")
+                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
                 {
                     tour.GetComponent<SphereCollider>().enabled = true;
                     tour.transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;

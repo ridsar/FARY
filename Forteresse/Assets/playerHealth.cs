@@ -9,9 +9,12 @@ public class playerHealth : MonoBehaviour
     public int Health;
     public Slider PlayerHealthBar; //R
 
+    int maxHealth;
+
     void Start()
     {
         print(Health);
+        maxHealth = Health;
     }
 
     void Update()
@@ -21,10 +24,12 @@ public class playerHealth : MonoBehaviour
             PlayerHealthBar.value = 0f; //R
             transform.position = new Vector3(443, 0, 436);
             GetComponent<pickUpMoney>().money -= 50;
+
             if (GetComponent<pickUpMoney>().money < 0)
                 GetComponent<pickUpMoney>().money = 0;
+
             print(GetComponent<pickUpMoney>().money);
-            Health = 100;
+            Health = maxHealth;
             PlayerHealthBar.value = 1f; //R
         }
     }
@@ -38,27 +43,27 @@ public class playerHealth : MonoBehaviour
                 case "Troll dmg":
                     {
                         Health -= 20;
-                        if (PlayerHealthBar.value > (float)(1.0 / 5.0))   //R
+                        if (PlayerHealthBar.value > 20f / maxHealth)   //R
                         {                                            
-                            PlayerHealthBar.value -= (float)(1.0 / 5.0); //R
+                            PlayerHealthBar.value -= 20f / maxHealth; //R
                         }
                     }
                     break;
                 case "Goblin dmg":
                     {
                         Health -= 10;
-                        if (PlayerHealthBar.value >= (float)(1.0 / 10.0))   //R
+                        if (PlayerHealthBar.value >= 10f / maxHealth)   //R
                         {
-                            PlayerHealthBar.value -= (float)(1.0 / 10.0); //R
+                            PlayerHealthBar.value -= 10f / maxHealth; //R
                         }
                     }
                     break;
                 case "Skeleton dmg":
                     {
                         Health -= 20;
-                        if (PlayerHealthBar.value >= (float)(1.0 / 5.0))   //R
+                        if (PlayerHealthBar.value >= 20f / maxHealth)   //R
                         {
-                            PlayerHealthBar.value -= (float)(1.0 / 5.0); //R
+                            PlayerHealthBar.value -= 20f / maxHealth; //R
                         }
                     }
                     break;
