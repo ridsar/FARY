@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\Reseau\SpawnReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\TargetAttackReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\WaveReseau.cs" />
+    <Compile Include="Assets\fireTarget.cs" />
     <Compile Include="Assets\playerHealth.cs" />
     <Compile Include="Assets\regroupeCoin.cs" />
   </ItemGroup>

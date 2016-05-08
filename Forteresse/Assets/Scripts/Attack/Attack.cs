@@ -94,8 +94,17 @@ public class Attack : MonoBehaviour
     {
         while (!check)
         {
-            GameObject projectile = gameObject.transform.GetChild(index).gameObject;
-            var newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity) as GameObject; //Créer l'objet (porjectile)
+            GameObject projectile = null;
+            GameObject newProj = null;
+            if (name == "Canon Projectile" || name == "Mage Projectile")
+            {
+                projectile = gameObject.transform.GetChild(index).gameObject;
+            }
+            else if (name == "Fire Projectile")
+            {
+                projectile = gameObject.transform.GetChild(index).GetChild(0).gameObject;
+            }
+            newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity) as GameObject; //Créer l'objet (porjectile)
             CancelInvoke(); //arrete la création d'objet
             newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
 
@@ -103,10 +112,14 @@ public class Attack : MonoBehaviour
             newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
 
             if (name == "Fire Projectile")
+            {
+                newProj.transform.parent = gameObject.transform.GetChild(0); //fait en sorte que la tour soit le parent du projectile
                 newProj.SetActive(true);
+            }
             //activation des scripts
             if (name ==  "Canon Projectile" || name == "Mage Projectile")
             {
+                newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
                 newProj.GetComponent<move>().enabled = true;
                 newProj.GetComponent<selfDestruct>().enabled = true;
             }
