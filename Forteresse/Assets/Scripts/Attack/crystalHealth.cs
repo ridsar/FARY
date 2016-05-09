@@ -2,14 +2,16 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class crystalHealth : MonoBehaviour {
+public class crystalHealth : MonoBehaviour
+{
     /*Les lignes suivies de //R sont les codes
     de Riday. Tu peux les enlever si jamais je 
-    fais de la merde.*/ 
+    fais de la merde.*/
     public int crysHealth = 30;
     int dead = 0;
     public Slider CristalHealth; //R
-    public Text WelcomeText; //R
+    public Text WelcomeText;//R
+    public Text WelcomeTex;//R
     int maxHealth;
 
 
@@ -21,6 +23,7 @@ public class crystalHealth : MonoBehaviour {
     void Start()
     {
         maxHealth = crysHealth;
+        WelcomeTex.enabled = false;
     }
 
     void Update()
@@ -28,12 +31,17 @@ public class crystalHealth : MonoBehaviour {
         if (Input.GetKey(KeyCode.B))
         {
             WelcomeText.enabled = false;
+            WelcomeTex.enabled = true;
+        }
+        if (Input.GetKey(KeyCode.P))
+        {
+            WelcomeTex.enabled = false;
         }
         if (crysHealth <= 0)
         {
-            CristalHealth.value = 0f; 
+            CristalHealth.value = 0f;
             Destroy(gameObject);
-            
+
         }
     }
 
