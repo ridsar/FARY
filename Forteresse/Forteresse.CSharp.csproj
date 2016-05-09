@@ -67,6 +67,7 @@
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+    <Compile Include="Assets\PlayerSetUp.cs" />
     <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
