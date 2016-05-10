@@ -93,7 +93,7 @@ public class Build : MonoBehaviour
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
 
-            if(name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
+            if(name == "Canon Tower" || name == "Mage Tower")
             {
                 attackScript = tour.GetComponent<Attack>();
                 attackScript.enabled = false; //Eteint le script "Attck" sur la tour
@@ -130,7 +130,8 @@ public class Build : MonoBehaviour
             if(name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
             {
                 //tour.GetComponent<CanBuildHere>().enabled = false;
-                attackScript.enabled = true; //Le script d'attack est désormais activé
+                if(name == "Canon Tower" || name == "Mage Tower")
+                    attackScript.enabled = true; //Le script d'attack est désormais activé
                 tour.GetComponent<CanBuildHere>().enabled = false;
             }
 

@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class enemyHealth : MonoBehaviour
 {
-    public int playerHealth = 100;
+    public float playerHealth = 100;
     int dead = 0;
     public Slider PlayerHealthBar; //R
     float time = 1;
+    float timeDoT;
 
     GameObject tower;
 
@@ -23,6 +24,13 @@ public class enemyHealth : MonoBehaviour
 
     void Update()
     {
+        if (timeDoT > 0)
+        {
+            timeDoT -= 1 * Time.deltaTime;
+            playerHealth -= 1f * Time.deltaTime;
+            print(playerHealth);
+        }
+
         if (playerHealth <= 0)
         {
             if (gameObject.tag == "Enemy")
@@ -79,6 +87,10 @@ public class enemyHealth : MonoBehaviour
             time = 1;
             playerHealth -= 1;
             print(playerHealth);
+        }
+        if(other.name == "Fire dmg")
+        {
+            timeDoT = 10f;
         }
     }
 }
