@@ -17,11 +17,15 @@ public class fireTarget : MonoBehaviour
     void Update()
     {
         if (target == null)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
             return;
+        }
         else if (target != null)
         {
-           targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
-           this.transform.LookAt(targetPos);
+            targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
+            transform.GetChild(0).gameObject.SetActive(true);
+            this.transform.LookAt(targetPos);
         }
     }
     void OnTriggerExit(Collider other)
