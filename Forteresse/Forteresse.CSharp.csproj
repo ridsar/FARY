@@ -77,6 +77,7 @@
     <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Scripts\Animation\Animations.cs" />
+    <Compile Include="Assets\Scripts\Animation\moveLight.cs" />
     <Compile Include="Assets\Scripts\Attack\Attack.cs" />
     <Compile Include="Assets\Scripts\Attack\Hit.cs" />
     <Compile Include="Assets\Scripts\Attack\Target.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\Scripts\Attack\attackPlayerCaster.cs" />
     <Compile Include="Assets\Scripts\Attack\crystalHealth.cs" />
     <Compile Include="Assets\Scripts\Attack\enemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Attack\fireTarget.cs" />
     <Compile Include="Assets\Scripts\Attack\move.cs" />
     <Compile Include="Assets\Scripts\Attack\selfDestruct.cs" />
     <Compile Include="Assets\Scripts\Character\AttackPlayer.cs" />
@@ -113,7 +115,6 @@
     <Compile Include="Assets\Scripts\Reseau\SpawnReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\TargetAttackReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\WaveReseau.cs" />
-    <Compile Include="Assets\fireTarget.cs" />
     <Compile Include="Assets\playerHealth.cs" />
     <Compile Include="Assets\regroupeCoin.cs" />
   </ItemGroup>
