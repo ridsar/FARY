@@ -73,11 +73,21 @@ public class Build : MonoBehaviour
             StartCoroutine(invokTower());
             
         }
-        if(Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        if(Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
         {
             name = "Fire Tower";
             type = 3;
             path = "/Fire Tower(Clone)/Walls";
+            price = 0;
+
+            canBuild = true;
+            StartCoroutine(invokTower());
+        }
+        if(Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        {
+            name = "Tower Buffer";
+            type = 4;
+            path = "/Tower Buffer(Clone)/Runestone";
             price = 0;
 
             canBuild = true;
@@ -108,7 +118,7 @@ public class Build : MonoBehaviour
             tour.transform.rotation = player.transform.rotation;
 
             tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
-            if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
+            if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
             {
                 tour.GetComponent<SphereCollider>().enabled = false;
             }
@@ -127,7 +137,7 @@ public class Build : MonoBehaviour
 
             Vector3 playerPos = player.transform.position;
             Vector3 towerPos = tour.transform.position;
-            if(name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
+            if(name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
             {
                 //tour.GetComponent<CanBuildHere>().enabled = false;
                 if(name == "Canon Tower" || name == "Mage Tower")
@@ -150,10 +160,14 @@ public class Build : MonoBehaviour
                 print(GetComponent<pickUpMoney>().money);
                 //réactive le collider de la tour
                 tour.GetComponent<BoxCollider>().isTrigger = false;
-                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower")
+                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name =="Tower Buffer")
                 {
                     tour.GetComponent<SphereCollider>().enabled = true;
                     tour.transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
+                }
+                if(name == "Tower Buffer")
+                {
+                    tour.transform.GetChild(0).gameObject.SetActive(true);
                 }
                 //remet les couleurs de la tour
                 var walls = GameObject.Find(path);
