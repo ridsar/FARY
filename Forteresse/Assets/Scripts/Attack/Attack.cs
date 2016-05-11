@@ -20,7 +20,7 @@ public class Attack : MonoBehaviour
     private string parentName;
     private string child;
     private int index;
-
+    private float buff;
     private Vector3 scale;
 
 
@@ -71,7 +71,16 @@ public class Attack : MonoBehaviour
         else
         {
             check = check && true; //l'objet testé n'est pas un enemie, cela depend donc des autres objets
-        }       
+        }
+        if (other.name == "Tower Buffer(Build)")
+        {
+            buff = 2;
+            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1f, 1.0f);
+        }
+        if(other.name == "Tower Buffer(Clone)")
+        {
+            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 0.2f, 1.0f);
+        }
     }
 
     void OnTriggerEnter(Collider other) //Lorsqu'un enemie entre en collision check est sur false et donc la tour attaque
@@ -127,7 +136,7 @@ public class Attack : MonoBehaviour
             newProj.name = name + "(Build)"; //Passage a l'etat "(Build)"
 
             check = true;
-            yield return new WaitForSeconds(attackSpeed); //Le temps entre les activations (la vitesse d'attaque des tours)
+            yield return new WaitForSeconds(attackSpeed / buff); //Le temps entre les activations (la vitesse d'attaque des tours)
         }
     }
 }
