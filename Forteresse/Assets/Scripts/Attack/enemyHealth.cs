@@ -9,6 +9,7 @@ public class enemyHealth : MonoBehaviour
     public Slider PlayerHealthBar; //R
     float time = 1;
     float timeDoT;
+    bool check = true;
 
     GameObject tower;
 
@@ -26,10 +27,13 @@ public class enemyHealth : MonoBehaviour
     {
         if (timeDoT > 0)
         {
+            check = true;
             timeDoT -= 1 * Time.deltaTime;
             playerHealth -= 1f * Time.deltaTime;
             print(playerHealth);
         }
+        else
+            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1f, 1f, 1.0f);
 
         if (playerHealth <= 0)
         {
@@ -91,6 +95,7 @@ public class enemyHealth : MonoBehaviour
         if(other.name == "Fire dmg")
         {
             timeDoT = 10f;
+            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
         }
     }
 }
