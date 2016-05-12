@@ -12,7 +12,7 @@ public class targetAttack : MonoBehaviour {
     {
         scale = transform.GetComponent<SphereCollider>().radius;
         if (transform.name == "Ranger")
-            bonus = 2;
+            bonus = 1.5f;
 	}
 	
 	// Update is called once per frame
