@@ -64,7 +64,7 @@ public class Attack : MonoBehaviour
 
     void OnTriggerStay(Collider other) //Lorsqu'il y a des enemies dans le collider 
     {                                  //Tout les objets vont être testé (enemie ou pas)
-        if(other.tag == "Enemy") 
+        if (other.tag == "Enemy")
         {
             check = check && false; //un enemie est présent -> check sera false, la tour attaquera
         }
@@ -75,28 +75,43 @@ public class Attack : MonoBehaviour
         if (other.name == "Tower Buffer(Build)")
         {
             buff = 2;
-            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1f, 1.0f);
         }
-        if(other.name == "Tower Buffer(Clone)")
+        if (other.name == "Tower Buffer(Clone)")
         {
-            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 0.2f, 1.0f);
+            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 0.2f, 1.0f, 1.0f);
+        }
+        if (other.name == "Tower Buffer(Build)" && transform.name != "Mage Tower(Clone)" && transform.name != "Canon Tower(Clone)")
+        {
+            transform.GetChild(3).gameObject.SetActive(true);
         }
     }
 
     void OnTriggerEnter(Collider other) //Lorsqu'un enemie entre en collision check est sur false et donc la tour attaque
-    { 
+    {
         if (other.tag == "Enemy" && check)
         {
             check = false;
             StartCoroutine(move());
         }
+        if (other.name == "Tower Buffer(Build)" && transform.name != "Mage Tower(Clone)" && transform.name != "Canon Tower(Clone)")
+        {
+            transform.GetChild(3).gameObject.SetActive(true);
+            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        }
     }
-
     void OnTriggerExit(Collider other) //Lorsqu'un enemie sort de collision check est sur true et donc la tour n'attaque pas
     {
         if (other.tag == "Enemy")
         {
             check = true;
+        }
+        if (other.name == "Tower Buffer(Clone)")
+        {
+            transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        }
+        if (other.name == "Tower Buffer(Build)")
+        {
+            buff = 1;
         }
     }
     IEnumerator move()

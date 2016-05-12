@@ -135,25 +135,31 @@ public class Build : MonoBehaviour
             var player = GameObject.Find("Player");
             var tour = GameObject.Find(name + "(Clone)");
 
-            Vector3 playerPos = player.transform.position;
-            Vector3 towerPos = tour.transform.position;
-            if(name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
+            if (Input.GetMouseButton(1) && tour != null) //clic droit
             {
-                //tour.GetComponent<CanBuildHere>().enabled = false;
-                if(name == "Canon Tower" || name == "Mage Tower")
-                    attackScript.enabled = true; //Le script d'attack est désormais activé
-                tour.GetComponent<CanBuildHere>().enabled = false;
-            }
-
-            if (Input.GetMouseButton(1)) //clic droit
-            {
-                if(tour != null)
+                if (tour != null)
                 {
                     Destroy(tour); //detruit la tour
                     canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
                     isBuildable = true;
                 }
             }
+            if (tour != null)
+            {
+                Vector3 playerPos = player.transform.position;
+                Vector3 towerPos = tour.transform.position;
+
+
+
+                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
+                {
+                    //tour.GetComponent<CanBuildHere>().enabled = false;
+                    if (name == "Canon Tower" || name == "Mage Tower")
+                        attackScript.enabled = true; //Le script d'attack est désormais activé
+                    tour.GetComponent<CanBuildHere>().enabled = false;
+                }
+            }
+           
             if (Input.GetMouseButton(0)) //clic gauche
             {
                 GetComponent<pickUpMoney>().money -= price;
