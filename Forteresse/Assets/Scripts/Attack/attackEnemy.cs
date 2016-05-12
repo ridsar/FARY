@@ -47,7 +47,6 @@ public class attackEnemy : MonoBehaviour {
         while (!canAttack)
         {
             dmg.GetComponent<BoxCollider>().enabled = true;
-            print("attaque");
             yield return new WaitForSeconds(0.5f);
             dmg.GetComponent<BoxCollider>().enabled = false;
             canAttack = true;

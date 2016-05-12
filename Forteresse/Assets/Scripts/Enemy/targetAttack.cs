@@ -5,11 +5,14 @@ public class targetAttack : MonoBehaviour {
 
     private float scale;
     public float tooClose;
+    float bonus = 1;
 
 	// Use this for initialization
 	void Start ()
     {
         scale = transform.GetComponent<SphereCollider>().radius;
+        if (transform.name == "Ranger")
+            bonus = 2;
 	}
 	
 	// Update is called once per frame
@@ -22,7 +25,7 @@ public class targetAttack : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
+            transform.GetComponent<SphereCollider>().radius = scale * bonus * 2.5f;
             float distance = Vector3.Distance(transform.position, other.transform.position);
             if (distance > tooClose)
             {
@@ -36,7 +39,7 @@ public class targetAttack : MonoBehaviour {
         {
             transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
             float distance = Vector3.Distance(transform.position, other.transform.position);
-            if (distance > tooClose * 2)
+            if (distance > tooClose * 2 / bonus)
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * transform.GetComponent<FollowPath>().speed);
             }
