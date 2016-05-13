@@ -4,16 +4,13 @@ using UnityEngine.UI;
 
 public class crystalHealth : MonoBehaviour
 {
-    /*Les lignes suivies de //R sont les codes
-    de Riday. Tu peux les enlever si jamais je 
-    fais de la merde.*/
     public int crysHealth = 30;
     int dead = 0;
     public Slider CristalHealth; //R
     public Text WelcomeText;//R
     public Text WelcomeTex;//R
     int maxHealth;
-
+    public GameObject gameobject;
 
     public int getDead()
     {
@@ -40,7 +37,6 @@ public class crystalHealth : MonoBehaviour
         if (crysHealth <= 0)
         {
             CristalHealth.value = 0f;
-            Destroy(gameObject);
 
         }
     }
@@ -59,7 +55,7 @@ public class crystalHealth : MonoBehaviour
                 }
                 else
                 {
-                    CristalHealth.value = 0;
+                    gameobject.SetActive(false);
                 }
             }
             //Degat des goblins
@@ -72,7 +68,7 @@ public class crystalHealth : MonoBehaviour
                 }
                 else
                 {
-                    CristalHealth.value = 0;
+                    gameobject.SetActive(false);
                 }
             }
             //Degat des trolls
@@ -85,7 +81,7 @@ public class crystalHealth : MonoBehaviour
                 }
                 else
                 {
-                    CristalHealth.value = 0;
+                    gameobject.SetActive(false);
                 }
             }
         }
