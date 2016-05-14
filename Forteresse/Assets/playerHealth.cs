@@ -41,30 +41,32 @@ public class playerHealth : MonoBehaviour
             switch (other.name)
             {
                 case "Troll dmg":
+                    Health -= 20;
+                    if (PlayerHealthBar.value > 20f / maxHealth)   //R
                     {
-                        Health -= 20;
-                        if (PlayerHealthBar.value > 20f / maxHealth)   //R
-                        {                                            
-                            PlayerHealthBar.value -= 20f / maxHealth; //R
-                        }
+                        PlayerHealthBar.value -= 20f / maxHealth; //R
                     }
                     break;
                 case "Goblin dmg":
+                    Health -= 10;
+                    if (PlayerHealthBar.value >= 10f / maxHealth)   //R
                     {
-                        Health -= 10;
-                        if (PlayerHealthBar.value >= 10f / maxHealth)   //R
-                        {
-                            PlayerHealthBar.value -= 10f / maxHealth; //R
-                        }
+                        PlayerHealthBar.value -= 10f / maxHealth; //R
                     }
                     break;
                 case "Skeleton dmg":
+                    Health -= 20;
+                    if (PlayerHealthBar.value >= 20f / maxHealth)   //R
                     {
-                        Health -= 20;
-                        if (PlayerHealthBar.value >= 20f / maxHealth)   //R
-                        {
-                            PlayerHealthBar.value -= 20f / maxHealth; //R
-                        }
+                        PlayerHealthBar.value -= 20f / maxHealth; //R
+                    }
+                    break;
+                case "Arrow(Build)":
+                    Health -= 10;
+                    Destroy(other);
+                    if(PlayerHealthBar.value >= 10f / maxHealth)
+                    {
+                        PlayerHealthBar.value -= 10f / maxHealth;
                     }
                     break;
             }

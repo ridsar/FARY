@@ -45,45 +45,54 @@ public class crystalHealth : MonoBehaviour
     {
         if (other.tag == "DamageEnemy")
         {
-            //Degat des squelettes 
-            if (other.name == "Skeleton dmg")
+            switch (other.name)
             {
-                crysHealth -= 5;
-                if (CristalHealth.value >= 5f / crysHealth) //R
-                {
-                    CristalHealth.value -= 5f / crysHealth; //R
-                }
-                else
-                {
-                    gameobject.SetActive(false);
-                }
-            }
-            //Degat des goblins
-            else if (other.name == "Goblin dmg")
-            {
-                crysHealth -= 10;
-                if (CristalHealth.value >= 10f / crysHealth) //R
-                {
-                    CristalHealth.value -= 10f / crysHealth; //R
-                }
-                else
-                {
-                    gameobject.SetActive(false);
-                }
-            }
-            //Degat des trolls
-            else if (other.name == "Troll dmg")
-            {
-                crysHealth -= 50;
-                if (CristalHealth.value >= 50f / crysHealth) //R
-                {
-                    CristalHealth.value -= 50f / crysHealth; //R
-                }
-                else
-                {
-                    gameobject.SetActive(false);
-                }
-            }
+                case "Skeleton dmg":
+                    crysHealth -= 5;
+                    if (CristalHealth.value >= 5f / crysHealth) //R
+                    {
+                        CristalHealth.value -= 5f / crysHealth; //R
+                    }
+                    else
+                    {
+                        gameobject.SetActive(false);
+                    }
+                    break;
+                case "Goblin dmg":
+                    crysHealth -= 10;
+                    if (CristalHealth.value >= 10f / crysHealth) //R
+                    {
+                        CristalHealth.value -= 10f / crysHealth; //R
+                    }
+                    else
+                    {
+                        gameobject.SetActive(false);
+                    }
+                    break;
+                case "Troll dmg":
+                    crysHealth -= 50;
+                    if (CristalHealth.value >= 50f / crysHealth) //R
+                    {
+                        CristalHealth.value -= 50f / crysHealth; //R
+                    }
+                    else
+                    {
+                        gameobject.SetActive(false);
+                    }
+                    break;
+                case "Arrow(Build)":
+                    crysHealth -= 10;
+                    Destroy(other);
+                    if (CristalHealth.value >= 10f / crysHealth) //R
+                    {
+                        CristalHealth.value -= 10f / crysHealth; //R
+                    }
+                    else
+                    {
+                        gameobject.SetActive(false);
+                    }
+                    break;
+            }           
         }
     }
 }

@@ -25,7 +25,7 @@ public class targetAttack : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            transform.GetComponent<SphereCollider>().radius = scale * bonus * 2.5f;
+            transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
             float distance = Vector3.Distance(transform.position, other.transform.position);
             if (distance > tooClose)
             {

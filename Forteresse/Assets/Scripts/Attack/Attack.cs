@@ -22,6 +22,7 @@ public class Attack : MonoBehaviour
     private int index;
     private float buff;
     private Vector3 scale;
+    private float time;
 
 
     // Use this for initialization
@@ -54,12 +55,52 @@ public class Attack : MonoBehaviour
             index = 0;
             attackSpeed = 2f;
         }
+        time = attackSpeed;
     }
 
     // Update is called once per frame
 
     void Update()
     {
+        if (time > 0)
+            time -= 1 * Time.deltaTime;
+        else
+            time = 0;
+        if (!check && time == 0)
+        {
+            GameObject projectile = null;
+            GameObject newProj = null;
+            if (name == "Canon Projectile" || name == "Mage Projectile")
+            {
+                projectile = gameObject.transform.GetChild(index).gameObject;
+            }
+            else if (name == "Fire Projectile")
+            {
+                projectile = gameObject.transform.GetChild(index).GetChild(0).gameObject;
+            }
+            newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity) as GameObject; //Créer l'objet (porjectile)
+            CancelInvoke(); //arrete la création d'objet
+            newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
+
+            newProj.transform.localScale = scale; //adapte la taille du projectile en fonction de la tour
+            newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
+
+            if (name == "Fire Projectile")
+            {
+                newProj.transform.parent = gameObject.transform.GetChild(0); //fait en sorte que la tour soit le parent du projectile
+                newProj.SetActive(true);
+            }
+            //activation des scripts
+            if (name == "Canon Projectile" || name == "Mage Projectile")
+            {
+                newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
+                newProj.GetComponent<move>().enabled = true;
+                newProj.GetComponent<selfDestruct>().enabled = true;
+            }
+
+            newProj.name = name + "(Build)"; //Passage a l'etat "(Build)"
+            time = attackSpeed;
+        }
     }
 
     void OnTriggerStay(Collider other) //Lorsqu'il y a des enemies dans le collider 
@@ -91,7 +132,6 @@ public class Attack : MonoBehaviour
         if (other.tag == "Enemy" && check)
         {
             check = false;
-            StartCoroutine(move());
         }
         if (other.name == "Tower Buffer(Build)" && transform.name != "Mage Tower(Clone)" && transform.name != "Canon Tower(Clone)")
         {

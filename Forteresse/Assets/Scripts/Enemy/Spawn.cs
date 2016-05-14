@@ -34,7 +34,7 @@ public class Spawn : MonoBehaviour {
                         case "A":
                             spawingTime = 2; //temps entre le spawn de chaque enemie
                             myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy"); //ajout a une liste des enemies a faire pop 
-                            myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy"); myWave.Add("Enemy");
+                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
                             spawingTime = 3;
