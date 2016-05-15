@@ -91,11 +91,12 @@ public class Attack : MonoBehaviour
                 newProj.SetActive(true);
             }
             //activation des scripts
-            if (name == "Canon Projectile" || name == "Mage Projectile")
+            if ((name == "Canon Projectile" || name == "Mage Projectile") && newProj != null)
             {
                 newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
                 newProj.GetComponent<move>().enabled = true;
                 newProj.GetComponent<selfDestruct>().enabled = true;
+                newProj.transform.GetChild(1).gameObject.SetActive(true);
             }
 
             newProj.name = name + "(Build)"; //Passage a l'etat "(Build)"
@@ -154,7 +155,7 @@ public class Attack : MonoBehaviour
             buff = 1;
         }
     }
-    IEnumerator move()
+    /*IEnumerator move()
     {
         while (!check)
         {
@@ -193,5 +194,5 @@ public class Attack : MonoBehaviour
             check = true;
             yield return new WaitForSeconds(attackSpeed / buff); //Le temps entre les activations (la vitesse d'attaque des tours)
         }
-    }
+    }*/
 }

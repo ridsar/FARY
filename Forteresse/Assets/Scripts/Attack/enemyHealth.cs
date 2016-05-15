@@ -46,7 +46,12 @@ public class enemyHealth : MonoBehaviour
                     tower.GetComponent<Attack>().check = true;
                 }
             }
-            int nb = Random.Range(1, 10);
+            int nb = Random.Range(0, 10);
+            if(nb == 1)
+            {
+                int rnd = Random.Range(0, 4);
+                Instantiate(GameObject.FindGameObjectsWithTag("Buff")[rnd]);
+            }
             for (int i = 0; i < (nb / 5); ++i)
             {
                 Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 0.5f, transform.position.z + Random.Range(-10, 10));
