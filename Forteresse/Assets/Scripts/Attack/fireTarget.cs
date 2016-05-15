@@ -24,7 +24,17 @@ public class fireTarget : MonoBehaviour
         else if (target != null)
         {
             targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
-            transform.GetChild(0).gameObject.SetActive(true);
+            GameObject currentFire = transform.GetChild(0).gameObject;
+            if (!currentFire.activeInHierarchy)
+            {
+                Vector3 pos = currentFire.transform.localPosition;
+                currentFire.SetActive(true);
+                GameObject fire = Instantiate(currentFire);
+                fire.transform.parent = transform;
+                fire.transform.localPosition = pos;
+                Destroy(transform.GetChild(0).gameObject);
+                fire.transform.SetAsFirstSibling();
+            }
             this.transform.LookAt(targetPos);
         }
     }
