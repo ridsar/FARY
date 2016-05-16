@@ -20,7 +20,7 @@ public class Attack : MonoBehaviour
     private string parentName;
     private string child;
     private int index;
-    private float buff;
+    private float buff = 1;
     private Vector3 scale;
     private float time;
 
@@ -55,7 +55,7 @@ public class Attack : MonoBehaviour
             index = 0;
             attackSpeed = 2f;
         }
-        time = attackSpeed;
+        time = attackSpeed / buff;
     }
 
     // Update is called once per frame
@@ -138,6 +138,7 @@ public class Attack : MonoBehaviour
         {
             transform.GetChild(3).gameObject.SetActive(true);
             transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            attackSpeed = buff;
         }
     }
     void OnTriggerExit(Collider other) //Lorsqu'un enemie sort de collision check est sur true et donc la tour n'attaque pas

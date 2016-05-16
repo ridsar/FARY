@@ -4,11 +4,15 @@ using UnityEngine.UI;
 
 public class enemyHealth : MonoBehaviour
 {
+    public float dmgPlayer = 20;
     public float playerHealth = 100;
-    int dead = 0;
     public Slider PlayerHealthBar; //R
+
+    int dead = 0;
+
     float time = 1;
     float timeDoT;
+
     bool check = true;
 
     GameObject tower;
@@ -50,7 +54,8 @@ public class enemyHealth : MonoBehaviour
             if(nb == 1)
             {
                 int rnd = Random.Range(0, 4);
-                Instantiate(GameObject.FindGameObjectsWithTag("Buff")[rnd]);
+                GameObject buff = Instantiate(GameObject.FindGameObjectsWithTag("Buff")[rnd]) as GameObject;
+                buff.transform.position = transform.position;
             }
             for (int i = 0; i < (nb / 5); ++i)
             {
@@ -78,10 +83,10 @@ public class enemyHealth : MonoBehaviour
                     playerHealth -= 10;
                     break;
                 case "Player dmg":
-                    playerHealth -= 20;
+                    playerHealth -= dmgPlayer;
                     break;
                 case "Player dmg(Build)":
-                    playerHealth -= 20;
+                    playerHealth -= dmgPlayer;
                     break;
             }
             print(playerHealth);         

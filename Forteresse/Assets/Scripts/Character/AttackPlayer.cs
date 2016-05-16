@@ -5,6 +5,7 @@ public class AttackPlayer : MonoBehaviour {
 
     BoxCollider arme;
     float time = 0f;
+    public float attackSpeed = 3;
 
     // Use this for initialization
     void Start()
@@ -19,7 +20,7 @@ public class AttackPlayer : MonoBehaviour {
             time -= 1 * Time.deltaTime;
         if (Input.GetKey(KeyCode.Mouse0) && time <= 0)
         {
-            time = 3;
+            time = attackSpeed;
             StartCoroutine(attack());
             StopCoroutine(attack());
         }  

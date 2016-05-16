@@ -4,6 +4,8 @@ using System.Collections;
 public class attackPlayerCaster : MonoBehaviour {
 
     private float time = 0;
+
+    public float valueTime = 1;
 	// Use this for initialization
 	void Start ()
     {
@@ -24,7 +26,7 @@ public class attackPlayerCaster : MonoBehaviour {
             CancelInvoke();
             GameObject.Find("Player dmg(Clone)").GetComponent<selfDestruct>().enabled = true;
             GameObject.Find("Player dmg(Clone)").name = "Player dmg(Build)";
-            time = 1;
+            time = valueTime;
         }
         if(time > 0)
             time -= 1 * Time.deltaTime;
@@ -35,11 +37,14 @@ public class attackPlayerCaster : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (transform.name == "Player dmg(Build)")
+        if(other is CapsuleCollider)
         {
-            if (other.tag == "Enemy")
+            if (transform.name == "Player dmg(Build)")
             {
-                Destroy(gameObject);
+                if (other.tag == "Enemy")
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

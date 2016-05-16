@@ -47,11 +47,13 @@ public class move : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider other)
-    {        
-        if (other.tag == "Enemy")
+    {   if(other is CapsuleCollider)
         {
-            Destroy(GameObject.Find(name));
-            target = null;
-        }
+            if (other.tag == "Enemy")
+            {
+                Destroy(GameObject.Find(name));
+                target = null;
+            }
+        }            
     }
 }

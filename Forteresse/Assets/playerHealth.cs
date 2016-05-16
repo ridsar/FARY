@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class playerHealth : MonoBehaviour
 {
 
-    public int Health;
+    public float Health;
     public Slider PlayerHealthBar; //R
 
-    int maxHealth;
+    float maxHealth;
 
     void Start()
     {
