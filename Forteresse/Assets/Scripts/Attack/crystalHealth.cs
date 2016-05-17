@@ -11,6 +11,7 @@ public class crystalHealth : MonoBehaviour
     public Text WelcomeTex;//R
     int maxHealth;
     public GameObject gameobject;
+    public GameObject GameOver;
 
     public int getDead()
     {
@@ -37,7 +38,7 @@ public class crystalHealth : MonoBehaviour
         if (crysHealth <= 0)
         {
             CristalHealth.value = 0f;
-
+            GameOver.SetActive(true);
         }
     }
 

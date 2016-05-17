@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Buffer.cs" />
@@ -97,6 +103,7 @@
     <Compile Include="Assets\Scripts\Enemy\Spawn.cs" />
     <Compile Include="Assets\Scripts\Enemy\Wave.cs" />
     <Compile Include="Assets\Scripts\Enemy\targetAttack.cs" />
+    <Compile Include="Assets\Scripts\Menu\GameOver.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseScript.cs" />
     <Compile Include="Assets\Scripts\Menu\SelectHero.cs" />
     <Compile Include="Assets\Scripts\Menu\VolumeControl.cs" />

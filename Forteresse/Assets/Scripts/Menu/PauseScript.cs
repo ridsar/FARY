@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour {
 
     public GameObject PauseMenu;
     public GameObject isSelect;
+    public GameObject Gameover;
     GameObject overlord;
     GameObject mage;
     GameObject fire;
@@ -37,9 +38,18 @@ public class PauseScript : MonoBehaviour {
                 GameObject.Find("Player").GetComponent<MouseLook>().enabled = false; //F
             }
         }
-        if (paused)
+        if (paused || Gameover.activeInHierarchy)
         {
-            PauseMenu.SetActive(true);
+            if(paused)
+            {
+                PauseMenu.SetActive(true);
+            }
+            if (Gameover.activeInHierarchy)
+            {
+                GameObject.Find("Main Camera").GetComponent<WowCamera>().enabled = false; //F
+                GameObject.Find("Player").GetComponent<MouseLook>().enabled = false; //F
+            }
+            
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None; //Le curseur apparait et est unlock
             Cursor.visible = true;
