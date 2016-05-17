@@ -4,11 +4,14 @@ using System.Collections;
 public class Buffer : MonoBehaviour
 {
     public GameObject fireBolt;
+    public bool buffed = false;
+
 
     float timeA = 0;
     float timeS = 0;
     float timeL = 0;
     float timeD = 0;
+    
 
 	// Use this for initialization
 	void Start ()
@@ -24,8 +27,11 @@ public class Buffer : MonoBehaviour
         else
             timeA = 0;
         if(timeD > 0)
+        {
+            buffed = true;
             timeD -= 1 * Time.deltaTime;
-        if(timeL > 0)
+        }
+        if (timeL > 0)
         {
             timeL -= 1 * Time.deltaTime;
             GetComponent<playerHealth>().Health += 20f * Time.deltaTime;
@@ -35,16 +41,16 @@ public class Buffer : MonoBehaviour
 
 
 
-        if(timeA <= 0)
+        if (timeA <= 0)
         {
             if (fireBolt.activeInHierarchy)
                 fireBolt.GetComponent<attackPlayerCaster>().valueTime = 1;
             else
                 GetComponent<AttackPlayer>().attackSpeed = 3f;
         }
-        if(timeD <= 0)
-            GetComponent<enemyHealth>().dmgPlayer /= 2;
-        if(timeS <= 0)
+        if (timeD <= 0)
+            buffed = false;
+        if (timeS <= 0)
             GetComponent<Déplacement>().Speed -= 10;
     }
     void OnTriggerEnter(Collider other)
@@ -53,7 +59,7 @@ public class Buffer : MonoBehaviour
         {
             switch (other.name)
             {
-                case "Attack Speed(Clone)":
+                case "AttackSpeed(Clone)":
                     timeA = 60f;
                     if (fireBolt.activeInHierarchy)
                         GetComponent<attackPlayerCaster>().valueTime = 0.5f;
@@ -68,7 +74,6 @@ public class Buffer : MonoBehaviour
                     timeL = 60f;
                     break;
                 case "Damage(Clone)":
-                    GetComponent<enemyHealth>().dmgPlayer *= 2;
                     timeD = 60f;
                     break;
             }

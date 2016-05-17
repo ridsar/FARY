@@ -32,6 +32,7 @@ public class fireTarget : MonoBehaviour
                 GameObject fire = Instantiate(currentFire);
                 fire.transform.parent = transform;
                 fire.transform.localPosition = pos;
+                fire.transform.localRotation = new Quaternion(0, 0, 0, 0);
                 Destroy(transform.GetChild(0).gameObject);
                 fire.transform.SetAsFirstSibling();
             }

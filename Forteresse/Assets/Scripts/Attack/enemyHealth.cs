@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class enemyHealth : MonoBehaviour
 {
-    public float dmgPlayer = 20;
+    public float buff = 1;
     public float playerHealth = 100;
     public Slider PlayerHealthBar; //R
 
@@ -83,10 +83,16 @@ public class enemyHealth : MonoBehaviour
                     playerHealth -= 10;
                     break;
                 case "Player dmg":
-                    playerHealth -= dmgPlayer;
+                    if (other.GetComponentInParent<Buffer>().buffed)
+                        buff = 2;              
+                    playerHealth -= (20 * buff);
+                    buff = 1;
                     break;
                 case "Player dmg(Build)":
-                    playerHealth -= dmgPlayer;
+                    if (other.GetComponentInParent<attackPlayerCaster>().player.GetComponent<Buffer>().buffed)                    
+                        buff = 2;
+                    playerHealth -= (20 * buff);
+                    buff = 1;
                     break;
             }
             print(playerHealth);         

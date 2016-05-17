@@ -3,6 +3,8 @@ using System.Collections;
 
 public class attackPlayerCaster : MonoBehaviour {
 
+    public GameObject player;
+
     private float time = 0;
 
     public float valueTime = 1;
@@ -17,11 +19,13 @@ public class attackPlayerCaster : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.Mouse0) && time <= 0 && transform.name == "Player dmg" && GameObject.Find("Player").GetComponent<Build>().canBuild == false)
         {
-            var temp = GameObject.Find("Player").transform;
+            var temp = player.transform;
+
             Vector3 pos = new Vector3(temp.position.x, 7f, temp.position.z);
             Quaternion rot = new Quaternion(0, temp.rotation.y, 0, temp.rotation.w);
-            var newFirebolt = Instantiate(gameObject, pos, rot);
-         
+
+            GameObject newFirebolt = Instantiate(gameObject, pos, rot) as GameObject;
+
             newFirebolt.name = transform.name + "(Clone)"; //Créer la boule de feu
             CancelInvoke();
             GameObject.Find("Player dmg(Clone)").GetComponent<selfDestruct>().enabled = true;
@@ -37,15 +41,14 @@ public class attackPlayerCaster : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other is CapsuleCollider)
+
+        if (transform.name == "Player dmg(Build)")
         {
-            if (transform.name == "Player dmg(Build)")
+            if (other.tag == "Enemy")
             {
-                if (other.tag == "Enemy")
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
         }
+
     }
 }
