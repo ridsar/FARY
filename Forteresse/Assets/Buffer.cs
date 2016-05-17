@@ -62,7 +62,7 @@ public class Buffer : MonoBehaviour
                 case "AttackSpeed(Clone)":
                     timeA = 60f;
                     if (fireBolt.activeInHierarchy)
-                        GetComponent<attackPlayerCaster>().valueTime = 0.5f;
+                        fireBolt.GetComponent<attackPlayerCaster>().valueTime = 0.5f;
                     else
                         GetComponent<AttackPlayer>().attackSpeed = 1.5f;
                     break;

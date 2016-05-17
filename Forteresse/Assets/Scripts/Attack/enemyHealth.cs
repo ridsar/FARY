@@ -70,6 +70,7 @@ public class enemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Damage")

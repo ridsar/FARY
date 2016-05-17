@@ -5,12 +5,15 @@ public class targetAttack : MonoBehaviour {
 
     private float scale;
     public float tooClose;
+
     float bonus = 1;
+    Transform parent_;
 
 	// Use this for initialization
 	void Start ()
     {
-        scale = transform.GetComponent<SphereCollider>().radius;
+        parent_ = transform.parent;
+        scale = GetComponent<SphereCollider>().radius;
         if (transform.name == "Ranger")
             bonus = 1.5f;
 	}
@@ -26,14 +29,14 @@ public class targetAttack : MonoBehaviour {
         if(other.tag == "Player")
         {
             transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
-            float distance = Vector3.Distance(transform.position, other.transform.position);
+            float distance = Vector3.Distance(parent_.position, other.transform.position);
             if (distance > tooClose)
             {
-                transform.Translate(Vector3.forward * Time.deltaTime * transform.GetComponent<FollowPath>().speed);
+                parent_.Translate(Vector3.forward * Time.deltaTime * parent_.GetComponent<FollowPath>().speed);
             }
             Vector3 newPos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
-            transform.LookAt(newPos);
-            GetComponent<FollowPath>().enabled = false;
+            parent_.LookAt(newPos);
+            parent_.GetComponent<FollowPath>().enabled = false;
         }
         else if(other.tag == "Crystal")
         {
@@ -43,18 +46,18 @@ public class targetAttack : MonoBehaviour {
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * transform.GetComponent<FollowPath>().speed);
             }
-            Vector3 newPos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
-            transform.LookAt(newPos);
-            GetComponent<FollowPath>().enabled = false;
+            Vector3 newPos = new Vector3(other.transform.position.x, parent_.position.y, other.transform.position.z);
+            parent_.LookAt(newPos);
+            parent_.GetComponent<FollowPath>().enabled = false;
         }
     }
     void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player" || other.tag == "Crystal")
         {
-            GetComponent<FollowPath>().enabled = true;
+            parent_.GetComponent<FollowPath>().enabled = true;
             transform.GetComponent<SphereCollider>().radius = scale;
-            transform.LookAt(transform.GetComponent<FollowPath>().currentTarget);
+            parent_.LookAt(parent_.GetComponent<FollowPath>().currentTarget);
         }
     }
 }

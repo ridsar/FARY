@@ -41,9 +41,11 @@ public class attackPlayerCaster : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
-        if (transform.name == "Player dmg(Build)")
+        if (!(other is CapsuleCollider))
+            Physics.IgnoreCollision(transform.GetComponent<Collider>(), other);
+        if (transform.name == "Player dmg(Build)" && other is CapsuleCollider)
         {
+            print(other);
             if (other.tag == "Enemy")
             {
                 Destroy(gameObject);
