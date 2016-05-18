@@ -201,9 +201,9 @@ public class Spawn : MonoBehaviour {
     void spawnEnemy()
     {
         //coordonnée de spawn
-        spawnPoints.x = Random.Range(-20 + transform.position.x, 20 + transform.position.x);
+        spawnPoints.x = Random.Range(-10 + transform.position.x, 10 + transform.position.x);
         spawnPoints.y = 0.5f;
-        spawnPoints.z = Random.Range(-20 + transform.position.z, 20 + transform.position.z);
+        spawnPoints.z = Random.Range(-10 + transform.position.z, 10 + transform.position.z);
 
         Instantiate(GameObject.Find(myWave[0]), spawnPoints, Quaternion.identity).name = gameObject.name + myWave[0] + "(Clone)"; //Créer l'enemie
         CancelInvoke();
