@@ -108,7 +108,7 @@ public class menuScript : MonoBehaviour {
         }
         if (mappick2)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
         }
             
     }
