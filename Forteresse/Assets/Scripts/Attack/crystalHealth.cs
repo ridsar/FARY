@@ -11,6 +11,7 @@ public class crystalHealth : MonoBehaviour {
     public Slider CristalHealth; //R
     public Text WelcomeText; //R
 
+
     public int getDead()
     {
         return dead;
@@ -23,7 +24,7 @@ public class crystalHealth : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.B))
         {
             WelcomeText.enabled = false;
         }
