@@ -16,6 +16,8 @@ public class Build : MonoBehaviour
 
     int price;
     int type;
+    int decal = 0;
+
     Attack attackScript;
 
     void Start()
@@ -78,17 +80,28 @@ public class Build : MonoBehaviour
             name = "Fire Tower";
             type = 3;
             path = "/Fire Tower(Clone)/Walls";
-            price = 0;
+            price = 20;
 
             canBuild = true;
             StartCoroutine(invokTower());
         }
-        if(Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        if(Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
         {
             name = "Tower Buffer";
             type = 4;
             path = "/Tower Buffer(Clone)/Runestone";
+            price = 50;
+
+            canBuild = true;
+            StartCoroutine(invokTower());
+        }
+        if(Input.GetKey(KeyCode.Alpha6) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        {
+            name = "Stun Trap";
+            type = 5;
+            path = "/Stun Trap(Clone)/tap";
             price = 0;
+            decal = -17;
 
             canBuild = true;
             StartCoroutine(invokTower());
@@ -122,7 +135,7 @@ public class Build : MonoBehaviour
             {
                 tour.GetComponent<SphereCollider>().enabled = false;
             }
-            tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0, playerPos.z + 20 * (float)cosAngle); //Modifie la position de la tour en fonction de la pos du joueur
+            tour.transform.position = new Vector3(playerPos.x + 20 * (float)sinAngle, 0 + decal, playerPos.z + 20 * (float)cosAngle); //Modifie la position de la tour en fonction de la pos du joueur
 
             
         }
@@ -182,6 +195,7 @@ public class Build : MonoBehaviour
                 isBuildable = true;
 
                 GameObject.Find(name + "(Clone)").name = name + "(Build)"; //On change le nom de la tour avec "(Build)" pour la differentier des autres tours
+                decal = 0;
             }
         }
     }
@@ -190,10 +204,12 @@ public class Build : MonoBehaviour
     //Clone l'objet voulu
     IEnumerator invokTower()
     {
-        Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
+        Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y + decal, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
         CancelInvoke(); //arrete la creation de tour
-
-        GameObject.Find(name + "(Clone)").GetComponent<CanBuildHere>().enabled = true;
+        if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
+        {
+            GameObject.Find(name + "(Clone)").GetComponent<CanBuildHere>().enabled = true;
+        }
         GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
 
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
