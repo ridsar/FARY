@@ -73,6 +73,7 @@ public class enemyHealth : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        
         if(other.tag == "Damage")
         {
             switch (other.name)

@@ -41,10 +41,10 @@ public class targetAttack : MonoBehaviour {
         else if(other.tag == "Crystal")
         {
             transform.GetComponent<SphereCollider>().radius = scale * 2.5f;
-            float distance = Vector3.Distance(transform.position, other.transform.position);
+            float distance = Vector3.Distance(parent_.position, other.transform.position);
             if (distance > tooClose * 2 / bonus)
             {
-                transform.Translate(Vector3.forward * Time.deltaTime * parent_.GetComponent<FollowPath>().speed);
+                //transform.Translate(Vector3.forward * Time.deltaTime * parent_.GetComponent<FollowPath>().speed);
             }
             Vector3 newPos = new Vector3(other.transform.position.x, parent_.position.y, other.transform.position.z);
             parent_.LookAt(newPos);

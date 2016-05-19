@@ -13,4 +13,11 @@ public class moveForward : MonoBehaviour {
     {
         transform.Translate(Vector3.forward * Time.deltaTime * 100);
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Crystal" || other.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
