@@ -178,7 +178,8 @@ public class Build : MonoBehaviour
                 GetComponent<pickUpMoney>().money -= price;
                 print(GetComponent<pickUpMoney>().money);
                 //réactive le collider de la tour
-                tour.GetComponent<BoxCollider>().isTrigger = false;
+                if(name != "Stun Trap")
+                    tour.GetComponent<BoxCollider>().isTrigger = false;
                 if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name =="Tower Buffer")
                 {
                     tour.GetComponent<SphereCollider>().enabled = true;
