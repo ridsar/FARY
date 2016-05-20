@@ -12,8 +12,11 @@ public class enemyHealth : MonoBehaviour
 
     float time = 1;
     float timeDoT;
+    float timeStun;
+    float timeStunPerEnemy;
 
     bool check = true;
+    bool canBeStuned = true;
 
     GameObject tower;
 
@@ -24,11 +27,29 @@ public class enemyHealth : MonoBehaviour
 
     void Start()
     {
+        switch (transform.name[1])
+        {
+            case 'E':
+                timeStunPerEnemy = 2f;
+                break;
+            case 'G':
+                timeStunPerEnemy = 3f;
+                break;
+            case 'R':
+                timeStunPerEnemy = 3f;
+                break;
+            case 'T':
+                timeStunPerEnemy = 0f;
+                break;
+
+        }
         print(playerHealth);
     }
 
     void Update()
     {
+
+        //Dot de feu provenant de la Fire Tower
         if (timeDoT > 0)
         {
             check = true;
@@ -38,6 +59,21 @@ public class enemyHealth : MonoBehaviour
         }
         else
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1f, 1f, 1.0f);
+
+        //Stun provenant du Stun Trap
+        if(timeStun > 0)
+        {
+            timeStun -= 1 * Time.deltaTime;
+            transform.GetComponent<FollowPath>().enabled = false;
+            transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = false;
+        }
+        else if (timeStun > -5 && timeStun <= 0)
+        {
+            timeStun = -10f;
+            transform.GetComponent<FollowPath>().enabled = true;
+            transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
+        }
+
 
         if (playerHealth <= 0)
         {
@@ -98,7 +134,12 @@ public class enemyHealth : MonoBehaviour
                     break;
             }
             print(playerHealth);         
-        }             
+        }    
+        if(other.name == "Stun Trap(Build)" && canBeStuned)
+        {
+            canBeStuned = false;
+            timeStun = timeStunPerEnemy;
+        }         
     }
     void OnTriggerStay(Collider other)
     {
