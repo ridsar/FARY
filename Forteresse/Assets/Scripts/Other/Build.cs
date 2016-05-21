@@ -54,7 +54,7 @@ public class Build : MonoBehaviour
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
         }
 
-        if (Input.GetKey(KeyCode.Alpha2) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
+        else if (Input.GetKey(KeyCode.Alpha2) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
         {
             name = "Canon Tower"; //Paramètre pour la tour a instancier
             type = 2;
@@ -64,7 +64,7 @@ public class Build : MonoBehaviour
             canBuild = true; //variable disant si je peux poser une tour ou pas
             StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
         }
-        if(Input.GetKey(KeyCode.Alpha3) && !canBuild && GetComponent<pickUpMoney>().money >= 30)
+        else if (Input.GetKey(KeyCode.Alpha3) && !canBuild && GetComponent<pickUpMoney>().money >= 30)
         {
             name = "Lava Floor";
             type = 1;
@@ -75,7 +75,7 @@ public class Build : MonoBehaviour
             StartCoroutine(invokTower());
             
         }
-        if(Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
+        else if (Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
         {
             name = "Fire Tower";
             type = 3;
@@ -85,7 +85,7 @@ public class Build : MonoBehaviour
             canBuild = true;
             StartCoroutine(invokTower());
         }
-        if(Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
+        else if (Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
         {
             name = "Tower Buffer";
             type = 4;
@@ -95,13 +95,24 @@ public class Build : MonoBehaviour
             canBuild = true;
             StartCoroutine(invokTower());
         }
-        if(Input.GetKey(KeyCode.Alpha6) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        else if (Input.GetKey(KeyCode.Alpha6) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
         {
             name = "Stun Trap";
             type = 5;
             path = "/Stun Trap(Clone)/tap";
-            price = 0;
+            price = 50;
             decal = -17;
+
+            canBuild = true;
+            StartCoroutine(invokTower());
+        }
+        else if(Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        {
+            name = "Frozen Trap";
+            type = 6;
+            path = "/Frozen Trap(Clone)/tap";
+            price = 0;
+            decal = 0;
 
             canBuild = true;
             StartCoroutine(invokTower());
@@ -129,8 +140,8 @@ public class Build : MonoBehaviour
             Vector3 towerPos = tour.transform.position; //Position actuelle de la tour
 
             tour.transform.rotation = player.transform.rotation;
-
-            tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
+            if(name != "Frozen Trap")
+                tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
             if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
             {
                 tour.GetComponent<SphereCollider>().enabled = false;
@@ -178,7 +189,7 @@ public class Build : MonoBehaviour
                 GetComponent<pickUpMoney>().money -= price;
                 print(GetComponent<pickUpMoney>().money);
                 //réactive le collider de la tour
-                if(name != "Stun Trap")
+                if(name != "Stun Trap" && name != "Frozen Trap")
                     tour.GetComponent<BoxCollider>().isTrigger = false;
                 if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name =="Tower Buffer")
                 {
@@ -191,7 +202,8 @@ public class Build : MonoBehaviour
                 }
                 //remet les couleurs de la tour
                 var walls = GameObject.Find(path);
-                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                if(name != "Frozen Trap")
+                    walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
                 isBuildable = true;
 

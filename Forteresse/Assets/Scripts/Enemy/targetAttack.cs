@@ -32,7 +32,7 @@ public class targetAttack : MonoBehaviour {
             float distance = Vector3.Distance(parent_.position, other.transform.position);
             if (distance > tooClose)
             {
-                parent_.Translate(Vector3.forward * Time.deltaTime * parent_.GetComponent<FollowPath>().speed);
+                parent_.Translate(Vector3.forward * Time.deltaTime * (parent_.GetComponent<FollowPath>().speed / 2 ));
             }
             Vector3 newPos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             parent_.LookAt(newPos);

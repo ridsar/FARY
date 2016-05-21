@@ -133,13 +133,13 @@
     <None Include="Assets\Maisons\Cartoon lowpoly water well\readme.txt" />
     <None Include="Assets\Maisons\Fortress Gate_Free\ReadMe.txt" />
     <None Include="Assets\Maisons\Sculptures\readme.txt" />
-    <None Include="Assets\Maisons\trap3\badfluid@gmail.com.txt" />
     <None Include="Assets\Player\BloodMageJonas\HairShader.shader" />
     <None Include="Assets\Player\overlord\models\overlord\Materials\clothshader.shader" />
     <None Include="Assets\Player\overlord\readme.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\PyroParticles\Readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Tower\Stun Trap\badfluid@gmail.com.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

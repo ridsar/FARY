@@ -19,6 +19,7 @@ public class enemyHealth : MonoBehaviour
     bool canBeStuned = true;
 
     GameObject tower;
+    Color fireColor;
 
     public int getDead()
     {
@@ -31,15 +32,19 @@ public class enemyHealth : MonoBehaviour
         {
             case 'S':
                 timeStunPerEnemy = 2f;
+                fireColor = new Color(1.0f, 0.2f, 0.2f, 1.0f);
                 break;
             case 'G':
                 timeStunPerEnemy = 3f;
+                fireColor = new Color(1.0f, 0.7f, 0.7f, 1.0f);
                 break;
             case 'R':
                 timeStunPerEnemy = 3f;
+                fireColor = new Color(1.0f, 0.7f, 0.7f, 1.0f);
                 break;
             case 'T':
                 timeStunPerEnemy = 0f;
+                fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 break;
 
         }
@@ -55,10 +60,9 @@ public class enemyHealth : MonoBehaviour
             check = true;
             timeDoT -= 1 * Time.deltaTime;
             playerHealth -= 1f * Time.deltaTime;
-            print(playerHealth);
         }
         else
-            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1f, 1f, 1.0f);
+            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         //Stun provenant du Stun Trap
         if(timeStun > 0)
@@ -156,7 +160,7 @@ public class enemyHealth : MonoBehaviour
         if(other.name == "Fire dmg")
         {
             timeDoT = 10f;
-            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
+            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[0].color = fireColor;
         }
     }
 }
