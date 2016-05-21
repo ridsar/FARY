@@ -42,7 +42,7 @@ public class Wave : MonoBehaviour {
                 obj.GetComponent<Spawn>().check = false; //met le 'check' du script Spawn sur 'false'
             }
         }
-        if (beginWave.enabled == true)
+        /*if (beginWave.enabled == true)
         {
             time -= 1.0f * Time.deltaTime;
             if (time == 0.0f)
@@ -50,6 +50,6 @@ public class Wave : MonoBehaviour {
                 beginWave.enabled = false;
                 time = 5.0f;
             }
-        }
+        }*/
     }  
 }

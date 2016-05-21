@@ -35,7 +35,6 @@ public class SelectHero : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None; //Le curseur apparait et est unlock
         Cursor.visible = true;
         GameObject.Find("Main Camera").GetComponent<WowCamera>().enabled = false; //F
-        GameObject.Find("Player").GetComponent<MouseLook>().enabled = false; //F
         readyB.enabled = false;
     }
 

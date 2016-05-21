@@ -59,9 +59,12 @@ public class FollowPath : MonoBehaviour {
                 break;
         }
 
-		if(pathToFollow == null){
-			Debug.LogError("Un GameObject 'Path' doit etre renseigné dans le script 'FollowPath.cs'.");
-		} else {
+		if(pathToFollow == null)
+        {
+			
+		}
+        else
+        {
 			GetPaths();
 
 			switch(type){
