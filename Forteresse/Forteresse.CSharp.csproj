@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -65,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Buffer.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
@@ -74,7 +71,6 @@
     <Compile Include="Assets\Player\AShopExport\UIObjRotation.cs" />
     <Compile Include="Assets\PlayerSetUp.cs" />
     <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
-    <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireLightScript.cs" />
@@ -83,34 +79,29 @@
     <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Scripts\Animation\Animations.cs" />
     <Compile Include="Assets\Scripts\Animation\moveLight.cs" />
-    <Compile Include="Assets\Scripts\Attack\Attack.cs" />
-    <Compile Include="Assets\Scripts\Attack\Hit.cs" />
-    <Compile Include="Assets\Scripts\Attack\Target.cs" />
-    <Compile Include="Assets\Scripts\Attack\attackEnemy.cs" />
-    <Compile Include="Assets\Scripts\Attack\attackPlayerCaster.cs" />
-    <Compile Include="Assets\Scripts\Attack\crystalHealth.cs" />
-    <Compile Include="Assets\Scripts\Attack\fireTarget.cs" />
-    <Compile Include="Assets\Scripts\Attack\move.cs" />
-    <Compile Include="Assets\Scripts\Attack\selfDestruct.cs" />
     <Compile Include="Assets\Scripts\Character\AttackPlayer.cs" />
     <Compile Include="Assets\Scripts\Character\Déplacement.cs" />
     <Compile Include="Assets\Scripts\Character\MouseLook.cs" />
     <Compile Include="Assets\Scripts\Character\WowCamera.cs" />
-    <Compile Include="Assets\Scripts\Enemy\enemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Character\attackPlayerCaster.cs" />
     <Compile Include="Assets\Scripts\Enemy\FollowPath.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spawn.cs" />
     <Compile Include="Assets\Scripts\Enemy\Wave.cs" />
+    <Compile Include="Assets\Scripts\Enemy\attackEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\enemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\moveForward.cs" />
     <Compile Include="Assets\Scripts\Enemy\targetAttack.cs" />
     <Compile Include="Assets\Scripts\Menu\GameOver.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseScript.cs" />
     <Compile Include="Assets\Scripts\Menu\SelectHero.cs" />
-    <Compile Include="Assets\Scripts\Menu\VolumeControl.cs" />
     <Compile Include="Assets\Scripts\Menu\menuScript.cs" />
+    <Compile Include="Assets\Scripts\Other\Buffer.cs" />
     <Compile Include="Assets\Scripts\Other\Build.cs" />
     <Compile Include="Assets\Scripts\Other\CanBuildHere.cs" />
     <Compile Include="Assets\Scripts\Other\Coin.cs" />
     <Compile Include="Assets\Scripts\Other\Gem.cs" />
     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
+    <Compile Include="Assets\Scripts\Other\crystalHealth.cs" />
     <Compile Include="Assets\Scripts\Other\pickUpMoney.cs" />
     <Compile Include="Assets\Scripts\Reseau\AnimmationReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\AttackPlayerCasterReseau.cs" />
@@ -121,11 +112,17 @@
     <Compile Include="Assets\Scripts\Reseau\SpawnReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\TargetAttackReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\WaveReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\renamePlayer.cs" />
+    <Compile Include="Assets\Scripts\Tower\Attack.cs" />
+    <Compile Include="Assets\Scripts\Tower\FireBaseScript.cs" />
+    <Compile Include="Assets\Scripts\Tower\Hit.cs" />
+    <Compile Include="Assets\Scripts\Tower\Target.cs" />
+    <Compile Include="Assets\Scripts\Tower\VolumeControl.cs" />
+    <Compile Include="Assets\Scripts\Tower\fireTarget.cs" />
+    <Compile Include="Assets\Scripts\Tower\move.cs" />
+    <Compile Include="Assets\Scripts\Tower\selfDestruct.cs" />
     <Compile Include="Assets\attackEnemyCaster.cs" />
-    <Compile Include="Assets\moveForward.cs" />
     <Compile Include="Assets\playerHealth.cs" />
-    <Compile Include="Assets\regroupeCoin.cs" />
-    <Compile Include="Assets\renamePlayer.cs" />
     <Compile Include="Assets\upAndDown.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,13 +133,13 @@
     <None Include="Assets\Maisons\Cartoon lowpoly water well\readme.txt" />
     <None Include="Assets\Maisons\Fortress Gate_Free\ReadMe.txt" />
     <None Include="Assets\Maisons\Sculptures\readme.txt" />
+    <None Include="Assets\Maisons\trap3\badfluid@gmail.com.txt" />
     <None Include="Assets\Player\BloodMageJonas\HairShader.shader" />
     <None Include="Assets\Player\overlord\models\overlord\Materials\clothshader.shader" />
     <None Include="Assets\Player\overlord\readme.txt" />
     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\PyroParticles\Readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\trap3\badfluid@gmail.com.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

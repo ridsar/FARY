@@ -29,7 +29,7 @@ public class enemyHealth : MonoBehaviour
     {
         switch (transform.name[1])
         {
-            case 'E':
+            case 'S':
                 timeStunPerEnemy = 2f;
                 break;
             case 'G':
