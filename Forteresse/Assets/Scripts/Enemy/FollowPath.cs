@@ -9,6 +9,7 @@ public class FollowPath : MonoBehaviour {
 	public Transform pathToFollow;
 	public MovementTypes type = MovementTypes.Follow;
 	[SerializeField][Range(0.1F, 100.0F)] public float speed;
+    public float buff = 1;
 	
 	[SerializeField][Range(0.0F, 60.0F)] public float minWaitTime;
 	[SerializeField][Range(0.0F, 60.0F)] public float maxWaitTime;
@@ -162,7 +163,7 @@ public class FollowPath : MonoBehaviour {
 	/// </summary>
 	void StartWalk(){
 		if(currentTarget != null){
-			transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, Time.deltaTime * speed);
+			transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, Time.deltaTime * speed * buff);
 
 			if(CheckDistance() <= 0.5f)
             {

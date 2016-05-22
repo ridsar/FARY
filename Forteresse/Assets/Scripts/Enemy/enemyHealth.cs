@@ -14,12 +14,13 @@ public class enemyHealth : MonoBehaviour
     float timeDoT;
     float timeStun;
     float timeStunPerEnemy;
+    float timeFrozen;
 
-    bool check = true;
     bool canBeStuned = true;
 
     GameObject tower;
     Color fireColor;
+    Color frozenColor;
 
     public int getDead()
     {
@@ -33,18 +34,22 @@ public class enemyHealth : MonoBehaviour
             case 'S':
                 timeStunPerEnemy = 2f;
                 fireColor = new Color(1.0f, 0.2f, 0.2f, 1.0f);
+                frozenColor = new Color(0.2f, 0.2f, 1.0f, 1.0f);
                 break;
             case 'G':
                 timeStunPerEnemy = 3f;
                 fireColor = new Color(1.0f, 0.7f, 0.7f, 1.0f);
+                frozenColor = new Color(0.7f, 0.7f, 1.0f, 1.0f);
                 break;
             case 'R':
                 timeStunPerEnemy = 3f;
                 fireColor = new Color(1.0f, 0.7f, 0.7f, 1.0f);
+                frozenColor = new Color(0.7f, 0.7f, 1.0f, 1.0f);
                 break;
             case 'T':
                 timeStunPerEnemy = 0f;
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
+                frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
                 break;
 
         }
@@ -53,11 +58,21 @@ public class enemyHealth : MonoBehaviour
 
     void Update()
     {
+        //Dot de froid provenant de la Frozen Tower
+        if(timeFrozen > 0)
+        {
+            timeFrozen -= 1 * Time.deltaTime;
+        }
+        else
+        {
+            GetComponent<FollowPath>().buff = 1;
+            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        }
+            
 
         //Dot de feu provenant de la Fire Tower
         if (timeDoT > 0)
         {
-            check = true;
             timeDoT -= 1 * Time.deltaTime;
             playerHealth -= 1f * Time.deltaTime;
         }
@@ -138,6 +153,12 @@ public class enemyHealth : MonoBehaviour
                     playerHealth -= (20 * buff);
                     buff = 1;
                     break;
+                case "Frozen dmg":
+                    playerHealth -= 3;
+                    timeFrozen = 10f;
+                    GetComponent<FollowPath>().buff = 0.5f;
+                    transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = frozenColor;
+                    break;
             }
             print(playerHealth);         
         }    
@@ -160,7 +181,7 @@ public class enemyHealth : MonoBehaviour
         if(other.name == "Fire dmg")
         {
             timeDoT = 10f;
-            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[0].color = fireColor;
+            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = fireColor;
         }
     }
 }
