@@ -126,8 +126,8 @@
     <Compile Include="Assets\upAndDown.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Enemis\Earthborn Troll\Shader\Alpha_Texture.shader" />
-    <None Include="Assets\Enemis\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
+    <None Include="Assets\Enemis\Troll\Shader\Alpha_Texture.shader" />
+    <None Include="Assets\Enemis\Troll\Shader\DoubleSided-Light-Spec.shader" />
     <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
     <None Include="Assets\MORPH3D\Content\ContentPacks\WoodElfScout\Readme.txt" />
     <None Include="Assets\Maisons\Cartoon lowpoly water well\readme.txt" />
