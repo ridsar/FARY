@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
@@ -78,6 +84,7 @@
     <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Scripts\Animation\Animations.cs" />
+    <Compile Include="Assets\Scripts\Animation\AnimationsMage.cs" />
     <Compile Include="Assets\Scripts\Animation\moveLight.cs" />
     <Compile Include="Assets\Scripts\Character\AttackPlayer.cs" />
     <Compile Include="Assets\Scripts\Character\Déplacement.cs" />
