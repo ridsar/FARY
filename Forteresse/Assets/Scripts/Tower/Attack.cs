@@ -55,6 +55,14 @@ public class Attack : MonoBehaviour
             index = 0;
             attackSpeed = 2f;
         }
+        else if (parentName == "Frozen Tower(Clone)" || parentName == "Frozen Tower(Build)")
+        {
+            name = "Frozen Projectile";
+            child = "/Frozen Tower(Build)/Frozen Projectile";
+            scale = new Vector3(1, 1, 1);
+            index = 0;
+            attackSpeed = 1f;
+        }
         time = attackSpeed / buff;
     }
 
@@ -70,7 +78,8 @@ public class Attack : MonoBehaviour
         {
             GameObject projectile = null;
             GameObject newProj = null;
-            if (name == "Canon Projectile" || name == "Mage Projectile")
+
+            if (name == "Canon Projectile" || name == "Mage Projectile" || name == "Frozen Projectile")
             {
                 projectile = gameObject.transform.GetChild(index).gameObject;
             }
@@ -78,6 +87,7 @@ public class Attack : MonoBehaviour
             {
                 projectile = gameObject.transform.GetChild(index).GetChild(0).gameObject;
             }
+
             newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity) as GameObject; //Créer l'objet (porjectile)
             CancelInvoke(); //arrete la création d'objet
             newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
@@ -91,14 +101,18 @@ public class Attack : MonoBehaviour
                 newProj.SetActive(true);
             }
             //activation des scripts
-            if ((name == "Canon Projectile" || name == "Mage Projectile") && newProj != null)
+            if ((name == "Canon Projectile" || name == "Mage Projectile" || name == "Frozen Projectile") && newProj != null)
             {
                 newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
                 newProj.GetComponent<move>().enabled = true;
                 newProj.GetComponent<selfDestruct>().enabled = true;
                 newProj.transform.GetChild(1).gameObject.SetActive(true);
             }
-
+            if(name == "Frozen Projectile")
+            {
+                newProj.GetComponent<Gem>().enabled = false;
+            }
+                
             newProj.name = name + "(Build)"; //Passage a l'etat "(Build)"
             time = attackSpeed;
         }
@@ -122,7 +136,7 @@ public class Attack : MonoBehaviour
         {
             transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 0.2f, 1.0f, 1.0f);
         }
-        if (other.name == "Tower Buffer(Build)" && transform.name != "Mage Tower(Clone)" && transform.name != "Canon Tower(Clone)")
+        if (other.name == "Tower Buffer(Build)" && transform.name != "Mage Tower(Clone)" && transform.name != "Canon Tower(Clone)" && transform.name != "Frozen Tower(Clone)")
         {
             transform.GetChild(3).gameObject.SetActive(true);
         }
@@ -134,7 +148,7 @@ public class Attack : MonoBehaviour
         {
             check = false;
         }
-        if (other.name == "Tower Buffer(Build)" && transform.name != "Mage Tower(Clone)" && transform.name != "Canon Tower(Clone)")
+        if (other.name == "Tower Buffer(Build)" && transform.name != "Mage Tower(Clone)" && transform.name != "Canon Tower(Clone)" && transform.name != "Frozen Tower(Clone)")
         {
             transform.GetChild(3).gameObject.SetActive(true);
             transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);

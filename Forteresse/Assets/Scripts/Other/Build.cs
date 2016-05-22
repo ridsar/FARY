@@ -108,9 +108,9 @@ public class Build : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
         {
-            name = "Frozen Trap";
+            name = "Frozen Tower";
             type = 6;
-            path = "/Frozen Trap(Clone)/tap";
+            path = "/Frozen Tower(Clone)/Mesh";
             price = 0;
             decal = 0;
 
@@ -127,7 +127,7 @@ public class Build : MonoBehaviour
             double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
 
-            if(name == "Canon Tower" || name == "Mage Tower")
+            if(name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
             {
                 attackScript = tour.GetComponent<Attack>();
                 attackScript.enabled = false; //Eteint le script "Attck" sur la tour
@@ -140,9 +140,8 @@ public class Build : MonoBehaviour
             Vector3 towerPos = tour.transform.position; //Position actuelle de la tour
 
             tour.transform.rotation = player.transform.rotation;
-            if(name != "Frozen Trap")
-                tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
-            if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
+            tour.GetComponent<BoxCollider>().isTrigger = true; //Desactivation du collider
+            if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
             {
                 tour.GetComponent<SphereCollider>().enabled = false;
             }
@@ -175,10 +174,10 @@ public class Build : MonoBehaviour
 
 
 
-                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
+                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
                 {
                     //tour.GetComponent<CanBuildHere>().enabled = false;
-                    if (name == "Canon Tower" || name == "Mage Tower")
+                    if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
                         attackScript.enabled = true; //Le script d'attack est désormais activé
                     tour.GetComponent<CanBuildHere>().enabled = false;
                 }
@@ -189,9 +188,9 @@ public class Build : MonoBehaviour
                 GetComponent<pickUpMoney>().money -= price;
                 print(GetComponent<pickUpMoney>().money);
                 //réactive le collider de la tour
-                if(name != "Stun Trap" && name != "Frozen Trap")
+                if(name != "Stun Trap")
                     tour.GetComponent<BoxCollider>().isTrigger = false;
-                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name =="Tower Buffer")
+                if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
                 {
                     tour.GetComponent<SphereCollider>().enabled = true;
                     tour.transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
@@ -202,10 +201,14 @@ public class Build : MonoBehaviour
                 }
                 //remet les couleurs de la tour
                 var walls = GameObject.Find(path);
-                if(name != "Frozen Trap")
-                    walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
                 isBuildable = true;
+
+                if(name == "Frozen Tower")
+                {
+                    walls.SetActive(false);
+                }
 
                 GameObject.Find(name + "(Clone)").name = name + "(Build)"; //On change le nom de la tour avec "(Build)" pour la differentier des autres tours
                 decal = 0;
@@ -219,27 +222,12 @@ public class Build : MonoBehaviour
     {
         Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y + decal, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
         CancelInvoke(); //arrete la creation de tour
-        if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer")
+        if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
         {
-            GameObject.Find(name + "(Clone)").GetComponent<CanBuildHere>().enabled = true;
+            GameObject.Find(name + "(Clone)").GetComponent<CanBuildHere>().enabled = true;  
         }
         GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
 
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
-    /*void OnTriggerEnter(Collider other) //Ca ca marche pas
-    {
-        if (other.tag == "Tower" && other.tag == "NoBuild")
-        {
-            GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
-            print(other.tag);
-        }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "Tower")
-        {
-            GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
-        }
-    }*/
 }
