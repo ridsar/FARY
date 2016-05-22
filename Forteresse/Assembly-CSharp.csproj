@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_2;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;CROSS_PLATFORM_INPUT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -45,16 +45,58 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Build.cs" />
-     <Compile Include="Assets\FollowPath.cs" />
-     <Compile Include="Assets\Map\Mapcamera.cs" />
-     <Compile Include="Assets\Scripts\Déplacement.cs" />
-     <Compile Include="Assets\Scripts\WowCamera.cs" />
-     <Compile Include="Assets\Spawn.cs" />
-     <Compile Include="Assets\Tower\Gem.cs" />
-     <Compile Include="Assets\menuScript.cs" />
-     <None Include="Assets\overlord\models\overlord\Materials\clothshader.shader" />
-     <None Include="Assets\overlord\readme.txt" />
+     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
+     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
+     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
+     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+     <Compile Include="Assets\Scripts\Animation\Animations.cs" />
+     <Compile Include="Assets\Scripts\Attack\Attack.cs" />
+     <Compile Include="Assets\Scripts\Attack\Hit.cs" />
+     <Compile Include="Assets\Scripts\Attack\Target.cs" />
+     <Compile Include="Assets\Scripts\Attack\attackEnemy.cs" />
+     <Compile Include="Assets\Scripts\Attack\attackPlayerCaster.cs" />
+     <Compile Include="Assets\Scripts\Attack\crystalHealth.cs" />
+     <Compile Include="Assets\Scripts\Attack\enemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Attack\move.cs" />
+     <Compile Include="Assets\Scripts\Attack\selfDestruct.cs" />
+     <Compile Include="Assets\Scripts\Character\AttackPlayer.cs" />
+     <Compile Include="Assets\Scripts\Character\Déplacement.cs" />
+     <Compile Include="Assets\Scripts\Character\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\Character\WowCamera.cs" />
+     <Compile Include="Assets\Scripts\Enemy\FollowPath.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Spawn.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Wave.cs" />
+     <Compile Include="Assets\Scripts\Enemy\targetAttack.cs" />
+     <Compile Include="Assets\Scripts\Menu\PauseScript.cs" />
+     <Compile Include="Assets\Scripts\Menu\SelectHero.cs" />
+     <Compile Include="Assets\Scripts\Menu\VolumeControl.cs" />
+     <Compile Include="Assets\Scripts\Menu\menuScript.cs" />
+     <Compile Include="Assets\Scripts\Other\Build.cs" />
+     <Compile Include="Assets\Scripts\Other\CanBuildHere.cs" />
+     <Compile Include="Assets\Scripts\Other\Coin.cs" />
+     <Compile Include="Assets\Scripts\Other\Gem.cs" />
+     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
+     <Compile Include="Assets\Scripts\Other\pickUpMoney.cs" />
+     <Compile Include="Assets\Scripts\Reseau\AttackPlayerCasterReseau.cs" />
+     <Compile Include="Assets\Scripts\Reseau\BuildReseau.cs" />
+     <Compile Include="Assets\Scripts\Reseau\CameraReseau.cs" />
+     <Compile Include="Assets\Scripts\Reseau\DeplacementReseau.cs" />
+     <Compile Include="Assets\Scripts\Reseau\LookMouseReseau.cs" />
+     <Compile Include="Assets\Scripts\Reseau\SpawnReseau.cs" />
+     <Compile Include="Assets\Scripts\Reseau\TargetAttackReseau.cs" />
+     <Compile Include="Assets\Scripts\Reseau\WaveReseau.cs" />
+     <Compile Include="Assets\playerHealth.cs" />
+     <Compile Include="Assets\regroupeCoin.cs" />
+     <None Include="Assets\Enemis\Earthborn Troll\Shader\Alpha_Texture.shader" />
+     <None Include="Assets\Player\overlord\models\overlord\Materials\clothshader.shader" />
+     <None Include="Assets\Enemis\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
+     <None Include="Assets\Maisons\Sculptures\readme.txt" />
+     <None Include="Assets\Player\BloodMageJonas\HairShader.shader" />
+     <None Include="Assets\Maisons\Cartoon lowpoly water well\readme.txt" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Maisons\Fortress Gate_Free\ReadMe.txt" />
+     <None Include="Assets\Player\overlord\readme.txt" />
+     <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
