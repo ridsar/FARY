@@ -97,7 +97,7 @@ public class enemyHealth : MonoBehaviour
 
 
         //
-        if (playerHealth <= 0)
+        if (playerHealth <= 0 && !isDying)
         {
             if (gameObject.tag == "Enemy")
             {
@@ -188,8 +188,8 @@ public class enemyHealth : MonoBehaviour
     }
 
     IEnumerator kill()
-    {
-        Destroy(gameObject);
+    {       
         yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
