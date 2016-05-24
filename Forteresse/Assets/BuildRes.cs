@@ -61,7 +61,7 @@ public class BuildRes : NetworkBehaviour
 
             name = "Mage Tower"; //Paramètre pour la tour a instancier
             type = 0;
-            path = "/Mage Tower(Clone)/Walls";
+            path = "Walls";
             price = 10;
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
@@ -74,7 +74,7 @@ public class BuildRes : NetworkBehaviour
 
             name = "Canon Tower"; //Paramètre pour la tour a instancier
             type = 2;
-            path = "/Canon Tower(Clone)/Walls";
+            path = "Walls";
             price = 20;
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
@@ -98,7 +98,7 @@ public class BuildRes : NetworkBehaviour
             my_object = Fire_Tower;
             name = "Fire Tower";
             type = 3;
-            path = "/Fire Tower(Clone)/Walls";
+            path = "Walls";
             price = 20;
 
             canBuild = true;
@@ -109,7 +109,7 @@ public class BuildRes : NetworkBehaviour
             my_object = Tower_Buffer;
             name = "Tower Buffer";
             type = 4;
-            path = "/Tower Buffer(Clone)/Runestone";
+            path = "Runestone";
             price = 50;
 
             canBuild = true;
@@ -120,7 +120,7 @@ public class BuildRes : NetworkBehaviour
             my_object = Stun_Trap;
             name = "Stun Trap";
             type = 5;
-            path = "/Stun Trap(Clone)/tap";
+            path = "tap";
             price = 50;
             decal = -17;
 
@@ -132,7 +132,7 @@ public class BuildRes : NetworkBehaviour
             my_object = Frozen_Tower;
             name = "Frozen Tower";
             type = 6;
-            path = "/Frozen Tower(Clone)/Mesh";
+            path = "Mesh";
             price = 0;
             decal = 0;
 
@@ -221,7 +221,12 @@ public class BuildRes : NetworkBehaviour
                     T.transform.GetChild(0).gameObject.SetActive(true);
                 }
                 //remet les couleurs de la tour
-                var walls = GameObject.Find(path);
+                GameObject walls;
+                if (name == "Lava Floor")
+                    walls = T;
+                else
+                    walls = T.transform.FindChild(path).gameObject;
+
                 walls.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 canBuild = false; //on ne peut plus poser de tour il faut re-choisir une tour
                 Buildable = true;
@@ -231,7 +236,7 @@ public class BuildRes : NetworkBehaviour
                     walls.SetActive(false);
                 }
 
-                GameObject.Find(name + "(Clone)").name = name + "(Build)"; //On change le nom de la tour avec "(Build)" pour la differentier des autres tours
+                T.name = name + "(Build)"; //On change le nom de la tour avec "(Build)" pour la differentier des autres tours
                 decal = 0;
             }
         }
@@ -244,13 +249,16 @@ public class BuildRes : NetworkBehaviour
         T = Instantiate(my_object, new Vector3(transform.position.x, transform.position.y + decal, transform.position.z + 20), Quaternion.identity) as GameObject; //créer l'objet (la tour dans ce cas)
         T.SetActive(true);
         T.name += "(Clone)";
+        T.transform.localScale *= 4;
         CancelInvoke(); //arrete la creation de tour
         if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
         {
             //T.GetComponent<CanBuildHere>().enabled = true;  
         }
-        GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
-
+        if(name == "Lava Floor")
+            GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
+        else
+            T.transform.FindChild(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
 }
