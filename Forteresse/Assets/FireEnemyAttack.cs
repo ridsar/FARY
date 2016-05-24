@@ -18,7 +18,6 @@ public class FireEnemyAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        print(time);
         if (time > 0)
             time -= 1 * Time.deltaTime;
 
@@ -26,10 +25,12 @@ public class FireEnemyAttack : MonoBehaviour {
         {
             firebreath = Instantiate(fire) as GameObject;
             firebreath.transform.parent = transform;
-            firebreath.transform.localPosition = new Vector3(0f, 2.30f, 6f);
-            firebreath.transform.rotation = new Quaternion(0f, 0, 0, 0);
+            firebreath.transform.localPosition = new Vector3(0f, 2.30f, 0.6f);
+            firebreath.transform.localRotation = new Quaternion(330f, -180, 0, 0);
             firebreath.SetActive(true);
-            time = 10f;
+            StartCoroutine(Fire());
+
+            time = 5f;
         }
 	}
     void OnTriggerEnter(Collider other)
@@ -57,5 +58,11 @@ public class FireEnemyAttack : MonoBehaviour {
         {
             canAttack = true;
         }
+    }
+    IEnumerator Fire()
+    {
+        transform.FindChild("fireBreath dmg").GetComponent<BoxCollider>().enabled = true;
+        yield return new WaitForSeconds(1f);
+        transform.FindChild("fireBreath dmg").GetComponent<BoxCollider>().enabled = false;
     }
 }

@@ -69,6 +69,20 @@ public class playerHealth : MonoBehaviour
                         PlayerHealthBar.value -= 10f / maxHealth;
                     }
                     break;
+                case "Hell Keeper dmg":
+                    Health -= 30;
+                    if (PlayerHealthBar.value >= 30f / maxHealth)
+                    {
+                        PlayerHealthBar.value -= 30f / maxHealth;
+                    }
+                    break;
+                case "fireBreath dmg":
+                    Health -= 10f;
+                    if (PlayerHealthBar.value >= 10f / maxHealth)
+                    {
+                        PlayerHealthBar.value -= 10f / maxHealth;
+                    }
+                    break;
             }
             print(Health);
         }

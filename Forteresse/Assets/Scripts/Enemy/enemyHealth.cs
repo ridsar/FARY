@@ -52,6 +52,11 @@ public class enemyHealth : MonoBehaviour
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
                 break;
+            case 'H':
+                timeStunPerEnemy = 1f;
+                fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
+                frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
+                break;
 
         }
         print(playerHealth);
@@ -126,6 +131,9 @@ public class enemyHealth : MonoBehaviour
                 Instantiate(GameObject.Find("Coin"), pos, GameObject.Find("Coin").transform.rotation);
             }
             isDying = true;
+            GetComponent<FollowPath>().enabled = false;
+            GetComponent<targetAttack>().enabled = false;
+            GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(kill());
         }
     }
@@ -168,7 +176,7 @@ public class enemyHealth : MonoBehaviour
         {
             canBeStuned = false;
             timeStun = timeStunPerEnemy;
-        }         
+        }
     }
     void OnTriggerStay(Collider other)
     {
@@ -189,6 +197,7 @@ public class enemyHealth : MonoBehaviour
 
     IEnumerator kill()
     {       
+        //aniamtion de mort !
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
