@@ -69,6 +69,7 @@
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+    <Compile Include="Assets\PauseScriptRes.cs" />
     <Compile Include="Assets\Player\AShopExport\ShowAnimation.cs" />
     <Compile Include="Assets\Player\AShopExport\UIObjRotation.cs" />
     <Compile Include="Assets\PlayerSetUp.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Assets\Scripts\Reseau\AnimmationReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\AttackPlayerCasterReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\CameraReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\CanBuildHereRes.cs" />
     <Compile Include="Assets\Scripts\Reseau\DeplacementReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\LookMouseReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\SpawnReseau.cs" />

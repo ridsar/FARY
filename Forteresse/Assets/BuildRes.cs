@@ -154,7 +154,7 @@ public class BuildRes : NetworkBehaviour
                 attackScript = T.GetComponent<Attack>();
                 attackScript.enabled = false; //Eteint le script "Attck" sur la tour
 
-                //tour.GetComponent<CanBuildHere>().enabled = true;
+                T.GetComponent<CanBuildHere>().enabled = true;
             }
 
 
@@ -197,10 +197,10 @@ public class BuildRes : NetworkBehaviour
 
                 if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
                 {
-                    //tour.GetComponent<CanBuildHere>().enabled = false;
+                    T.GetComponent<CanBuildHere>().enabled = false;
                     if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
                         attackScript.enabled = true; //Le script d'attack est désormais activé
-                    //tour.GetComponent<CanBuildHere>().enabled = false;
+                    T.GetComponent<CanBuildHere>().enabled = false;
                 }
             }
            
