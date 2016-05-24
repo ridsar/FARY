@@ -5,6 +5,8 @@ public class targetAttack : MonoBehaviour {
 
     private float scale;
     public float tooClose;
+    public Animator anim;
+
 
     float bonus = 1;
     Transform parent_;
@@ -12,6 +14,7 @@ public class targetAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        anim = GetComponent<Animator>();
         parent_ = transform.parent;
         scale = GetComponent<SphereCollider>().radius;
         if (transform.name == "Ranger")
@@ -33,6 +36,11 @@ public class targetAttack : MonoBehaviour {
             if (distance > tooClose)
             {
                 parent_.Translate(Vector3.forward * Time.deltaTime * (parent_.GetComponent<FollowPath>().speed / 2 ));
+                anim.SetBool("walk", true);
+            }
+            else
+            {
+                anim.SetBool("walk", false);
             }
             Vector3 newPos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             parent_.LookAt(newPos);
@@ -60,4 +68,5 @@ public class targetAttack : MonoBehaviour {
             parent_.LookAt(parent_.GetComponent<FollowPath>().currentTarget);
         }
     }
+
 }

@@ -5,9 +5,11 @@ public class attackEnemy : MonoBehaviour {
 
 
     bool canAttack = true;
+    public Animator anim;
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,7 +49,10 @@ public class attackEnemy : MonoBehaviour {
         while (!canAttack)
         {
             dmg.GetComponent<BoxCollider>().enabled = true;
+            //Anim attaque
+            anim.SetBool("attack", true);
             yield return new WaitForSeconds(0.5f);
+            anim.SetBool("attack", false);
             dmg.GetComponent<BoxCollider>().enabled = false;
             canAttack = true;
             yield return new WaitForSeconds(2f);
