@@ -12,7 +12,6 @@ public class GameOver : MonoBehaviour {
     public Color color1 = Color.blue;
     // Use this for initialization
     void Start () {
-        Lightsky = GetComponent<Light>();
 
     }
 	

@@ -9,6 +9,12 @@ public class enemyHealth : MonoBehaviour
     public Slider PlayerHealthBar; //R
     public bool isDying = false;
 
+    public Animator anim;
+    public bool animatored;
+    public AnimationClip die;
+
+    public GameObject perso;
+
     int dead = 0;
 
     float time = 1;
@@ -196,8 +202,16 @@ public class enemyHealth : MonoBehaviour
     }
 
     IEnumerator kill()
-    {       
+    {
         //aniamtion de mort !
+        if (animatored)
+        {
+            anim.SetBool("dead", true);
+        }
+        else
+        {
+            perso.GetComponent<Animation>().Play(die.name);
+        }
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
