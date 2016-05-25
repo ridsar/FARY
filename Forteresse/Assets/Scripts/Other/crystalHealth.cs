@@ -14,6 +14,7 @@ public class crystalHealth : MonoBehaviour
     int maxHealth;
     public GameObject gameobject;
     public GameObject GameOver;
+    float count = 0.0f;
 
     public int getDead()
     {
@@ -34,7 +35,17 @@ public class crystalHealth : MonoBehaviour
             nb += 1;
             selectText(nb);
         }
-        
+
+        if (WelcomeTe.enabled == true)
+        {
+            count += 1.0f * Time.deltaTime;
+            if (count > 8.0f)
+            {
+                WelcomeTe.enabled = false;
+                count = 0.0f;
+            }
+        }
+
         if (crysHealth <= 0)
         {
             CristalHealth.value = 0f;
@@ -106,15 +117,15 @@ public class crystalHealth : MonoBehaviour
                     WelcomeTex.enabled = true;
                     break;
                 }
-            case 5:
+            case 4:
                 {
                     WelcomeTex.enabled = false;
                     WelcomeTe.enabled = true;
                     break;
                 }
-            default:
-                WelcomeTe.enabled = false;
-                break;
+           // default:
+             //   WelcomeTe.enabled = false;
+               // break;
         }
     }
 }

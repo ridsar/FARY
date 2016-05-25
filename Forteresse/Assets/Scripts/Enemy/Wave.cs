@@ -36,7 +36,10 @@ public class Wave : MonoBehaviour {
         //Le nombre d'enemie restant a invoquer doit etre nul ainsi que le nombre d'enemie en vie. On doit appuyer sur 'F'
         if (Input.GetKey(KeyCode.F) && compte == 0 && enemyNumber == 0)
         {
-            checkText = true;
+            if (enemyNumber > 0)
+            {
+                checkText = true;
+            }
             beginWave.enabled = true;
             //check = true; //sert dans le script 'Spawn'
 
@@ -46,12 +49,23 @@ public class Wave : MonoBehaviour {
                 obj.GetComponent<Spawn>().check = false; //met le 'check' du script Spawn sur 'false'
             }
         }
-        if (checkText == true) 
+        if (beginWave.enabled == true) 
         {
             time += 1.0f * Time.deltaTime;
-            if (time > 5.0f)
+            if (time > 8.0f)
             {
                 beginWave.enabled = false;
+                time = 0.0f;
+            }
+        }
+        if(checkText && enemyNumber == 0)
+        {
+            checkText = false;
+            endWave.enabled = true;
+            time += 1.0f * Time.deltaTime;
+            if (time > 8.0f)
+            {
+                endWave.enabled = false;
                 time = 0.0f;
             }
         }
