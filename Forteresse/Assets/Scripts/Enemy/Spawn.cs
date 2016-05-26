@@ -32,7 +32,7 @@ public class Spawn : MonoBehaviour {
                     switch (name) //regarde le spawn ou l'on doit spawn le mob
                     {
                         case "A":
-                            spawingTime = 2; //temps entre le spawn de chaque enemie
+                            spawingTime = 1; //temps entre le spawn de chaque enemie
                             myWave.Add("Goblin"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
                             myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
@@ -54,7 +54,7 @@ public class Spawn : MonoBehaviour {
                     switch (name)
                     {
                         case "A":
-                            spawingTime = 1;
+                            spawingTime = 0.5f;
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             break;
@@ -79,7 +79,7 @@ public class Spawn : MonoBehaviour {
                         case "A":
                             spawingTime = 1;
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
                             spawingTime = 3;
@@ -91,7 +91,8 @@ public class Spawn : MonoBehaviour {
                             spawingTime = 2;
                             break;
                         case "E":
-                            spawingTime = 2.5f;
+                            spawingTime = 1f;
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             break;
                     }
@@ -100,16 +101,18 @@ public class Spawn : MonoBehaviour {
                     switch (name)
                     {
                         case "A":
-                            spawingTime = 1;
+                            spawingTime = 0.8f;
                             myWave.Add("Troll");
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Troll");
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Troll");
+                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
-                            spawingTime = 3;
+                            spawingTime = 1.5f;
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             break;
                         case "C":
                             spawingTime = 10;
@@ -157,28 +160,63 @@ public class Spawn : MonoBehaviour {
                     switch (name)
                     {
                         case "A":
-                            spawingTime = 1;
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            spawingTime = 0.3f;
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             break;
                         case "B":
                             spawingTime = 1f;
+                            myWave.Add("Hell Keeper");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Hell Keeper");
                             break;
                         case "C":
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-
+                            myWave.Add("Hell Keeper");
                             spawingTime = 1;
                             break;
                         case "D":
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-
-                            spawingTime = 1;
+                            spawingTime = 0.5f;
                             break;
                         case "E":
                             spawingTime = 1f;
+                            myWave.Add("Hell Keeper");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            break;
+                    }
+                    break;
+                case 7:
+                    switch (name)
+                    {
+                        case "A":
+                            spawingTime = 1;
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
+                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            break;
+                        case "B":
+                            spawingTime = 1f;
+                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
+                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Hell Keeper");
+                            break;
+                        case "C":
+                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
+                            myWave.Add("Hell Keeper");
+                            spawingTime = 1;
+                            break;
+                        case "D":
+                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
+                            spawingTime = 1;
+                            break;
+                        case "E":
+                            spawingTime = 0.5f;
+                            myWave.Add("Hell Keeper");
+                            myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             break;
                     }
                     break;

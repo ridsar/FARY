@@ -17,7 +17,7 @@ public class attackPlayerCaster : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && time <= 0 && transform.name == "Player dmg" && GameObject.Find("Player").GetComponent<Build>().canBuild == false)
+        if (Input.GetKey(KeyCode.Mouse0) && time <= 0 && transform.name == "Player dmg" && player.GetComponent<Build>().canBuild == false)
         {
             var temp = player.transform;
 

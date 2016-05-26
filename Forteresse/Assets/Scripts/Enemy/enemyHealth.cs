@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class enemyHealth : MonoBehaviour
 {
     public float buff = 1;
-    public float playerHealth = 100;
+    public float playerHealth;
     public Slider PlayerHealthBar; //R
     public bool isDying = false;
 
@@ -36,6 +36,7 @@ public class enemyHealth : MonoBehaviour
 
     void Start()
     {
+        playerHealth += playerHealth * (GameObject.Find("Spawn").transform.GetChild(0).GetComponent<Spawn>().waveNb - 1) * 0.5f;
         switch (transform.name[1])
         {
             case 'S':
@@ -138,7 +139,7 @@ public class enemyHealth : MonoBehaviour
             }
             isDying = true;
             GetComponent<FollowPath>().enabled = false;
-            GetComponent<targetAttack>().enabled = false;
+            transform.GetChild(2).GetComponent<targetAttack>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(kill());
         }

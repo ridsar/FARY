@@ -36,7 +36,7 @@ public class crystalHealth : MonoBehaviour
             selectText(nb);
         }
 
-        if (WelcomeTe.enabled == true)
+        if (WelcomeTe != null && WelcomeTe.enabled == true)
         {
             count += 1.0f * Time.deltaTime;
             if (count > 8.0f)

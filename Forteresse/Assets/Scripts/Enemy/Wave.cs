@@ -29,8 +29,8 @@ public class Wave : MonoBehaviour {
     {
         compte = 0;
         enemyNumber = 0;
-
-        VagueText.text = "Vague :  " + VagueNumber.ToString();
+        if(VagueText != null)
+            VagueText.text = "Vague :  " + VagueNumber.ToString();
 
         foreach (Transform obj in gameObject.transform) //regarde si il reste des enemies a pop ou a tuer
         {
@@ -56,7 +56,7 @@ public class Wave : MonoBehaviour {
                 obj.GetComponent<Spawn>().check = false; //met le 'check' du script Spawn sur 'false'
             }
         }
-        if (beginWave.enabled == true) 
+        if (beginWave != null && beginWave.enabled == true) 
         {
             time += 1.0f * Time.deltaTime;
             if (time > 8.0f)
