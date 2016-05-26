@@ -41,7 +41,7 @@ public class targetAttack : MonoBehaviour {
                 parent_.Translate(Vector3.forward * Time.deltaTime * (parent_.GetComponent<FollowPath>().speed / 2 ));
                 if (animatored)
                 {
-                    anim.SetBool("walk", true);
+                    anim.SetBool("cool", false);
                 }
                 else
                 {
@@ -52,7 +52,7 @@ public class targetAttack : MonoBehaviour {
             {
                 if (animatored)
                 {
-                    anim.SetBool("walk", false);
+                    anim.SetBool("cool", true);
                 }
                 else
                 {
