@@ -47,11 +47,9 @@ public class targetAttack : MonoBehaviour {
                 {
                     perso.GetComponent<Animation>().Play(marche.name);
                 }
-
             }
             else
             {
-
                 if (animatored)
                 {
                     anim.SetBool("walk", false);
