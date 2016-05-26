@@ -8,7 +8,7 @@ public class FollowPath : MonoBehaviour {
 	#region Attributes
 	public Transform pathToFollow;
 	public MovementTypes type = MovementTypes.Follow;
-	[SerializeField][Range(0.1F, 100.0F)] public float speed;
+	/*[SerializeField][Range(0.1F, 100.0F)]*/ public float speed;
     public float buff = 1;
 	
 	[SerializeField][Range(0.0F, 60.0F)] public float minWaitTime;

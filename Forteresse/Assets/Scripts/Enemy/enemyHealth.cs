@@ -16,6 +16,8 @@ public class enemyHealth : MonoBehaviour
     public GameObject perso;
 
     int dead = 0;
+    float speed;
+    float buffedSpeed;
 
     float time = 1;
     float timeDoT;
@@ -64,8 +66,14 @@ public class enemyHealth : MonoBehaviour
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
                 break;
+            case 'O':
+                timeStunPerEnemy = 5f;
+                fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
+                frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
+                break;
 
         }
+        setSpeed();
         print(playerHealth);
     }
 
@@ -103,7 +111,8 @@ public class enemyHealth : MonoBehaviour
         {
             timeStun = -10f;
             transform.GetComponent<FollowPath>().enabled = true;
-            transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
+            if(transform.GetChild(0).name != "Shield")
+                transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
         }
 
 
@@ -147,8 +156,10 @@ public class enemyHealth : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        
-        if(other.tag == "Damage")
+        if(other.name == "Shield")
+        {
+        }
+        if (other.tag == "Damage")
         {
             switch (other.name)
             {
@@ -187,6 +198,14 @@ public class enemyHealth : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
+        if (other.name == "Shield")
+        {
+            GetComponent<FollowPath>().speed = buffedSpeed;
+        }
+        else
+        {
+            GetComponent<FollowPath>().speed = speed;
+        }
         if (time > 0)
             time -= 1 * Time.deltaTime;
         if(other.name == "Lava Floor(Build)" && time <= 0)
@@ -215,5 +234,35 @@ public class enemyHealth : MonoBehaviour
         }
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+    }
+    void setSpeed()
+    {
+        switch (transform.name[1])
+        {
+            case 'S':
+                speed = 10f;
+                buffedSpeed = speed + speed * 0.5f;
+                break;
+            case 'G':
+                speed = 15f;
+                buffedSpeed = speed + speed * 0.5f;
+                break;
+            case 'R':
+                speed = 10f;
+                buffedSpeed = speed + speed * 0.5f;
+                break;
+            case 'T':
+                speed = 7f;
+                buffedSpeed = speed + speed * 0.5f;
+                break;
+            case 'H':
+                speed = 7f;
+                buffedSpeed = speed + speed * 0.5f;
+                break;
+            case 'O':
+                speed = 10f;
+                buffedSpeed = speed + speed * 0.5f;
+                break;
+        }
     }
 }

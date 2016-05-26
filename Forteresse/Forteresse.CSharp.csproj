@@ -65,10 +65,12 @@
   <ItemGroup>
     <Compile Include="Assets\BuildRes.cs" />
     <Compile Include="Assets\FireEnemyAttack.cs" />
+    <Compile Include="Assets\GolemBuff.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+    <Compile Include="Assets\NetManagerCustom.cs" />
     <Compile Include="Assets\PauseScriptRes.cs" />
     <Compile Include="Assets\Player\AShopExport\ShowAnimation.cs" />
     <Compile Include="Assets\Player\AShopExport\UIObjRotation.cs" />
@@ -128,6 +130,7 @@
     <Compile Include="Assets\attackEnemyCaster.cs" />
     <Compile Include="Assets\attackPlayerCasterRes.cs" />
     <Compile Include="Assets\playerHealth.cs" />
+    <Compile Include="Assets\shieldFade.cs" />
     <Compile Include="Assets\upAndDown.cs" />
   </ItemGroup>
   <ItemGroup>

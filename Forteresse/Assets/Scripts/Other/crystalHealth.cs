@@ -104,6 +104,20 @@ public class crystalHealth : MonoBehaviour
                         gameobject.SetActive(false);
                     }
                     break;
+                case "Hell Keeper dmg":
+                    crysHealth -= 30;
+                    if (CristalHealth.value >= 30f / maxHealth)
+                    {
+                        CristalHealth.value -= 30f / maxHealth;
+                    }
+                    break;
+                case "fireBreath dmg":
+                    crysHealth -= 10;
+                    if (CristalHealth.value >= 10f / maxHealth)
+                    {
+                        CristalHealth.value -= 10f / maxHealth;
+                    }
+                    break;
             }           
         }
     }
