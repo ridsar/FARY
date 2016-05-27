@@ -23,7 +23,7 @@ public class CanBuildHere : MonoBehaviour {
             if (other.tag == "NoBuild")
             {
                 transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
-                GameObject.Find("Player").GetComponent<BuildRes>().Buildable = false;
+                GameObject.Find("Player").GetComponent<Build>().isBuildable = false;
             }
         }
     }
@@ -34,7 +34,7 @@ public class CanBuildHere : MonoBehaviour {
             if (other.tag == "NoBuild")
             {
                 transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
-                GameObject.Find("Player").GetComponent<BuildRes>().Buildable = true;
+                GameObject.Find("Player").GetComponent<Build>().isBuildable = true;
             }
         }
     }
