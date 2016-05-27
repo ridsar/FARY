@@ -43,7 +43,7 @@ public class Attack : MonoBehaviour
         {
             name = "Canon Projectile";
             child = "/Canon Tower(Build)/Canon Projectile";
-            scale = new Vector3(1, 1, 1);
+            scale = new Vector3(1.5f, 1.2f, 1.5f);
             index = 0;
             attackSpeed = 3.5f;
         }

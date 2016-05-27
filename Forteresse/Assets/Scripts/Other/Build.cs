@@ -5,6 +5,7 @@ using System.Collections;
 public class Build : MonoBehaviour
 {
     public GameObject[] Tower;
+    public GameObject fireBall;
 
     private Vector3 spawnPoints;
 
@@ -212,6 +213,7 @@ public class Build : MonoBehaviour
 
                 GameObject.Find(name + "(Clone)").name = name + "(Build)"; //On change le nom de la tour avec "(Build)" pour la differentier des autres tours
                 decal = 0;
+                Invoke("reactivateFireBall", 1f);
             }
         }
     }
@@ -220,6 +222,7 @@ public class Build : MonoBehaviour
     //Clone l'objet voulu
     IEnumerator invokTower()
     {
+        fireBall.SetActive(false);
         Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y + decal, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
         CancelInvoke(); //arrete la creation de tour
         if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
@@ -229,5 +232,9 @@ public class Build : MonoBehaviour
         GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
 
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
+    }
+    void reactivateFireBall()
+    {
+        fireBall.SetActive(true);
     }
 }
