@@ -16,9 +16,12 @@ public class Hit : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other is CapsuleCollider || other.tag == "Shield")
         {
-            Destroy(transform.parent.gameObject);
+            if (other.tag == "Enemy" || other.tag == "Shield")
+            {
+                Destroy(transform.parent.gameObject);
+            }
         }
     }
 }

@@ -45,11 +45,10 @@ public class move : MonoBehaviour {
         if (other.tag == "Enemy" && target == null && !other.GetComponent<enemyHealth>().isDying)
             target = other.transform;
     }
-
     void OnTriggerExit(Collider other)
-    {   if(other is CapsuleCollider)
+    {   if(other is CapsuleCollider || other.tag == "Shield")
         {
-            if (other.tag == "Enemy")
+            if (other.tag == "Enemy" || other.tag == "Shield")
             {
                 Destroy(GameObject.Find(name));
                 target = null;

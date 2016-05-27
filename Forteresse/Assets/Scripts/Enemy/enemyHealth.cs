@@ -115,8 +115,6 @@ public class enemyHealth : MonoBehaviour
                 transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
         }
 
-
-
         //
         if (playerHealth <= 0 && !isDying)
         {
