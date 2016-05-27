@@ -26,6 +26,7 @@ public class enemyHealth : MonoBehaviour
     float timeFrozen;
 
     bool canBeStuned = true;
+    bool underShield = false;
 
     GameObject tower;
     Color fireColor;
@@ -150,11 +151,15 @@ public class enemyHealth : MonoBehaviour
             StartCoroutine(kill());
         }
     }
-
+    void LateUpdate()
+    {
+        StartCoroutine(moveSpeedBuff());
+    }
     void OnTriggerEnter(Collider other)
     {
-        if(other.name == "Shield")
+        if(other.tag == "Shield")
         {
+            underShield = true;
         }
         if (other.tag == "Damage")
         {
@@ -195,7 +200,15 @@ public class enemyHealth : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.name == "Shield")
+        if(other.tag == "Shield")
+        {
+            underShield = underShield || true;
+        }
+        else
+        {
+            underShield = underShield || false;
+        }
+        if (underShield)
         {
             GetComponent<FollowPath>().speed = buffedSpeed;
         }
@@ -203,6 +216,8 @@ public class enemyHealth : MonoBehaviour
         {
             GetComponent<FollowPath>().speed = speed;
         }
+
+
         if (time > 0)
             time -= 1 * Time.deltaTime;
         if(other.name == "Lava Floor(Build)" && time <= 0)
@@ -217,8 +232,14 @@ public class enemyHealth : MonoBehaviour
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = fireColor;
         }
     }
-
-    IEnumerator kill()
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Shield")
+        {
+            underShield = false;
+        }
+    }
+            IEnumerator kill()
     {
         //aniamtion de mort !
         if (animatored)
@@ -263,5 +284,17 @@ public class enemyHealth : MonoBehaviour
                 buffedSpeed = speed + speed * 0.5f;
                 break;
         }
+    }
+    IEnumerator moveSpeedBuff()
+    {
+        if (underShield)
+        {
+            GetComponent<FollowPath>().speed = buffedSpeed;
+        }
+        else
+        {
+            GetComponent<FollowPath>().speed = speed;
+        }
+        yield return new WaitForSeconds(1);
     }
 }
