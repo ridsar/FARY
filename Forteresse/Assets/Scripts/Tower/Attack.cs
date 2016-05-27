@@ -135,7 +135,7 @@ public class Attack : MonoBehaviour
         }
         if (other.name == "Tower Buffer(Clone)")
         {
-            if (name == "Frozen Tower(Build)")
+            if (transform.name == "Frozen Tower(Build)")
                 transform.GetChild(1).gameObject.SetActive(true);
             transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 0.2f, 1.0f, 1.0f);
         }
@@ -166,6 +166,8 @@ public class Attack : MonoBehaviour
         }
         if (other.name == "Tower Buffer(Clone)")
         {
+            if (transform.name == "Frozen Tower(Build)")
+                transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
         if (other.name == "Tower Buffer(Build)")
