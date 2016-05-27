@@ -122,8 +122,7 @@ public class enemyHealth : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
-                if(GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy != null)
-                    GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
+                
                 if(tower != null)
                 {
                     tower.GetComponent<Attack>().check = true;
@@ -234,6 +233,8 @@ public class enemyHealth : MonoBehaviour
         }
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+        if (GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy != null)
+            GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
     }
     void setSpeed()
     {

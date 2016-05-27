@@ -89,6 +89,7 @@ public class Attack : MonoBehaviour
             }
 
             newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity) as GameObject; //Créer l'objet (porjectile)
+            newProj.SetActive(true);
             CancelInvoke(); //arrete la création d'objet
             newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
 

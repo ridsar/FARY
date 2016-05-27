@@ -31,27 +31,35 @@ public class Buffer : MonoBehaviour
             buffed = true;
             timeD -= 1 * Time.deltaTime;
         }
-        if (timeL > 0)
+        if (timeL > 0 && GetComponent<playerHealth>().Health < GetComponent<playerHealth>().maxHealth)
         {
             timeL -= 1 * Time.deltaTime;
-            GetComponent<playerHealth>().Health += 20f * Time.deltaTime;
+            GetComponent<playerHealth>().Health += 10f * Time.deltaTime;
+            GetComponent<playerHealth>().PlayerHealthBar.value += 10f / GetComponent<playerHealth>().maxHealth * Time.deltaTime;
         }
         if(timeS > 0)
             timeS -= 1 * Time.deltaTime;
 
 
 
-        if (timeA <= 0)
+        if (timeA < 0)
         {
             if (fireBolt.activeInHierarchy)
                 fireBolt.GetComponent<attackPlayerCaster>().valueTime = 1;
             else
                 GetComponent<AttackPlayer>().attackSpeed = 3f;
+            timeA = 0;
         }
-        if (timeD <= 0)
+        if (timeD < 0)
+        {
             buffed = false;
-        if (timeS <= 0)
+            timeD = 0;
+        }
+        if (timeS < 0)
+        {
             GetComponent<Déplacement>().Speed -= 10;
+            timeS = 0;
+        }
     }
     void OnTriggerEnter(Collider other)
     {

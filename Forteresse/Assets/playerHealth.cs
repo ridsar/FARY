@@ -9,7 +9,7 @@ public class playerHealth : MonoBehaviour
     public float Health;
     public Slider PlayerHealthBar; //R
 
-    float maxHealth;
+    public float maxHealth;
 
     void Start()
     {
