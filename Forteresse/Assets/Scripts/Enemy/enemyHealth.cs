@@ -42,37 +42,37 @@ public class enemyHealth : MonoBehaviour
         playerHealth += playerHealth * (GameObject.Find("Spawn").transform.GetChild(0).GetComponent<Spawn>().waveNb - 1) * 0.5f;
         switch (transform.name[1])
         {
-            case 'S':
+            case 'S': //Skeleton
                 timeStunPerEnemy = 2f;
                 fireColor = new Color(1.0f, 0.2f, 0.2f, 1.0f);
                 frozenColor = new Color(0.2f, 0.2f, 1.0f, 1.0f);
                 break;
-            case 'G':
+            case 'G': //Goblin
                 timeStunPerEnemy = 3f;
                 fireColor = new Color(1.0f, 0.7f, 0.7f, 1.0f);
                 frozenColor = new Color(0.7f, 0.7f, 1.0f, 1.0f);
                 break;
-            case 'R':
+            case 'R': //Ranger
                 timeStunPerEnemy = 3f;
                 fireColor = new Color(1.0f, 0.7f, 0.7f, 1.0f);
                 frozenColor = new Color(0.7f, 0.7f, 1.0f, 1.0f);
                 break;
-            case 'T':
+            case 'T': // Troll
                 timeStunPerEnemy = 0f;
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
                 break;
-            case 'H':
+            case 'H': //Hell Keeper
                 timeStunPerEnemy = 1f;
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
                 break;
-            case 'O':
+            case 'O': //Overseer
                 timeStunPerEnemy = 5f;
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
                 break;
-            case 'N':
+            case 'N': //Necromancer
                 timeStunPerEnemy = 3f;
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
@@ -90,7 +90,7 @@ public class enemyHealth : MonoBehaviour
         {
             timeFrozen -= 1 * Time.deltaTime;
         }
-        else
+        else if(timeDoT < 0 && timeFrozen < 0)
         {
             GetComponent<FollowPath>().buff = 1;
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
@@ -103,7 +103,7 @@ public class enemyHealth : MonoBehaviour
             timeDoT -= 1 * Time.deltaTime;
             playerHealth -= 1f * Time.deltaTime;
         }
-        else
+        else if (timeDoT < 0 && timeFrozen < 0)
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         //Stun provenant du Stun Trap
@@ -117,7 +117,7 @@ public class enemyHealth : MonoBehaviour
         {
             timeStun = -10f;
             transform.GetComponent<FollowPath>().enabled = true;
-            if(transform.GetChild(0).name != "Shield")
+            if(transform.GetChild(0).name != "Shield" && transform.GetChild(0).name != "model")
                 transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
         }
 
@@ -132,6 +132,7 @@ public class enemyHealth : MonoBehaviour
                     tower.GetComponent<Attack>().check = true;
                 }
             }
+
             int nb = Random.Range(0, 10);
             if(nb == 1)
             {
@@ -156,40 +157,44 @@ public class enemyHealth : MonoBehaviour
             StartCoroutine(kill());
         }
     }
+
     void LateUpdate()
     {
         StartCoroutine(moveSpeedBuff());
     }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Shield")
         {
             underShield = true;
         }
+
+        //Gestion des degats
         if (other.tag == "Damage")
         {
             switch (other.name)
             {
                 case "Canon dmg":
-                    playerHealth -= 20;
+                    playerHealth -= 20f;
                     break;
                 case "Mage dmg":
-                    playerHealth -= 10;
+                    playerHealth -= 10f;
                     break;
                 case "Player dmg":
                     if (other.GetComponentInParent<Buffer>().buffed)
-                        buff = 2;              
-                    playerHealth -= (20 * buff);
-                    buff = 1;
+                        buff = 2f;              
+                    playerHealth -= (20f * buff);
+                    buff = 1f;
                     break;
                 case "Player dmg(Build)":
                     if (other.GetComponentInParent<attackPlayerCaster>().player.GetComponent<Buffer>().buffed)                    
-                        buff = 2;
-                    playerHealth -= (20 * buff);
-                    buff = 1;
+                        buff = 2f;
+                    playerHealth -= (20f * buff);
+                    buff = 1f;
                     break;
                 case "Frozen dmg":
-                    playerHealth -= 3;
+                    playerHealth -= 3f;
                     timeFrozen = 10f;
                     GetComponent<FollowPath>().buff = 0.5f;
                     transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = frozenColor;
@@ -197,6 +202,8 @@ public class enemyHealth : MonoBehaviour
             }
             print(playerHealth);         
         }    
+
+        //Declanche le stun du Stun Trap
         if(other.name == "Stun Trap(Build)" && canBeStuned)
         {
             canBeStuned = false;
@@ -205,61 +212,46 @@ public class enemyHealth : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Shield")
-        {
+        //Detecte si l'ennemi est sous un bouclier ou pas
+        if (other.tag == "Shield")
             underShield = underShield || true;
-        }
         else
-        {
             underShield = underShield || false;
-        }
-        if (underShield)
-        {
+
+        //modifie la vitesse de l'ennemi si il est sous le bouclier
+        if (underShield)        
             GetComponent<FollowPath>().speed = buffedSpeed;
-        }
         else
-        {
             GetComponent<FollowPath>().speed = speed;
-        }
+        
 
-
+        //degat du Lava Floor
         if (time > 0)
             time -= 1 * Time.deltaTime;
+
         if(other.name == "Lava Floor(Build)" && time <= 0)
         {
             time = 1;
             playerHealth -= 1;
             print(playerHealth);
         }
+
+        //degat de la Fire Tower
         if(other.name == "Fire dmg")
         {
             timeDoT = 10f;
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = fireColor;
         }
     }
+
+
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Shield")
-        {
             underShield = false;
-        }
     }
-            IEnumerator kill()
-    {
-        //aniamtion de mort !
-        if (animatored)
-        {
-            anim.SetBool("dead", true);
-        }
-        else
-        {
-            perso.GetComponent<Animation>().Play(die.name);
-        }
-        yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
-        if (GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy != null)
-            GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
-    }
+
+
     void setSpeed()
     {
         switch (transform.name[1])
@@ -294,6 +286,24 @@ public class enemyHealth : MonoBehaviour
                 break;
         }
     }
+
+    IEnumerator kill()
+    {
+        //aniamtion de mort !
+        if (animatored)
+        {
+            anim.SetBool("dead", true);
+        }
+        else
+        {
+            perso.GetComponent<Animation>().Play(die.name);
+        }
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+        if (GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy != null)
+            GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
+    }
+
     IEnumerator moveSpeedBuff()
     {
         if (underShield)
@@ -304,6 +314,6 @@ public class enemyHealth : MonoBehaviour
         {
             GetComponent<FollowPath>().speed = speed;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
     }
 }
