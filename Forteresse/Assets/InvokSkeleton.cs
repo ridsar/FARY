@@ -4,7 +4,7 @@ using System.Collections;
 public class InvokSkeleton : MonoBehaviour
 {
     public GameObject skeleton;
-    float time = 5;
+    float time = 15;
 	// Use this for initialization
 	void Start ()
     {
@@ -17,7 +17,7 @@ public class InvokSkeleton : MonoBehaviour
 	    if(time < 0)
         {
             Invoke("invok", 0);
-            time = 5;
+            time = 15;
         }
         else
         {
