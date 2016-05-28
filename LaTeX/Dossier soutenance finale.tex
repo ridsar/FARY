@@ -1,0 +1,214 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{PROJET : Forteresse}
+\lfoot{Info Sup}
+\rfoot{EPITA 2016}
+\renewcommand{\footrulewidth}{0.3mm}
+
+\usepackage[french]{babel}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\usepackage{setspace}
+\usepackage{caption}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+
+    % Upper part of the page. The '~' is needed because \\
+    % only works if a paragraph has started.
+
+    \textsc{\Huge Rapport soutenance 2}\\[3cm]
+
+    \textsc{\LARGE Projet:}\\[1.5cm]
+
+    % Title
+	\centerline{\includegraphics{coollogo_com-19602433.png}}
+	\vfill{
+	\centerline{\includegraphics[scale=0.4]{crossed-swords-clip-art-48219.jpg}}}
+
+    % Author and supervisor
+    \begin{minipage}{0.4\textwidth}
+      \begin{flushleft} \large	
+      
+      \end{flushleft}
+    \end{minipage}
+	\begin{flushleft}\vfill
+      {
+       \textsc{Chatelus} Florian - \emph{chatel\_f} \\
+       \textsc{Henric} Arnaud - \emph{henric\_a}\\
+       \textsc{Sarkar} Riday - \emph{sarkar\_r}\\
+       }
+    \end{flushleft}	
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\begin{spacing}{1.0}
+	\tableofcontents
+\end{spacing}
+
+\newpage
+\section{Introduction}
+Dans le cadre de de notre première année à EPITA, nous devons réaliser un projet informatique de fin d’année qui doit montrer l’application de nos connaissances dans le domaine de la programmation. Pour réaliser ce projet, nous avions formé un groupe composé de quatre étudiants. Actuellement, notre groupe n’est composé que de trois étudiants puisqu’un membre du groupe à quitté l’école.  
+Le sujet étant libre, nous avons décidé de réaliser un jeu vidéo nommé Forteresse. C’est un jeu du type Tower Defense. La présentation du jeu est détaillée dans la reprise du cahier des charges.  
+	\par Le présent document est  le rapport de projet  qui retrace les différents cheminements de création de ce projet  et il présente surtout le jeu.  Nous avons donc décrit les différentes tâches réalisées ainsi que les problèmes rencontrés et les solutions trouvées pour résoudre ces problèmes.
+	\par Le plan de notre rapport sera divisé en trois parties. La première étant consacrée à la reprise du cahier des charges, la deuxième est consacrée à la présentation du jeu et la troisième, quant à elle, est consacrée au bilan personnel de chaque étudiant faisant partie de ce groupe.
+
+
+\newpage
+\section{Cahier des charges}
+\subsection{Les origines du projet}
+Nous avons choisi de réaliser un jeu plutôt qu’un logiciel car nous avons deux membres dans le groupe qui ont déjà réalisé un jeu en Terminale dans le cadre d’un projet en groupe. Même si le projet achevé en ISN par ces deux derniers n’est pas comparable avec ce qui nous attend ce semestre en INFO SUP, ce sera toujours une aide non-négligeable.
+\par Une fois que la nature du projet était choisi, nous avons réfléchi longuement sur le type de jeu que nous allons réaliser. Notre expérience en tant que joueur nous donnait un large choix parmi les types de jeu possibles comme un RPG (Role Playing Game), RTS (Real Time Strategy) ou encore un Tower Defense . 
+
+		\subsubsection{Présentation}
+		\par Notre jeu sera basé sur le principe du \textit{tower defense}. Qu'est-ce que 			cela signifie? Un \textit{tower defense}, est un jeu qui comme son nom l'indique 			aura comme objectif de défendre un point donné. Le but du jeu sera donc de défendre 		un cristal qui alimente la porte de l'endroit que nous souhaitons protéger.  
+		\subsubsection{Déroulement d'une partie}
+		Une partie se déroulera en deux phases qui se répéteront, a chaque vague d'ennemis.\\
+		\centerline{\includegraphics[scale=0.55]{Plan.png}}
+		\par La première est la phase que nous appellerons \textit{phase de préparation}, elle consiste à préparer ses défenses, en les positionnant de façon stratégique, les améliorant ou en les réparant. Cette phase sera d'une importance capital pour assurer une victoire lors de la phase suivante. Une fois que vous serez fin prêt pour le combat, il vous suffira d'appuyer sur prêt et la deuxième phase commencera une fois tout les joueurs prêt.
+		\par Nous arrivons donc en deuxième phase, la \textit{phase de combat}, qui va déclencher l'action. Des créatures vont apparaitre à des points précis de la carte et vont converger vers le ou les cristaux. Le joueur pourra donc durant cette phase attaquer les monstres et tenter de les détruire et/ou continuer à poser, améliorer et réparer ses constructions mais avec des malus d'incantation.
+		\par Tous les certains nombre de cycle, au terme de ces deux phases, un monstre plus imposant apparaitra, et le joueur devra s'en défaire afin de remporter la manque et d'obtenir des objets.
+		\subsubsection{Multijoueur}
+		Le mode multijoueur consistera en un mode CO-OP. Vous devrez \^etre capable de jouer en \'equipe afin d'affronter vos adversaires. Pour cela, vous commencerez la partie c\^ote \'a c\^ote. Vous ne pouvez combattre seulement des IA. Le mode multijoueur consiste en un mode en \'equipe et non pas en 1vs1 contre un ami.
+		\par Chaque joueur pourra int\'eragir avec l'environnement. Leurs constructions et leurs objectifs sont communs tandis que toutes leurs caract\'eristiques telles que leur monnaie et leur vie sont s\'epar\'ees.
+		\subsubsection{L'interface}
+		L’interface permettra au joueur d'être renseignée à tout moment sur : 
+		\begin{itemize}
+		\item Le temps écoulé.
+		\item Sa jauge de vie.
+		\item L’arme dont il est en possession , ainsi que les  munitions dont il dispose.
+		\item L’argent qu’il possède pour acheter de nouvelles tours ou armes.
+		\end{itemize}
+		\subsubsection{L'arsenal de défense}
+		Nous utiliserons donc différents types d’armes de type médiéval fantastique.
+Les armes seront donc accessible en la ramassant sur un bosse ou bien  suite à un achat du joueur, elles pourront être améliorer, durant la partie. On distinguera plusieurs types d’armes tel que:
+	\begin{itemize}
+	\item Les épées.
+	\item Les arcs.
+	\item Les bâtons.
+	\end{itemize}
+Les défenses fixes seront achetable grâce a l’argent gagné durant la partie. Les défenses seront comme les armes améliorables. Ces dernières seront autonomes et feront partie de l’IA. On pourra y trouver:
+	\begin{itemize}
+	\item Des tourelles.
+	\item Des pièges.
+	\item Des auras.
+	\end{itemize}
+\newpage
+\subsection{Découpage du projet}
+	\subsubsection{Le graphisme}
+		\subsubsection{La 3D}
+		Étant donné sa gratuité, nous allons utiliser Blender pour réaliser des modèles 3D. Ce logiciel va nous permettre de modéliser les différents personnages de notre jeu et de faire les diverses textures de l’environnement du jeu.
+
+		\subsubsection{La 2D}
+		La 2D de notre jeu sera principalement représenté par l'interface graphique du joueur. En effet, le joueur aura besoin d'avoir des informations et de repère visuel afin d'interagir correctement avec son environnement et d'avoir une expérience de jeu la meilleure possible. La 2D pourra également jouer un rôle important dans les menus
+	\subsubsection{Audio}
+	L’audio gère évidemment tous les sons. De bruitages dans le jeu à musique dans les menus, nous devrons trouver des sons qui s’adaptent au contexte médiéval.
+
+	\subsubsection{Le réseau}
+	Le réseau consistera tout simplement a implémenter un mode multijoueur, afin que les joueurs puisse jouer ensemble en ligne ou bien en réseau local.
+	\subsubsection{L'intelligence artificiel}
+	Pour définir l’IA, nous allons créer différents niveaux de difficultés. Le but est que l’IA détruise le cristal que nous devons protéger, ainsi, l’IA est l’ennemie. Il contrôle plusieurs personnages. Nous devons coder un IA capable de se déplacer vers le cristal, mais également de combattre contre l’utilisateur, de mourir tué par le héros ou les tourelles. 
+
+	\subsubsection{Le menu}
+	Nous tenterons de créer un menu accessible et design. Il devra permettre d'accéder au lancement d’une nouvelle partie, aux options, ainsi qu’au mode multi-joueur. 
+	\subsubsection{Le site}
+	Modéliser un site web avec une présentation générale des créateurs et de la création (chronologie, problèmes, solutions…). Ajouter des images du jeu. Expliquer les règles.  Donner les références utiles pour notre réalisation. Permettre le téléchargement du jeu aux utilisateurs, et mettre à disposition le rapport ainsi que le jeu en version lite.
+	\subsubsection{Gameplay}
+	Le gameplay consiste à coder tous les mouvements de notre héros, soit le personnage que l’on contrôle… Il devra être capable de donner des coups, construire des tours, courir, sauter, et bien sûr, se déplacer à n’importe qu’elle point accessible de la map. Le gameplay consiste également à coder la caméra suivant notre héros. Ce jeu se jouant à la troisième personne, la caméra devra être capable de toujours regarder le héros de derrière et de le suivre dans tous ses mouvements. On devra ici géré également tous les problèmes de collision.
+	\subsubsection{Animation}
+	L’animation est le moyen de rendre les mouvements des personnages fluides et réalistes. Chaque mouvement devra être animé, les jambes lorsqu’un personnage se déplace, les bras lorsqu’il combat, etc...
+
+\newpage
+
+\subsection{Répartition des tâches}
+Nous avons décidé d’attribuer chaque tâche à au moins deux personnes car ainsi chaque membre réalise plusieurs tâches et peut apprendre des choses de domaines différents . De plus, si un membre rencontre des difficultés et se retrouve bloqué pour réaliser une tâche, son coéquipier peut venir en aide puisqu’ils s’occupent de la même tâche. Ainsi la réalisation des tâches devient plus facile.
+\bigbreak
+\bigbreak
+	\begin{tabular}{|c||c|c|c|c|c|}
+		\hline
+		& Florian & Riday & Yassine & Arnaud \\
+		\hline
+		Site & & & $\times$ & $\times$\\
+		\hline
+		3D & & $\times$ & $\times$ &\\
+		\hline
+		2D & & $\times$ & & $\times$\\
+		\hline
+		IA & $\times$ & & & $\times$\\
+		\hline
+		Multijoueur & $\times$ & & $\times$ &\\
+		\hline
+		Réseau & $\times$ & $\times$ & & \\
+		\hline
+		Menu & & & $\times$ & $\times$\\
+		\hline
+		Gameplay & $\times$ & $\times$ & &\\
+		\hline
+		Animation & & $\times$ & & $\times$\\		
+		\hline
+		Audio & $\times$ & & $\times$ &\\
+		\hline
+		\LaTeX & $\times$ & $\times$ & $\times$ & $\times$\\
+		\hline
+	\end{tabular}
+	\newpage
+\subsection{Ressources utilisées}
+	\subsubsection{Ordinateur}
+	Nous utiliserons a l'évidence des ordinateurs. Ils seront notre principale outil de travail. Nous utiliserons un ordinateur dans toutes les étapes de notre projet. 
+	\subsubsection{Visual Studio 2015}
+	Visual Studio est le logiciel qui nous permettra de coder nos script sur Unity. Nous l'utiliserons plus particulièrement afin d'utiliser le langage C\# qui représentera la quasi-totalité, voir la totalité de notre code.
+	\subsubsection{Unity}
+	Unity sera LE logiciel cœur de notre projet, il lui servira de base. Il nous permettra de mettre en relation des objets avec des scripts que ces objets effectuerons. Ce logiciel correspond parfaitement a nos besoins, dans la réalisation d'un jeu vidéo. De plus il possède une courbe d'apprentissage linaire et est facile d'accès, ce qui correspond a nouveau avec notre statut d'étudiant en première année.
+	\subsubsection{Gimp/Blender}
+	Gimp est un éditeur graphique. Il nous sera utile notamment pour la création de la 2D, et donc de l'interface graphique de notre jeu. Sans oublier la jaquette de notre jeu lorsqu'il sera en version CD.
+	\par Blender quant a lui est un logiciel de modélisation 3D et sera simplement destiné a la création d'éléments 3D pour notre jeu. 
+	\subsubsection{Tutoriel}
+	Enfin, la ressource que nous utiliserons le plus, après nos ordinateurs, sont les tutoriels. Dans la mesure où, cette expérience est inédite pour chacun d'entre nous, nous aurons besoin d'acquérir de nombreuse connaissance. C'est ici qu'interviendront les nombreux tutoriels à notre disposition sur le web. Notez que des tutoriels on été visionné pour la réalisation de ce cahier des charges.
+\subsection{Planning}
+	\begin{tabular}{|c||c|c|c|}
+		\hline
+		& 1\iere{} soutenance & 2\ieme{} soutenance & 3\ieme{} soutenance \\
+		\hline
+		Site &  Avancé & Avancé & Terminé \\
+		\hline
+		3D & Débuté & Avancé & Terminé \\
+		\hline
+		2D & Débuté & Avancé & Terminé \\
+		\hline
+		IA & Débuté & Débuté & Terminé\\
+		\hline
+		Multijoueur & Débuté & Avancé & Terminé\\
+		\hline
+		Réseau & Débuté & Avancé & Terminé\\
+		\hline
+		Menu & Avancé & Terminé & Terminé \\
+		\hline
+		Gameplay & Débuté & Débuté & Terminé\\
+		\hline
+		Animation & Débuté & Avancé & Terminé\\		
+		\hline
+		Audio & Non débuté & Débuté & Terminé\\
+		\hline		
+	\end{tabular}\\
+	\newpage
+\section{Budget}
+
+Nous sommes des étudiants et ceci est un projet de première année. C'est donc un projet dans le cadre scolaire et à but non lucratif. Ainsi, le budget sera de 0\euro{}. Aucun achats ne sera nécessaire à la réalisation de notre projet. Les dépenses seront donc également de 0\euro{}. Seul des logiciels gratuits ou bien fournit gratuitement par l'école seront utilisés dans ce projet. Un léger dépassement de budget est bien entendu possible, notamment pour l'achat d'un CD si cela s'avère nécessaire.\\
+\centerline{\includegraphics[scale=0.7]{images.jpg}}
+\section{Le jeu}
+\section{Bilan personnel}
+
+\section{Conclusion}
+
+Les outils à notre disposition pour réaliser le projet étant  nouveaux pour nous, nous avons eu du mal à les utiliser de manière efficace. Nous avons dans la mesure du possible essayé de respecter le planning de la première soutenance. Nous avons des l\'eger retards dans la partie multijoueur, mais avons d\'ebut\'e succinctement la partie audio. De nombreuses tâches restent à réaliser pour la deuxième soutenance. Néanmoins, connaissant mieux les outils mis à notre disposition, nous allons travailler beaucoup plus efficacement et nous espérons, respecter le planning pour la deuxième soutenance. 
+\end{document}
