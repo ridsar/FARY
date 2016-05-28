@@ -70,6 +70,8 @@
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+    <Compile Include="Assets\InvokSkeleton.cs" />
+    <Compile Include="Assets\NecroBuff.cs" />
     <Compile Include="Assets\NetManagerCustom.cs" />
     <Compile Include="Assets\PauseScriptRes.cs" />
     <Compile Include="Assets\Player\AShopExport\ShowAnimation.cs" />

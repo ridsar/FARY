@@ -72,6 +72,11 @@ public class enemyHealth : MonoBehaviour
                 fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
                 frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
                 break;
+            case 'N':
+                timeStunPerEnemy = 3f;
+                fireColor = new Color(1.0f, 0.5f, 0.5f, 1.0f);
+                frozenColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
+                break;
 
         }
         setSpeed();
@@ -281,6 +286,10 @@ public class enemyHealth : MonoBehaviour
                 break;
             case 'O':
                 speed = 10f;
+                buffedSpeed = speed + speed * 0.5f;
+                break;
+            case 'N':
+                speed = 8f;
                 buffedSpeed = speed + speed * 0.5f;
                 break;
         }

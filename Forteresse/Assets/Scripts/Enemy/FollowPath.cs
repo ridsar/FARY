@@ -22,7 +22,7 @@ public class FollowPath : MonoBehaviour {
 
 
 	private List<Transform> listPaths = new List<Transform>();
-	private int index = 1;
+	public int index = 1;
 	private bool walk = false;
 	public Transform currentTarget;
 	private Transform lastTarget;
@@ -70,7 +70,7 @@ public class FollowPath : MonoBehaviour {
 
 			switch(type){
 			case MovementTypes.Follow:
-				index = 1;
+				index = index;
 				break;
 			case MovementTypes.Random:
 				index = 1;
@@ -223,7 +223,7 @@ public class FollowPath : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
     {
         if(other.transform.tag == "Enemy")
-            Physics.IgnoreCollision(gameObject.GetComponent<CapsuleCollider>(), other.collider);
+            Physics.IgnoreCollision(gameObject.GetComponent<CapsuleCollider>(), other.gameObject.GetComponent<CapsuleCollider>());
     }
 } // End class
 

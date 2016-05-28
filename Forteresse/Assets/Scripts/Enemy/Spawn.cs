@@ -33,7 +33,7 @@ public class Spawn : MonoBehaviour {
                     {
                         case "A":
                             spawingTime = 1; //temps entre le spawn de chaque enemie
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Overseer"); //ajout a une liste des enemies a faire pop 
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Overseer"); //ajout a une liste des enemies a faire pop 
                             myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
@@ -243,7 +243,12 @@ public class Spawn : MonoBehaviour {
         spawnPoints.y = 0.5f;
         spawnPoints.z = Random.Range(-10 + transform.position.z, 10 + transform.position.z);
 
-        Instantiate(GameObject.Find(myWave[0]), spawnPoints, Quaternion.identity).name = gameObject.name + myWave[0] + "(Clone)"; //Créer l'enemie
+        GameObject enemy = Instantiate(GameObject.Find(myWave[0]), spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+
+        enemy.name = gameObject.name + myWave[0] + "(Clone)";
+        if (enemy.name == gameObject.name + "Necromancer(Clone)")
+            enemy.GetComponent<InvokSkeleton>().enabled = true;
+
         CancelInvoke();
 
         myEnemy.Add(GameObject.Find(gameObject.name + myWave[0] + "(Clone)")); //ajout de l'enemie spawn a la liste des enemies en vie

@@ -233,6 +233,7 @@ public class Build : MonoBehaviour
 
         yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
+
     void reactivateFireBall()
     {
         fireBall.SetActive(true);
