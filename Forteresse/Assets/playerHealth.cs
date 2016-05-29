@@ -8,6 +8,8 @@ public class playerHealth : MonoBehaviour
 
     public float Health;
     public Slider PlayerHealthBar; //R
+    public GameObject cam;
+    public GameObject deathCam;
 
     public float maxHealth;
 
@@ -22,13 +24,18 @@ public class playerHealth : MonoBehaviour
         if (Health <= 0)
         {
             PlayerHealthBar.value = 0f; //R
-            transform.position = new Vector3(443, 0, 436);
-            GetComponent<pickUpMoney>().money -= 50;
 
+            GetComponent<pickUpMoney>().money -= 50;
             if (GetComponent<pickUpMoney>().money < 0)
                 GetComponent<pickUpMoney>().money = 0;
 
-            print(GetComponent<pickUpMoney>().money);
+            transform.position = new Vector3(443, 0, 436);
+
+            cam.SetActive(false);
+            deathCam.SetActive(true);
+            gameObject.SetActive(false);
+
+            Invoke("rePop", 5);
             Health = maxHealth;
             PlayerHealthBar.value = 1f; //R
         }
@@ -90,5 +97,11 @@ public class playerHealth : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         
+    }
+    void rePop()
+    {
+        gameObject.SetActive(true);
+        cam.SetActive(true);
+        deathCam.SetActive(false);
     }
 }
