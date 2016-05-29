@@ -6,13 +6,13 @@ using UnityEngine.Networking;
 
 public class BuildRes : NetworkBehaviour
 {
-    public GameObject Mage_Tower;
-    public GameObject Canon_Tower;
-    public GameObject Fire_Tower;
-    public GameObject Frozen_Tower;
-    public GameObject Tower_Buffer;
-    public GameObject Stun_Trap;
-    public GameObject Lava_Floor;
+    [SerializeField] GameObject Mage_Tower;
+    [SerializeField] GameObject Canon_Tower;
+    [SerializeField] GameObject Fire_Tower;
+    [SerializeField] GameObject Frozen_Tower;
+    [SerializeField] GameObject Tower_Buffer;
+    [SerializeField] GameObject Stun_Trap;
+    [SerializeField] GameObject Lava_Floor;
 
     public GameObject[] Tower;
     GameObject my_object;
@@ -67,7 +67,7 @@ public class BuildRes : NetworkBehaviour
                 price = 10;
 
                 canBuild = true; //variable disant si je peux poser une tour ou pas
-                StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
+                CmdinvokTower(); //Lance la Coroutine qui va instancier la tour
             }
 
             else if (Input.GetKey(KeyCode.Alpha2) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
@@ -80,7 +80,7 @@ public class BuildRes : NetworkBehaviour
                 price = 20;
 
                 canBuild = true; //variable disant si je peux poser une tour ou pas
-                StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
+                CmdinvokTower(); //Lance la Coroutine qui va instancier la tour
             }
             else if (Input.GetKey(KeyCode.Alpha3) && !canBuild && GetComponent<pickUpMoney>().money >= 30)
             {
@@ -92,7 +92,7 @@ public class BuildRes : NetworkBehaviour
                 price = 30;
 
                 canBuild = true;
-                StartCoroutine(invokTower());
+                CmdinvokTower();
 
             }
             else if (Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
@@ -104,7 +104,7 @@ public class BuildRes : NetworkBehaviour
                 price = 20;
 
                 canBuild = true;
-                StartCoroutine(invokTower());
+                CmdinvokTower();
             }
             else if (Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
             {
@@ -115,7 +115,7 @@ public class BuildRes : NetworkBehaviour
                 price = 50;
 
                 canBuild = true;
-                StartCoroutine(invokTower());
+                CmdinvokTower();
             }
             else if (Input.GetKey(KeyCode.Alpha6) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
             {
@@ -127,7 +127,7 @@ public class BuildRes : NetworkBehaviour
                 decal = -17;
 
                 canBuild = true;
-                StartCoroutine(invokTower());
+                CmdinvokTower();
             }
             else if (Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
             {
@@ -139,7 +139,7 @@ public class BuildRes : NetworkBehaviour
                 decal = 0;
 
                 canBuild = true;
-                StartCoroutine(invokTower());
+               CmdinvokTower();
             }
 
             //l'objet suit la souris
@@ -247,12 +247,14 @@ public class BuildRes : NetworkBehaviour
 
 
     //Clone l'objet voulu
-    IEnumerator invokTower()
+    [Command]
+     void CmdinvokTower() 
     {
         T = Instantiate(my_object, new Vector3(transform.position.x, transform.position.y + decal, transform.position.z + 20), Quaternion.identity) as GameObject; //créer l'objet (la tour dans ce cas)
         T.SetActive(true);
-        T.name += "(Clone)";
-        T.transform.localScale *= 4;
+        NetworkServer.Spawn(T);
+        //T.name += "(Clone)";
+       // T.transform.localScale *= 4;
         CancelInvoke(); //arrete la creation de tour
         if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
         {
@@ -262,6 +264,6 @@ public class BuildRes : NetworkBehaviour
             GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
         else
             T.transform.FindChild(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
-        yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
+       // yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
 }
