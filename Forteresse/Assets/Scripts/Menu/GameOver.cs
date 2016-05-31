@@ -20,7 +20,7 @@ public class GameOver : MonoBehaviour {
         if (Gameover.activeInHierarchy == true)
         {
             float t = Mathf.PingPong(Time.time, duration) / duration;
-            Lightsky.color = Color.Lerp(color0, color1, t);
+            Lightsky.color = Color.Lerp(color0, Lightsky.color, t);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None; //Le curseur apparait et est unlock
             Cursor.visible = true;
