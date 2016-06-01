@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.2)  28 MAY 2016 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.2)  1 JUN 2016 03:19
 entering extended mode
 **"./Dossier soutenance finale.tex"
 ("Dossier soutenance finale.tex"
@@ -636,53 +636,54 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1] [2] <Plan.png, id=24, 584.93532pt x 417.81094pt>
+[1] [2] [3] <Plan.png, id=27, 584.93532pt x 417.81094pt>
 File: Plan.png Graphic file (type png)
  <use Plan.png>
-Package pdftex.def Info: Plan.png used on input line 78.
+Package pdftex.def Info: Plan.png used on input line 77.
 (pdftex.def)             Requested size: 321.71541pt x 229.79672pt.
- [3]
-[4 <./Plan.png>] [5] [6] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 179--204
+
+[4] [5 <./Plan.png>] [6] [7] [8] [9] [10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 178--203
 
  []
 
-[12] <images.jpg, id=61, 212.795pt x 238.8925pt>
+[13] <images.jpg, id=64, 212.795pt x 238.8925pt>
 File: images.jpg Graphic file (type jpg)
  <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 208.
+Package pdftex.def Info: images.jpg used on input line 207.
 (pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
- [13 <./images.jpg>] [14] ("Dossier soutenance finale.aux") ) 
+ [14 <./images.jpg>] [15] [16] [17] [18] ("Dossier soutenance finale.aux") ) 
 Here is how much of TeX's memory you used:
- 5752 strings out of 493340
- 84930 string characters out of 3129441
- 144882 words of memory out of 3000000
- 9195 multiletter control sequences out of 15000+200000
- 17783 words of font info for 39 fonts, out of 3000000 for 9000
+ 5758 strings out of 493340
+ 85001 string characters out of 3129441
+ 145882 words of memory out of 3000000
+ 9200 multiletter control sequences out of 15000+200000
+ 18473 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,659b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/florian/
-AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/
-Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/eurosym/feymr10.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/cm-super/sfbx1200.pfb><C:/Users/florian/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/florian/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1728.pfb><C:/Users/flor
-ian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1200.pfb>
-<C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super
-/sfcc2074.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/cm-super/sfcc2488.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/florian/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/florian/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfsi1200.pfb><C:/Users
-/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1200
-.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-
-super/sfss1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/cm-super/sfti1200.pfb>
-Output written on "Dossier soutenance finale.pdf" (15 pages, 333000 bytes).
+ 37i,11n,43p,1392b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:
+/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-su
+per-t1.enc}<C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/eurosym/feymr10.pfb><C:/Users/florian/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/florian/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/flo
+rian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1728.pfb
+><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-supe
+r/sfcc1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/cm-super/sfcc2074.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/cm-super/sfcc2488.pfb><C:/Users/florian/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/florian/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/User
+s/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfsi120
+0.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm
+-super/sfsl1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/cm-super/sfss1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/cm-super/sfti1200.pfb><C:/Users/florian/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfxc1440.pfb>
+Output written on "Dossier soutenance finale.pdf" (19 pages, 354442 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 131 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
