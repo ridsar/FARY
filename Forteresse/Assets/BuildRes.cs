@@ -149,8 +149,11 @@ public class BuildRes : NetworkBehaviour
 
                 double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180); //Permet de maintenir la tour devant meme lors de rotation
                 double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
+                if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower" )
+                {
 
-                if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
+                }
+                    if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
                 {
                     attackScript = T.GetComponent<Attack>();
                     attackScript.enabled = false; //Eteint le script "Attck" sur la tour
@@ -201,7 +204,6 @@ public class BuildRes : NetworkBehaviour
                         T.GetComponent<CanBuildHereRes>().enabled = false;
                         if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
                             attackScript.enabled = true; //Le script d'attack est désormais activé
-                        T.GetComponent<CanBuildHereRes>().enabled = false;
                     }
                 }
 

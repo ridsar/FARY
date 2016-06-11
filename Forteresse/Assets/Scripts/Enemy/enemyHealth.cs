@@ -107,7 +107,7 @@ public class enemyHealth : MonoBehaviour
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         //Stun provenant du Stun Trap
-        if(timeStun > 0)
+        if (timeStun > 0)
         {
             timeStun -= 1 * Time.deltaTime;
             transform.GetComponent<FollowPath>().enabled = false;
@@ -117,7 +117,7 @@ public class enemyHealth : MonoBehaviour
         {
             timeStun = -10f;
             transform.GetComponent<FollowPath>().enabled = true;
-            if(transform.GetChild(0).name != "Shield" && transform.GetChild(0).name != "model")
+            if (transform.GetChild(0).name != "Shield" && transform.GetChild(0).name != "model")
                 transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
         }
 
@@ -134,7 +134,7 @@ public class enemyHealth : MonoBehaviour
             }
 
             int nb = Random.Range(0, 10);
-            if(nb == 1)
+            if (nb == 1)
             {
                 int rnd = Random.Range(0, 4);
                 GameObject buff = Instantiate(GameObject.FindGameObjectsWithTag("Buff")[rnd]) as GameObject;
@@ -152,7 +152,8 @@ public class enemyHealth : MonoBehaviour
             }
             isDying = true;
             GetComponent<FollowPath>().enabled = false;
-            transform.GetChild(2).GetComponent<targetAttack>().enabled = false;
+            if(transform.name[1] == 'S' || transform.name[1] == 'T' || transform.name[1] == 'G' || transform.name[1] == 'R' || transform.name[1] == 'H')
+                transform.GetChild(2).GetComponent<targetAttack>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(kill());
         }

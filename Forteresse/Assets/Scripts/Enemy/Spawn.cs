@@ -33,8 +33,7 @@ public class Spawn : MonoBehaviour {
                     {
                         case "A":
                             spawingTime = 1; //temps entre le spawn de chaque enemie
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             break;
                         case "B":
                             spawingTime = 3;
@@ -78,6 +77,7 @@ public class Spawn : MonoBehaviour {
                     {
                         case "A":
                             spawingTime = 1;
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
@@ -93,7 +93,6 @@ public class Spawn : MonoBehaviour {
                         case "E":
                             spawingTime = 1f;
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             break;
                     }
                     break;
@@ -105,14 +104,12 @@ public class Spawn : MonoBehaviour {
                             myWave.Add("Troll");
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Troll");
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Troll");
                             myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
                             spawingTime = 1.5f;
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Skeleton"); myWave.Add("Overseer"); myWave.Add("Skeleton"); 
                             break;
                         case "C":
                             spawingTime = 10;
@@ -232,7 +229,7 @@ public class Spawn : MonoBehaviour {
         }
         if (myWave.Count > 0 && check) //tant qu'il reste des elements dans la liste
         {
-            InvokeRepeating("spawnEnemy", spawingTime, 10f); //appel la methode spawnEnemy
+            Invoke("spawnEnemy", spawingTime); //appel la methode spawnEnemy
         }
 	}
 
