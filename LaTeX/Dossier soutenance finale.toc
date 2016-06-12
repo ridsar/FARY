@@ -34,5 +34,17 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Le scenario}{14}
 \contentsline {subsubsection}{\numberline {3.3.2}Le Graphisme 3D}{15}
 \contentsline {subsubsection}{\numberline {3.3.3}L'intelligence artificielle}{17}
-\contentsline {section}{\numberline {4}Bilan personnel}{18}
-\contentsline {section}{\numberline {5}Conclusion}{18}
+\contentsline {subsubsection}{\numberline {3.3.4}Le Gameplay}{18}
+\contentsline {paragraph}{\numberline {3.3.4.1}Les personnages}{18}
+\contentsline {paragraph}{\numberline {3.3.4.2}Les ennemis}{18}
+\contentsline {paragraph}{\numberline {3.3.4.3}L'arsenal d\IeC {\'e}fensif}{20}
+\contentsline {paragraph}{\numberline {3.3.4.4}Les vagues}{22}
+\contentsline {paragraph}{\numberline {3.3.4.5}Les am\IeC {\'e}liorations}{23}
+\contentsline {paragraph}{\numberline {3.3.4.6}Les effets visuel}{23}
+\contentsline {paragraph}{\numberline {3.3.4.7}Les cam\IeC {\'e}ras}{24}
+\contentsline {subsubsection}{\numberline {3.3.5}Le R\IeC {\'e}seau}{25}
+\contentsline {subsubsection}{\numberline {3.3.6}Les Menus}{25}
+\contentsline {subsubsection}{\numberline {3.3.7}Le multijoueur}{26}
+\contentsline {section}{\numberline {4}Bilan personnel}{27}
+\contentsline {subsection}{\numberline {4.1}\textsc {Chatelus} Florian}{27}
+\contentsline {section}{\numberline {5}Conclusion}{30}

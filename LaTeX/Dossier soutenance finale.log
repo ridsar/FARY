@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.2)  1 JUN 2016 03:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.2)  12 JUN 2016 22:25
 entering extended mode
 **"./Dossier soutenance finale.tex"
 ("Dossier soutenance finale.tex"
@@ -147,11 +147,24 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \c@ContinuedFloat=\count99
 Package caption Info: listings package is loaded.
 )
+("C:\Users\florian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlese
+c.sty"
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box29
+\beforetitleunit=\skip59
+\aftertitleunit=\skip60
+\ttl@plus=\dimen117
+\ttl@minus=\dimen118
+\ttl@toksa=\toks17
+\titlewidth=\dimen119
+\titlewidthlast=\dimen120
+\titlewidthfirst=\dimen121
+)
 ("C:\Users\florian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
 y"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
  ("C:\Users\florian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
@@ -492,26 +505,26 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count100
 ))
-\Gin@req@height=\dimen117
-\Gin@req@width=\dimen118
+\Gin@req@height=\dimen122
+\Gin@req@width=\dimen123
 ) ("Dossier soutenance finale.aux")
 \openout1 = `"Dossier soutenance finale.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Info: Redefining \degres on input line 21.
-LaTeX Info: Redefining \dots on input line 21.
-LaTeX Info: Redefining \up on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Info: Redefining \degres on input line 29.
+LaTeX Info: Redefining \dots on input line 29.
+LaTeX Info: Redefining \up on input line 29.
 \c@lstlisting=\count101
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -520,16 +533,16 @@ Package caption Info: End \AtBeginDocument code.
 mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count102
-\scratchdimen=\dimen119
-\scratchbox=\box29
+\scratchdimen=\dimen124
+\scratchbox=\box30
 \nofMPsegments=\count103
 \nofMParguments=\count104
-\everyMPshowfont=\toks19
+\everyMPshowfont=\toks20
 \MPscratchCnt=\count105
-\MPscratchDim=\dimen120
+\MPscratchDim=\dimen125
 \MPnumerator=\count106
 \makeMPintoPDFobject=\count107
-\everyMPtoPDFconversion=\toks20
+\everyMPtoPDFconversion=\toks21
 )
 ("C:\Users\florian\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdfte
 xcmds.sty"
@@ -584,106 +597,108 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 23.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 31.
 
 ("C:\Users\florian\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 29.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 37.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <24.88> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 29.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 37.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <20.74> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 31.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 39.
 
 <coollogo_com-19602433.png, id=1, 220.57407pt x 76.78688pt>
 File: coollogo_com-19602433.png Graphic file (type png)
 
 <use coollogo_com-19602433.png>
-Package pdftex.def Info: coollogo_com-19602433.png used on input line 34.
+Package pdftex.def Info: coollogo_com-19602433.png used on input line 42.
 (pdftex.def)             Requested size: 220.57352pt x 76.78668pt.
 
 <crossed-swords-clip-art-48219.jpg, id=3, 426.59375pt x 426.59375pt>
 File: crossed-swords-clip-art-48219.jpg Graphic file (type jpg)
 
 <use crossed-swords-clip-art-48219.jpg>
-Package pdftex.def Info: crossed-swords-clip-art-48219.jpg used on input line 3
-6.
+Package pdftex.def Info: crossed-swords-clip-art-48219.jpg used on input line 4
+4.
 (pdftex.def)             Requested size: 170.63446pt x 170.63446pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 43.
+(Font)              <12> on input line 51.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 43.
+(Font)              <8> on input line 51.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 43.
+(Font)              <6> on input line 51.
  [1
 
 {C:/Users/florian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./coollog
 o_com-19602433.png> <./crossed-swords-clip-art-48219.jpg>] ("Dossier soutenance
- finale.toc")
-\tf@toc=\write3
-\openout3 = `"Dossier soutenance finale.toc"'.
-
-
+ finale.toc"
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.61858pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1] [2] [3] <Plan.png, id=27, 584.93532pt x 417.81094pt>
+[1])
+\tf@toc=\write3
+\openout3 = `"Dossier soutenance finale.toc"'.
+
+ [2] [3] <Plan.png, id=27, 584.93532pt x 417.81094pt>
 File: Plan.png Graphic file (type png)
  <use Plan.png>
-Package pdftex.def Info: Plan.png used on input line 77.
+Package pdftex.def Info: Plan.png used on input line 85.
 (pdftex.def)             Requested size: 321.71541pt x 229.79672pt.
 
 [4] [5 <./Plan.png>] [6] [7] [8] [9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 178--203
+Underfull \hbox (badness 10000) in paragraph at lines 186--211
 
  []
 
 [13] <images.jpg, id=64, 212.795pt x 238.8925pt>
 File: images.jpg Graphic file (type jpg)
  <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 207.
+Package pdftex.def Info: images.jpg used on input line 215.
 (pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
- [14 <./images.jpg>] [15] [16] [17] [18] ("Dossier soutenance finale.aux") ) 
+ [14 <./images.jpg>] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26
+] [27]
+[28] [29] [30] ("Dossier soutenance finale.aux") ) 
 Here is how much of TeX's memory you used:
- 5758 strings out of 493340
- 85001 string characters out of 3129441
- 145882 words of memory out of 3000000
- 9200 multiletter control sequences out of 15000+200000
+ 6036 strings out of 493340
+ 88661 string characters out of 3129441
+ 150854 words of memory out of 3000000
+ 9474 multiletter control sequences out of 15000+200000
  18473 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,1392b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:
-/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-su
-per-t1.enc}<C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/eurosym/feymr10.pfb><C:/Users/florian/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/florian/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/flo
-rian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1728.pfb
-><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-supe
-r/sfcc1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/cm-super/sfcc2074.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/cm-super/sfcc2488.pfb><C:/Users/florian/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm0800.pfb><C:/Users/florian/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/User
-s/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfsi120
-0.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm
--super/sfsl1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/cm-super/sfss1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/cm-super/sfti1200.pfb><C:/Users/florian/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfxc1440.pfb>
-Output written on "Dossier soutenance finale.pdf" (19 pages, 354442 bytes).
+ 37i,11n,43p,2301b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/florian/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Users/flori
+an/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/eurosym/
+feymr10.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/cm-super/sfbx1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/cm-super/sfbx1440.pfb><C:/Users/florian/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1728.pfb><C:/Users/florian/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc1200.pfb><C:/Users/f
+lorian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfcc2074.p
+fb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-su
+per/sfcc2488.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/cm-super/sfrm0800.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/florian/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/cm-super/sfsi1200.pfb><C:/Users/florian/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1200.pfb><C:/Us
+ers/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss1
+200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+cm-super/sfti1200.pfb><C:/Users/florian/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/cm-super/sfxc1440.pfb>
+Output written on "Dossier soutenance finale.pdf" (31 pages, 382566 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 169 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
