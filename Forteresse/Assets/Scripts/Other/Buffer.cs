@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Buffer : MonoBehaviour
 {
@@ -11,23 +12,36 @@ public class Buffer : MonoBehaviour
     float timeS = 0;
     float timeL = 0;
     float timeD = 0;
-    
 
-	// Use this for initialization
-	void Start ()
+    public RawImage Heart;
+    public RawImage VitesseAttack;
+    public RawImage Sprint;
+    public RawImage Dammage;
+
+    public Text Chrono;
+
+    // Use this for initialization
+    void Start ()
     {
-	
+        Heart.enabled = false;
+        VitesseAttack.enabled = false;
+        Sprint.enabled = false;
+        Dammage.enabled = false;
+        Chrono.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         if (timeA > 0)
+        {
             timeA -= 1 * Time.deltaTime;
+        }
         else
             timeA = 0;
         if(timeD > 0)
         {
+
             buffed = true;
             timeD -= 1 * Time.deltaTime;
         }
