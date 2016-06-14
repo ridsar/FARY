@@ -17,9 +17,19 @@ public class SpawnRes : NetworkBehaviour
     public bool check = false;
     private Vector3 spawnPoints;
 
+    public GameObject Skeleton;
+    public GameObject Goblin;
+    public GameObject Troll;
+    public GameObject Ranger;
+    public GameObject Hell_Keeper;
+    public GameObject Necromancer;
+    public GameObject Overseer;
+
+    private float time;
+
     void Start()
     {
-
+        time = -1;
     }
 
     void Update()
@@ -35,8 +45,8 @@ public class SpawnRes : NetworkBehaviour
                     {
                         case "A":
                             spawingTime = 1; //temps entre le spawn de chaque enemie
-                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Overseer"); //ajout a une liste des enemies a faire pop 
-                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             break;
                         case "B":
                             spawingTime = 3;
@@ -226,33 +236,62 @@ public class SpawnRes : NetworkBehaviour
             ++waveNb; //On incrémente de 1, pour passer a la vague suivante
             check = true;
         }
-        else if (check && transform.parent.GetComponent<Wave>().check) //si les deux check sont true alors on peut lancer une nouvelle vague
+        else if (check && transform.parent.GetComponent<WaveRes>().check) //si les deux check sont true alors on peut lancer une nouvelle vague
         {
             //pemret de relancer un vague
             check = false;
-            transform.parent.GetComponent<Wave>().check = false;
+            transform.parent.GetComponent<WaveRes>().check = false;
         }
-        if (myWave.Count > 0 && check) //tant qu'il reste des elements dans la liste
+        if (time >= 0)
+            time -= 1 * Time.deltaTime;
+
+        if (myWave != null && myWave.Count > 0 && check && time < 0) //tant qu'il reste des elements dans la liste
         {
-            InvokeRepeating("spawnEnemy", spawingTime, 10f); //appel la methode spawnEnemy
+            CmdspawnEnemy(myWave[0]); //appel la methode spawnEnemy
+            time = spawingTime;
         }
     }
 
     [Command]
-    void CmdspawnEnemy()
+    void CmdspawnEnemy(string name)
     {
+        GameObject enemy = null;
         //coordonnée de spawn
         spawnPoints.x = Random.Range(-10 + transform.position.x, 10 + transform.position.x);
         spawnPoints.y = 0.5f;
         spawnPoints.z = Random.Range(-10 + transform.position.z, 10 + transform.position.z);
 
-        GameObject enemy = Instantiate(GameObject.Find(myWave[0]), spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
-        NetworkServer.Spawn(enemy);
+        switch (name)
+        {
+            case "Skeleton":
+                enemy = Instantiate(Skeleton, spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+                break;
+            case "Goblin":
+                enemy = Instantiate(Goblin, spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+                break;
+            case "Troll":
+                enemy = Instantiate(Troll, spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+                break;
+            case "Ranger":
+                enemy = Instantiate(Ranger, spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+                break;
+            case "Hell Keeper":
+                enemy = Instantiate(Hell_Keeper, spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+                break;
+            case "Necromancer":
+                enemy = Instantiate(Necromancer, spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+                break;
+            case "Overseer":
+                enemy = Instantiate(Overseer, spawnPoints, Quaternion.identity) as GameObject; //Créer l'enemie
+                break;
+        }
+
         enemy.name = gameObject.name + myWave[0] + "(Clone)";
-        if (enemy.name == gameObject.name + "Necromancer(Clone)")
+        if (name == "Necromancer")
             enemy.GetComponent<InvokSkeleton>().enabled = true;
 
         CancelInvoke();
+        NetworkServer.Spawn(enemy);
 
         myEnemy.Add(GameObject.Find(gameObject.name + myWave[0] + "(Clone)")); //ajout de l'enemie spawn a la liste des enemies en vie
 

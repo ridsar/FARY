@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BufferRes.cs" />
     <Compile Include="Assets\BuildRes.cs" />
     <Compile Include="Assets\FireEnemyAttack.cs" />
     <Compile Include="Assets\GolemBuff.cs" />
@@ -86,6 +85,17 @@
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
+    <Compile Include="Assets\Reseau\Script\BufferRes.cs" />
+    <Compile Include="Assets\Reseau\Script\CanBuildHereRes.cs" />
+    <Compile Include="Assets\Reseau\Script\LookMouseReseau.cs" />
+    <Compile Include="Assets\Reseau\Script\NecroBuffRes.cs" />
+    <Compile Include="Assets\Reseau\Script\RamaseArgentRes.cs" />
+    <Compile Include="Assets\Reseau\Script\WaveRes.cs" />
+    <Compile Include="Assets\Reseau\Script\animationRes.cs" />
+    <Compile Include="Assets\Reseau\Script\attackPlayerCasterRes.cs" />
+    <Compile Include="Assets\Reseau\Script\enemyHealthRes.cs" />
+    <Compile Include="Assets\Reseau\Script\renamePlayer.cs" />
+    <Compile Include="Assets\Reseau\Script\shieldFadeRes.cs" />
     <Compile Include="Assets\Scripts\Animation\Animations.cs" />
     <Compile Include="Assets\Scripts\Animation\AnimationsMage.cs" />
     <Compile Include="Assets\Scripts\Animation\moveLight.cs" />
@@ -113,10 +123,6 @@
     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
     <Compile Include="Assets\Scripts\Other\crystalHealth.cs" />
     <Compile Include="Assets\Scripts\Other\pickUpMoney.cs" />
-    <Compile Include="Assets\Scripts\Reseau\CanBuildHereRes.cs" />
-    <Compile Include="Assets\Scripts\Reseau\LookMouseReseau.cs" />
-    <Compile Include="Assets\Scripts\Reseau\RamaseArgentRes.cs" />
-    <Compile Include="Assets\Scripts\Reseau\renamePlayer.cs" />
     <Compile Include="Assets\Scripts\Tower\Attack.cs" />
     <Compile Include="Assets\Scripts\Tower\FireBaseScript.cs" />
     <Compile Include="Assets\Scripts\Tower\Hit.cs" />
@@ -126,10 +132,7 @@
     <Compile Include="Assets\Scripts\Tower\move.cs" />
     <Compile Include="Assets\Scripts\Tower\selfDestruct.cs" />
     <Compile Include="Assets\SpawnRes.cs" />
-    <Compile Include="Assets\WaveRes.cs" />
-    <Compile Include="Assets\animationRes.cs" />
     <Compile Include="Assets\attackEnemyCaster.cs" />
-    <Compile Include="Assets\attackPlayerCasterRes.cs" />
     <Compile Include="Assets\playerHealth.cs" />
     <Compile Include="Assets\playerHealthRes.cs" />
     <Compile Include="Assets\shieldFade.cs" />
