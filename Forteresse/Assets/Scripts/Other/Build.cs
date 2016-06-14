@@ -54,7 +54,7 @@ public class Build : MonoBehaviour
             boxSize = new Vector3(0.6f, 1.5f, 0.6f);
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
-            StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
+            invokTower();
         }
 
         else if (Input.GetKey(KeyCode.Alpha2) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
@@ -66,7 +66,7 @@ public class Build : MonoBehaviour
             boxSize = new Vector3(4.3f, 12.0f, 4.3f);
 
             canBuild = true; //variable disant si je peux poser une tour ou pas
-            StartCoroutine(invokTower()); //Lance la Coroutine qui va instancier la tour
+            invokTower();
         }
         else if (Input.GetKey(KeyCode.Alpha3) && !canBuild && GetComponent<pickUpMoney>().money >= 30)
         {
@@ -76,8 +76,7 @@ public class Build : MonoBehaviour
             price = 30;
 
             canBuild = true;
-            StartCoroutine(invokTower());
-
+            invokTower();
         }
         else if (Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
         {
@@ -88,7 +87,7 @@ public class Build : MonoBehaviour
             boxSize = new Vector3(0.2f, 1.5f, 0.2f);
 
             canBuild = true;
-            StartCoroutine(invokTower());
+            invokTower();
         }
         else if (Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
         {
@@ -99,7 +98,7 @@ public class Build : MonoBehaviour
             boxSize = new Vector3(1.7f, 8f, 1.7f);
 
             canBuild = true;
-            StartCoroutine(invokTower());
+            invokTower();
         }
         else if (Input.GetKey(KeyCode.Alpha6) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
         {
@@ -110,7 +109,7 @@ public class Build : MonoBehaviour
             decal = -17;
 
             canBuild = true;
-            StartCoroutine(invokTower());
+            invokTower();
         }
         else if (Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
         {
@@ -119,11 +118,11 @@ public class Build : MonoBehaviour
             path = "/Frozen Tower(Clone)/Mesh";
             price = 0;
             decal = 0;
-            boxSize = new Vector3(10f, 10f, 10f);
+            boxSize = new Vector3(5f, 10f, 5f);
 
 
             canBuild = true;
-            StartCoroutine(invokTower());
+            invokTower();
         }
 
         //l'objet suit la souris
@@ -235,15 +234,13 @@ public class Build : MonoBehaviour
 
 
     //Clone l'objet voulu
-    IEnumerator invokTower()
+    void invokTower()
     {
         fireBall.SetActive(false);
         Instantiate(GameObject.Find(name), new Vector3(transform.position.x, transform.position.y + decal, transform.position.z + 20), Quaternion.identity).name = name + "(Clone)"; //créer l'objet (la tour dans ce cas)
         CancelInvoke(); //arrete la creation de tour
 
         GameObject.Find(path).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f); //La tour devient verte
-
-        yield return new WaitForSeconds(0); //temps avant d'effectuer les instructions précedente (0 sec dans ce cas)
     }
 
     void reactivateFireBall()
