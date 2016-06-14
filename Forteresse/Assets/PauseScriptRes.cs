@@ -75,6 +75,7 @@ public class PauseScriptRes : NetworkBehaviour
 
     public void MainMenu()
     {
+        //NetworkManagerHUD.enabled = false;
         SceneManager.LoadScene(0);
         NetworkStuff.SetActive(false);
     }
