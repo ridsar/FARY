@@ -8,6 +8,10 @@ public class attackEnemyCaster : MonoBehaviour
     Vector3 scale;
     float time = 1.5f;
 
+
+    public AudioClip coups;
+    AudioSource audio;
+
     //public Animator anim;
 
     // Use this for initialization
@@ -15,6 +19,9 @@ public class attackEnemyCaster : MonoBehaviour
     {
         canAttack = true;
         scale = Vector3.one;
+
+        audio = GetComponent<AudioSource>();
+        audio.clip = coups;
     }
 
     // Update is called once per frame
@@ -27,6 +34,8 @@ public class attackEnemyCaster : MonoBehaviour
         if(!canAttack && time == 0)
         {
             //anim.SetBool("arrow", true);
+
+            audio.Play();
             GameObject dmg = transform.GetChild(0).gameObject;
             //double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);

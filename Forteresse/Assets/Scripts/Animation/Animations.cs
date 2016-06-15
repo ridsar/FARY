@@ -8,17 +8,26 @@ public class Animations : MonoBehaviour {
     public float inputV;
     public bool jump;
     public bool run;
+    public AudioClip pas;
+    public AudioClip coups;
+    public AudioClip mort;
+    AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-	}
+        audio = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 	
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
+        if (inputH ==0 && inputV ==0)
+        {
+            audio.loop = false;
+        }
 
         anim.SetFloat("inputH", inputH);
         anim.SetFloat("inputV", inputV);
@@ -31,9 +40,12 @@ public class Animations : MonoBehaviour {
         {
             anim.SetBool("jump", false);
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))         
         {
             anim.SetBool("run", true);
+            audio.clip = pas;
+            audio.loop = true;
+            audio.Play();
         }
         else
         {
@@ -42,10 +54,14 @@ public class Animations : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
             anim.SetBool("attack", true);
+            audio.clip = coups;
+            audio.loop = false;
+            audio.Play();
         }
         else
         {
             anim.SetBool("attack", false);
         }
+        
     }
 }

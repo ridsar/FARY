@@ -32,6 +32,9 @@ public class enemyHealth : MonoBehaviour
     Color fireColor;
     Color frozenColor;
 
+    public AudioClip cri;
+    AudioSource audio;
+
     public int getDead()
     {
         return dead;
@@ -39,6 +42,8 @@ public class enemyHealth : MonoBehaviour
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+        audio.clip = cri;
         playerHealth += playerHealth * (GameObject.Find("Spawn").transform.GetChild(0).GetComponent<Spawn>().waveNb - 1) * 0.5f;
         switch (transform.name[1])
         {
@@ -294,10 +299,13 @@ public class enemyHealth : MonoBehaviour
         if (animatored)
         {
             anim.SetBool("dead", true);
+            audio.Play();
+
         }
         else
         {
             perso.GetComponent<Animation>().Play(die.name);
+            audio.Play();
         }
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);

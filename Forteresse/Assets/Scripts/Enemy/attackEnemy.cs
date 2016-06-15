@@ -6,10 +6,16 @@ public class attackEnemy : MonoBehaviour {
 
     bool canAttack = true;
     public Animator anim;
+
+    public AudioClip coups;
+    AudioSource audio;
+
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
+        audio.clip = coups;
     }
 
     // Update is called once per frame
@@ -51,6 +57,7 @@ public class attackEnemy : MonoBehaviour {
             dmg.GetComponent<BoxCollider>().enabled = true;
             //Anim attaque
             anim.SetBool("attack", true);
+            audio.Play();
             yield return new WaitForSeconds(0.5f);
             anim.SetBool("attack", false);
             dmg.GetComponent<BoxCollider>().enabled = false;

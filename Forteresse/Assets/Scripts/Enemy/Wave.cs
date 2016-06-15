@@ -17,12 +17,18 @@ public class Wave : MonoBehaviour {
 
     private float time = 0.0f;
 
+    public AudioClip fear;
+    AudioSource audio;
+
     // Use this for initialization
     void Start()
     {
         beginWave.enabled = false;
         endWave.enabled = false;
-        VagueText.enabled = false;         
+        VagueText.enabled = false;
+
+        audio = GetComponent<AudioSource>();
+        audio.clip = fear;
     }
     // Update is called once per frame
     void Update()
@@ -43,6 +49,7 @@ public class Wave : MonoBehaviour {
         if (Input.GetKey(KeyCode.F) && compte == 0 && enemyNumber == 0)
         {
             ++VagueNumber;
+            audio.Play();
             VagueText.enabled = true;
 
             beginWave.enabled = true;

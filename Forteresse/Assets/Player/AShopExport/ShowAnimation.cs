@@ -13,13 +13,19 @@ public class ShowAnimation : MonoBehaviour {
     public string CurAnimName;
     public float inputH;
     public float inputV;
+
+
+    public AudioClip pas;
+    public AudioClip coups;
+    AudioSource audio;
     // Use this for initialization
     void Start () {
-		//AddAnim ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        //AddAnim ();
+        audio = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update () {
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
 
@@ -32,6 +38,11 @@ public class ShowAnimation : MonoBehaviour {
         {
             CurAnimClip = 2;
             PlayAnim();
+
+
+            audio.clip = coups;
+            audio.loop = false;
+            audio.Play();
         }
         else if (Input.GetMouseButton(1))
         {
@@ -42,6 +53,10 @@ public class ShowAnimation : MonoBehaviour {
         {
             CurAnimClip = 0;
             PlayAnim();
+
+            audio.clip = pas;
+            audio.loop = true;
+            audio.Play();
         }
         else
         {
