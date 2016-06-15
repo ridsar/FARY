@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class enemyHealthRes : MonoBehaviour
+public class enemyHealthRes : NetworkBehaviour
 {
     public float buff = 1;
+    [SyncVar]
     public float playerHealth;
     public Slider PlayerHealthBar; //R
     public bool isDying = false;
@@ -92,7 +94,7 @@ public class enemyHealthRes : MonoBehaviour
         }
         else if (timeDoT < 0 && timeFrozen < 0)
         {
-            GetComponent<FollowPath>().buff = 1;
+            GetComponent<FollowPathRes>().buff = 1;
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
 
@@ -111,14 +113,14 @@ public class enemyHealthRes : MonoBehaviour
         {
             timeStun -= 1 * Time.deltaTime;
             transform.GetComponent<FollowPathRes>().enabled = false;
-            transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = false;
+            GetComponent<targetAttackRes>().enabled = false;
         }
         else if (timeStun > -5 && timeStun <= 0)
         {
             timeStun = -10f;
             transform.GetComponent<FollowPathRes>().enabled = true;
             if (transform.GetChild(0).name != "Shield" && transform.GetChild(0).name != "model")
-                transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
+                GetComponent<targetAttackRes>().enabled = true;
         }
 
         //
@@ -153,7 +155,7 @@ public class enemyHealthRes : MonoBehaviour
             isDying = true;
             GetComponent<FollowPathRes>().enabled = false;
             if (transform.name[1] == 'S' || transform.name[1] == 'T' || transform.name[1] == 'G' || transform.name[1] == 'R' || transform.name[1] == 'H')
-                transform.GetChild(2).GetComponent<targetAttack>().enabled = false;
+                GetComponent<targetAttackRes>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(kill());
         }
@@ -183,13 +185,13 @@ public class enemyHealthRes : MonoBehaviour
                     playerHealth -= 10f;
                     break;
                 case "Player dmg":
-                    if (other.GetComponentInParent<Buffer>().buffed)
+                    if (other.GetComponentInParent<BufferRes>().buffed)
                         buff = 2f;
                     playerHealth -= (20f * buff);
                     buff = 1f;
                     break;
                 case "Player dmg(Build)":
-                    if (other.GetComponentInParent<attackPlayerCaster>().player.GetComponent<Buffer>().buffed)
+                    if (other.GetComponentInParent<attackPlayerCaster>().player.GetComponent<BufferRes>().buffed)
                         buff = 2f;
                     playerHealth -= (20f * buff);
                     buff = 1f;
@@ -301,8 +303,8 @@ public class enemyHealthRes : MonoBehaviour
         }
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        if (GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy != null)
-            GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
+        if (GameObject.Find("" + name[0]).GetComponent<SpawnRes>().myEnemy != null)
+            GameObject.Find("" + name[0]).GetComponent<SpawnRes>().myEnemy.RemoveAt(0);
     }
 
     IEnumerator moveSpeedBuff()

@@ -61,18 +61,13 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BuildRes.cs" />
     <Compile Include="Assets\FireEnemyAttack.cs" />
     <Compile Include="Assets\FollowPathRes.cs" />
     <Compile Include="Assets\GolemBuff.cs" />
+    <Compile Include="Assets\GolemBuffRes.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
@@ -99,6 +94,7 @@
     <Compile Include="Assets\Reseau\Script\RamaseArgentRes.cs" />
     <Compile Include="Assets\Reseau\Script\WaveRes.cs" />
     <Compile Include="Assets\Reseau\Script\animationRes.cs" />
+    <Compile Include="Assets\Reseau\Script\attackEnemyRes.cs" />
     <Compile Include="Assets\Reseau\Script\attackPlayerCasterRes.cs" />
     <Compile Include="Assets\Reseau\Script\enemyHealthRes.cs" />
     <Compile Include="Assets\Reseau\Script\renamePlayer.cs" />
@@ -143,6 +139,7 @@
     <Compile Include="Assets\playerHealth.cs" />
     <Compile Include="Assets\playerHealthRes.cs" />
     <Compile Include="Assets\shieldFade.cs" />
+    <Compile Include="Assets\targetAttackRes.cs" />
     <Compile Include="Assets\upAndDown.cs" />
   </ItemGroup>
   <ItemGroup>

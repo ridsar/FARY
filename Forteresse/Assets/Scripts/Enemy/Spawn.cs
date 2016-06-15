@@ -22,7 +22,7 @@ public class Spawn : MonoBehaviour {
 
     void Update ()
     {
-            if (Input.GetKey(KeyCode.F) && !check)
+        if (Input.GetKey(KeyCode.F) && !check)
         {
             print("ceci est le spawn : " + name);
             // pour test
@@ -33,7 +33,7 @@ public class Spawn : MonoBehaviour {
                     {
                         case "A":
                             spawingTime = 1; //temps entre le spawn de chaque enemie
-                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Troll"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             break;
                         case "B":
                             spawingTime = 3;

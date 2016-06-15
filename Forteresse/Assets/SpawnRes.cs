@@ -46,7 +46,6 @@ public class SpawnRes : NetworkBehaviour
                         case "A":
                             spawingTime = 1; //temps entre le spawn de chaque enemie
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             break;
                         case "B":
                             spawingTime = 3;
@@ -295,12 +294,11 @@ public class SpawnRes : NetworkBehaviour
             enemy.GetComponent<InvokSkeleton>().enabled = true;
 
         CancelInvoke();
-        enemy.name = spawn + name + "(Build)";
+        enemy.name = spawn + name + "(Clone)";
         NetworkServer.Spawn(enemy);
         //Rpcrename(enemy.name, name, spawn);
 
         myEnemy.Add(GameObject.Find(spawn + name + "(Clone)")); //ajout de l'enemie spawn a la liste des enemies en vie
-
     }
 
     /*[ClientRpc]
