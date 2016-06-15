@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\BuildRes.cs" />
     <Compile Include="Assets\FireEnemyAttack.cs" />
+    <Compile Include="Assets\FollowPathRes.cs" />
     <Compile Include="Assets\GolemBuff.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />

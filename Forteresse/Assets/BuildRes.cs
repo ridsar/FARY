@@ -171,7 +171,6 @@ public class BuildRes : NetworkBehaviour
                     attackScript.enabled = false; //Eteint le script "Attck" sur la tour
                 }
 
-
                 Vector3 playerPos = transform.position; //Position actuelle du joueur
                 Vector3 towerPos = T.transform.position; //Position actuelle de la tour
 

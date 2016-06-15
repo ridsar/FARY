@@ -247,13 +247,18 @@ public class SpawnRes : NetworkBehaviour
 
         if (myWave != null && myWave.Count > 0 && check && time < 0) //tant qu'il reste des elements dans la liste
         {
-            CmdspawnEnemy(myWave[0]); //appel la methode spawnEnemy
+            string name = myWave[0];
+            CmdspawnEnemy(name, gameObject.name); //appel la methode spawnEnemy
             time = spawingTime;
+            if (myWave.Count > 0) //retire un element de la liste des enemies a faire spawn
+                myWave.RemoveAt(0);
+          
+
         }
     }
 
     [Command]
-    void CmdspawnEnemy(string name)
+    void CmdspawnEnemy(string name, string spawn)
     {
         GameObject enemy = null;
         //coordonnée de spawn
@@ -286,16 +291,24 @@ public class SpawnRes : NetworkBehaviour
                 break;
         }
 
-        enemy.name = gameObject.name + myWave[0] + "(Clone)";
         if (name == "Necromancer")
             enemy.GetComponent<InvokSkeleton>().enabled = true;
 
         CancelInvoke();
+        enemy.name = spawn + name + "(Build)";
         NetworkServer.Spawn(enemy);
+        //Rpcrename(enemy.name, name, spawn);
 
-        myEnemy.Add(GameObject.Find(gameObject.name + myWave[0] + "(Clone)")); //ajout de l'enemie spawn a la liste des enemies en vie
+        myEnemy.Add(GameObject.Find(spawn + name + "(Clone)")); //ajout de l'enemie spawn a la liste des enemies en vie
 
-        if (myWave.Count > 0) //retire un element de la liste des enemies a faire spawn
-            myWave.RemoveAt(0);
     }
+
+    /*[ClientRpc]
+    void Rpcrename(string id, string name, string spawn)
+    {
+        GameObject temps = GameObject.Find(id);
+        temps.name = spawn + name + "(Clone)";
+        temps.GetComponent<FollowPathRes>().enabled = true;
+        print(id);
+    }*/
 }

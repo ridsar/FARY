@@ -110,13 +110,13 @@ public class enemyHealthRes : MonoBehaviour
         if (timeStun > 0)
         {
             timeStun -= 1 * Time.deltaTime;
-            transform.GetComponent<FollowPath>().enabled = false;
+            transform.GetComponent<FollowPathRes>().enabled = false;
             transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = false;
         }
         else if (timeStun > -5 && timeStun <= 0)
         {
             timeStun = -10f;
-            transform.GetComponent<FollowPath>().enabled = true;
+            transform.GetComponent<FollowPathRes>().enabled = true;
             if (transform.GetChild(0).name != "Shield" && transform.GetChild(0).name != "model")
                 transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
         }
@@ -151,7 +151,7 @@ public class enemyHealthRes : MonoBehaviour
                 Instantiate(GameObject.Find("Coin"), pos, GameObject.Find("Coin").transform.rotation);
             }
             isDying = true;
-            GetComponent<FollowPath>().enabled = false;
+            GetComponent<FollowPathRes>().enabled = false;
             if (transform.name[1] == 'S' || transform.name[1] == 'T' || transform.name[1] == 'G' || transform.name[1] == 'R' || transform.name[1] == 'H')
                 transform.GetChild(2).GetComponent<targetAttack>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
@@ -197,7 +197,7 @@ public class enemyHealthRes : MonoBehaviour
                 case "Frozen dmg":
                     playerHealth -= 3f;
                     timeFrozen = 10f;
-                    GetComponent<FollowPath>().buff = 0.5f;
+                    GetComponent<FollowPathRes>().buff = 0.5f;
                     transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = frozenColor;
                     break;
             }
@@ -221,9 +221,9 @@ public class enemyHealthRes : MonoBehaviour
 
         //modifie la vitesse de l'ennemi si il est sous le bouclier
         if (underShield)
-            GetComponent<FollowPath>().speed = buffedSpeed;
+            GetComponent<FollowPathRes>().speed = buffedSpeed;
         else
-            GetComponent<FollowPath>().speed = speed;
+            GetComponent<FollowPathRes>().speed = speed;
 
 
         //degat du Lava Floor
@@ -309,11 +309,11 @@ public class enemyHealthRes : MonoBehaviour
     {
         if (underShield)
         {
-            GetComponent<FollowPath>().speed = buffedSpeed;
+            GetComponent<FollowPathRes>().speed = buffedSpeed;
         }
         else
         {
-            GetComponent<FollowPath>().speed = speed;
+            GetComponent<FollowPathRes>().speed = speed;
         }
         yield return new WaitForSeconds(1f);
     }
