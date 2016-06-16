@@ -123,7 +123,7 @@ public class enemyHealth : MonoBehaviour
             timeStun = -10f;
             transform.GetComponent<FollowPath>().enabled = true;
             if (transform.GetChild(0).name != "Shield" && transform.GetChild(0).name != "model")
-                transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = true;
+                GetComponent<targetAttack>().enabled = true;
         }
 
         //
@@ -158,7 +158,7 @@ public class enemyHealth : MonoBehaviour
             isDying = true;
             GetComponent<FollowPath>().enabled = false;
             if(transform.name[1] == 'S' || transform.name[1] == 'T' || transform.name[1] == 'G' || transform.name[1] == 'R' || transform.name[1] == 'H')
-                transform.GetChild(2).GetComponent<targetAttack>().enabled = false;
+                GetComponent<targetAttack>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(kill());
         }

@@ -45,7 +45,7 @@ public class SpawnRes : NetworkBehaviour
                     {
                         case "A":
                             spawingTime = 1; //temps entre le spawn de chaque enemie
-                            myWave.Add("Troll"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
+                            myWave.Add("Ranger"); myWave.Add("Hell Keeper"); myWave.Add("Ranger"); myWave.Add("Goblin"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
                             break;
                         case "B":
                             spawingTime = 3;

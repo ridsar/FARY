@@ -38,20 +38,22 @@ public class targetAttackRes : MonoBehaviour
         else if (name.Contains("G"))
         {
             scale = 1.5f * transform.localScale.x;
-            fromTheCrystal = 3f;
+            fromTheCrystal = 3.5f;
         }
         else if (name.Contains("T"))
         {
             scale = 0.25f * transform.localScale.x;
-            fromTheCrystal = 1.5f;
+            fromTheCrystal = 1.8f;
         }
         else if (name.Contains("R"))
         {
             scale = 2f * transform.localScale.x;
+            fromTheCrystal = 3f;
         }
         else if (name.Contains("H"))
         {
             scale = 1.75f * transform.localScale.x;
+            fromTheCrystal = 1.8f;
         }
     }
 

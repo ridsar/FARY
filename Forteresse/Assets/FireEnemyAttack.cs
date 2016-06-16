@@ -5,7 +5,7 @@ public class FireEnemyAttack : MonoBehaviour {
 
 
     public GameObject fire;
-    bool canAttack = true;
+    bool canAttack = false;
     float time = 0f;
     GameObject firebreath;
 
@@ -21,7 +21,7 @@ public class FireEnemyAttack : MonoBehaviour {
         if (time > 0)
             time -= 1 * Time.deltaTime;
 
-        if (time <= 0 && !canAttack)
+        if (time <= 0 && GetComponent<attackEnemy>().canAttack)
         {
             firebreath = Instantiate(fire) as GameObject;
             firebreath.transform.parent = transform;
@@ -33,7 +33,7 @@ public class FireEnemyAttack : MonoBehaviour {
             time = 5f;
         }
 	}
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" || other.tag == "Crystal")
         {
@@ -58,7 +58,7 @@ public class FireEnemyAttack : MonoBehaviour {
         {
             canAttack = true;
         }
-    }
+    }*/
     IEnumerator Fire()
     {
         transform.FindChild("fireBreath dmg").GetComponent<BoxCollider>().enabled = true;

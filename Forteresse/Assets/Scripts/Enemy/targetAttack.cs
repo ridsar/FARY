@@ -21,32 +21,30 @@ public class targetAttack : MonoBehaviour
     bool isFollowing;
     public bool animatored;
 
-    Transform parent_;
-
 	// Use this for initialization
 	void Start ()
     {
         time = 0.3f;
-        parent_ = transform.parent;
+
         if (transform.name == "Ranger")
             bonus = 1.5f;
 
-        switch (parent_.name[1])
+        switch (name[1])
         {
             case 'S':
-                scale = 7.5f * parent_.localScale.x;
+                scale = 7.5f * transform.localScale.x;
                 break;
             case 'G':
-                scale = 1.5f * parent_.localScale.x;
+                scale = 1.5f * transform.localScale.x;
                 break;
             case 'T':
-                scale = 0.25f * parent_.localScale.x;
+                scale = 0.25f * transform.localScale.x;
                 break;
             case 'R':
-                scale = 2f * parent_.localScale.x;
+                scale = 2f * transform.localScale.x;
                 break;
             case 'H':
-                scale = 1.75f * parent_.localScale.x;
+                scale = 1.75f * transform.localScale.x;
                 break;
         }
 	}
@@ -82,17 +80,17 @@ public class targetAttack : MonoBehaviour
 
         if (target != null)
         {
-            if (Vector3.Distance(parent_.position, target.transform.position) > scale * 2.5f)
+            if (Vector3.Distance(transform.position, target.transform.position) > scale * 2.5f)
             {
                 target = null;
                 return;
             }
             if (n == 0)
             {
-                float distance = Vector3.Distance(parent_.position, target.transform.position);
+                float distance = Vector3.Distance(transform.position, target.transform.position);
                 if (distance > tooClose)
                 {
-                    parent_.Translate(Vector3.forward * Time.deltaTime * (parent_.GetComponent<FollowPath>().speed));
+                    transform.Translate(Vector3.forward * Time.deltaTime * (transform.GetComponent<FollowPath>().speed));
                     if (animatored)
                     {
                         anim.SetBool("cool", false);
@@ -114,23 +112,23 @@ public class targetAttack : MonoBehaviour
                     }
                 }
                 Vector3 newPos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-                parent_.LookAt(newPos);
-                parent_.GetComponent<FollowPath>().enabled = false;
+                transform.LookAt(newPos);
+                transform.GetComponent<FollowPath>().enabled = false;
             }       
             else if (n == 1)
             {
-                float distance = Vector3.Distance(parent_.position, target.transform.position);
+                float distance = Vector3.Distance(transform.position, target.transform.position);
 
-                Vector3 newPos = new Vector3(target.transform.position.x, parent_.position.y, target.transform.position.z);
-                parent_.LookAt(newPos);
-                parent_.GetComponent<FollowPath>().enabled = false;
+                Vector3 newPos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+                transform.LookAt(newPos);
+                transform.GetComponent<FollowPath>().enabled = false;
             }    
         }
         else
         {
-            parent_.GetComponent<FollowPath>().enabled = true;
+            transform.GetComponent<FollowPath>().enabled = true;
 
-            parent_.LookAt(parent_.GetComponent<FollowPath>().currentTarget);
+            transform.LookAt(transform.GetComponent<FollowPath>().currentTarget);
         }
     }
 

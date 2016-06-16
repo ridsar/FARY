@@ -5,7 +5,7 @@ public class attackEnemyRes : MonoBehaviour
 {
     int cpt = 0;
 
-    bool canAttack = true;
+    public bool canAttack = true;
     public Animator anim;
 
     public AudioClip coups;
@@ -54,33 +54,6 @@ public class attackEnemyRes : MonoBehaviour
             }
         }
     }
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player" || other.tag == "Crystal")
-        {
-            if (canAttack)
-            {
-                canAttack = false;
-                StartCoroutine(autoAttack());
-            }
-        }
-    }
-   void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player" || other.tag == "Crystal")
-        {
-            canAttack = canAttack && false;
-        }
-        else
-            canAttack = canAttack && true;
-    }
-    void OnTriggerExit (Collider other)
-    {
-        if (other.tag == "Player" || other.tag == "Crystal")
-        {
-            canAttack = true;
-        }
-    }*/
 
     IEnumerator autoAttack()
     {
