@@ -104,18 +104,18 @@ public class menuScript : MonoBehaviour {
     {
         if (mappick1)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         if (mappick2)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
             
     }
 
     public void StartMulti()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     public void rightpick()
     {

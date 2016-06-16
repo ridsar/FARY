@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BuildRes.cs" />
@@ -134,6 +140,7 @@
     <Compile Include="Assets\Scripts\Tower\fireTarget.cs" />
     <Compile Include="Assets\Scripts\Tower\move.cs" />
     <Compile Include="Assets\Scripts\Tower\selfDestruct.cs" />
+    <Compile Include="Assets\Scripts\Trailer\TrailerScript.cs" />
     <Compile Include="Assets\SpawnRes.cs" />
     <Compile Include="Assets\attackEnemyCaster.cs" />
     <Compile Include="Assets\playerHealth.cs" />

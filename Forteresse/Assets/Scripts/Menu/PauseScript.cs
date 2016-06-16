@@ -72,7 +72,7 @@ public class PauseScript : MonoBehaviour {
 
     public void MainMenu ()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Save ()

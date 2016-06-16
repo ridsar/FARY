@@ -47,7 +47,7 @@ public class SelectHero : MonoBehaviour {
     public void MainMenu()
     {
         Network.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void HeroPickRight()
