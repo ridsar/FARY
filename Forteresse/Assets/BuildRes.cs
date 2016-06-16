@@ -35,7 +35,7 @@ public class BuildRes : NetworkBehaviour
     int type;
     int decal = 0;
 
-    Attack attackScript;
+    AttackRes attackScript;
 
     void Start()
     {
@@ -167,7 +167,7 @@ public class BuildRes : NetworkBehaviour
                 }
                 if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
                 {
-                    attackScript = T.GetComponent<Attack>();
+                    attackScript = T.GetComponent<AttackRes>();
                     attackScript.enabled = false; //Eteint le script "Attck" sur la tour
                 }
 
@@ -262,6 +262,9 @@ public class BuildRes : NetworkBehaviour
         T.SetActive(true);
         T.name = name + "(Clone)";
 
+        if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
+            T.GetComponent<AttackRes>().enabled = true; //Le script d'attack est désormais activé
+
         CancelInvoke(); //arrete la creation de tour
 
         if(name == "Lava Floor")
@@ -340,7 +343,7 @@ public class BuildRes : NetworkBehaviour
         }
 
         if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
-            T.GetComponent<Attack>().enabled = true; //Le script d'attack est désormais activé
+            T.GetComponent<AttackRes>().enabled = true; //Le script d'attack est désormais activé
 
         //remet les couleurs de la tour
         GameObject walls;

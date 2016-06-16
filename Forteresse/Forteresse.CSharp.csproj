@@ -61,15 +61,10 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AttackEnemyCasterRes.cs" />
+    <Compile Include="Assets\AttackRes.cs" />
     <Compile Include="Assets\BuildRes.cs" />
     <Compile Include="Assets\FireEnemyAttack.cs" />
     <Compile Include="Assets\FollowPathRes.cs" />
@@ -80,6 +75,8 @@
     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
     <Compile Include="Assets\InvokSkeleton.cs" />
+    <Compile Include="Assets\InvokSkeletonRes.cs" />
+    <Compile Include="Assets\MoveRes.cs" />
     <Compile Include="Assets\NecroBuff.cs" />
     <Compile Include="Assets\NetManagerCustom.cs" />
     <Compile Include="Assets\PauseScriptRes.cs" />
@@ -146,6 +143,7 @@
     <Compile Include="Assets\Scripts\Tower\selfDestruct.cs" />
     <Compile Include="Assets\Scripts\Trailer\TrailerScript.cs" />
     <Compile Include="Assets\attackEnemyCaster.cs" />
+    <Compile Include="Assets\mouseCursor.cs" />
     <Compile Include="Assets\playerHealth.cs" />
     <Compile Include="Assets\playerHealthRes.cs" />
     <Compile Include="Assets\shieldFade.cs" />

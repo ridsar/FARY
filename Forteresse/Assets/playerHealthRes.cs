@@ -36,6 +36,8 @@ public class playerHealthRes : NetworkBehaviour
 
             cam.SetActive(false);
             deathCam.SetActive(true);
+            deathCam.transform.rotation = new Quaternion(0.1f, -0.9f, 0.2f, 0.4f);
+            deathCam.transform.position = new Vector3(462, 79, 459);
             gameObject.SetActive(false);
 
             Invoke("rePop", 5);
@@ -71,7 +73,7 @@ public class playerHealthRes : NetworkBehaviour
                         PlayerHealthBar.value -= 20f / maxHealth; //R
                     }
                     break;
-                case "Arrow(Build)":
+                case "Arrow(Clone)":
                     Health -= 10;
                     Destroy(other);
                     if (PlayerHealthBar.value >= 10f / maxHealth)

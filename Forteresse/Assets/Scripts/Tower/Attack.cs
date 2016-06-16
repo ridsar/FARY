@@ -175,44 +175,4 @@ public class Attack : MonoBehaviour
             buff = 1;
         }
     }
-    /*IEnumerator move()
-    {
-        while (!check)
-        {
-            GameObject projectile = null;
-            GameObject newProj = null;
-            if (name == "Canon Projectile" || name == "Mage Projectile")
-            {
-                projectile = gameObject.transform.GetChild(index).gameObject;
-            }
-            else if (name == "Fire Projectile")
-            {
-                projectile = gameObject.transform.GetChild(index).GetChild(0).gameObject;
-            }
-            newProj = Instantiate(projectile, gameObject.transform.GetChild(0).position, Quaternion.identity) as GameObject; //Créer l'objet (porjectile)
-            CancelInvoke(); //arrete la création d'objet
-            newProj.name = name + "(Clone)"; //ajout de "(Clone)" pour le differencier des autres projectiles 
-
-            newProj.transform.localScale = scale; //adapte la taille du projectile en fonction de la tour
-            newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
-
-            if (name == "Fire Projectile")
-            {
-                newProj.transform.parent = gameObject.transform.GetChild(0); //fait en sorte que la tour soit le parent du projectile
-                newProj.SetActive(true);
-            }
-            //activation des scripts
-            if (name ==  "Canon Projectile" || name == "Mage Projectile")
-            {
-                newProj.transform.parent = gameObject.transform; //fait en sorte que la tour soit le parent du projectile
-                newProj.GetComponent<move>().enabled = true;
-                newProj.GetComponent<selfDestruct>().enabled = true;
-            }
-
-            newProj.name = name + "(Build)"; //Passage a l'etat "(Build)"
-
-            check = true;
-            yield return new WaitForSeconds(attackSpeed / buff); //Le temps entre les activations (la vitesse d'attaque des tours)
-        }
-    }*/
 }

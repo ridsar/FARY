@@ -26,7 +26,7 @@ public class FireEnemyAttackRes : MonoBehaviour
         {
             firebreath = Instantiate(fire) as GameObject;
             firebreath.transform.parent = transform;
-            firebreath.transform.localPosition = new Vector3(0f, 2.30f, 0.6f);
+            firebreath.transform.localPosition = new Vector3(0f, 2.30f, 0.8f);
             firebreath.transform.localRotation = new Quaternion(330f, -180, 0, 0);
             firebreath.SetActive(true);
             StartCoroutine(Fire());

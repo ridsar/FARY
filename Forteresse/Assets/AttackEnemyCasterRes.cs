@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class AttackEnemyCasterRes : MonoBehaviour
+public class AttackEnemyCasterRes : NetworkBehaviour
 {
 
     bool canAttack;
-    Vector3 scale;
     float time = 1.5f;
+    public GameObject dmg;
+
 
 
     public AudioClip coups;
@@ -19,7 +20,6 @@ public class AttackEnemyCasterRes : MonoBehaviour
     void Start()
     {
         canAttack = true;
-        scale = Vector3.one;
 
         audio = GetComponent<AudioSource>();
         audio.clip = coups;
@@ -48,27 +48,30 @@ public class AttackEnemyCasterRes : MonoBehaviour
             if (time < 0)
             {
                 time = 1.5f;
+                CmdArrow();
 
-                audio.Play();
-                GameObject dmg = transform.GetChild(0).gameObject;
-
-                double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
-
-                Vector3 pos = new Vector3(0, 1f, 1.5f);
-                Quaternion rot = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
-
-                GameObject arrow = Instantiate(dmg, pos, rot) as GameObject; //Créer la fleche
-                CancelInvoke();
-                arrow.transform.parent = transform;
-                arrow.transform.localPosition = pos;
-                arrow.SetActive(true);
-                arrow.transform.localScale = scale;
-                arrow.name = dmg.name + "(Clone)";
-
-                GameObject.Find("Arrow(Clone)").GetComponent<selfDestruct>().enabled = true;
-                GameObject.Find("Arrow(Clone)").GetComponent<moveForward>().enabled = true;
-                GameObject.Find("Arrow(Clone)").name = "Arrow(Build)";
             }
         }
     }
+
+    [Command]
+    void CmdArrow()
+    {
+        audio.Play();
+
+        double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
+
+        Vector3 pos = new Vector3(0, 1f, 1.5f);
+        Quaternion rot = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
+
+        GameObject arrow = Instantiate(dmg, pos, rot) as GameObject; //Créer la fleche
+        CancelInvoke();
+        arrow.transform.parent = transform;
+        arrow.transform.localPosition = pos;
+        arrow.transform.localScale = Vector3.one;
+        arrow.name = dmg.name + "(Clone)";
+        NetworkServer.Spawn(arrow);
+    }
+
+
 }

@@ -4,6 +4,7 @@ using System.Collections;
 public class attackEnemyRes : MonoBehaviour
 {
     int cpt = 0;
+    float enemyAttackSpeed;
 
     public bool canAttack = true;
     public Animator anim;
@@ -21,10 +22,22 @@ public class attackEnemyRes : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (animatored)
-        {
-            anim = GetComponent<Animator>();
-        }      
+        if (name.Contains("S"))
+            enemyAttackSpeed = 1f;
+        else if (name.Contains("G"))
+            enemyAttackSpeed = 0.7f;
+        else if (name.Contains("T"))
+            enemyAttackSpeed = 1.5f;
+        else if (name.Contains("R"))
+            enemyAttackSpeed = 2f;
+        else if (name.Contains("H"))
+            enemyAttackSpeed = 2f;
+
+
+            if (animatored)
+            {
+                anim = GetComponent<Animator>();
+            }      
         audio = GetComponent<AudioSource>();
         audio.clip = coups;
     }
@@ -60,7 +73,7 @@ public class attackEnemyRes : MonoBehaviour
         {
             if (time < 0)
             {
-                time = 1f;
+                time = enemyAttackSpeed;
                 StartCoroutine(autoAttack());
                 cpt = -1;
             }

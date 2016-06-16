@@ -4,7 +4,8 @@ using System.Collections;
 public class moveForward : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 	
 	}
 	
@@ -15,7 +16,8 @@ public class moveForward : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Crystal" || other.tag == "Enemy")
+        print(other.gameObject);
+        if(other.tag == "Crystal" || other.tag == "Player")
         {
             Destroy(gameObject);
         }

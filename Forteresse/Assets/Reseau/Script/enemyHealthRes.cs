@@ -16,6 +16,9 @@ public class enemyHealthRes : NetworkBehaviour
     public AnimationClip die;
 
     public GameObject perso;
+    public GameObject Coin;
+    public GameObject Ignot;
+    public GameObject[] Buff;
 
     int dead = 0;
     float speed;
@@ -133,36 +136,22 @@ public class enemyHealthRes : NetworkBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
-
                 if (tower != null)
                 {
-                    tower.GetComponent<Attack>().check = true;
+                    tower.GetComponent<AttackRes>().check = true;
                 }
+                isDying = true;
+                CmdMoneyAndBuff();
+                GetComponent<FollowPathRes>().enabled = false;
+                if (transform.name[1] == 'S' || transform.name[1] == 'T' || transform.name[1] == 'G' || transform.name[1] == 'R' || transform.name[1] == 'H')
+                    GetComponent<targetAttackRes>().enabled = false;
+                GetComponent<CapsuleCollider>().enabled = false;
+
+                StartCoroutine(kill());
+
             }
 
-            int nb = Random.Range(0, 10);
-            if (nb == 1)
-            {
-                int rnd = Random.Range(0, 4);
-                GameObject buff = Instantiate(GameObject.FindGameObjectsWithTag("Buff")[rnd]) as GameObject;
-                buff.transform.position = transform.position;
-            }
-            for (int i = 0; i < (nb / 5); ++i)
-            {
-                Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 0.5f, transform.position.z + Random.Range(-10, 10));
-                Instantiate(GameObject.Find("Ignot"), pos, GameObject.Find("Ignot").transform.rotation);
-            }
-            for (int i = 0; i < nb % 5; ++i)
-            {
-                Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 0.5f, transform.position.z + Random.Range(-10, 10));
-                Instantiate(GameObject.Find("Coin"), pos, GameObject.Find("Coin").transform.rotation);
-            }
-            isDying = true;
-            GetComponent<FollowPathRes>().enabled = false;
-            if (transform.name[1] == 'S' || transform.name[1] == 'T' || transform.name[1] == 'G' || transform.name[1] == 'R' || transform.name[1] == 'H')
-                GetComponent<targetAttackRes>().enabled = false;
-            GetComponent<CapsuleCollider>().enabled = false;
-            StartCoroutine(kill());
+
         }
     }
 
@@ -325,5 +314,28 @@ public class enemyHealthRes : NetworkBehaviour
             GetComponent<FollowPathRes>().speed = speed;
         }
         yield return new WaitForSeconds(1f);
+    }
+
+    [Command]
+    void CmdMoneyAndBuff()
+    {
+        int nb = Random.Range(0, 10);
+
+        if (nb == 1)
+        {
+            int rnd = Random.Range(0, 4);
+            NetworkServer.Spawn(Instantiate(Buff[rnd], transform.position, Quaternion.identity) as GameObject);
+        }
+        for (int i = 0; i < (nb / 5); ++i)
+        {
+            Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 0.5f, transform.position.z + Random.Range(-10, 10));
+            NetworkServer.Spawn(Instantiate(Ignot, pos, new Quaternion(1, 0, 0, 0)) as GameObject);
+        }
+        for (int i = 0; i < nb % 5; ++i)
+        {
+            Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 0.5f, transform.position.z + Random.Range(-10, 10));
+            NetworkServer.Spawn(Instantiate(Coin, pos, new Quaternion(0, 0, 0, 1)) as GameObject);
+
+        }        
     }
 }

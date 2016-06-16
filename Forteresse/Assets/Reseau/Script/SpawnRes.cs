@@ -45,7 +45,7 @@ public class SpawnRes : NetworkBehaviour
                     {
                         case "A":
                             spawingTime = 1; //temps entre le spawn de chaque enemie
-                            myWave.Add("Skeleton"); myWave.Add("Hell Keeper"); myWave.Add("Skeleton"); myWave.Add("Goblin"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); //ajout a une liste des enemies a faire pop 
                             break;
                         case "B":
                             spawingTime = 3;
@@ -67,7 +67,6 @@ public class SpawnRes : NetworkBehaviour
                         case "A":
                             spawingTime = 0.5f;
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             break;
                         case "B":
                             spawingTime = 3;
@@ -79,6 +78,7 @@ public class SpawnRes : NetworkBehaviour
                             spawingTime = 2;
                             break;
                         case "E":
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             spawingTime = 2.5f;
                             break;
                     }
@@ -89,7 +89,7 @@ public class SpawnRes : NetworkBehaviour
                     {
                         case "A":
                             spawingTime = 1;
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
@@ -103,8 +103,7 @@ public class SpawnRes : NetworkBehaviour
                             break;
                         case "E":
                             spawingTime = 1f;
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             break;
                     }
                     break;
@@ -113,11 +112,9 @@ public class SpawnRes : NetworkBehaviour
                     {
                         case "A":
                             spawingTime = 0.8f;
-                            myWave.Add("Troll");
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Troll");
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Troll");
                             myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
@@ -143,25 +140,23 @@ public class SpawnRes : NetworkBehaviour
                         case "A":
                             spawingTime = 1;
                             myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Overseer"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Troll"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
                             spawingTime = 1.5f;
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "C":
-                            spawingTime = 10;
+                            spawingTime = 1;
                             break;
                         case "D":
-                            myWave.Add("Troll"); myWave.Add("Troll");
-                            spawingTime = 10;
+                            myWave.Add("Troll"); 
+                            spawingTime = 1;
                             break;
                         case "E":
                             spawingTime = 1.5f;
-                            myWave.Add("Troll");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             break;
@@ -175,26 +170,23 @@ public class SpawnRes : NetworkBehaviour
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Hell Keeper");
                             break;
                         case "B":
                             spawingTime = 1f;
                             myWave.Add("Hell Keeper");
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            myWave.Add("Hell Keeper");
                             break;
                         case "C":
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             myWave.Add("Hell Keeper");
                             spawingTime = 1;
                             break;
                         case "D":
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            spawingTime = 0.5f;
+                            myWave.Add("Hell Keeper"); 
+                            spawingTime = 1f;
                             break;
                         case "E":
                             spawingTime = 1f;
                             myWave.Add("Hell Keeper");
-                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             break;
                     }
                     break;
@@ -203,31 +195,109 @@ public class SpawnRes : NetworkBehaviour
                     {
                         case "A":
                             spawingTime = 1;
-                            myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
-                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
                             break;
                         case "B":
                             spawingTime = 1f;
-                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
-                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            myWave.Add("Hell Keeper");
+                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Troll");
                             break;
                         case "C":
-                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
-                            myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
-                            myWave.Add("Hell Keeper");
+                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Troll");
                             spawingTime = 1;
                             break;
                         case "D":
                             myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Troll");
+                            spawingTime = 1;
+                            break;
+                        case "E":
+                            spawingTime = 1f;
+                            myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Troll");
+                            break;
+                    }
+                    break;
+                case 8:
+                    switch (name)
+                    {
+                        case "A":
+                            spawingTime = 1;
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Necromancer"); myWave.Add("Overseer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            break;
+                        case "B":
+                            spawingTime = 1f;
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            break;
+                        case "C":
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            spawingTime = 1;
+                            break;
+                        case "D":
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            spawingTime = 1;
+                            break;
+                        case "E":
+                            spawingTime = 1f;
+                            myWave.Add("Necromancer"); myWave.Add("Skeleton"); myWave.Add("Skeleton"); myWave.Add("Skeleton");
+                            break;
+                    }
+                    break;
+                case 9:
+                    switch (name)
+                    {
+                        case "A":
+                            spawingTime = 1;
+                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            myWave.Add("Overseer");
                             myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger"); myWave.Add("Ranger");
+
+                            break;
+                        case "B":
+                            spawingTime = 1f;
+                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            break;
+                        case "C":
+                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            spawingTime = 1;
+                            break;
+                        case "D":
+                            myWave.Add("Troll"); myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
                             spawingTime = 1;
                             break;
                         case "E":
                             spawingTime = 0.5f;
-                            myWave.Add("Hell Keeper");
                             myWave.Add("Troll"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin"); myWave.Add("Goblin");
+                            break;
+                    }
+                    break;
+                case 10:
+                    switch (name)
+                    {
+                        case "A":
+                            spawingTime = 1;
+                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
+                            break;
+                        case "B":
+                            spawingTime = 1f;
+                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
+                            break;
+                        case "C":
+                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
+                            spawingTime = 1;
+                            break;
+                        case "D":
+                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
+                            spawingTime = 1;
+                            break;
+                        case "E":
+                            spawingTime = 1f;
+                            myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper"); myWave.Add("Hell Keeper");
                             break;
                     }
                     break;
@@ -291,22 +361,27 @@ public class SpawnRes : NetworkBehaviour
         }
 
         if (name == "Necromancer")
-            enemy.GetComponent<InvokSkeleton>().enabled = true;
+            enemy.GetComponent<InvokSkeletonRes>().enabled = true;
 
         CancelInvoke();
         enemy.name = spawn + name + "(Clone)";
         NetworkServer.Spawn(enemy);
-        //Rpcrename(enemy.name, name, spawn);
+        Rpcrename(enemy.name, name, spawn);
 
         myEnemy.Add(GameObject.Find(spawn + name + "(Clone)")); //ajout de l'enemie spawn a la liste des enemies en vie
     }
 
-    /*[ClientRpc]
+    [ClientRpc]
     void Rpcrename(string id, string name, string spawn)
     {
-        GameObject temps = GameObject.Find(id);
+        GameObject temps = null;
+        if (isServer)
+            temps = GameObject.Find(id);
+        else if (isClient)
+            temps = GameObject.Find(name + "(Clone)");
+
         temps.name = spawn + name + "(Clone)";
         temps.GetComponent<FollowPathRes>().enabled = true;
         print(id);
-    }*/
+    }
 }

@@ -68,7 +68,7 @@ public class WaveRes : MonoBehaviour {
         if (beginWave != null && beginWave.enabled == true)
         {
             time += 1.0f * Time.deltaTime;
-            if (time > 8.0f)
+            if (time > 2.0f)
             {
                 beginWave.enabled = false;
                 time = 0.0f;
@@ -79,7 +79,7 @@ public class WaveRes : MonoBehaviour {
             checkText = false;
             endWave.enabled = true;
             time += 1.0f * Time.deltaTime;
-            if (time > 8.0f)
+            if (time > 2.0f)
             {
                 endWave.enabled = false;
                 time = 0.0f;
