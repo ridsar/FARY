@@ -10,6 +10,7 @@ public class playerHealth : MonoBehaviour
 
     public GameObject cam;
     public GameObject deathCam;
+    public GameObject respawn;
     public Canvas youredead;
 
     public float maxHealth;
@@ -33,7 +34,7 @@ public class playerHealth : MonoBehaviour
             if (GetComponent<pickUpMoney>().money < 0)
                 GetComponent<pickUpMoney>().money = 0;
 
-            transform.position = new Vector3(443, 0, 436);
+            transform.position = respawn.transform.position; //new Vector3(443, 0, 436);
 
             cam.SetActive(false);
             deathCam.SetActive(true);

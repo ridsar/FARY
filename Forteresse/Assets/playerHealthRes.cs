@@ -32,7 +32,7 @@ public class playerHealthRes : NetworkBehaviour
             if (GetComponent<pickUpMoney>().money < 0)
                 GetComponent<pickUpMoney>().money = 0;
 
-            transform.position = new Vector3(443, 0, 436);
+            transform.position = GameObject.Find("Respawn").transform.position;
 
             cam.SetActive(false);
             deathCam.SetActive(true);

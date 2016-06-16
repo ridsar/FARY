@@ -58,7 +58,7 @@ public class attackEnemy : MonoBehaviour {
         {
             if (time < 0)
             {
-                time = 2f;
+                time = 1f;
                 StartCoroutine(autoAttack());
                 cpt = -1;
             }
