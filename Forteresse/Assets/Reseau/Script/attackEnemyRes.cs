@@ -19,7 +19,6 @@ public class attackEnemyRes : MonoBehaviour
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         audio.clip = coups;
-       // StartCoroutine(autoAttack());
     }
 
     // Update is called once per frame

@@ -6,6 +6,8 @@ public class targetAttackRes : MonoBehaviour
     int n;
 
     private float scale = 1f;
+    private float saveTooClose;
+    private float fromTheCrystal;
     public float tooClose;
     float bonus = 1;
     float time;
@@ -23,20 +25,34 @@ public class targetAttackRes : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        saveTooClose = tooClose;
         time = 0.3f;
         if (transform.name == "Ranger")
             bonus = 1.5f;
 
         if (name.Contains("S"))
+        {
             scale = 7.5f * transform.localScale.x;
+            fromTheCrystal = 3f;
+        }
         else if (name.Contains("G"))
+        {
             scale = 1.5f * transform.localScale.x;
+            fromTheCrystal = 3f;
+        }
         else if (name.Contains("T"))
+        {
             scale = 0.25f * transform.localScale.x;
+            fromTheCrystal = 1.5f;
+        }
         else if (name.Contains("R"))
+        {
             scale = 2f * transform.localScale.x;
+        }
         else if (name.Contains("H"))
+        {
             scale = 1.75f * transform.localScale.x;
+        }
     }
 
 
@@ -50,16 +66,18 @@ public class targetAttackRes : MonoBehaviour
         if (target == null && time < 0)
         {
             time = 0.3f;
-            foreach (Collider other in Physics.OverlapSphere(transform.position, scale))
+            foreach (Collider other in Physics.OverlapSphere(transform.position, scale * 2))
             {
-                if (other.tag == "Player")
+                if (other.tag == "Player" && Vector3.Distance(transform.position, other.transform.position) < scale)
                 {
+                    tooClose = saveTooClose;
                     target = other.gameObject;
                     isFollowing = true;
                     n = 0;
                 }
                 else if (other.tag == "Crystal")
                 {
+                    tooClose = saveTooClose * fromTheCrystal;
                     target = other.gameObject;
                     isFollowing = true;
                     n = 1;
@@ -71,14 +89,15 @@ public class targetAttackRes : MonoBehaviour
 
         if (target != null)
         {
-            if (Vector3.Distance(transform.position, target.transform.position) > scale * 2.5f)
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+
+            if (distance > scale * 2.5f)
             {
                 target = null;
                 return;
             }
             if (n == 0)
             {
-                float distance = Vector3.Distance(transform.position, target.transform.position);
                 if (distance > tooClose)
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * (transform.GetComponent<FollowPathRes>().speed));
@@ -108,8 +127,10 @@ public class targetAttackRes : MonoBehaviour
             }
             else if (n == 1)
             {
-                float distance = Vector3.Distance(transform.position, target.transform.position);
-
+                if (distance > tooClose)
+                {
+                    transform.Translate(Vector3.forward * Time.deltaTime * (transform.GetComponent<FollowPathRes>().speed));
+                }
                 Vector3 newPos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
                 transform.LookAt(newPos);
                 transform.GetComponent<FollowPathRes>().enabled = false;
