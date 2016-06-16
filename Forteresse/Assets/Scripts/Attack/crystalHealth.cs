@@ -9,6 +9,8 @@ public class crystalHealth : MonoBehaviour
     public Slider CristalHealth; //R
     public Text WelcomeText;//R
     public Text WelcomeTex;//R
+    public Text WelcomeTe;
+    uint nb = 0;
     int maxHealth;
     public GameObject gameobject;
     public GameObject GameOver;
@@ -22,19 +24,17 @@ public class crystalHealth : MonoBehaviour
     {
         maxHealth = crysHealth;
         WelcomeTex.enabled = false;
+        WelcomeTe.enabled = false;
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.B))
         {
-            WelcomeText.enabled = false;
-            WelcomeTex.enabled = true;
+            nb += 1;
+            selectText(nb);
         }
-        if (Input.GetKey(KeyCode.P))
-        {
-            WelcomeTex.enabled = false;
-        }
+        
         if (crysHealth <= 0)
         {
             CristalHealth.value = 0f;
@@ -94,6 +94,27 @@ public class crystalHealth : MonoBehaviour
                     }
                     break;
             }           
+        }
+    }
+    public void selectText(uint nb)
+    {
+        switch(nb)
+        {
+            case 1:
+                {
+                    WelcomeText.enabled = false;
+                    WelcomeTex.enabled = true;
+                    break;
+                }
+            case 2:
+                {
+                    WelcomeTex.enabled = false;
+                    WelcomeTe.enabled = true;
+                    break;
+                }
+            default:
+                WelcomeTe.enabled = false;
+                break;
         }
     }
 }
