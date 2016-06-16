@@ -195,9 +195,9 @@ textarea { overflow: auto; }
 .main .cols .col h3 { padding-bottom: 14px; padding-left: 50px; }
 .main .cols .col h3 a { color: #000; }
 .main .cols .col h3 a:hover { text-decoration: none; color: #333; }
-.main .cols .col h3.starter-ico { background: url(images/starter-ico.png) no-repeat 0 0; }
-.main .cols .col h3.awesome-ico { background: url(images/awesome-ico.png) no-repeat 0 0; }
-.main .cols .col h3.save-ico { background: url(images/save-ico.png) no-repeat 0 0; }
+.main .cols .col h3.starter-ico { background: url(images/sprint.png) no-repeat 0 0; }
+.main .cols .col h3.awesome-ico { background: url(images/break.png) no-repeat 0 0; }
+.main .cols .col h3.save-ico { background: url(images/vitesseAttack.png) no-repeat 0 0; }
 .main .cols .col p { padding-bottom: 10px;  }
 .main .cols .col a.more { text-transform: uppercase; } 
 
