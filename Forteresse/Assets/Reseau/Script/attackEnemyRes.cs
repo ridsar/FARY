@@ -7,6 +7,11 @@ public class attackEnemyRes : MonoBehaviour
 
     public bool canAttack = true;
     public Animator anim;
+    public bool animatored;
+
+
+    public AnimationClip cool;
+    public AnimationClip marche;
 
     public AudioClip coups;
     AudioSource audio;
@@ -16,7 +21,10 @@ public class attackEnemyRes : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        anim = GetComponent<Animator>();
+        if (animatored)
+        {
+            anim = GetComponent<Animator>();
+        }      
         audio = GetComponent<AudioSource>();
         audio.clip = coups;
     }
@@ -28,7 +36,11 @@ public class attackEnemyRes : MonoBehaviour
         {
             GameObject dmg = transform.GetChild(0).gameObject;
 
-            anim.SetBool("attack", false);
+            if (animatored)
+                anim.SetBool("attack", false);
+            else
+                GetComponent<Animation>().Play(cool.name);
+
             dmg.GetComponent<BoxCollider>().enabled = false;
             canAttack = true;
             cpt = 0;
@@ -61,7 +73,14 @@ public class attackEnemyRes : MonoBehaviour
         GameObject dmg = transform.GetChild(0).gameObject;
         dmg.GetComponent<BoxCollider>().enabled = true;
         //Anim attaque
-        anim.SetBool("attack", true);
+        if (animatored)
+        {
+            anim.SetBool("cool", true);
+            anim.SetBool("attack", true);
+        }
+        else
+            GetComponent<Animation>().Play(marche.name);
+
         audio.Play();
         yield return new WaitForSeconds(0);
     }
