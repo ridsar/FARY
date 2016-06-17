@@ -28,21 +28,18 @@ public class ShowAnimation : MonoBehaviour {
     void Update () {
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
-
         if (Input.GetMouseButton(0))
         {
             CurAnimClip = 2;
             PlayAnim();
+            audio.clip = coups;
+            audio.Play();
         }
         else if (Input.GetMouseButton(0))
         {
             CurAnimClip = 2;
             PlayAnim();
-
-
-            audio.clip = coups;
-            audio.loop = false;
-            audio.Play();
+            
         }
         else if (Input.GetMouseButton(1))
         {
@@ -53,13 +50,16 @@ public class ShowAnimation : MonoBehaviour {
         {
             CurAnimClip = 0;
             PlayAnim();
-
-            audio.clip = pas;
-            audio.loop = true;
-            audio.Play();
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                audio.clip = pas;
+                audio.loop = true;
+                audio.Play();
+            }            
         }
         else
         {
+            audio.loop = false;
             CurAnimClip = 1;
             PlayAnim();
         }
