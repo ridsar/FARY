@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.13)  18 JUN 2016 22:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.13)  18 JUN 2016 04:52
 entering extended mode
 **"./Plan soutenance finale.tex"
 ("Plan soutenance finale.tex"
@@ -477,21 +477,21 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 ("Plan soutenance finale.aux")
 \openout1 = `"Plan soutenance finale.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Info: Redefining \degres on input line 21.
-LaTeX Info: Redefining \dots on input line 21.
-LaTeX Info: Redefining \up on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Info: Redefining \degres on input line 22.
+LaTeX Info: Redefining \dots on input line 22.
+LaTeX Info: Redefining \up on input line 22.
 \c@lstlisting=\count102
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -553,11 +553,11 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 23.
+(Font)              <24.88> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 23.
+(Font)              <20.74> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 23.
+(Font)              <17.28> on input line 24.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -572,7 +572,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  5684 strings out of 493335
  81941 string characters out of 3136656
- 141889 words of memory out of 3000000
+ 142875 words of memory out of 3000000
  9157 multiletter control sequences out of 15000+200000
  12124 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -584,9 +584,9 @@ epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1
 728.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
 en\ec\dpi600\ecbx2488.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\font
 s\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk>
-Output written on "Plan soutenance finale.pdf" (1 page, 40312 bytes).
+Output written on "Plan soutenance finale.pdf" (1 page, 39144 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

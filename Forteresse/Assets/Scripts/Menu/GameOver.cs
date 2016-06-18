@@ -10,6 +10,8 @@ public class GameOver : MonoBehaviour {
     public float duration = 1.0F;
     public Color color0 = Color.red;
     public Color color1 = Color.blue;
+
+    public int currentscene;
     // Use this for initialization
     void Start () {
 
@@ -39,7 +41,7 @@ public class GameOver : MonoBehaviour {
     }
     public void Load()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("currentscenesave"));
+        SceneManager.LoadScene(currentscene);
     }
     public void Quit()
     {
