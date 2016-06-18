@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Networking;
+//using UnityEngine.Networking;
 using UnityEngine.UI;
 
 
-public class BufferRes : NetworkBehaviour
+public class BufferRes : MonoBehaviour /*NetworkBehaviour*/
 {
 
     public GameObject fireBolt;
@@ -31,6 +31,16 @@ public class BufferRes : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
+        Heart = GameObject.Find("Heart").GetComponent<RawImage>();
+        VitesseAttack = GameObject.Find("VitesseAttack").GetComponent<RawImage>();
+        Sprint = GameObject.Find("Sprint").GetComponent<RawImage>();
+        Dammage = GameObject.Find("Dammage").GetComponent<RawImage>();
+
+        ChronoDammage = GameObject.Find("ChronoDamage").GetComponent<Text>();
+        ChronoSprint = GameObject.Find("ChronoSprint").GetComponent<Text>();
+        ChronoVitesseAtack = GameObject.Find("ChronoVitesseAtack").GetComponent<Text>();
+        ChronoHeart = GameObject.Find("ChronoHeart").GetComponent<Text>();
+
         buffedSpeed = GetComponent<Déplacement>().Speed + 10f;
         normalSpeed = GetComponent<Déplacement>().Speed;
 
