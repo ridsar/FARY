@@ -7,6 +7,7 @@ public class enemyHealth : MonoBehaviour
     public float buff = 1;
     public float playerHealth = 100;
     public Slider PlayerHealthBar; //R
+    public bool isDying = false;
 
     int dead = 0;
 
@@ -124,7 +125,8 @@ public class enemyHealth : MonoBehaviour
                 Vector3 pos = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + 0.5f, transform.position.z + Random.Range(-10, 10));
                 Instantiate(GameObject.Find("Coin"), pos, GameObject.Find("Coin").transform.rotation);
             }
-            Destroy(gameObject);
+            isDying = true;
+            StartCoroutine(kill());
         }
     }
 
@@ -183,5 +185,11 @@ public class enemyHealth : MonoBehaviour
             timeDoT = 10f;
             transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = fireColor;
         }
+    }
+
+    IEnumerator kill()
+    {
+        Destroy(gameObject);
+        yield return new WaitForSeconds(2f);
     }
 }

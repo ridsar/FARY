@@ -42,7 +42,7 @@ public class move : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Enemy" && target == null)
+        if (other.tag == "Enemy" && target == null && !other.GetComponent<enemyHealth>().isDying)
             target = other.transform;
     }
 

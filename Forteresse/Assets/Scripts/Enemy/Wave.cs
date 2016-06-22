@@ -49,7 +49,7 @@ public class Wave : MonoBehaviour {
         if (checkText == true) 
         {
             time += 1.0f * Time.deltaTime;
-            if (time == 5.0f)
+            if (time > 5.0f)
             {
                 beginWave.enabled = false;
                 time = 0.0f;
