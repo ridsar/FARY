@@ -15,7 +15,7 @@ public class pickUpMoney : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //CountMoney.text = money.ToString(); //R
+        CountMoney.text = money.ToString(); //R
     }
     void OnTriggerEnter(Collider other)
     {
