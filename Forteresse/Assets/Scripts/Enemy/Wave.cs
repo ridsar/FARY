@@ -11,6 +11,9 @@ public class Wave : MonoBehaviour {
     public Text beginWave;
     public Text endWave;
     bool checkText = false;
+    public Text VagueText;
+
+    uint VagueNumber; 
 
     private float time = 0.0f;
 
@@ -19,13 +22,15 @@ public class Wave : MonoBehaviour {
     {
         beginWave.enabled = false;
         endWave.enabled = false;
-        
+        VagueText.enabled = false;         
     }
     // Update is called once per frame
     void Update()
     {
         compte = 0;
         enemyNumber = 0;
+
+        VagueText.text = "Vague :  " + VagueNumber.ToString();
 
         foreach (Transform obj in gameObject.transform) //regarde si il reste des enemies a pop ou a tuer
         {
@@ -36,6 +41,8 @@ public class Wave : MonoBehaviour {
         //Le nombre d'enemie restant a invoquer doit etre nul ainsi que le nombre d'enemie en vie. On doit appuyer sur 'F'
         if (Input.GetKey(KeyCode.F) && compte == 0 && enemyNumber == 0)
         {
+            ++VagueNumber;
+            VagueText.enabled = true;
             if (enemyNumber > 0)
             {
                 checkText = true;
