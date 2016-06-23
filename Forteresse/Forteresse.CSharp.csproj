@@ -111,15 +111,9 @@
     <Compile Include="Assets\Scripts\Other\Mapcamera.cs" />
     <Compile Include="Assets\Scripts\Other\crystalHealth.cs" />
     <Compile Include="Assets\Scripts\Other\pickUpMoney.cs" />
-    <Compile Include="Assets\Scripts\Reseau\AnimmationReseau.cs" />
-    <Compile Include="Assets\Scripts\Reseau\AttackPlayerCasterReseau.cs" />
-    <Compile Include="Assets\Scripts\Reseau\CameraReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\CanBuildHereRes.cs" />
-    <Compile Include="Assets\Scripts\Reseau\DeplacementReseau.cs" />
     <Compile Include="Assets\Scripts\Reseau\LookMouseReseau.cs" />
-    <Compile Include="Assets\Scripts\Reseau\SpawnReseau.cs" />
-    <Compile Include="Assets\Scripts\Reseau\TargetAttackReseau.cs" />
-    <Compile Include="Assets\Scripts\Reseau\WaveReseau.cs" />
+    <Compile Include="Assets\Scripts\Reseau\RamaseArgentRes.cs" />
     <Compile Include="Assets\Scripts\Reseau\renamePlayer.cs" />
     <Compile Include="Assets\Scripts\Tower\Attack.cs" />
     <Compile Include="Assets\Scripts\Tower\FireBaseScript.cs" />

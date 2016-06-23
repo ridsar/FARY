@@ -39,7 +39,7 @@ public class crystalHealth : MonoBehaviour
         if (WelcomeTe != null && WelcomeTe.enabled == true)
         {
             count += 1.0f * Time.deltaTime;
-            if (count > 8.0f)
+            if (count > 2.0f)
             {
                 WelcomeTe.enabled = false;
                 count = 0.0f;
