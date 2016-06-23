@@ -100,13 +100,13 @@ public class crystalHealth : MonoBehaviour
     {
         switch(nb)
         {
-            case 1:
+            case 2:
                 {
                     WelcomeText.enabled = false;
                     WelcomeTex.enabled = true;
                     break;
                 }
-            case 2:
+            case 5:
                 {
                     WelcomeTex.enabled = false;
                     WelcomeTe.enabled = true;
