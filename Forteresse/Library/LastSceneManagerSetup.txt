@@ -1,4 +1,4 @@
 sceneSetups:
-- path: "Assets/Scenes/sph\xE8re test.unity"
+- path: Assets/Scenes/SphereReseau.unity
   isLoaded: 1
   isActive: 1

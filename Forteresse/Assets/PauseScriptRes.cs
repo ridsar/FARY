@@ -9,6 +9,7 @@ public class PauseScriptRes : NetworkBehaviour
 
     public GameObject PauseMenu;
     public GameObject Gameover;
+    public GameObject NetworkStuff;
 
     GameObject overlord;
     GameObject mage;
@@ -75,6 +76,7 @@ public class PauseScriptRes : NetworkBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        NetworkStuff.SetActive(false);
     }
 
     public void Save()
