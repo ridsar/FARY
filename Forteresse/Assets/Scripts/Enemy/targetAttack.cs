@@ -58,7 +58,7 @@ public class targetAttack : MonoBehaviour {
                 }
                 else
                 {
-                    perso.GetComponent<Animation>().Play("Attack1h1");
+                    perso.GetComponent<Animation>().Play(cool.name);
                 }
             }
             Vector3 newPos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);

@@ -8,6 +8,8 @@ public class attackEnemyCaster : MonoBehaviour
     Vector3 scale;
     float time = 1.5f;
 
+    public Animator anim;
+
     // Use this for initialization
     void Start()
     {
@@ -24,6 +26,7 @@ public class attackEnemyCaster : MonoBehaviour
             time = 0;
         if(!canAttack && time == 0)
         {
+            anim.SetBool("arrow", true);
             GameObject dmg = transform.GetChild(0).gameObject;
             //double cosAngle = Mathf.Cos(transform.eulerAngles.y * Mathf.PI / 180);
             double sinAngle = Mathf.Sin(transform.eulerAngles.y * Mathf.PI / 180);
@@ -44,6 +47,10 @@ public class attackEnemyCaster : MonoBehaviour
             GameObject.Find("Arrow(Clone)").name = "Arrow(Build)";
 
             time = 1.5f;
+        }
+        else
+        {
+            anim.SetBool("arrow", false);
         }      
     }
     void OnTriggerStay(Collider other)
