@@ -7,12 +7,14 @@ public class playerHealth : MonoBehaviour
 {
 
     public float Health;
-    public Slider PlayerHealthBar; //R
+
     public GameObject cam;
     public GameObject deathCam;
-    public Canvas youredead;
+    //public Canvas youredead;
 
     public float maxHealth;
+    public Slider PlayerHealthBar; //R
+
 
     void Start()
     {
@@ -24,7 +26,7 @@ public class playerHealth : MonoBehaviour
     {
         if (Health <= 0)
         {
-            youredead.enabled = true;
+            //youredead.enabled = true;
             PlayerHealthBar.value = 0f; //R
 
             GetComponent<pickUpMoney>().money -= 50;
@@ -102,7 +104,7 @@ public class playerHealth : MonoBehaviour
     }
     void rePop()
     {
-        youredead.enabled = false;
+        //youredead.enabled = false;
         gameObject.SetActive(true);
         cam.SetActive(true);
         deathCam.SetActive(false);

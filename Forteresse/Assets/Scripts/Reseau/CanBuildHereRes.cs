@@ -18,25 +18,25 @@ public class CanBuildHereRes : NetworkBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (gameObject.GetComponent<CanBuildHere>().isActiveAndEnabled == true)
+        if (gameObject.GetComponent<CanBuildHereRes>().isActiveAndEnabled == true)
         {
             Physics.IgnoreCollision(gameObject.GetComponent<SphereCollider>(), other);
 
             if (other.tag == "NoBuild")
             {
                 transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.2f, 0.2f, 1.0f);
-                GameObject.Find("Player").GetComponent<Build>().isBuildable = false;
+                GameObject.Find("Player").GetComponent<BuildRes>().Buildable = false;
             }
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (gameObject.GetComponent<CanBuildHere>().isActiveAndEnabled == true)
+        if (gameObject.GetComponent<CanBuildHereRes>().isActiveAndEnabled == true)
         {
             if (other.tag == "NoBuild")
             {
                 transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(0.2f, 1.0f, 0.2f, 1.0f);
-                GameObject.Find("Player").GetComponent<Build>().isBuildable = true;
+                GameObject.Find("Player").GetComponent<BuildRes>().Buildable = true;
             }
         }
     }

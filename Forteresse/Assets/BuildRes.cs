@@ -65,7 +65,6 @@ public class BuildRes : NetworkBehaviour
                 type = 0;
                 path = "Walls";
                 price = 10;
-
                 canBuild = true; //variable disant si je peux poser une tour ou pas
                 CmdinvokTower(); //Lance la Coroutine qui va instancier la tour
             }
@@ -156,7 +155,7 @@ public class BuildRes : NetworkBehaviour
                     attackScript = T.GetComponent<Attack>();
                     attackScript.enabled = false; //Eteint le script "Attck" sur la tour
 
-                    T.GetComponent<CanBuildHere>().enabled = true;
+                    T.GetComponent<CanBuildHereRes>().enabled = true;
                 }
 
 
@@ -199,10 +198,10 @@ public class BuildRes : NetworkBehaviour
 
                     if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
                     {
-                        T.GetComponent<CanBuildHere>().enabled = false;
+                        T.GetComponent<CanBuildHereRes>().enabled = false;
                         if (name == "Canon Tower" || name == "Mage Tower" || name == "Frozen Tower")
                             attackScript.enabled = true; //Le script d'attack est désormais activé
-                        T.GetComponent<CanBuildHere>().enabled = false;
+                        T.GetComponent<CanBuildHereRes>().enabled = false;
                     }
                 }
 
@@ -253,8 +252,8 @@ public class BuildRes : NetworkBehaviour
         T = Instantiate(my_object, new Vector3(transform.position.x, transform.position.y + decal, transform.position.z + 20), Quaternion.identity) as GameObject; //créer l'objet (la tour dans ce cas)
         T.SetActive(true);
         NetworkServer.Spawn(T);
-        //T.name += "(Clone)";
-       // T.transform.localScale *= 4;
+        T.name += "(Clone)";
+
         CancelInvoke(); //arrete la creation de tour
         if (name == "Canon Tower" || name == "Mage Tower" || name == "Fire Tower" || name == "Tower Buffer" || name == "Frozen Tower")
         {
