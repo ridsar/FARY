@@ -1,62 +1,65 @@
 \select@language {french}
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Cahier des charges}{4}
-\contentsline {subsection}{\numberline {2.1}Les origines du projet}{4}
-\contentsline {subsubsection}{\numberline {2.1.1}Pr\IeC {\'e}sentation}{4}
-\contentsline {subsubsection}{\numberline {2.1.2}D\IeC {\'e}roulement d'une partie}{4}
-\contentsline {subsubsection}{\numberline {2.1.3}Multijoueur}{6}
-\contentsline {subsubsection}{\numberline {2.1.4}L'interface}{6}
-\contentsline {subsubsection}{\numberline {2.1.5}L'arsenal de d\IeC {\'e}fense}{6}
-\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}coupage du projet}{8}
-\contentsline {subsubsection}{\numberline {2.2.1}Le graphisme}{8}
-\contentsline {subsubsection}{\numberline {2.2.2}La 3D}{8}
-\contentsline {subsubsection}{\numberline {2.2.3}La 2D}{8}
-\contentsline {subsubsection}{\numberline {2.2.4}Audio}{8}
-\contentsline {subsubsection}{\numberline {2.2.5}Le r\IeC {\'e}seau}{8}
-\contentsline {subsubsection}{\numberline {2.2.6}L'intelligence artificiel}{9}
-\contentsline {subsubsection}{\numberline {2.2.7}Le menu}{9}
-\contentsline {subsubsection}{\numberline {2.2.8}Le site}{9}
-\contentsline {subsubsection}{\numberline {2.2.9}Gameplay}{9}
-\contentsline {subsubsection}{\numberline {2.2.10}Animation}{10}
-\contentsline {subsection}{\numberline {2.3}R\IeC {\'e}partition des t\IeC {\^a}ches}{11}
-\contentsline {subsection}{\numberline {2.4}Ressources utilis\IeC {\'e}es}{12}
-\contentsline {subsubsection}{\numberline {2.4.1}Ordinateur}{12}
-\contentsline {subsubsection}{\numberline {2.4.2}Visual Studio 2015}{12}
-\contentsline {subsubsection}{\numberline {2.4.3}Unity}{12}
-\contentsline {subsubsection}{\numberline {2.4.4}Gimp/Blender}{12}
-\contentsline {subsubsection}{\numberline {2.4.5}Tutoriel}{13}
-\contentsline {subsection}{\numberline {2.5}Planning}{13}
-\contentsline {subsection}{\numberline {2.6}Budget}{14}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Reprise du cahier des charges}{3}
+\contentsline {subsection}{\numberline {2.1}Les origines du projet}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Pr\IeC {\'e}sentation}{3}
+\contentsline {subsubsection}{\numberline {2.1.2}D\IeC {\'e}roulement d'une partie}{3}
+\contentsline {subsubsection}{\numberline {2.1.3}Multijoueur}{5}
+\contentsline {subsubsection}{\numberline {2.1.4}L'interface}{5}
+\contentsline {subsubsection}{\numberline {2.1.5}L'arsenal de d\IeC {\'e}fense}{5}
+\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}coupage du projet}{7}
+\contentsline {subsubsection}{\numberline {2.2.1}Le graphisme}{7}
+\contentsline {subsubsection}{\numberline {2.2.2}La 3D}{7}
+\contentsline {subsubsection}{\numberline {2.2.3}La 2D}{7}
+\contentsline {subsubsection}{\numberline {2.2.4}Audio}{7}
+\contentsline {subsubsection}{\numberline {2.2.5}Le r\IeC {\'e}seau}{7}
+\contentsline {subsubsection}{\numberline {2.2.6}L'intelligence artificiel}{8}
+\contentsline {subsubsection}{\numberline {2.2.7}Le menu}{8}
+\contentsline {subsubsection}{\numberline {2.2.8}Le site}{8}
+\contentsline {subsubsection}{\numberline {2.2.9}Gameplay}{8}
+\contentsline {subsubsection}{\numberline {2.2.10}Animation}{9}
+\contentsline {subsection}{\numberline {2.3}R\IeC {\'e}partition des t\IeC {\^a}ches}{10}
+\contentsline {subsection}{\numberline {2.4}Ressources utilis\IeC {\'e}es}{11}
+\contentsline {subsubsection}{\numberline {2.4.1}Ordinateur}{11}
+\contentsline {subsubsection}{\numberline {2.4.2}Visual Studio 2015}{11}
+\contentsline {subsubsection}{\numberline {2.4.3}Unity}{11}
+\contentsline {subsubsection}{\numberline {2.4.4}Gimp/Blender}{11}
+\contentsline {subsubsection}{\numberline {2.4.5}Tutoriel}{12}
+\contentsline {subsection}{\numberline {2.5}Planning}{12}
+\contentsline {subsection}{\numberline {2.6}Budget}{13}
 \contentsline {section}{\numberline {3}Le jeu}{14}
 \contentsline {subsection}{\numberline {3.1}\textsc {Sarkar} Riday}{14}
 \contentsline {subsubsection}{\numberline {3.1.1}Graphisme}{14}
-\contentsline {paragraph}{\numberline {3.1.1.1}La 2D}{15}
+\contentsline {paragraph}{La 2D}{14}
 \contentsline {subsubsection}{\numberline {3.1.2}La 3D}{16}
-\contentsline {subsubsection}{\numberline {3.1.3}Le Multijoueur}{17}
+\contentsline {subsubsection}{\numberline {3.1.3}Reseau}{17}
+\contentsline {subsubsection}{\numberline {3.1.4}Le Multijoueur}{18}
+\contentsline {subsubsection}{\numberline {3.1.5}Le site internet}{18}
 \contentsline {subsection}{\numberline {3.2}\textsc {Henric} Arnaud}{18}
 \contentsline {subsubsection}{\numberline {3.2.1}Histoire et bande annonce}{18}
-\contentsline {subsubsection}{\numberline {3.2.2}Site internet}{18}
-\contentsline {subsubsection}{\numberline {3.2.3}Les Menus}{19}
+\contentsline {subsubsection}{\numberline {3.2.2}Site internet}{19}
+\contentsline {subsubsection}{\numberline {3.2.3}Les Menus}{20}
 \contentsline {subsubsection}{\numberline {3.2.4}L'intelligence artificielle}{20}
-\contentsline {subsubsection}{\numberline {3.2.5}Les Animations}{20}
-\contentsline {subsubsection}{\numberline {3.2.6}L'Audio}{21}
-\contentsline {subsection}{\numberline {3.3}\textsc {Chatelus} Florian}{21}
-\contentsline {subsubsection}{\numberline {3.3.1}Le scenario}{21}
-\contentsline {subsubsection}{\numberline {3.3.2}Le Graphisme 3D}{22}
-\contentsline {subsubsection}{\numberline {3.3.3}L'intelligence artificielle}{23}
-\contentsline {subsubsection}{\numberline {3.3.4}Le Gameplay}{24}
-\contentsline {paragraph}{\numberline {3.3.4.1}Les personnages}{24}
-\contentsline {paragraph}{\numberline {3.3.4.2}Les ennemis}{25}
-\contentsline {paragraph}{\numberline {3.3.4.3}L'arsenal d\IeC {\'e}fensif}{27}
-\contentsline {paragraph}{\numberline {3.3.4.4}Les vagues}{29}
-\contentsline {paragraph}{\numberline {3.3.4.5}Les am\IeC {\'e}liorations}{29}
-\contentsline {paragraph}{\numberline {3.3.4.6}Les effets visuel}{30}
-\contentsline {paragraph}{\numberline {3.3.4.7}Les cam\IeC {\'e}ras}{31}
-\contentsline {subsubsection}{\numberline {3.3.5}Le R\IeC {\'e}seau}{32}
-\contentsline {subsubsection}{\numberline {3.3.6}Les Menus}{32}
-\contentsline {subsubsection}{\numberline {3.3.7}Le multijoueur}{33}
-\contentsline {section}{\numberline {4}Bilan personnel}{33}
-\contentsline {subsection}{\numberline {4.1}\textsc {Chatelus} Florian}{33}
-\contentsline {subsection}{\numberline {4.2}\textsc {Henric} Arnaud}{36}
-\contentsline {subsection}{\numberline {4.3}\textsc {Sarkar} Riday}{38}
-\contentsline {section}{\numberline {5}Conclusion}{41}
+\contentsline {subsubsection}{\numberline {3.2.5}Les Animations}{21}
+\contentsline {subsubsection}{\numberline {3.2.6}L'Audio}{22}
+\contentsline {subsection}{\numberline {3.3}\textsc {Chatelus} Florian}{22}
+\contentsline {subsubsection}{\numberline {3.3.1}Le scenario}{22}
+\contentsline {subsubsection}{\numberline {3.3.2}Le Graphisme 3D}{23}
+\contentsline {subsubsection}{\numberline {3.3.3}L'intelligence artificielle}{24}
+\contentsline {subsubsection}{\numberline {3.3.4}Le Gameplay}{26}
+\contentsline {paragraph}{Les personnages}{26}
+\contentsline {paragraph}{Les ennemis}{26}
+\contentsline {paragraph}{L'arsenal d\IeC {\'e}fensif}{28}
+\contentsline {paragraph}{Les vagues}{31}
+\contentsline {paragraph}{Les am\IeC {\'e}liorations}{32}
+\contentsline {paragraph}{Les effets visuel}{32}
+\contentsline {paragraph}{Les cam\IeC {\'e}ras}{33}
+\contentsline {subsubsection}{\numberline {3.3.5}Le R\IeC {\'e}seau}{34}
+\contentsline {subsubsection}{\numberline {3.3.6}Les Menus}{34}
+\contentsline {subsubsection}{\numberline {3.3.7}Le multijoueur}{35}
+\contentsline {section}{\numberline {4}Bilan personnel}{36}
+\contentsline {subsection}{\numberline {4.1}\textsc {Chatelus} Florian}{36}
+\contentsline {subsection}{\numberline {4.2}\textsc {Henric} Arnaud}{39}
+\contentsline {subsection}{\numberline {4.3}\textsc {Sarkar} Riday}{41}
+\contentsline {section}{\numberline {5}Conclusion}{43}
+\contentsline {section}{\numberline {6}Annexe}{44}

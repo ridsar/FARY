@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.13)  6 JUL 2016 08:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.13)  6 JUL 2016 17:18
 entering extended mode
 **"./Dossier soutenance finale.tex"
 ("Dossier soutenance finale.tex"
@@ -143,6 +143,9 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidth=\dimen119
 \titlewidthlast=\dimen120
 \titlewidthfirst=\dimen121
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\shorttoc\shorttoc.sty"
+Package: shorttoc 2002/08/20 v1.3 Short table of contents (JPFD)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -489,21 +492,21 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 ("Dossier soutenance finale.aux")
 \openout1 = `"Dossier soutenance finale.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Info: Redefining \degres on input line 29.
-LaTeX Info: Redefining \dots on input line 29.
-LaTeX Info: Redefining \up on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Info: Redefining \degres on input line 30.
+LaTeX Info: Redefining \dots on input line 30.
+LaTeX Info: Redefining \up on input line 30.
 \c@lstlisting=\count102
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -564,28 +567,28 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 31.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 32.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 37.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 38.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <24.88> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 37.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 38.
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <20.74> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 39.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 40.
 
 <coollogo_com-19602433.png, id=1, 220.57407pt x 76.78688pt>
 File: coollogo_com-19602433.png Graphic file (type png)
 
 <use coollogo_com-19602433.png>
-Package pdftex.def Info: coollogo_com-19602433.png used on input line 42.
+Package pdftex.def Info: coollogo_com-19602433.png used on input line 43.
 (pdftex.def)             Requested size: 220.57352pt x 76.78668pt.
 
 <crossed-swords-clip-art-48219.jpg, id=3, 426.59375pt x 426.59375pt>
@@ -593,78 +596,253 @@ File: crossed-swords-clip-art-48219.jpg Graphic file (type jpg)
 
 <use crossed-swords-clip-art-48219.jpg>
 Package pdftex.def Info: crossed-swords-clip-art-48219.jpg used on input line 4
-4.
+5.
 (pdftex.def)             Requested size: 170.63446pt x 170.63446pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 51.
+(Font)              <12> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 51.
+(Font)              <8> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 51.
+(Font)              <6> on input line 52.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./coollogo_com-19602433.p
-ng> <./crossed-swords-clip-art-48219.jpg>] ("Dossier soutenance finale.toc"
+ng> <./crossed-swords-clip-art-48219.jpg>] ("Dossier soutenance finale.toc")
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[1] [2] <Plan.png, id=25, 584.93532pt x 417.81094pt>
+File: Plan.png Graphic file (type png)
+ <use Plan.png>
+Package pdftex.def Info: Plan.png used on input line 84.
+(pdftex.def)             Requested size: 321.71541pt x 229.79672pt.
+ [3]
+[4 <./Plan.png>] [5] [6] [7] [8] [9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 187--212
+
+ []
+
+[12] <images.jpg, id=61, 212.795pt x 238.8925pt>
+File: images.jpg Graphic file (type jpg)
+ <use images.jpg>
+Package pdftex.def Info: images.jpg used on input line 216.
+(pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
+ [13 <./images.jpg>] [14] <interface2D.png, id=70, 1248.16313pt x 659.46375pt>
+File: interface2D.png Graphic file (type png)
+
+<use interface2D.png>
+Package pdftex.def Info: interface2D.png used on input line 229.
+(pdftex.def)             Requested size: 374.45183pt x 197.84064pt.
+ [15 <./interface2D.png>]
+<3Dmap2.png, id=74, 1262.46657pt x 660.21657pt>
+File: 3Dmap2.png Graphic file (type png)
+ <use 3Dmap2.png>
+Package pdftex.def Info: 3Dmap2.png used on input line 236.
+(pdftex.def)             Requested size: 378.74289pt x 198.0665pt.
+ [16]
+<Chat.png, id=78, 1263.97218pt x 661.72218pt>
+File: Chat.png Graphic file (type png)
+ <use Chat.png>
+Package pdftex.def Info: Chat.png used on input line 247.
+(pdftex.def)             Requested size: 379.19458pt x 198.51819pt.
+ [17 <./3Dmap2.png>] [18 <./Chat.png>] [19]
+<selectionDesPersonnages.png, id=89, 1260.96094pt x 660.21657pt>
+File: selectionDesPersonnages.png Graphic file (type png)
+
+<use selectionDesPersonnages.png>
+Package pdftex.def Info: selectionDesPersonnages.png used on input line 266.
+(pdftex.def)             Requested size: 378.2912pt x 198.0665pt.
+ [20] [21 <./selectionDesPersonnages.png>]
+[22] [23] <3D.png, id=102, 1262.46657pt x 658.71094pt>
+File: 3D.png Graphic file (type png)
+ <use 3D.png>
+Package pdftex.def Info: 3D.png used on input line 300.
+(pdftex.def)             Requested size: 378.74289pt x 197.61479pt.
+ [24]
+[25 <./3D.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
+
+ []
+
+[26] [27] <Enemis.png, id=116, 1259.4553pt x 660.21657pt>
+File: Enemis.png Graphic file (type png)
+ <use Enemis.png>
+Package pdftex.def Info: Enemis.png used on input line 326.
+(pdftex.def)             Requested size: 377.83951pt x 198.0665pt.
+
+[28] [29 <./Enemis.png>] <Tours.png, id=123, 1262.46657pt x 661.72218pt>
+File: Tours.png Graphic file (type png)
+
+<use Tours.png>
+Package pdftex.def Info: Tours.png used on input line 341.
+(pdftex.def)             Requested size: 378.74289pt x 198.51819pt.
+ [30] [31 <./Tours.png>] [32] [33] [34] [35] [36] [37] [38]
+[39] [40] [41] [42] <BonneChance.png, id=166, 1260.96094pt x 660.21657pt>
+File: BonneChance.png Graphic file (type png)
+
+<use BonneChance.png>
+Package pdftex.def Info: BonneChance.png used on input line 429.
+(pdftex.def)             Requested size: 378.2912pt x 198.0665pt.
+ <Skeleton.png, id=167, 221.32687pt x 288.3272pt>
+File: Skeleton.png Graphic file (type png)
+
+<use Skeleton.png>
+Package pdftex.def Info: Skeleton.png used on input line 435.
+(pdftex.def)             Requested size: 177.06172pt x 230.66205pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--437
+
+ []
+
+[43 <./BonneChance.png>] <Goblin.png, id=171, 221.32687pt x 288.3272pt>
+File: Goblin.png Graphic file (type png)
+
+<use Goblin.png>
+Package pdftex.def Info: Goblin.png used on input line 438.
+(pdftex.def)             Requested size: 177.06172pt x 230.66205pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+[44 <./Skeleton.png> <./Goblin.png>]
+<Troll.png, id=177, 213.79875pt x 276.28218pt>
+File: Troll.png Graphic file (type png)
+ <use Troll.png>
+Package pdftex.def Info: Troll.png used on input line 442.
+(pdftex.def)             Requested size: 171.03922pt x 221.02603pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
+
+ []
+
+<Ranger.png, id=178, 221.32687pt x 295.85532pt>
+File: Ranger.png Graphic file (type png)
+ <use Ranger.png>
+Package pdftex.def Info: Ranger.png used on input line 446.
+(pdftex.def)             Requested size: 177.06172pt x 236.68456pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
+
+ []
+
+[45 <./Troll.png> <./Ranger.png>]
+<HellKeeper.png, id=184, 221.32687pt x 307.90031pt>
+File: HellKeeper.png Graphic file (type png)
+ <use HellKeeper.png>
+Package pdftex.def Info: HellKeeper.png used on input line 450.
+(pdftex.def)             Requested size: 177.06172pt x 246.32057pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--453
+
+ []
+
+<Necromancer.png, id=185, 221.32687pt x 285.31593pt>
+File: Necromancer.png Graphic file (type png)
+ <use Necromancer.png>
+Package pdftex.def Info: Necromancer.png used on input line 454.
+(pdftex.def)             Requested size: 177.06172pt x 228.25305pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
+
+ []
+
+[46 <./HellKeeper.png> <./Necromancer.png>]
+<Overseer.png, id=191, 221.32687pt x 295.85532pt>
+File: Overseer.png Graphic file (type png)
+ <use Overseer.png>
+Package pdftex.def Info: Overseer.png used on input line 458.
+(pdftex.def)             Requested size: 177.06172pt x 236.68456pt.
+
+<Mage.png, id=192, 189.70876pt x 189.70876pt>
+File: Mage.png Graphic file (type png)
+ <use Mage.png>
+Package pdftex.def Info: Mage.png used on input line 463.
+(pdftex.def)             Requested size: 189.70828pt x 189.70828pt.
+ [47 <./Overseer.png> <./Mage.png>] <Canon.png, id=198, 218.31563pt x 217.5628p
+t>
+File: Canon.png Graphic file (type png)
+ <use Canon.png>
+Package pdftex.def Info: Canon.png used on input line 468.
+(pdftex.def)             Requested size: 218.31508pt x 217.56227pt.
+
+<FirTower.png, id=199, 219.06844pt x 215.30438pt>
+File: FirTower.png Graphic file (type png)
+ <use FirTower.png>
+Package pdftex.def Info: FirTower.png used on input line 473.
+(pdftex.def)             Requested size: 219.06789pt x 215.30385pt.
+ [48 <./Canon.png> <./FirTower.png>]
+<IconeFrozenTower.png, id=205, 219.82124pt x 225.09094pt>
+File: IconeFrozenTower.png Graphic file (type png)
+
+<use IconeFrozenTower.png>
+Package pdftex.def Info: IconeFrozenTower.png used on input line 479.
+(pdftex.def)             Requested size: 219.8207pt x 225.09038pt.
+ <LavaBrik.png, id=206, 189.70876pt x 189.70876pt>
+File: LavaBrik.png Graphic file (type png)
+
+<use LavaBrik.png>
+Package pdftex.def Info: LavaBrik.png used on input line 484.
+(pdftex.def)             Requested size: 227.64935pt x 227.64935pt.
+ [49 <./IconeFrozenTower.png> <./LavaBrik.png>]
+<fbx.png, id=210, 219.82124pt x 219.06844pt>
+File: fbx.png Graphic file (type png)
+ <use fbx.png>
+Package pdftex.def Info: fbx.png used on input line 490.
+(pdftex.def)             Requested size: 219.8207pt x 219.06789pt.
+ [50 <./fbx.png>]
+("Dossier soutenance finale.toc"
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+
+
+Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
  Make it at least 14.61858pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1])
+[51])
 \tf@toc=\write3
 \openout3 = `"Dossier soutenance finale.toc"'.
 
- [2] [3] <Plan.png, id=27, 584.93532pt x 417.81094pt>
-File: Plan.png Graphic file (type png)
- <use Plan.png>
-Package pdftex.def Info: Plan.png used on input line 85.
-(pdftex.def)             Requested size: 321.71541pt x 229.79672pt.
-
-[4] [5 <./Plan.png>] [6] [7] [8] [9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 186--211
-
- []
-
-[13] <images.jpg, id=64, 212.795pt x 238.8925pt>
-File: images.jpg Graphic file (type jpg)
- <use images.jpg>
-Package pdftex.def Info: images.jpg used on input line 215.
-(pdftex.def)             Requested size: 148.95547pt x 167.2236pt.
- [14 <./images.jpg>] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26
-] [27]
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]
-("Dossier soutenance finale.aux") ) 
+ [52] ("Dossier soutenance finale.aux") ) 
 Here is how much of TeX's memory you used:
- 6044 strings out of 493335
- 87120 string characters out of 3136656
- 150861 words of memory out of 3000000
- 9485 multiletter control sequences out of 15000+200000
- 18473 words of font info for 40 fonts, out of 3000000 for 9000
+ 6178 strings out of 493335
+ 89370 string characters out of 3136656
+ 150157 words of memory out of 3000000
+ 9591 multiletter control sequences out of 15000+200000
+ 20062 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,2301b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\epita-student\AppData\Local\MiKTe
-X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1440.pk> <C:\Users\epita-student\A
-ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Use
-rs\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-ti1200.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
-appen\ec\dpi600\ecbx1440.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\epita-student\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\epit
-a-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.
-pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
-c\dpi600\ecrm1200.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\jknappen\ec\dpi600\ecsi1200.pk> <C:\Users\epita-student\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1200.pk> <C:\Users\epita-stude
-nt\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:
-\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\eccc2074.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\eccc2488.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/eurosym/feymr10.pfb>
-Output written on "Dossier soutenance finale.pdf" (42 pages, 333289 bytes).
+ 37i,11n,43p,2309b,546s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\epita-student\AppData\Local
+\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk> <C:\Users\epita-stu
+dent\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <
+C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
+600\ecxc1440.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\epita-student\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\epita-student\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\User
+s\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
+x1200.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
+ppen\ec\dpi600\ecbx1728.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fo
+nts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\epita-student\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\epita
+-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsi1200.p
+k> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecss1200.pk> <C:\Users\epita-student\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\epita-student\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2074.pk> <C:\Users\epita-studen
+t\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb>
+Output written on "Dossier soutenance finale.pdf" (53 pages, 22382159 bytes).
 PDF statistics:
- 531 PDF objects out of 1000 (max. 8388607)
+ 698 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
