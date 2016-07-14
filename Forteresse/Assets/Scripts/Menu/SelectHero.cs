@@ -20,7 +20,7 @@ public class SelectHero : MonoBehaviour {
     public GameObject pause;
     bool paused;
     bool selectR = false;
-    bool selectL = true;
+    bool selectL = false;
     public bool isSelecting = true;
     public GameObject cam;
 
