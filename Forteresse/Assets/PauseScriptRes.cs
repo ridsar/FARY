@@ -29,7 +29,7 @@ public class PauseScriptRes : NetworkBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
             if (!paused) //F
@@ -63,7 +63,7 @@ public class PauseScriptRes : NetworkBehaviour
             PauseMenu.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked; //Le curseur disparait et est lock au milieu de l'ecran
             Cursor.visible = false;
-        }
+        }*/
     }
 
     public void Resume()
