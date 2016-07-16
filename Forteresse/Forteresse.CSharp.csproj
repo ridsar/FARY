@@ -76,6 +76,7 @@
     <Compile Include="Assets\NecroBuff.cs" />
     <Compile Include="Assets\NetManagerCustom.cs" />
     <Compile Include="Assets\PauseScriptRes.cs" />
+    <Compile Include="Assets\PickUpMoneyRes.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\Player\AShopExport\ShowAnimation.cs" />
     <Compile Include="Assets\Player\AShopExport\UIObjRotation.cs" />

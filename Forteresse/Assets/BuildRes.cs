@@ -64,7 +64,7 @@ public class BuildRes : NetworkBehaviour
         }
 
         //Instanciation d'un model de tour pour visualisation
-        if (Input.GetKey(KeyCode.Alpha1) && !canBuild && GetComponent<pickUpMoney>().money >= 10)
+        if (Input.GetKey(KeyCode.Alpha1) && !canBuild && GetComponent<PickUpMoneyRes>().money >= 10)
         {
             my_object = Mage_Tower;
 
@@ -79,7 +79,7 @@ public class BuildRes : NetworkBehaviour
             invokTower(); //Lance la Coroutine qui va instancier la tour
         }
 
-        else if (Input.GetKey(KeyCode.Alpha2) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
+        else if (Input.GetKey(KeyCode.Alpha2) && !canBuild && GetComponent<PickUpMoneyRes>().money >= 20)
         {
             my_object = Canon_Tower;
 
@@ -92,7 +92,7 @@ public class BuildRes : NetworkBehaviour
             canBuild = true; //variable disant si je peux poser une tour ou pas
             invokTower(); //Lance la Coroutine qui va instancier la tour
         }
-        else if (Input.GetKey(KeyCode.Alpha3) && !canBuild && GetComponent<pickUpMoney>().money >= 30)
+        else if (Input.GetKey(KeyCode.Alpha3) && !canBuild && GetComponent<PickUpMoneyRes>().money >= 30)
         {
             my_object = Lava_Floor;
 
@@ -105,7 +105,7 @@ public class BuildRes : NetworkBehaviour
             invokTower();
 
         }
-        else if (Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<pickUpMoney>().money >= 20)
+        else if (Input.GetKey(KeyCode.Alpha4) && !canBuild && GetComponent<PickUpMoneyRes>().money >= 20)
         {
             my_object = Fire_Tower;
             name = "Fire Tower";
@@ -117,7 +117,7 @@ public class BuildRes : NetworkBehaviour
             canBuild = true;
             invokTower();
         }
-        else if (Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
+        else if (Input.GetKey(KeyCode.Alpha5) && !canBuild && GetComponent<PickUpMoneyRes>().money >= 50)
         {
             my_object = Tower_Buffer;
             name = "Tower Buffer";
@@ -129,7 +129,7 @@ public class BuildRes : NetworkBehaviour
             canBuild = true;
             invokTower();
         }
-        else if (Input.GetKey(KeyCode.Alpha6) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
+        else if (Input.GetKey(KeyCode.Alpha6) && !canBuild && GetComponent<PickUpMoneyRes>().money >= 50)
         {
             my_object = Stun_Trap;
             name = "Stun Trap";
@@ -141,7 +141,7 @@ public class BuildRes : NetworkBehaviour
             canBuild = true;
             invokTower();
         }
-        else if (Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        else if (Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<PickUpMoneyRes>().money >= 0)
         {
             my_object = Frozen_Tower;
             name = "Frozen Tower";
@@ -230,8 +230,8 @@ public class BuildRes : NetworkBehaviour
 
                     if (Input.GetMouseButton(0)) //clic gauche
                     {
-                        GetComponent<pickUpMoney>().money -= price;
-                        print(GetComponent<pickUpMoney>().money);
+                        GetComponent<PickUpMoneyRes>().money -= price;
+                        print(GetComponent<PickUpMoneyRes>().money);
 
                         if (T != null)
                         {
