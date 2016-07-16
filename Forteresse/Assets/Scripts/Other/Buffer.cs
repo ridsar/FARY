@@ -18,7 +18,10 @@ public class Buffer : MonoBehaviour
     public RawImage Sprint;
     public RawImage Dammage;
 
-    public Text Chrono;
+    public Text ChronoHeart;
+    public Text ChronoVitesseAtack;
+    public Text ChronoDammage;
+    public Text ChronoSprint;
 
     // Use this for initialization
     void Start ()
@@ -27,17 +30,20 @@ public class Buffer : MonoBehaviour
         VitesseAttack.enabled = false;
         Sprint.enabled = false;
         Dammage.enabled = false;
-        Chrono.enabled = false;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        ChronoHeart.enabled = false;
+        ChronoDammage.enabled = false;
+        ChronoSprint.enabled = false;
+        ChronoVitesseAtack.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         if (timeA > 0)
         {
             timeA -= 1 * Time.deltaTime;
-            Chrono.text = timeA.ToString();
-            Chrono.enabled = true;
+            ChronoVitesseAtack.text = ((int)timeA).ToString();
+            ChronoVitesseAtack.enabled = true;
             VitesseAttack.enabled = true;
         }
         else
@@ -47,16 +53,16 @@ public class Buffer : MonoBehaviour
         if(timeD > 0)
         {
             timeD -= 1 * Time.deltaTime;
-            Chrono.text = timeD.ToString();
-            Chrono.enabled = true;
+            ChronoDammage.text = ((int)timeD).ToString();
+            ChronoDammage.enabled = true;
             Dammage.enabled = true;
             buffed = true;
         }
         if (timeL > 0 && GetComponent<playerHealth>().Health < GetComponent<playerHealth>().maxHealth)
         {
             timeL -= 1 * Time.deltaTime;
-            Chrono.text = timeL.ToString();
-            Chrono.enabled = true;
+            ChronoHeart.text = ((int)timeL).ToString();
+            ChronoHeart.enabled = true;
             Heart.enabled = true;
             buffed = true;
             GetComponent<playerHealth>().Health += 10f * Time.deltaTime;
@@ -65,13 +71,13 @@ public class Buffer : MonoBehaviour
         else
         {
             Heart.enabled = false;
-            Chrono.enabled = false;
+            ChronoHeart.enabled = false;
         }
         if (timeS > 0)
         {
             timeS -= 1 * Time.deltaTime;
-            Chrono.text = timeS.ToString();
-            Chrono.enabled = true;
+            ChronoSprint.text = ((int)timeS).ToString();
+            ChronoSprint.enabled = true;
             Sprint.enabled = true;
             buffed = true;
         }
@@ -80,7 +86,7 @@ public class Buffer : MonoBehaviour
         if (timeA < 0)
         {
             VitesseAttack.enabled = false;
-            Chrono.enabled = false;
+            ChronoVitesseAtack.enabled = false;
             if (fireBolt.activeInHierarchy)
                 fireBolt.GetComponent<attackPlayerCaster>().valueTime = 1;
             else
@@ -90,14 +96,14 @@ public class Buffer : MonoBehaviour
         if (timeD < 0)
         {
             Dammage.enabled = false;
-            Chrono.enabled = false;
+            ChronoDammage.enabled = false;
             buffed = false;
             timeD = 0;
         }
         if (timeS < 0)
         {
             Sprint.enabled = false;
-            Chrono.enabled = false;
+            ChronoSprint.enabled = false;
             GetComponent<Déplacement>().Speed -= 10;
             timeS = 0;
         }

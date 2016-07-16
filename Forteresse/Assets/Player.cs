@@ -51,12 +51,12 @@ public class Player : NetworkBehaviour
             currentMessage = GUILayout.TextField(currentMessage);
             if (GUILayout.Button("Send"))
             {
-                if (!string.IsNullOrEmpty(currentMessage.Trim()))
-                {
+               // if (!string.IsNullOrEmpty(currentMessage.Trim()))
+              //  {
                     Debug.Log("command sent");
                     CmdChatMessage(currentMessage);
                     currentMessage = string.Empty;
-                }
+              //  }
             }
             GUILayout.EndHorizontal();
         }
