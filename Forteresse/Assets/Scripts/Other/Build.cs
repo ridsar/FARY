@@ -111,12 +111,12 @@ public class Build : MonoBehaviour
             canBuild = true;
             invokTower();
         }
-        else if (Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<pickUpMoney>().money >= 0)
+        else if (Input.GetKey(KeyCode.Alpha7) && !canBuild && GetComponent<pickUpMoney>().money >= 50)
         {
             name = "Frozen Tower";
             type = 6;
             path = "/Frozen Tower(Clone)/Mesh";
-            price = 0;
+            price = 50;
             decal = 0;
             boxSize = new Vector3(5f, 10f, 5f);
 

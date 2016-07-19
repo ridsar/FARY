@@ -116,7 +116,7 @@ public class enemyHealth : MonoBehaviour
         {
             timeStun -= 1 * Time.deltaTime;
             transform.GetComponent<FollowPath>().enabled = false;
-            transform.FindChild("targetRange").GetComponent<targetAttack>().enabled = false;
+            GetComponent<targetAttack>().enabled = false;
         }
         else if (timeStun > -5 && timeStun <= 0)
         {
@@ -309,8 +309,8 @@ public class enemyHealth : MonoBehaviour
         }
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        if (GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy != null)
-            GameObject.Find("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
+        if (GameObject.Find("Spawn").transform.FindChild("" +  name[0]).GetComponent<Spawn>().myEnemy != null)
+            GameObject.Find("Spawn").transform.FindChild("" + name[0]).GetComponent<Spawn>().myEnemy.RemoveAt(0);
     }
 
     IEnumerator moveSpeedBuff()

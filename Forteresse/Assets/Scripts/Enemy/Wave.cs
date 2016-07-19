@@ -13,6 +13,8 @@ public class Wave : MonoBehaviour {
     bool checkText = false;
     public Text VagueText;
 
+    public GameObject win;
+
     uint VagueNumber; 
 
     private float time = 0.0f;
@@ -33,6 +35,7 @@ public class Wave : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
         compte = 0;
         enemyNumber = 0;
         if(VagueText != null)
@@ -72,6 +75,10 @@ public class Wave : MonoBehaviour {
         }
         if(checkText && enemyNumber == 0 && compte == 0)
         {
+            if (transform.GetChild(0).GetComponent<Spawn>().waveNb == 10)
+            {
+                win.SetActive(true);
+            }
             checkText = false;
             endWave.enabled = true;
             Invoke("endEndWave", 3);

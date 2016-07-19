@@ -130,6 +130,7 @@
     <Compile Include="Assets\Scripts\Menu\GameOver.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseScript.cs" />
     <Compile Include="Assets\Scripts\Menu\SelectHero.cs" />
+    <Compile Include="Assets\Scripts\Menu\WinScript.cs" />
     <Compile Include="Assets\Scripts\Menu\menuScript.cs" />
     <Compile Include="Assets\Scripts\Other\Buffer.cs" />
     <Compile Include="Assets\Scripts\Other\Build.cs" />

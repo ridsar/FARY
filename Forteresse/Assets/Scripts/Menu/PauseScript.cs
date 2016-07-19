@@ -8,6 +8,7 @@ public class PauseScript : MonoBehaviour {
     public GameObject PauseMenu;
     public GameObject isSelect;
     public GameObject Gameover;
+    public int currentscene;
     GameObject overlord;
     GameObject mage;
     GameObject fire;
@@ -81,7 +82,7 @@ public class PauseScript : MonoBehaviour {
     }
     public void Load()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("currentscenesave"));
+        SceneManager.LoadScene(currentscene);
     }
     public void Quit()
     {

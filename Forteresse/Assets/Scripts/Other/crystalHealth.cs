@@ -30,7 +30,7 @@ public class crystalHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             nb += 1;
             selectText(nb);
@@ -125,13 +125,13 @@ public class crystalHealth : MonoBehaviour
     {
         switch(nb)
         {
-            case 2:
+            case 1:
                 {
                     WelcomeText.enabled = false;
                     WelcomeTex.enabled = true;
                     break;
                 }
-            case 4:
+            case 2:
                 {
                     WelcomeTex.enabled = false;
                     WelcomeTe.enabled = true;
