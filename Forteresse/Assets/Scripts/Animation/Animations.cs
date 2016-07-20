@@ -24,7 +24,7 @@ public class Animations : MonoBehaviour {
 	
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
-        if (inputH ==0 && inputV ==0)
+        if (inputH == 0 && inputV == 0)
         {
             audio.loop = false;
         }

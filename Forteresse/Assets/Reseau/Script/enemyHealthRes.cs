@@ -324,7 +324,8 @@ public class enemyHealthRes : NetworkBehaviour
         if (nb == 1)
         {
             int rnd = Random.Range(0, 4);
-            NetworkServer.Spawn(Instantiate(Buff[rnd], transform.position, Quaternion.identity) as GameObject);
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
+            NetworkServer.Spawn(Instantiate(Buff[rnd], pos, Quaternion.identity) as GameObject);
         }
         for (int i = 0; i < (nb / 5); ++i)
         {
