@@ -7,6 +7,8 @@ public class Buffer : MonoBehaviour
     public GameObject fireBolt;
     public bool buffed = false;
 
+    float buffedSpeed;
+    float normalSpeed;
 
     float timeA = 0;
     float timeS = 0;
@@ -26,6 +28,9 @@ public class Buffer : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        buffedSpeed = GetComponent<Déplacement>().Speed + 10f;
+        normalSpeed = GetComponent<Déplacement>().Speed;
+
         Heart.enabled = false;
         VitesseAttack.enabled = false;
         Sprint.enabled = false;
@@ -104,7 +109,7 @@ public class Buffer : MonoBehaviour
         {
             Sprint.enabled = false;
             ChronoSprint.enabled = false;
-            GetComponent<Déplacement>().Speed -= 10;
+            GetComponent<Déplacement>().Speed = normalSpeed;
             timeS = 0;
         }
     }
@@ -123,7 +128,7 @@ public class Buffer : MonoBehaviour
                     break;
                 case "Speed(Clone)":
                     timeS = 60f;
-                    GetComponent<Déplacement>().Speed += 10;
+                    GetComponent<Déplacement>().Speed = buffedSpeed;
                     break;
                 case "Life(Clone)":
                     timeL = 60f;

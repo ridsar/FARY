@@ -164,8 +164,9 @@ public class FollowPath : MonoBehaviour {
 	void StartWalk(){
 		if(currentTarget != null){
 			transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, Time.deltaTime * speed * buff);
+            PlayAnimation(walkAnimation);
 
-			if(CheckDistance() <= 0.5f)
+            if (CheckDistance() <= 0.5f)
             {
 				walk = false;
 				lastTarget = currentTarget;

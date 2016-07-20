@@ -178,6 +178,7 @@ public class FollowPathRes : MonoBehaviour
         if (currentTarget != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, Time.deltaTime * speed * buff);
+            PlayAnimation(walkAnimation);
 
             if (CheckDistance() <= 0.5f)
             {

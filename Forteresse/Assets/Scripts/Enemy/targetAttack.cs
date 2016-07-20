@@ -40,7 +40,7 @@ public class targetAttack : MonoBehaviour
         else if (name.Contains("G"))
         {
             scale = 1.5f * transform.localScale.x;
-            fromTheCrystal = 3.5f;
+            fromTheCrystal = 3f;
         }
         else if (name.Contains("T"))
         {

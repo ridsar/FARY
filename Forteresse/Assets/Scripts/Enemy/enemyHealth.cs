@@ -143,7 +143,8 @@ public class enemyHealth : MonoBehaviour
             {
                 int rnd = Random.Range(0, 4);
                 GameObject buff = Instantiate(GameObject.FindGameObjectsWithTag("Buff")[rnd]) as GameObject;
-                buff.transform.position = transform.position;
+                Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
+                buff.transform.position = pos;
             }
             for (int i = 0; i < (nb / 5); ++i)
             {

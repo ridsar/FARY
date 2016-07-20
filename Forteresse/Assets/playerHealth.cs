@@ -8,6 +8,7 @@ public class playerHealth : MonoBehaviour
 
     public float Health;
 
+    public GameObject player_dmg;
     public GameObject cam;
     public GameObject deathCam;
     public GameObject respawn;
@@ -15,6 +16,8 @@ public class playerHealth : MonoBehaviour
 
     public float maxHealth;
     public Slider PlayerHealthBar; //R
+
+    bool isMage = false;
 
 
     void Start()
@@ -35,7 +38,11 @@ public class playerHealth : MonoBehaviour
                 GetComponent<pickUpMoney>().money = 0;
 
             transform.position = respawn.transform.position; //new Vector3(443, 0, 436);
-
+            if (player_dmg.activeInHierarchy)
+            {
+                isMage = true;
+                player_dmg.SetActive(false);
+            }
             cam.SetActive(false);
             deathCam.SetActive(true);
             gameObject.SetActive(false);
@@ -109,5 +116,7 @@ public class playerHealth : MonoBehaviour
         gameObject.SetActive(true);
         cam.SetActive(true);
         deathCam.SetActive(false);
+        if (isMage)
+            player_dmg.SetActive(true);
     }
 }
