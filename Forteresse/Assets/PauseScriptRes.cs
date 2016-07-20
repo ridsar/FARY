@@ -77,7 +77,11 @@ public class PauseScriptRes : NetworkBehaviour
     {
         //NetworkManagerHUD.enabled = false;
         SceneManager.LoadScene(1);
-        NetworkStuff.SetActive(false);
+        foreach (GameObject obj in Object.FindObjectsOfType(typeof(GameObject)))
+        {
+            if (obj.name == "NetworkManager")
+                obj.SetActive(false);
+        }
     }
 
     public void Save()

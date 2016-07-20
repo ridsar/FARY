@@ -9,7 +9,7 @@ public class mouseCursor : NetworkBehaviour
 	// Use this for initialization
 	void Start ()
     {
-	    
+        Time.timeScale = 1.0f;
 	}
 	
 	// Update is called once per frame
